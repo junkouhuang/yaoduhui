@@ -1,0 +1,620 @@
+page{
+  border: none;
+}
+.swiper {
+  position: relative;
+}
+
+swiper {
+  width: 100%;
+  height: 540rpx;
+  background-color: #fff;
+}
+
+swiper swiper-item {
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 540rpx;
+  background-size: cover;
+  position: relative;
+}
+
+swiper swiper-item image {
+  width: 172rpx;
+  height: 76rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.content {
+  margin-bottom: 22rpx;
+  padding: 44rpx;
+  background-color: #fff;
+}
+
+.content .title {
+  color: #868686;
+  font-size: 26rpx;
+}
+
+.content:last-child {
+  margin-top: 20rpx;
+}
+
+.content .spmc-image {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content .spmc-image image {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.content .spmc {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.content .price {
+  color: #ff6c00;
+  font-size: 24rpx;
+  margin-top: 26rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.content .ghj text {
+  font-size: 33rpx;
+}
+
+.content .lsj {
+  color: #868686;
+  font-size: 24rpx;
+}
+
+.content .sl {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 22rpx;
+}
+
+.content .sl .v1 {
+  display: flex;
+  align-items: center;
+}
+
+.content .sl .v1 .quantity {
+  font-size: 24rpx;
+  color: #868686;
+  margin: 0 10rpx;
+}
+
+.content .sl .v1  .num {
+  display: flex;
+  width: 180rpx;
+  border-radius: 6rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  color: #868686;
+  padding: 0;
+}
+
+.content .sl .v1 .num  .sub {
+  width: 48rpx;
+  height: 56rpx;
+  line-height: 0;
+  font-size: 40rpx;
+  text-align: center;
+  padding: 0;
+  /* background-color: #F2F2F2; */
+  border: 1px solid rgba(229, 229, 229, 1);
+  color: #b6b6b6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px 0px 0px 6px;
+}
+
+.content .sl .v1 .num  .sub image {
+  width: 22rpx;
+  height: 22rpx;
+}
+
+.content .sl .v1 .num  input {
+  flex: 1;
+  height: 56rpx;
+  text-align: center;
+  font-size: 24rpx;
+  border-top: 1px solid rgba(229, 229, 229, 1);
+  border-bottom: 1px solid rgba(229, 229, 229, 1);
+  padding: 0 8rpx;
+}
+
+.content .sl .v1 .num .add {
+  width: 48rpx;
+  height: 56rpx;
+  line-height: 0;
+  font-size: 40rpx;
+  text-align: center;
+  padding: 0;
+  border-radius: 0px 6px 6px 0px;
+  color: #b6b6b6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(229, 229, 229, 1);
+}
+
+.content .sl .v1 .num .add image {
+  width: 22rpx;
+  height: 22rpx;
+}
+
+.content .sl .v1 text {
+  color: #868686;
+  font-size: 24rpx;
+  margin-left: 10rpx;
+}
+
+.content .sl  .stock {
+  color: #868686;
+  font-size: 24rpx;
+  margin-left: 24rpx;
+}
+
+.content .packageAmount {
+  color: #868686;
+  font-size: 24rpx;
+}
+
+.content .company {
+  color: #5d5d5d;
+  font-size: 26rpx;
+  margin-top: 24rpx;
+  display: flex;
+}
+
+.content .company text {
+  color: #333;
+  font-size: 26rpx;
+  width: 130rpx;
+  display: inline-block;
+  text-align: right;
+}
+
+.content .company .producerName {
+  max-width: 530rpx;
+}
+
+.content .spec {
+  color: #5d5d5d;
+  font-size: 26rpx;
+  margin-top: 24rpx;
+}
+
+.content .spec text {
+  color: #333;
+  font-size: 26rpx;
+  width: 130rpx;
+  display: inline-block;
+  text-align: right;
+}
+
+.content .no {
+  color: #5d5d5d;
+  font-size: 26rpx;
+  margin-top: 24rpx;
+}
+
+.content .no text {
+  color: #333;
+  font-size: 26rpx;
+  width: 130rpx;
+  display: inline-block;
+  text-align: right;
+}
+
+.content .validityDate {
+  color: #5d5d5d;
+  font-size: 26rpx;
+  margin-top: 24rpx;
+}
+
+.content .validityDate text {
+  color: #333;
+  font-size: 26rpx;
+  width: 130rpx;
+  display: inline-block;
+  text-align: right;
+}
+
+.content .packageAmount {
+  color: #5d5d5d;
+  font-size: 26rpx;
+  margin-top: 24rpx;
+}
+
+.content .packageAmount text {
+  color: #333;
+  font-size: 26rpx;
+  width: 130rpx;
+  display: inline-block;
+  text-align: right;
+}
+
+.content .batch {
+  color: #5d5d5d;
+  font-size: 26rpx;
+  margin-top: 24rpx;
+}
+
+.content .batch text {
+  color: #333;
+  font-size: 26rpx;
+  width: 130rpx;
+  display: inline-block;
+  text-align: right;
+}
+
+.content .line {
+  width: 100%;
+  height: 2rpx;
+  background-color: #ebebeb;
+  margin: 34rpx 0;
+}
+
+.sent {
+  color: #333;
+  display: flex;
+  margin-top: 20rpx;
+  padding: 30rpx;
+  background-color: #fff;
+  position: relative;
+  font-size: 28rpx;
+}
+
+.sent .mc {
+  flex: 1;
+}
+
+.sent .btn2 {
+  color: #3996e1;
+  font-size: 26rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.apply {
+  /* background-image: linear-gradient(to right, #04befe, #4481eb);
+  box-shadow: 0 0.206667rem 0.26rem 0 rgba(67, 115, 234, 0.3); */
+  background: #3996E1;
+  border-radius: 60rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 26rpx;
+  padding: 0 20rpx;
+  height: 62rpx;
+  line-height: 62rpx;
+  margin-top: 2rpx;
+  position: absolute;
+  top: 50%;
+  margin-top: -31rpx;
+  right: 30rpx;
+}
+
+.sent text {
+  color: #868686;
+  font-size: 26rpx;
+  width: 120rpx;
+  display: inline-block;
+  margin-bottom: 18rpx;
+}
+
+.sent rich-text {
+  width: 700rpx;
+}
+
+.sent  .mc view {
+  font-size: 26rpx;
+  margin-bottom: 22rpx;
+}
+
+.sent  .mc .up {
+  color: #868686;
+}
+
+.blank {
+  width: 100%;
+  height: 120rpx;
+}
+
+.carBtn {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: space-between;
+  bottom: 0;
+  background-color: #fff;
+  width: 100%;
+  padding: 0 44rpx;
+  height: 100rpx;
+  z-index: 9;
+}
+
+.carBtn .btn-left {
+  display: flex;
+  align-items: center;
+}
+
+.carBtn .btn-right {
+  flex: 1;
+  justify-content: space-between;
+}
+
+.carBtn .image-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70rpx;
+}
+
+.carBtn .image-item .collet {
+  margin-bottom: 4rpx;
+}
+
+.carBtn .image-item .toCar {
+  position: relative;
+}
+
+.carBtn .image-item text {
+  font-size: 22rpx;
+  line-height: 22rpx;
+  margin-top: 5rpx;
+}
+
+.carBtn .toCar .selNum {
+  width: 26rpx;
+  height: 26rpx;
+  border: 0.026667rem solid #ee0a24;
+  color: #fff;
+  background: #ee0a24;
+  position: absolute;
+  top: -10rpx;
+  right: -17rpx;
+  font-size: 22rpx;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.carBtn .toCar image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.carBtn .collet image {
+  width: 36rpx;
+  height: 32rpx;
+}
+
+.carBtn .submit {
+  width: 220rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 28rpx;
+  border-radius: 60rpx;
+  /* background-image: linear-gradient(to right, rgb(240, 152, 25), #ff5858);
+  box-shadow: 0 0.206667rem 0.26rem 0 rgba(240, 152, 25, 0.3); */
+  background-image: linear-gradient(to right, #04befe, #4481eb);
+  box-shadow: 0 0.206667rem 0.26rem 0 rgba(67, 115, 234, 0.3);
+  margin-right: 70rpx;
+}
+
+.carBtn .band {
+  background-image: linear-gradient(to right, #04befe, #4481eb);
+  box-shadow: 0 0.206667rem 0.26rem 0 rgba(67, 115, 234, 0.3);
+  color: #fff;
+  width: 520rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+}
+
+.carBtn .band text {
+  font-size: 30rpx;
+}
+
+.maskLayer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+}
+
+.choose {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  z-index: 11;
+  border-radius: 8px 8px 0px 0px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.choose .title {
+  font-size: 30rpx;
+  border-bottom: 2rpx solid #dcdcdc;
+  padding: 46rpx 0 32rpx 46rpx;
+}
+
+.choose .desc {
+  margin: 34rpx 56rpx 0 46rpx;
+  font-size: 28rpx;
+}
+
+.choose .desc text {
+  color: #f00;
+}
+
+.choose .shil {
+  font-size: 28rpx;
+  margin: 44rpx 0 0 46rpx;
+  display: flex;
+}
+
+.choose .shil .txt1 {
+  color: #f00;
+}
+
+.choose .shil .txt2 {
+  color: #3996e1;
+}
+
+.choose .box_img {
+  width: 66%;
+  height: 340rpx;
+  margin: 20rpx 17%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.choose .zhu {
+  color: #ffa200;
+  font-size: 28rpx;
+  border-top: 2rpx solid #dcdcdc;
+  padding: 24rpx 0 28rpx;
+  margin: 0 46rpx;
+}
+
+.choose .btn1 {
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  z-index: 5;
+  margin-bottom: 52rpx;
+}
+
+.choose .btn1 .ok {
+  margin: 0 40rpx;
+  flex: 1;
+  font-size: 34rpx;
+  color: #fff;
+  background-image: linear-gradient(to right, #04befe, #4481eb);
+  box-shadow: 0 0.206667rem 0.26rem 0 rgba(67, 115, 234, 0.3);
+  opacity: 0.54;
+  border-radius: 60rpx;
+}
+
+.choose .btn1 .btnActive {
+  opacity: 1;
+}
+
+.business-text {
+  margin: 20rpx auto 0;
+  font-size: 28rpx;
+  color: #3f4552;
+  font-family: 'PingFangSC-Regular';
+  overflow: hidden;
+  text-align: justify;
+  padding: 30rpx;
+  background-color: #fff;
+  position: relative;
+}
+
+.business-text text {
+  color: #868686;
+  font-size: 24rpx;
+  width: 120rpx;
+  display: inline-block;
+  margin-bottom: 18rpx;
+}
+
+.business-text .not_notice {
+  color: #868686;
+  font-size: 24rpx;
+  display: inline-block;
+  margin-bottom: 18rpx;
+}
+
+/* 
+  1.默认设置高度 隐藏其它
+  2.设置两行末尾显示...
+*/
+
+.business-text.none {
+  height: 102rpx;
+  /* -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  display: -webkit-box; 
+  -webkit-box-orient: vertical; *//* 从上向下垂直排列子元素 */
+}
+
+.isExpanding {
+  background-color: #fff;
+}
+
+.business-btn {
+  margin: 0 auto 16rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border-radius: 28rpx;
+  font-size: 26rpx;
+  font-family: 'PingFangSC-Regular';
+  color: #3996e1;
+  position: relative;
+  padding: 0 55rpx 0 48rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.business-btn image {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.business-btn .horn {
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 50%;
+  left: 66%;
+  transform: translateY(-50%);
+}
+
+.business-btn .horn.none {
+  border-left: 8rpx solid transparent;
+  border-right: 8rpx solid transparent;
+  border-top: 12rpx solid #b9c0d0;
+}
+
+.business-btn .horn.block {
+  border-left: 8rpx solid transparent;
+  border-right: 8rpx solid transparent;
+  border-bottom: 12rpx solid #b9c0d0;
+}
+
+.tripList_root{
+  left: 0px;
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  z-index: 0;
+}

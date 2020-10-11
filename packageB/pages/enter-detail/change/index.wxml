@@ -1,0 +1,76 @@
+
+<wxs src="../../../../wxs/filter.wxs" module="tools" />
+<model show="{{showSl}}" title="示例" imgUrl="https://edm.xinquanjk.com/upload/iconfont/202003/20/sample.png"></model>
+<view class="tips-msg" bindtap="goToSettledIn">
+  <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/tips.png"></image>
+  <view class="tips">
+    <view>带“<text>*</text>”号为必填项，不带可以跳过不填写</view>
+  </view>
+</view>
+<view class="information-title"><text style="color:#FF0000">*</text>{{item.qualificationsName}}
+  <text class="status" wx:if="{{item.changeStatus ==0}}">变更中</text>
+</view>
+<view class="update-shell">
+    <view class="update-list">
+      <view class="image-item" wx:for="{{item.qualificationsPath}}" wx:key="index" wx:for-item="items">
+        <image class="detail" src="{{items}}" bindtap="previewImg" data-src="{{item.qualificationsPath}}" data-index="{{index}}"></image>
+        <view class="close-shell" wx:if="{{item.changeStatus !=0}}">
+          <image class="close" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/close.png" bindtap="handleCloseImage" data-index="{{index}}"></image>
+        </view> 
+      </view>
+      <block wx:if="{{item.changeStatus !=0}}">
+        <view class="image-item" bindtap="{{auth!=0?'handleSelectImage':''}}" wx:if="{{item.qualificationsPath.length<3}}">
+          <image class="detail" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/update.png"></image>
+        </view>
+      </block>
+    </view>
+    <view class="explain">{{item.changeStatus!=0?"点击上传证件照片":""}}<text class="num">{{item.qualificationsPath.length}}/3</text></view>
+</view>
+<view class="essential-information">
+  <view class="information-item">
+    <view class="item-text">
+      <text class="symbol">*</text>
+      <text class="item-name">企业名称：</text>
+    </view>
+    <view class="enterpriseName">{{enterpriseName}}</view>
+  </view>
+  <view class="information-item">
+    <view class="item-text">
+      <text class="symbol">*</text>
+      <view class="validity-date">证书有效期：</view>
+    </view>
+    <text  class="long-term"  wx:if="{{item.isCheck}}">证件长期有效</text>
+    <block wx:else>
+      <text style="color:#666;" wx:if="{{auth==0}}">请选择证件有效期时间</text>
+      <picker bindchange="pickDate" mode = "date" value="{{item.expiryDate}}" wx:else>
+        <view class="picker">
+          <input value='{{item.expiryDate}}' placeholder='请选择证件有效期时间' disabled/>
+        </view>
+      </picker>
+    </block>
+  </view> 
+  <block wx:if="{{item.changeStatus !=0}}">
+    <view class="information-item" wx:if="{{item.nameId == 17}}">
+      <checkbox checked="{{item.isCheck}}" bindtap="checkHandle" />
+      <text class="validTime" bindtap="checkHandle" >证件长期有效</text>
+    </view>
+  </block>
+</view>
+<view class="sl" bindtap="openSl">上传授权委托书<text>（示例）</text></view>
+<view class="sub">
+    <!--已过期变更中-->
+    <block wx:if="{{item.changeStatus == 0 && item.expiryStatus == 1}}">
+      <view class="col_red exceed">该证件已过期</view>
+      您已提交信息变更，平台正在审核中，您可在【证件管理】> 【证件变更记录】中查看。
+    </block>
+    <!--变更中-->
+    <block wx:if="{{item.changeStatus == 0 && item.expiryStatus != 1}}">
+      该证件已提交信息变更，平台正在审核中，您可在【证件管 理】>【证件变更记录】中查看。
+    </block>
+    <!--变更失败-->
+    <block wx:if="{{item.changeStatus == 2}}">
+      您的证件变更申请<text class="col_red">未通过</text>，您可在【证件管理】>【证件变更 记录】中查看，您可在【证件管理】>【证件变更 记录】中查看
+    </block>
+    <text wx:if="{{item.changeStatus != 0 &&item.expiryStatus == 1}}"  class="col_red" >您的证件已过期请及时上传，带“*”必传证件过期后将不能 购买商品。</text>
+</view>
+<view class="next-step {{isDisable?'disabled':''}}" bindtap="{{isDisable?'':'handleSaveImage'}}" wx:if="{{item.changeStatus !=0 && auth!=0}}">保存</view>

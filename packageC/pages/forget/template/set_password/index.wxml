@@ -1,0 +1,29 @@
+<!--pages/set_password/index.wxml-->
+<view class="set_password">
+  <view class="flow2">
+    <view class="title">
+      <view>密码必须至少6个字符，以字母开头，同时包含字母和数字。</view>
+      <!-- <view class="set">设置密码成功后，您可以使用注册时的手机号或会员名及新设置的密码在民乐荟登录。</view> -->
+    </view>
+    <view class="form">
+      <view class="password {{focus === 2 ? 'inputActive' : ''}}">
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/pass1.png" wx:if="{{focus === 2}}" class="lock"></image> 
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/pass.png" wx:else class="lock"></image> 
+        <input placeholder="设置密码" placeholder-style="color:#CBCBCB;" maxlength="18" value="{{ruleForm.password}}" type="password" bindfocus="passwordFocus" bindinput="passwordInput"  wx:if="{{hide1}}"></input>
+        <input placeholder="设置密码" placeholder-style="color:#CBCBCB;" maxlength="18" value="{{ruleForm.password}}" type="text" bindfocus="passwordFocus" bindinput="passwordInput" wx:else></input>
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/e01.png" class="eyes_close" wx:if="{{hide1}}" bindtap="seen1"></image>
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/e02.png" class="eyes_open" wx:else bindtap="seen1"></image>
+      </view>
+      <view class="password {{focus === 3 ? 'inputActive' : ''}}">
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/pass1.png" wx:if="{{focus === 3}}" class="lock"></image> 
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/pass.png" wx:else class="lock"></image> 
+        <input placeholder="确认密码" placeholder-style="color:#CBCBCB;" maxlength="18" value="{{ruleForm.confirm}}" type="password" bindfocus="confirmpasswordFocus" bindinput="confirmpasswordInput" wx:if="{{hide2}}"></input>
+        <input placeholder="确认密码" placeholder-style="color:#CBCBCB;" maxlength="18" value="{{ruleForm.confirm}}" type="text" bindfocus="confirmpasswordFocus" bindinput="confirmpasswordInput"  wx:else ></input>
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/e01.png" class="eyes_close" wx:if="{{hide2}}" bindtap="seen2"></image>
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/e02.png" class="eyes_open" wx:else bindtap="seen2"></image>
+      </view>
+      <view class="btn_register {{can ? 'btnActive' : ''}}" bindtap="{{can ? 'finsh' : ''}}">确定</view>
+    </view>
+  </view>
+</view>
+

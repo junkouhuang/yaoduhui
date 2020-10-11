@@ -1,0 +1,38 @@
+/* pages/band/bindding/success/index.wxss */
+page {
+  text-align: center;
+  background: #fff;
+}
+image {
+  width: 234rpx;
+  height: 234rpx;
+  margin-top: 200rpx;
+}
+
+.t1 {
+  color: #333;
+  font-size: 32rpx;
+  margin-top: 82rpx;
+}
+
+.t2 {
+  color: #6D6D6D;
+  font-size: 28rpx;
+  margin: 24rpx 60rpx;
+}
+
+.color {
+  color: #FF0000;
+}
+
+.isee {
+  width:250rpx;
+  height:70rpx;
+  line-height: 70rpx;
+  background:#3996E1;
+  font-size: 28rpx;
+  color: #fff;
+  border-radius:44rpx;
+  margin: 246rpx auto 0;
+}
+

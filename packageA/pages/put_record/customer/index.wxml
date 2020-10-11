@@ -1,0 +1,33 @@
+<!--pages/put_record/customer/index.wxml-->
+<view class="medical-care">
+  <view class="medical-item">
+    <view class="medical-left">
+        <view class="definition-mode">
+          <text class="definition">{{userInfo.enterpriseName}}</text>
+          <text class="mode">{{userInfo.modeName}}</text>
+        </view>
+        <view class="name-phone">
+          <text class="name">{{userInfo.userName}}</text>
+          <text class="phone">{{userInfo.mobileNumber}}</text>
+        </view>
+        <text class="address">{{userInfo.location}}</text>
+        <view class="shipping-companies">配送企业：{{userInfo.supplierName}}</view>
+        <text class="reason" wx:if="{{userInfo.status==1}}">拒绝原因：{{userInfo.auditOpinion}}</text>
+    </view>
+        <!-- 不通过 -->
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/not_adopt.png" wx:if="{{userInfo.status==1}}"></image>
+        <!-- 通过 -->
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/adopt.png" wx:if="{{userInfo.status==2}}"></image>
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/trial.png" wx:if="{{userInfo.status==0}}"></image>
+  </view>
+</view>
+
+<view class="message-list" wx:if="{{customerList[0]}}">
+  <view class="message-item" wx:for="{{customerList}}" wx:key="index" bindtap="handleLookDetail" data-detail="{{item}}">
+    <text>{{item.qualificationsName}}</text>
+    <view class="image-right">
+      <image class="complete" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/select.png" wx:if="{{item.flag}}"></image>
+      <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/right3.png"></image>
+    </view>
+  </view>
+</view>

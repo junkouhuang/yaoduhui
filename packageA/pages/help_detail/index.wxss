@@ -1,0 +1,37 @@
+/* pages/my/template/help_detail/index.wxss */
+.help_detail {
+  background-color: #ffffff;
+  padding: 0 34rpx 0 42rpx;
+  margin-top: 20rpx;
+  color: #333333;
+}
+.questionTitle {
+  padding: 34rpx 0;
+  position: relative;
+  font-size: 32rpx;
+}
+.questionTitle::after {
+  position: absolute;
+  box-sizing: border-box;
+  content: ' ';
+  pointer-events: none;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-bottom: 1px solid #ebedf0;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+.questionTitle text {
+  font-style: italic;
+}
+.questionContent {
+  padding: 36rpx 0;
+  font-size: 28rpx;
+}
+.questionContent text {
+  font-style: italic;
+}
+.questionContent .wxParse-p {
+  overflow: hidden;
+}

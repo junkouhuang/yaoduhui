@@ -1,0 +1,478 @@
+/* pages/member/data-replenish/index.wxss */
+
+.replnish-page {
+  box-sizing: border-box;
+  padding-bottom: 200rpx;
+}
+
+.notice {
+  height: 101rpx;
+  background: #E3F1FC;
+  opacity: 1;
+}
+
+.tspan {
+  height: 54rpx;
+  font-size: 24rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  line-height: 30rpx;
+  color: #333333;
+  opacity: 1;
+  padding: 24rpx 30rpx 23rpx 24rpx;
+}
+
+.uploadtitle {
+  height: 102rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: #F4F4F4;
+  padding-left: 30rpx;
+}
+
+.uploadtitle .text1 {
+  color: red;
+}
+
+.uploadtitle .text2 {
+  font-size: 32rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 500;
+  line-height: 54rpx;
+  color: #333333;
+  opacity: 1;
+}
+
+/* 上传身份证 */
+
+
+.upload-message {
+  background-color: #fff;
+  border-radius: 16rpx;
+  padding-top: 34rpx;
+  padding-bottom: 20rpx;
+  box-sizing: border-box;
+}
+
+.padding-message {
+  padding-top: 0rpx;
+  padding-bottom: 0rpx;
+}
+
+.upload-message .title {
+  padding-left: 26rpx;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.upload-message .idcard-msg {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 68rpx;
+  padding-top: 46rpx;
+  flex-wrap: wrap;
+}
+
+.upload-message .idcard-msg .idcard-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 46rpx;
+  position: relative;
+}
+
+.upload-message .idcard-msg .idcard-item image {
+  width: 267rpx;
+  height: 167rpx;
+}
+
+.upload-message .idcard-msg .idcard-item text {
+  font-size: 24rpx;
+  color: #333;
+  margin-top: 26rpx;
+}
+
+
+.ps-tips {
+  background-color: #fff;
+  border-radius: 16rpx;
+  border-top: 1px solid #DCDCDC;
+  box-sizing: border-box;
+  padding: 36rpx 28rpx;
+}
+
+.ps-tips .title2 {
+  height: 28rpx;
+  font-size: 28rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  line-height: 48rpx;
+  color: #333333;
+  opacity: 1;
+}
+
+.ps-tips .msg {
+  margin-top: 26rpx;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  color: #707070;
+}
+
+.ps-tips .msg text {
+  color: #f00;
+}
+
+.ps-tips .image-list {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30rpx;
+}
+
+.ps-tips .image-list .image-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ps-tips .image-list .image-item image {
+  width: 164rpx;
+  height: 120rpx;
+}
+
+.ps-tips .image-list .image-item text {
+  font-size: 20rpx;
+  color: #333;
+  margin-top: 14rpx;
+}
+
+/* 手机验证码 */
+
+.card-list {
+  /* border-top:1rpx solid #DCDCDC; */
+  /* background-color: #fff; */
+  border-radius: 0 0 15rpx 15rpx;
+  box-sizing: border-box;
+}
+
+.card-list>.title {
+  padding: 40rpx 30rpx 30rpx;
+  font-size: 32rpx;
+  color: #333333;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.card-list .title image {
+  width: 34rpx;
+  height: 34rpx;
+  margin-right: 15rpx;
+}
+
+
+.card-list .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 96rpx;
+  border-bottom: 1rpx solid #DCDCDC;
+}
+
+.card-list .options {
+  padding: 0 30rpx;
+  background-color: #fff;
+}
+
+.card-list .item .rightIcon {
+  width: 42rpx;
+  height: 42rpx;
+}
+
+.card-list .item:last-child {
+  border-bottom: none;
+}
+
+.card-list .item .left {
+  color: #333;
+  font-size: 28rpx;
+}
+
+.card-list .item .valueBox {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  padding-left: 20rpx;
+  align-items: center;
+}
+
+.card-list .item .bankType {
+  flex: initial;
+  color: #767676;
+  font-size: 28rpx;
+}
+
+.card-list .item .bankType .type {
+  margin-left: 40rpx;
+  display: flex;
+  align-items: center;
+}
+
+.left .text1 {
+  color: red;
+}
+
+.card-list .item input {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: right;
+  font-size: 28rpx;
+  width: 400rpx;
+  flex: 1;
+}
+
+
+/* 提交 */
+
+.next-step {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80rpx;
+  background: #0266C4;
+  opacity: 1;
+  border-radius: 15rpx;
+  font-size: 32rpx;
+  font-family: MicrosoftYaHei;
+  line-height: 36rpx;
+  color: #FFFFFF;
+  opacity: 1;
+  margin: 52rpx 30rpx 0 30rpx;
+}
+
+.button_commit {
+  position: fixed;
+  left: 30rpx;
+  right: 30rpx;
+  bottom: 30rpx;
+  margin: 52rpx 0 0 0;
+  z-index: 999999;
+}
+
+.valueBox .getCodeBtn {
+  background: #0266C4;
+  border: none;
+  height: 60rpx;
+  line-height: 62rpx;
+  width: 188rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 24rpx;
+  font-weight: 400;
+  border-radius: 15rpx;
+  margin-left: 60rpx;
+}
+
+
+/* 企业开户资料 */
+
+.essential-information {
+  background-color: #fff;
+  border-radius: 15px;
+  box-sizing: border-box;
+  padding: 0 34rpx 0 42rpx;
+}
+
+.essential-information .information-item {
+  border-bottom: 1rpx solid #DCDCDC;
+  height: 96rpx;
+  display: flex;
+  align-items: center;
+  color: #333333;
+  font-size: 28rpx;
+}
+
+.essential-information .information-item:last-child {
+  border-bottom: none;
+}
+
+.essential-information .information-item .item-text {
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  max-width: 310rpx;
+  margin-right: 20rpx;
+  width: 310rpx;
+}
+
+.essential-information .information-item .enterpriseName {
+  width: 500rpx;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+
+}
+
+.essential-information .information-item .long-term {
+  color: #999;
+  font-size: 28rpx;
+}
+
+.essential-information .information-item .item-text-name {
+  display: felx;
+  align-items: center;
+  font-size: 28rpx;
+  width: 90rpx;
+}
+
+.essential-information .information-item .validTime {
+  color: #333;
+  font-size: 28rpx;
+  margin-left: 16rpx;
+}
+
+.essential-information .information-item .symbol {
+  color: #FF0000;
+}
+
+.essential-information .information-item .validity-date {
+  color: #333;
+  font-size: 28rpx;
+  width: 209rpx;
+}
+
+.essential-information .information-item .symbol_view {
+  width: 20rpx;
+  height: 100%;
+  color: #FF0000;
+}
+
+.essential-information .information-item .nameId {
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.essential-information .information-item input {
+  flex: 1;
+}
+
+
+/*checkbox 整体大小  */
+checkbox {
+  width: 32rpx;
+}
+
+/*checkbox 选项框大小  */
+checkbox .wx-checkbox-input {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+/*checkbox选中后样式  */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  background: #3996E1;
+}
+
+/*checkbox选中后图标样式  */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  width: 28rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  text-align: center;
+  font-size: 22rpx;
+  color: #fff;
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}
+
+.information-title {
+  height: 50rpx;
+  padding: 20rpx 45rpx 0 45rpx;
+  background: #FFFFFF;
+  font-size: 28rpx;
+}
+
+.update-shell {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 0 45rpx 10rpx 45rpx;
+}
+
+.update-shell .update-list {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  border-bottom: 1rpx solid #DCDCDC;
+}
+
+.update-shell .update-list .image-item {
+  width: 178rpx;
+  height: 178rpx;
+  position: relative;
+  margin-right: 25rpx;
+  margin-bottom: 40rpx;
+}
+
+.update-list .image-item .detail {
+  width: 100%;
+  height: 100%;
+}
+
+.update-list .image-item .close-shell {
+  width: 34rpx;
+  height: 34rpx;
+  border-radius: 50%;
+  background-color: #b2b2b2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: -10rpx;
+  top: -10rpx;
+  z-index: 10;
+}
+
+.update-list .image-item .close {
+  width: 15rpx;
+  height: 15rpx;
+}
+
+.update-shell .explain {
+  font-size: 24rpx;
+  color: #868686;
+  margin-top: 28rpx;
+}
+
+.update-shell .text {
+  font-size: 26rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  line-height: 53rpx;
+  color: #808080;
+  opacity: 1;
+  margin-bottom: 20rpx;
+}
+
+.count_3 {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 25rpx;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: #808080;
+}

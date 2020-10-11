@@ -1,0 +1,129 @@
+
+.sent {
+  color: #333;
+  padding-bottom: 110rpx;
+}
+
+.tip {
+  color: #FF0000;
+  font-size: 24rpx;
+  margin: 18rpx 30rpx 0;
+}
+
+.sent .sent_time {
+  font-size: 32rpx;
+  margin: 40rpx 30rpx 30rpx; 
+  font-weight: bold;
+}
+
+.information-item {
+  border-radius: 26rpx;
+  background: #fff;
+  margin: 30rpx;
+  padding: 26rpx 20rpx;
+  display: flex;
+  align-items: center;
+}
+
+.logo3 {
+  width: 92rpx;
+  height: 92rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 30rpx;
+  border-radius: 12rpx;
+  color: #fff;
+  margin-right: 12rpx;
+}
+
+.logo4 {
+  width: 80rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 30rpx;
+  background-color: #3996e1;
+  border-radius: 12rpx;
+  color: #fff;
+  margin-right: 12rpx;
+}
+
+.information-item .icon {
+  width: 92rpx;
+  height: 92rpx;
+  margin-right: 16rpx;
+  border-radius: 12rpx;
+}
+
+.information-item .noimg {
+  width: 100rpx;
+  height: 100rpx;
+  margin-right: 16rpx;
+  border-radius: 18rpx;
+}
+
+.information-item .center {
+  width: 440rpx;
+}
+
+.information-item .center .validate {
+  font-size: 24rpx;
+  color: #6D6D6D;
+  margin-top: 16rpx;
+}
+
+.information-item .item-name {
+  font-size: 28rpx;
+  width: 450rpx;
+  color: #333;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.information-item .item-name .qualificationsName {
+  font-weight: bold;
+}
+
+.information-item .image-right {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 24rpx;
+  color: #666;
+}
+
+.information-item .image-right .right {
+  width: 16rpx;
+  height: 28rpx;
+  margin-left: 16rpx;
+}
+
+.applyBuild {
+  background-color: #f5f5f5;
+  position: fixed;
+  height: 110rpx;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.applyBuild view {
+  border-radius: 60rpx;
+  background-image: linear-gradient(to right, #04BEFE, #4481EB);
+  box-shadow: 0 0.206667rem 0.26rem 0 rgba(67, 115, 234, .3);
+  font-size: 32rpx;
+  width: calc(100vw - 68rpx);
+  height: 90rpx;
+  line-height: 90rpx;
+  color: #ffffff;
+  text-align: center;
+  background-image: linear-gradient(to right, #3996E1, #3996E1);
+  margin-left: 34rpx;
+  opacity: .54;
+}
+
+.applyBuild view.isCan {
+  opacity: 1;
+}

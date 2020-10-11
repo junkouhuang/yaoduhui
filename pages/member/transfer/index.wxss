@@ -1,0 +1,129 @@
+/* pages/member/transfer/index.wxss */
+.transfer-msg{
+  border-top:1rpx solid #DCDCDC;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding:0 38rpx;
+  border-radius: 0 0 15rpx 15rpx;
+}
+
+.transfer-msg .message-item{
+  height:96rpx;
+  border-bottom:1rpx solid #DCDCDC;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.transfer-msg .message-item:last-child{
+  border-bottom:none;
+}
+
+.transfer-msg .message-item .item{
+  font-size:28rpx;
+  color:#333;
+}
+
+.transfer-msg .message-item .item text{
+  color:#FF0101;
+}
+
+.transfer-msg .message-item .detail{
+  color:#868686;
+  font-size:28rpx;
+}
+
+.transfer-msg .message-item input{
+  flex:1;
+  text-align:right;
+  font-size:28rpx;
+}
+
+.transfer-munber{
+  border-radius: 15rpx;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding:45rpx 25rpx 40rpx 35rpx;
+  margin-top:20rpx;
+}
+
+.transfer-munber .title-top{
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.transfer-munber .title-top .title{
+  font-size:24rpx;
+  color:#868686;
+  line-height:24rpx;
+}
+
+.transfer-munber .title-top .all{
+  color:#63A3FE;
+  font-size:24rpx;
+  line-height:24rpx;
+}
+
+.transfer-munber .message-money{
+  margin-top:40rpx;
+  display: flex;
+  align-items: center;
+}
+
+
+.transfer-munber .message-money .symbol{
+  font-size:44rpx;
+  color:#232332;
+  margin-right:27rpx;
+}
+
+.available-money{
+  font-size:24rpx;
+  color:#868686;
+  padding-left:35rpx;
+  height:60rpx;
+  display: block;
+  line-height:60rpx;
+}
+
+.leaving-message{
+  height:300rpx;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding:30rpx 28rpx 40rpx 40rpx;
+}
+
+.leaving-message .title{
+  color:#333333;
+  font-size:28rpx;
+}
+
+
+.leaving-message textarea{
+  border-radius: 8rpx;
+  border:1rpx solid #DCDCDC;
+  height:176rpx;
+  width:100%;
+  margin-top:26rpx;
+  font-size:28rpx;
+  color:#333;
+}
+
+.next-step{
+  width:690rpx;
+  height:88rpx;
+  background:linear-gradient(90deg,rgba(4,190,254,1),rgba(68,129,235,1));
+  margin-left:30rpx;
+  margin-top:60rpx;
+  text-align:center;
+  color:#fff;
+  line-height:88rpx;
+  border-radius: 44rpx;
+  font-weight: 500;
+  margin-bottom:20rpx;
+}
+
+.disabled{
+  opacity: 0.54
+}

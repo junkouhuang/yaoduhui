@@ -1,0 +1,25 @@
+<!--pages/classify/index.wxml-->
+<view class="classify">
+	<scroll-view class="left" scroll-y="true" scroll-top="{{navScrollTop}}" scroll-with-animation="{{true}}">
+		<view wx:for="{{classifyList}}" wx:key="index" class="item {{index == currentIndex? ' active' : ''}}  {{item.typeName.length>5?'wordSize':''}}" data-index="{{index}}" data-id="{{item.id}}" data-typeName="{{item.typeName}}"  bindtap='flHandle'>
+			<view class="typeName" >{{item.typeName}}</view>
+		</view>
+	</scroll-view>
+	<view class="right">
+		<block wx:if="{{pages>0}}">
+			<view class="list">
+				<view class="item" wx:for="{{promotion}}" wx:key="index" bindtap="search_good" data-id="{{item.id}}" data-categoryId="{{item.categoryId}}" data-typename="{{item.typeName}}">
+					<image src="{{item.img}}" class="icon" wx:if="{{item.img}}"></image>
+					<image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/classify1.png" class="icon" wx:else></image>
+					<view class="name">{{item.typeName}}</view>
+				</view>
+			</view>
+		</block>
+		<block wx:else>
+			<view class="nodata">
+				<image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/no_data_icon.png"></image>
+				<view class="tip">暂无分类~</view>
+			</view>
+		</block>
+	</view>
+</view>

@@ -1,0 +1,81 @@
+/* pages/my/template/set_pwd.wxss */
+.update_password {
+  padding: 0 34rpx 0 42rpx;
+  background-color: #fff;
+}
+.password {
+  height: 96rpx;
+  line-height: 96rpx;
+  font-size: 28rpx;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  background-color: #ffffff;
+}
+.newpassword {
+  height: 96rpx;
+  line-height: 96rpx;
+  font-size: 28rpx;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  background-color: #ffffff;
+  position: relative;
+}
+.newpassword::after {
+  position: absolute;
+  box-sizing: border-box;
+  content: ' ';
+  pointer-events: none;
+  right: 0;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid #ebedf0;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+.password span {
+  color: #ee0a24;
+  margin-right: 6rpx;
+}
+.password view {
+  width: 120rpx;
+}
+.password input {
+  flex: 1;
+  margin: 0 30rpx;
+  text-align: right;
+}
+.password .eyes_close1 {
+  width: 40rpx;
+  height: 40rpx;
+}
+.password .eyes_close2 {
+  width: 40rpx;
+  height: 40rpx;
+}
+.save_btn {
+  width: calc(100vw - 80rpx);
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 34rpx;
+  color: #ffffff;
+  border-radius: 60rpx;
+  text-align: center;
+  margin:  auto;
+  background-image: linear-gradient(to right,#04BEFE, #4481EB);
+  box-shadow: 0 0.206667rem 0.26rem 0 rgba(67,115,234,.3);
+  opacity: .54;
+  position: fixed;
+  left:0;
+  right: 0;
+  bottom: 100rpx;
+}
+.btnActive {
+  opacity: 1;
+}
+.tip {
+  padding: 20rpx 34rpx 20rpx  42rpx;
+  font-size: 24rpx;
+  color: #666666;
+}

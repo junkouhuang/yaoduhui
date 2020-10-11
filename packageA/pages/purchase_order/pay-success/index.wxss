@@ -1,0 +1,45 @@
+/* pages/confirm_order/template/pay_result.wxss */
+.pay_result {
+  background-color: #ffffff;
+  text-align: center;
+  height: 100%;
+}
+.pay_result .ico {
+  width: 150rpx;
+  height: 150rpx;
+  margin: 100rpx auto 40rpx;
+}
+.pay_result .txt {
+  color: #333333;
+  font-size: 36rpx;
+  text-align: center;
+  font-weight: bold;
+}
+.pay_result .describle1 {
+  color: #6D6D6D;
+  font-size: 30rpx;
+  text-align: left;
+  margin: 100rpx 56rpx;
+  line-height: 50rpx;
+}
+.pay_result .describle1 text {
+  color: #0266C4;
+}
+.pay_result .btn {
+  padding: 20rpx 0;
+  font-size: 32rpx;
+  color: #ffffff;
+  border-radius: 16rpx;
+  text-align: center;
+  margin: 0 56rpx;
+  background: #0266C4;
+}
+.pay_result .cgd {
+  padding: 20rpx 0;
+  font-size: 32rpx;
+  color: #333333;
+  border-radius: 16rpx;
+  text-align: center;
+  margin: 72rpx 56rpx;
+  border: 1px solid #333333;
+}

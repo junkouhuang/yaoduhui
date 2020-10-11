@@ -1,0 +1,43 @@
+<!--pages/login/index.wxml-->
+<view class="login">
+  <view class="help"></view>
+  <view class="logo">
+    <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/logo1.png" ></image>
+  </view>
+  <view class="form">
+    <view class="username {{focus === 0 ? 'inputActive' : ''}}">
+      <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/user1.png" class="topic" wx:if="{{focus === 0}}"></image>
+      <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/user.png" class="topic" wx:else></image>
+      <input placeholder="请输入手机号/用户名" placeholder-style="color:#CBCBCB;" value="{{username}}" bindfocus="usernameFocus" bindinput="usernameInput" bindblur="usernameBlur" maxlength="11"></input>
+      <view class="close_icon" hidden="{{!close}}" catchtap="clearHandle">
+        <view class="close">
+          <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/close.png"  ></image>
+        </view>
+      </view>
+    </view>
+    <view class="password {{focus === 1 ? 'inputActive' : ''}}">
+      <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/pass1.png" class="lock" wx:if="{{focus === 1}}"></image>
+      <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/pass.png" class="lock" wx:else></image>
+      <input placeholder="请输入密码" placeholder-style="color:#CBCBCB;" type="password" value="{{password}}" wx:if="{{hide}}" bindinput="passwordInput" bindfocus="passwordFocus"></input>
+      <input placeholder="请输入密码" placeholder-style="color:#CBCBCB;" type="text" value="{{password}}" wx:else bindinput="passwordInput" bindfocus="passwordFocus"></input>
+      <view class="eyes_icon"  hidden="{{!hide}}" catchtap="seen">
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/e01.png" class="eyes_close"></image>
+      </view>
+      <view class="eyes_icon" hidden="{{hide}}" catchtap="seen">
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/e02.png" class="eyes_open" ></image>
+      </view>
+    </view>
+    <view class="remember">
+      <view class='radio' bindtap="radioChange">
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/login_checked.png"  wx:if="{{remember_pwd}}" ></image>
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/login_unchecked.png"  wx:else ></image>
+        <text class="loginLab" >记住密码</text>
+      </view>
+      <view class="findbackpwd">
+        <view bindtap="forget">忘记密码</view>
+      </view>
+    </view>
+    <view class="login_btn {{can ? 'btnActive' : ''}}" bindtap="{{can ? 'login' : ''}}">登录</view>
+    <view class="new"><button open-type="getUserInfo" bindgetuserinfo="register" hover-class="none">新用户注册</button></view>
+  </view>
+</view>

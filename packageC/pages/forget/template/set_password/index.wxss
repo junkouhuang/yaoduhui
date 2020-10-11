@@ -1,0 +1,73 @@
+/* pages/set_password/index.wxss */
+.set_password {
+  background-color: #ffffff;
+  height: calc(100vh - 2rpx);
+  border-top: 2rpx solid  #DCDCDC;
+}
+.flow2 {
+  padding: 50rpx 0;
+}
+.flow2 .title {
+  font-size: 24rpx;
+  color: #666666;
+  width: 600rpx;
+  margin: auto;
+}
+.set {
+  margin-top: 10rpx;
+}
+.flow2 .form .password {
+  border: 2rpx solid #DBDBDB;
+  border-radius: 60rpx;
+  width: 600rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  margin: auto;
+  align-items: center;
+  display: flex;
+  margin-top: 52rpx;
+}
+.flow2 .form .password .lock {
+  width: 36rpx;
+  height: 36rpx;
+  margin: 0 20rpx 0 40rpx;
+}
+.flow2 .form .password input {
+  flex: 1;
+  padding: 10rpx 0;
+  text-align: left;
+  font-size: 28rpx;
+}
+.flow2 .form .password .code {
+  flex: 1;
+  padding: 10rpx 0;
+}
+.flow2 .password .eyes_close {
+  width: 48rpx;
+  height: 18rpx;
+  margin: 0 30rpx;
+}
+.flow2 .password .eyes_open {
+  width: 48rpx;
+  height: 40rpx;
+  margin: 0 30rpx;
+}
+.flow2 .form .inputActive {
+  border:1px solid #04BEFE;
+}
+.btn_register {
+  width: 600rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 34rpx;
+  color: #ffffff;
+  background-image: linear-gradient(to right,#04BEFE, #4481EB);
+  border-radius: 60rpx;
+  text-align: center;
+  margin: 74rpx auto 0;
+  box-shadow: 0 0.206667rem 0.26rem 0 rgba(67,115,234,.3);
+  opacity: .54;
+}
+.btnActive {
+  opacity: 1;
+}

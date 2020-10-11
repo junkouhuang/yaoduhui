@@ -1,0 +1,22 @@
+<!--pages/integral/record/index.wxml-->
+<view class="navbar-shell">
+  <view class="navbar-list">
+    <text class="navber-item" wx:for="{{navbarList}}" wx:key="index" bindtap="handleToggleNavber" data-index="{{index}}">{{item}}</text>
+  </view>
+  <view class="line" style="left:{{lineLeft[activeIndex]}};width:{{activeWidth}}"></view>
+</view>
+
+<view class="record-list">
+  <view class="record-item" wx:for="{{8}}" wx:key="index">
+    <view class="recorc-left">
+      <image wx:if="{{fales}}" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/chong.png"></image>
+      <image  wx:if="{{fales}}" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/dong.png"></image>
+      <image  wx:if="{{true}}" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/jie.png"></image>
+      <view class="record-detail">
+        <text class="classify">充值</text>
+        <text class="year">2019-12-24<text class="time">17:04:01</text></text>
+      </view>
+    </view>
+    <text class="raction">+1000</text>
+  </view>
+</view>

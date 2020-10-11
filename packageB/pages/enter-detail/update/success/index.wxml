@@ -1,0 +1,8 @@
+<!--pages/band/bindding/success/index.wxml-->
+<image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/band_success.png"> </image>
+<view class="t1" wx:if="{{nameId == 23 || nameId == 25}}">证件变更资料已提交</view>
+<block wx:else>
+<view class="t1">证件变更资料已提交</view>
+<view class="t2">平台会在<text class="color">1-2</text>个工作日为您审核确认，您可以在【证件变更记录】页面中查看变更状态。</view>
+</block>
+<view class="isee" bindtap="isee">知道了</view>

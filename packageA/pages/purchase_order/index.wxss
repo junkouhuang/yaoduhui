@@ -1,0 +1,125 @@
+.purchase {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.box {
+  background-color: #fff;
+  height: 116rpx;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.searchbox {
+  width: calc(100vw - 80rpx);
+  display: flex;
+  align-items: center;
+  background-color: #F3F4F5;
+  border-radius: 60rpx;
+  position: relative;
+  margin: 30rpx auto;
+}
+
+.searchbox .s_img {
+  width: 60rpx;
+  height: 60rpx;
+  margin: 0 10rpx 0 20rpx;
+}
+
+.searchbox input {
+  color: #333;
+  padding: 15rpx 15rpx;
+  flex: 1;
+  border: none;
+  font-size: 30rpx;
+}
+
+.close_icon {
+  margin: 0 30rpx;
+  float: right;
+  width: 100rpx;
+}
+
+.close_icon .close {
+  width: 40rpx;
+  height: 40rpx;
+  float: right;
+}
+
+.nav {
+  height: 96rpx;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  line-height: 96rpx;
+  background: #fff;
+  font-size: 16px;
+  white-space: nowrap;
+  z-index: 2;
+  position: fixed;
+  top: 116rpx;
+  left: 0;
+  right: 0;
+}
+
+.nav .item {
+  width: 20%;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  font-size: 30rpx;
+}
+
+.nav .active {
+  font-weight: bold;
+}
+
+.nav .item1 {
+  width: 25%;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  font-size: 30rpx;
+}
+.nav .item2 {
+  width: 26%;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  font-size: 30rpx;
+}
+.nav .active::after {
+  content: "";
+  width: 60rpx;
+  height: 6rpx;
+  background-color: #04befe;
+  background-image: linear-gradient(to right, #04befe, #4481eb);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -30rpx;
+  z-index: 999;
+}
+
+.nav .item .down {
+  width: 14rpx;
+  height: 7rpx;
+  position: absolute;
+  right: 20rpx;
+  bottom: 40rpx;
+}
+
+.nav .item .default {
+  width: 14rpx;
+  height: 18rpx;
+  position: absolute;
+  right: 20rpx;
+  bottom: 40rpx;
+}
+
+
+
+

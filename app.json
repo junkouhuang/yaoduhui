@@ -1,0 +1,172 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/classify/index",
+    "pages/car/index",
+    "pages/my/index",
+    "pages/member/index",
+    "pages/member/bill_details/index",
+    "pages/member/account_detail/index",
+    "pages/member/transfer/index",
+    "pages/member/cash-withdrawal/index",
+    "pages/member/open-account/index",
+    "pages/member/account-two/index",
+    "pages/web-view/index",
+    "pages/bohai/index",
+    "pages/member/binding-card/index",
+    "pages/member/manage-account/index",
+    "pages/member/change-phone/index",
+    "pages/member/recharge/index",
+    "pages/member/change-card/index",
+    "pages/member/open-complete/index",
+    "pages/member/manage-account-update/index",
+    "pages/member/data-replenish/index",
+    "pages/member/data-replenish-detail/index"
+  ],
+  "subPackages": [
+    {
+      "root": "packageA",
+      "pages": [
+        "pages/qrcode/index",
+        "pages/help/index",
+        "pages/help_detail/index",
+        "pages/like-goods/index",
+        "pages/partner/index",
+        "pages/partner/record/index",
+        "pages/partner/info/index",
+        "pages/partner/enterprise/index",
+        "pages/partner/type/index",
+        "pages/earnings/index",
+        "pages/earnings/list/index",
+        "pages/earnings/settle/index",
+        "pages/earnings/success/index",
+        "pages/statistics/index",
+        "pages/setting/index",
+        "pages/user/index",
+        "pages/account/index",
+        "pages/update_password/index",
+        "pages/real-detail/index",
+        "pages/shop-guanli/index",
+        "pages/shop-guanli/staff/index",
+        "pages/shop-guanli/price/index",
+        "pages/shop-guanli/receipt_address/index",
+        "pages/integral/index",
+        "pages/integral/record/index",
+        "pages/integral/purchase/index",
+        "pages/integral/redeem/index",
+        "pages/purchase_order/index",
+        "pages/purchase_order/detail/index",
+        "pages/purchase_order/pay/index",
+        "pages/purchase_order/pay-error/index",
+        "pages/purchase_order/pay-success/index",
+        "pages/purchase_order/confirm-pay/index",
+        "pages/sale_order/detail/index",
+        "pages/sale_order/index",
+        "pages/put_record/index",
+        "pages/put_record/customer/index",
+        "pages/put_record/detail/index",
+        "pages/upload/index",
+        "pages/address_list/index",
+        "pages/address_list/editor/index"
+        
+      ]
+    },
+    {
+      "root": "packageB",
+      "pages": [
+        "pages/enter-band/index",
+        "pages/enter-record/index",
+        "pages/enter-detail/index",
+        "pages/enter-detail/detail/index",
+        "pages/enter-detail/certificates/index",
+        "pages/enter-detail/transfer/index",
+        "pages/enter-detail/update/index",
+        "pages/enter-detail/before/index",
+        "pages/enter-detail/update/success/index",
+        "pages/enter-detail/change/index",
+        "pages/enter-detail/change/success/index",
+        "pages/enter-detail/sent/index",
+        "pages/enter-detail/record/index",
+        "pages/band/index",
+        "pages/band/intelligence/index",
+        "pages/band/update/index",
+        "pages/band/search/index",
+        "pages/band/success/index",
+        "pages/band/bindding/index",
+        "pages/band/bindding/success/index",
+        "pages/band/check/index",
+        "pages/band/update/success/index"
+      ]
+    },
+    {
+      "root": "packageC",
+      "pages": [
+        "pages/login/index",
+        "pages/register/template/verify_phone_number/index",
+        "pages/register/template/set_password/index",
+        "pages/register/template/register_success/index",
+        "pages/register/template/verify_phone_number/template/protocol/index",
+        "pages/forget/template/verify_phone_number/index",
+        "pages/forget/template/set_password/index",
+        "pages/forget/template/setting_success/index",
+        "pages/search_goods/index",
+        "pages/confirm_order/index",
+        "pages/confirm_order/template/pay_result/index",
+        "pages/fl_home/index",
+        "pages/detail/index",
+        "pages/popularity/index",
+        "pages/company/index",
+        "pages/company_search/index"
+      ]
+    }
+  ],
+  "preloadRule": {
+    "pages/home/index": {
+      "network": "all",
+      "packages": ["__APP__","packageC"]
+    },
+    "pages/my/index": {
+      "packages": ["packageA", "packageB","packageC"]
+    }
+  },
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "药都荟",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#615f60",
+    "selectedColor": "#4481EB",
+    "borderStyle": "black",
+    "list": [
+      {
+        "iconPath": "img/home.png",
+        "selectedIconPath": "img/home-active.png",
+        "pagePath": "pages/home/index",
+        "text": "首页"
+      },
+      {
+        "iconPath": "img/classify.png",
+        "selectedIconPath": "img/classify-active.png",
+        "pagePath": "pages/classify/index",
+        "text": "分类"
+      },
+      {
+        "iconPath": "img/car.png",
+        "selectedIconPath": "img/car-active.png",
+        "pagePath": "pages/car/index",
+        "text": "预约单"
+      },
+      {
+        "iconPath": "img/my.png",
+        "selectedIconPath": "img/my-active.png",
+        "pagePath": "pages/my/index",
+        "text": "我的"
+      }
+    ]
+  },
+  "style": "v2",
+  "debug": false,
+  "sitemapLocation": "sitemap.json",
+  "AppSecret":"60a2cd136ccdfb2914e17d41a2f26f19"
+}

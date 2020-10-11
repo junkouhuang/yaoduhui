@@ -1,0 +1,130 @@
+<wxs src="../../../wxs/filter.wxs" module="tools" />
+<build show="{{showBuilding}}" content="{{content}}" announcement="{{announcement}}" bind:getBuildInfo="getBuildInfo" id="buildInfo" bind:myevent="myevent"></build>
+<skeleton wx:if="{{showSkeleton}}"></skeleton>
+<view class="detail skeleton {{scrolly?'tripList_root':''}}" model:style="top:-{{mtop}}px">
+  <view class="swiper">
+    <swiper duration="500" bindchange="bannerChange" class="swiper1">
+      <swiper-item style="background-image:url({{list.imgUrl?list.imgUrl:'https://edm.xinquanjk.com/upload/iconfont/202003/20/classify1.png'}})" data-src="{{list.imgUrl?list.imgUrl:'https://edm.xinquanjk.com/upload/iconfont/202003/20/classify1.png'}}"
+        bindtap="previewImg" class="skeleton-rect">
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class="content">
+    <view class="spmc-image ">
+      <view class="spmc skeleton-rect">{{list.name}}</view>
+    </view>
+    <view class="price ">
+      <view class="ghj skeleton-rect">预约价：￥
+        <text>{{list.price == null?'仅企业可看':list.price}}</text>
+      </view>
+      <view class="lsj skeleton-rect">建议零售价：￥{{list.suggestPrice}}</view>
+    </view>
+  </view>
+  <view class="content">
+    <text class="title skeleton-rect">商品信息</text>
+    <view class="company ">
+      <text class="skeleton-rect">生产厂家：</text>
+      <view class="producerName">{{list.producerName}}</view>
+    </view>
+    <view class="spec skeleton-rect">
+      <text>商品规格：</text>{{list.spec}}</view>
+    <view class="no skeleton-rect">
+      <text>批准文号：</text>{{list.licenseNo}}
+    </view>
+    <view class="batch skeleton-rect">
+      <text>商品批号：</text>{{list.batchNo == null?'--':list.batchNo}}
+    </view>
+    <view class="validityDate skeleton-rect">
+      <text>有效期：</text>{{tools.formatDate(list.validityDate)}}
+    </view>
+    <block wx:if="{{list.packageAmount != null && list.retail == 0}}">
+      <view class="packageAmount skeleton-rect">
+        <text>起批量：</text>{{list.packageAmount}}{{list.unit}}</view>
+    </block>
+    <block wx:if="{{list.midpackageAmount != null && list.retail == 1}}">
+      <view class="packageAmount skeleton-rect">
+        <text>起批量：</text>{{list.midpackageAmount}}{{list.unit}}</view>
+    </block>
+    <block wx:if="{{list.packageAmount == null && item.midpackageAmount == null}}">
+      <view class="packageAmount skeleton-rect">
+        <text>起批量：</text>--</view>
+    </block>
+    <view class="sl">
+      <view class="v1 skeleton-rect">
+        <text class="quantity">数量</text>
+        <view class="num">
+          <view class="sub" catchtap="sub">
+            <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/sub.png"></image>
+          </view>
+          <input type="number" value="{{list.quantity}}" bindblur="getQuantity" />
+          <view class="add" catchtap="add">
+            <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/add1.png"></image>
+          </view>
+        </view>
+        <text>{{list.unit!=null?list.unit:""}}</text>
+      </view>
+      <view class="stock skeleton-rect">库存：{{list.amount == null?'--':list.amount}}{{list.unit!=null?list.unit:""}}</view>
+    </view>
+  </view>
+  <view class="sent">
+    <view class="mc">
+      <text>供应商</text>
+      <view>{{list.enterpriseName}}</view>
+      <view class="up">最低配送金额：{{list.minimumPurchasePrice}}元（起）</view>
+    </view>
+    <view wx:for="{{announcement}}" wx:key="index" wx:for-item="items">
+      <block wx:if="{{items.supplierId == list.enterpriseId}}">
+        <block wx:if="{{auth == 1}}">
+          <view wx:if="{{buildStatus == 1 || buildStatus == null}}" class="apply" bindtap="openBuild" data-enterpriseid="{{item.enterpriseId}}" data-enterprisename="{{item.enterpriseName}}" data-item="{{list}}">申请建档</view>
+        </block>
+        <view wx:if="{{buildStatus == 0}}" class="btn2" bindtap="openBuilding">建档中</view>
+      </block>
+    </view>
+  </view>
+  <view class=" business-text {{ isExpanding ? 'block' : 'none' }}" wx:if="{{buildStatus == 2}}">
+    <text>公告：</text>
+    <block wx:if="{{announcement}}">
+      <rich-text nodes="{{announcement[0].announcement.content}}" class="questionContent"></rich-text>
+    </block>
+    <view wx:else>
+      <view class="not_notice">暂无公告信息</view>
+    </view>
+  </view>
+  <view class="isExpanding" wx:if="{{buildStatus == 2 && announcement}}">
+    <view class="business-btn" bindtap="handleExpandingChange">{{isExpanding ? "收起" : "展开全部"}}
+      <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/up_blue.png" wx:if="{{isExpanding}}"></image>
+      <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/down_blue.png" wx:else></image>
+    </view>
+  </view>
+  <view class="blank"></view>
+  <view class="carBtn">
+    <view class='btn-left'>
+      <view class="image-item">
+        <view class="toCar">
+          <image style="margin-left:-10rpx;" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/car.png" bindtap="toCar"></image>
+          <span class="selNum" wx:if="{{selNum>0}}">{{selNum}}</span>
+        </view>
+        <text>预约单</text>
+      </view>
+      <view class="image-item" style="margin-left:10rpx;" wx:if="{{isFavorite}}" bindtap="handleCancelFavorite">
+        <view class="collet">
+          <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/sc.png"></image>
+        </view>
+        <text>已收藏</text>
+      </view>
+      <view class="image-item" style="margin-left:10rpx;" wx:else bindtap="handleFavorite">
+        <view class="collet">
+          <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/scqx.png"></image>
+        </view>
+        <text>收藏</text>
+      </view>
+    </view>
+    <view class="submit" bindtap="addcar" wx:if="{{list.price != null}}">
+      <text>加入预约单</text>
+    </view>
+    <view class="band" bindtap="band" wx:else>
+      <text>绑定企业</text>
+    </view>
+  </view>
+  <view class='maskLayer' bindtap='closeBuild' wx:if="{{showBuild}}"></view>
+</view>

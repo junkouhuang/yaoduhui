@@ -1,0 +1,190 @@
+
+.customer-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.top_name {
+  color: #333;
+  font-size: 36rpx;
+  font-weight: bold;
+  padding: 40rpx 0 30rpx;
+  margin-left: 36rpx;
+}
+
+.medical-care {
+  display: flex;
+  flex-direction: column;
+}
+
+.medical-care .medical-item {
+  margin: 0 30rpx 30rpx;
+  box-sizing: border-box;
+  padding: 22rpx;
+  background-color: #fff;
+  border-radius: 26rpx;
+}
+
+.blank {
+  width: 100%;
+  height: 100rpx;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+}
+
+.top .logo {
+  width: 80rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 30rpx;
+  background-color: #3996e1;
+  border-radius: 12rpx;
+  color: #fff;
+}
+
+.top .logo2 {
+  width: 80rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 30rpx;
+  border-radius: 12rpx;
+  color: #fff;
+}
+
+.top .company {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20rpx;
+  flex: 1;
+}
+
+.top .company .name {
+  font-size: 28rpx;
+  color: #333;
+  display: flex;
+}
+
+.top .company .name .enterpriseName {
+  max-width: 500rpx;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-weight: bold;
+}
+
+.top .company .way .loginStatus {
+  color: #3996E1;
+  background: #E3F1FC;
+  font-size: 20rpx;
+  padding: 0 10rpx;
+  height: 34rpx;
+  line-height: 34rpx;
+  border-radius: 6rpx;
+  margin-left: 20rpx;
+  text-align: center;
+}
+
+.top .company .way {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 6rpx;
+  display: flex;
+}
+
+.top .right {
+  width: 36rpx;
+  height: 36rpx;
+}
+
+.medical-item image {
+  width: 155rpx;
+  height: 155rpx;
+}
+
+.medical-item .medical-left {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20rpx;
+}
+
+.medical-item .medical-left .enter-address,
+.medical-item .medical-left .enter-menber,
+.medical-item .medical-left .shop-num {
+  font-size: 26rpx;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 630rpx;
+  margin-bottom: 8rpx;
+}
+
+.business_button {
+  width: 100%;
+  background: #fff;
+  display: flex;
+  position: fixed;
+  bottom: 0;
+}
+
+.business_button .enter_record {
+  padding: 16rpx 26rpx;
+  border-radius: 60rpx;
+  font-size: 28rpx;
+  margin: 20rpx;
+  border: 1px solid #3996E1;
+  color: #3996E1;
+}
+
+.business_button .band_join {
+  padding: 16rpx;
+  border-radius: 60rpx;
+  background-image: linear-gradient(to right, #04BEFE, #4481EB);
+  box-shadow: 0 0.206667rem 0.26rem 0 rgba(67, 115, 234, .3);
+  color: #fff;
+  font-size: 28rpx;
+  margin: 20rpx;
+  flex: 1;
+  text-align: center;
+}
+
+.empty-data {
+  /* margin-top:200rpx; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+  margin-top: -100rpx;
+}
+
+.empty-data image {
+  width: 250rpx;
+  height: 250rpx;
+}
+
+.empty-data text {
+  color: #615f60;
+  font-size: 28rpx;
+  margin-top: 55rpx;
+}
+
+.empty-data navigator {
+  background: linear-gradient(90deg, rgba(4, 190, 254, 1), rgba(68, 129, 235, 1));
+  width: 217rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  border-radius: 30rpx;
+  color: #fff;
+  font-size: 28rpx;
+  margin-top: 70rpx;
+}

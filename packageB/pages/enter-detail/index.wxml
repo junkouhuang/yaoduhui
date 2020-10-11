@@ -1,0 +1,228 @@
+<import src="../../../template/loading/index.wxml" />
+<wxs src="../../../wxs/filter.wxs" module="tools" />
+<build show="{{showBuilding}}" content="{{content}}" announcement="{{announcement}}" bind:getBuildInfo="getBuildInfo" id="buildInfo" ></build>
+<view class="header">
+	<view class="return_icon" bindtap="return">
+		<image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/left1.png" class="left"></image>
+		<text>企业管理</text>
+	</view>
+	<view class="card">
+		<view class="top">
+			<image wx:if="{{item.logo}}" src="{{item.logo}}" class="logo2" bindtap="previewImg" data-src="{{item.logo}}"></image>
+			<view class="logo" wx:else>
+				<block wx:if="{{item.enterpriseName}}">{{tools.firstCHN(item.enterpriseName)}}</block>
+			</view>
+			<view class="company">
+				<view class="name">
+					<view class="enterpriseName">{{item.enterpriseName}}</view>
+				</view>
+				<view class="way">企业类型：{{item.modeName}}<view wx:if="{{item.loginStatus == 1}}" class="loginStatus">当前企业</view></view>
+			</view>
+		</view>
+	</view>
+	<view class="nav">
+		<view wx:for="{{nav}}" wx:key="index" class="item {{currentIndex == index?'active':''}}" bindtap="handleNav" data-index="{{index}}">
+			{{item}}
+		</view>
+		<view class="line" style="left:{{lineLeft}};"></view>
+	</view>
+</view>
+<view wx:if="{{currentIndex == 0}}" class="papers">
+	<view class="tip" wx:if="{{data.qualificationsDTOList.length>0}}">带“<text style="color:#FF0000">*</text>”为必传证件，必须在有效期内；如您的证件即将过期，请 及时更新并完善证件信息，平台审核人员会及时审核。</view>
+	<view class="information-item" wx:for="{{data.qualificationsDTOList}}" wx:key="index" bindtap="handleUpdateImage"  data-item="{{item}}" data-enterprisename="{{data.enterpriseName}}" data-index="{{index}}">
+		<image class="icon" src="{{item.qualificationsPath[0]}}" wx:if="{{item.qualificationsPath[0]}}"></image>
+		<view class="center {{item.qualificationsPath[0]?'short':''}}">
+			<view class="item-name">
+				<text style="color:#FF0000" wx:if="{{item.check == 1}}">*</text>
+				<text class="nameInfo">{{item.qualificationsName}}</text>
+			</view>
+			<view class="expiryDate">
+				<block wx:if="{{item.expiryDate}}">
+					<view class="validate">
+						<view>有效期：{{item.expiryDate}}
+						<!--changeStatus  0:变更中，2变更失败-->
+						<!--expiryStatus  1:过期-->
+						<!-- readStatus   0：未读   1:已读-->
+						<block wx:if="{{item.expiryStatus == 1 && item.changeStatus != 0 && (item.changeStatus != 2 || (item.changeStatus == 2 &&  item.readStatus == 1))}}">
+							<text style="color:#FF0000;margin-left:16rpx;">已过期</text>
+						</block>
+						</view>
+					</view>
+				</block>
+				<block wx:else>
+					<block wx:if="{{item.nameId==17}}">
+						<text class="validate">有效期：长期有效</text>
+					</block>
+					<block wx:else>
+						<text class="validate" wx:if="{{item.qualificationsPath}}">有效期：--</text>
+					</block>
+				</block>
+				<!--changeStatus  0:变更中，2变更失败-->
+				<!--expiryStatus  1:过期-->
+				<!-- readStatus   0：未读   1:已读-->
+				<text style="color:#3996E1;margin:16rpx 0 0 16rpx;font-size:24rpx;" wx:if="{{item.changeStatus !=1 &&item.changeStatus !=undefined && item.readStatus == 0}}">{{item.changeStatus == 0?'变更中':item.changeStatus == 2?'变更失败':""}}</text>
+			</view>
+		</view>
+		<view class="image-right">
+			<image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/select.png" style="width:34rpx;height:34rpx;margin-right:15rpx" wx:if="{{item.qualificationsPath}}"></image>
+			<image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/right3.png" class="right"></image>
+		</view>
+	</view>
+	<navigator class="audit1" url="/packageB/pages/enter-detail/certificates/index?enterpriseId={{item.enterpriseId}}" hover-class="none" wx:if="{{data.qualificationsDTOList.length>0}}">
+		证件变更记录
+	</navigator>
+</view>
+<view wx:if="{{currentIndex == 1}}" class="shouying">
+	<block wx:if="{{no_auth == 1}}">
+		<block wx:if="{{data.length>0}}">
+			<view class="tip" >根据<text style="font-weight:bold;">《药品管理法》</text>规定，企业必须互换首营资料，建立首营企业关系才能通过平台交易。</view>
+			<view class="">
+				<view class="relax">请选择供应商建立首营企业关系</view>
+				<view class="information-item zjadmin" wx:for="{{data}}" wx:key="index"  wx:for-item="items" bindtap="handleSelectItem" data-index="{{index}}">
+					<view class="zj_top">
+						<view class="zj_left">
+							<image wx:if="{{items.logo}}" src="{{items.logo}}" class="logo3" ></image>
+							<view class="logo4" wx:else>
+								<block wx:if="{{items.enterpriseName}}">{{tools.firstCHN(items.enterpriseName)}}</block>
+							</view>
+							<view class="center">
+								<view class="item-name">
+									<text style="color:#FF0000"></text>
+									<text class="nameInfo">{{items.enterpriseName}}</text>
+								</view>
+								<view class="validate">
+								销售范围：{{items.sellArea}}
+								<text wx:if="{{items.archiveStatus==2}}" class="builded">已首营建档</text>
+								</view>
+							</view>
+						</view>
+						<!--null-未申请 0-待审核 1-审核不通过 2-审核通过-->
+						<block wx:if="{{syRecord}}">
+							<view class="waitAudit" wx:if="{{items.archiveStatus == 0}}">待审核</view>
+							<view class="fail" wx:if="{{items.archiveStatus == 1}}">未通过</view>
+							<view class="syBuild" bindtap="syBuild" data-item="{{items}}"wx:if="{{items.archiveStatus == null && auth == 1}}">首营建档</view>
+						</block>
+						<block wx:else>
+							<view class="image-right" wx:if="{{items.archiveStatus==null && auth == 1}}">
+								<image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/select.png" style="width:34rpx;height:34rpx;margin-right:15rpx" wx:if="{{items.check}}" ></image>
+								<view class="circular" wx:else></view>
+							</view>
+						</block>
+					</view>
+					<view wx:if="{{items.archiveStatus == 0}}" class="zj_address" bindtap="zj_address" data-provinceid="{{items.provinceId}}" data-enterpriseId="{{items.enterpriseId}}">
+						首营资料接收地址
+						<image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/right3.png" class="right"></image>
+					</view>
+					<view wx:if="{{items.archiveStatus == 1}}" class="sy_reject">
+						<view>
+						拒绝原因：{{items.remark}}
+						</view>
+					</view>
+					<view class="agin" wx:if="{{items.archiveStatus == 1 && auth == 1}}" bindtap="syBuild" data-item="{{items}}"><view>重新申请首营建档</view></view>
+				</view>
+			</view>
+			<navigator class="audit" url="/packageA/pages/put_record/index?enterpriseId={{item.enterpriseId}}" wx:if="{{syRecord && auth == 1}}">首营建档记录</navigator>
+			<block wx:else>
+				<view class="applyBuild" wx:if="{{auth == 1}}">
+					<view bindtap="{{isCan?'applyBuild':''}}"  class=" {{isCan?'isCan':''}}" >申请首营建档</view>
+				</view>
+			</block>
+		</block>
+	</block>
+	<view class="no_auth" wx:if="{{no_auth == 2}}">
+		<image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/no_auth.png"></image>
+		<view>该企业暂时无法首营建档</view>
+	</view>
+</view> 
+<view wx:if="{{currentIndex == 2  && has}}">
+	<view class="ygadmin">
+		<block wx:if="{{data.preStaffList.length>0}}">
+			<view class="item" wx:for="{{data.preStaffList}}" wx:key="index">
+				<view >
+					<view class="contacts">{{item.contacts}}</view>
+					<view class="mobileNumber">手机号码：{{item.mobileNumber}}</view>
+					<view class="idCode">身份证号码：{{item.idCode}}</view>
+					<view class="createTime">申请时间：{{tools.formatTime(item.createTime)}}</view>
+				</view>
+				<view class="btn">
+					<view class="reject" bindtap="reject" data-id="{{item.bindApplyId}}">拒绝</view>
+					<view class="pass" bindtap="pass" data-id="{{item.bindApplyId}}">通过</view>
+				</view>
+			</view>
+		</block>
+		<block wx:if="{{data.enterpriseMaster}}">
+			<view class="item" navigator bindtap="yghandle" data-item="{{data.enterpriseMaster}}" data-type="my">
+				<view class="contacts">{{data.enterpriseMaster.contacts}}<view class="loginStatus" wx:if="{{data.enterpriseMaster.type == 1}}">法人/负责人</view></view>
+				<view class="mobileNumber">手机号码：{{data.enterpriseMaster.mobileNumber}}</view>
+				<view class="idCode">身份证号码：{{data.enterpriseMaster.idCode}}</view>
+				<view class="createTime">申请时间：{{tools.formatTime(data.enterpriseMaster.createTime)}}</view>
+			</view>
+		</block>
+		<block wx:if="{{data.mySelf}}">
+			<view class="item" navigator bindtap="yghandle"  data-type="my" data-item="{{data.mySelf}}" >
+				<view class="contacts">{{data.mySelf.contacts}}<view class="loginStatus">我自己</view><view class="loginStatus" wx:if="{{data.mySelf.type == 1}}">法人/负责人</view></view>
+				<view class="mobileNumber">手机号码：{{data.mySelf.mobileNumber}}</view>
+				<view class="idCode">身份证号码：{{data.mySelf.idCode}}</view>
+				<view class="createTime">申请时间：{{tools.formatTime(data.mySelf.createTime)}}</view>
+			</view>
+		</block>
+		<block wx:if="{{data.staffList.length>0}}">
+			<view class="item" wx:for="{{data.staffList}}" wx:key="index" bindtap="yghandle" data-item="{{item}}"   data-type="worker">
+				<view class="contacts">{{item.contacts}}</view>
+				<view class="mobileNumber">手机号码：{{item.mobileNumber}}</view>
+				<view class="idCode">身份证号码：{{item.idCode}}</view>
+				<view class="createTime">申请时间：{{tools.formatTime(item.createTime)}}</view>
+			</view>
+		</block>
+	</view>
+	<!-- <navigator class="audit1" url="/packageB/pages/enter-record/index" hover-class="none" wx:if="{{auth == 0}}">
+		企业绑定记录
+	</navigator> -->
+	<navigator class="audit1" url="/packageA/pages/shop-guanli/staff/index?enterpriseId={{item.enterpriseId}}" hover-class="none" wx:if="{{auth == 1}}">
+		审核记录
+	</navigator>
+</view>
+<view wx:if="{{currentIndex == 3  && has}}" class="enter-info">
+	<view class="basic">企业基本信息</view>
+	<view class="medical-item">
+		<view class="toper">
+			<image src="{{data.imgUrl}}" class="imgUrl" wx:if="{{data.imgUrl}}" bindtap="previewImg" data-src="{{data.imgUrl}}"></image>
+			<view class="logo" wx:else>
+				<block wx:if="{{data.enterpriseName}}">{{tools.firstCHN(data.enterpriseName)}}</block>
+			</view>
+			<view class="company" bindtap="changeImg">
+				<text>点击修改封面图</text>
+				<image class="right" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/right_black.png" bindtap="enterDetail" ></image>
+			</view>
+		</view>
+		<view class="medical-left">
+			<view class="enter-enterpriseName">
+				<view class="item-enterpriseName">企业名称：</view>
+				<view class="name">{{data.enterpriseName}}</view>
+			</view>
+			<view class="enter-modeName">
+				企业类型：{{data.modeName}}
+			</view>
+				<view class="enter-address">
+					<view class="item_address">
+						企业地址：
+					</view>
+				<view class="name">{{data.address}}</view>
+			</view>
+			<view class="enter-menber">
+				入驻时间：{{tools.formatDate(data.createTime)}}
+			</view>
+		</view>
+	</view>
+	<view class="basic">法人/负责人信息</view>
+	<view class="medical-item">
+		<view class="enter-contacts">
+		法人/负责人：{{data.contacts?data.contacts:''}}
+		</view>
+		<view class="enter-idCode">
+		身份证号码：{{data.idCode?data.idCode:''}}
+		</view>
+	</view>
+</view>
+<confirm show="{{show}}" title="拒绝原因" placeholderText="请输入拒绝原因"  bind:getData="getData"></confirm>
+<alert show="{{showAlert}}" content="您无权限上传证件,只有法人/负责人才能上传或变更证件。" ></alert>

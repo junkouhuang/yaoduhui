@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "getCodeBtn": "../../../components/verificationCode/index"
+  },
+  "navigationBarTitleText": "资料补充"
+}

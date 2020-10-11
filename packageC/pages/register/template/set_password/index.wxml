@@ -1,0 +1,38 @@
+<!--pages/set_password/index.wxml-->
+<view class="set_password">
+  <view class="flow2">
+    <view class="form">
+      <view class="username {{focus === 0 ? 'inputActive' : ''}}" style="display:none;">
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/user1.png" wx:if="{{focus === 0}}" class="topic"></image> 
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/user.png" wx:else class="topic"></image> 
+        <input placeholder="输入用户名" placeholder-style="color:#CBCBCB;" value="{{ruleForm.username}}" bindfocus="usernameFocus" bindblur="usernameBlur" bindinput="usernameInput"></input>
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/guanbi.png" class="close" wx:if="{{close}}" bindtap="clear"></image>
+      </view>
+      <view class="password {{focus === 2 ? 'inputActive' : ''}}">
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/pass1.png" wx:if="{{focus === 2}}" class="lock"></image> 
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/pass.png" wx:else class="lock"></image> 
+        <input placeholder="设置密码" placeholder-style="color:#CBCBCB;" maxlength="18" value="{{ruleForm.password}}" type="password" bindfocus="passwordFocus" bindinput="passwordInput"  wx:if="{{hide1}}"></input>
+        <input placeholder="设置密码" placeholder-style="color:#CBCBCB;" maxlength="18" value="{{ruleForm.password}}" type="text" bindfocus="passwordFocus" bindinput="passwordInput" wx:else></input>
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/e01.png" class="eyes_close" wx:if="{{hide1}}" bindtap="seen1"></image>
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/e02.png" class="eyes_open" wx:else bindtap="seen1"></image>
+      </view>
+      <view class="password {{focus === 3 ? 'inputActive' : ''}}">
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/pass1.png" wx:if="{{focus === 3}}" class="lock"></image> 
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/pass.png" wx:else class="lock"></image> 
+        <input placeholder="确认密码" placeholder-style="color:#CBCBCB;" maxlength="18" value="{{ruleForm.confirm}}" type="password" bindfocus="confirmpasswordFocus" bindinput="confirmpasswordInput" wx:if="{{hide2}}"></input>
+        <input placeholder="确认密码" placeholder-style="color:#CBCBCB;" maxlength="18" value="{{ruleForm.confirm}}" type="text" bindfocus="confirmpasswordFocus" bindinput="confirmpasswordInput"  wx:else ></input>
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/e01.png" class="eyes_close" wx:if="{{hide2}}" bindtap="seen2"></image>
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/e02.png" class="eyes_open" wx:else bindtap="seen2"></image>
+      </view>
+      <view class="reminder">密码必须至少6个字符，以字母开头，同时包含字母和数字。</view>
+      <view class="code {{focus === 1 ? 'inputActive' : ''}}" style="diplay:none">
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/person1.png" wx:if="{{focus === 1}}" class="person"></image> 
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/person.png" wx:else class="person"></image> 
+        <input placeholder="请扫业务合伙人邀请码" placeholder-style="color:#CBCBCB;" maxlength="18" value="{{ruleForm.code}}" disabled></input>
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/qrcode.png" class="scan"  bindtap="scan"></image>
+      </view>
+      <view class="btn_register {{can ? 'btnActive' : ''}}" bindtap="{{can ? 'register' : ''}}">立即注册</view>
+    </view>
+  </view>
+</view>
+

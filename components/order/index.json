@@ -1,0 +1,9 @@
+{
+  "navigationStyle": "custom",
+  "component": true,
+  "usingComponents": {
+    "band": "../../components/band/index",
+    "nodata": "../../components/nodata/index",
+    "alert": "../../components/alert/index"
+  }
+}

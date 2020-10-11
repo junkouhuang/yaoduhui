@@ -1,0 +1,26 @@
+/* pages/confirm_order/template/pay_result.wxss */
+.pay_result {
+  background-color: #ffffff;
+  text-align: center;
+  height: 100%;
+}
+.pay_result .ico {
+  width: 150rpx;
+  height: 150rpx;
+  margin: 200rpx auto 40rpx;
+}
+.pay_result .txt {
+  color: #F13C3C;
+  font-size: 36rpx;
+  text-align: center;
+  font-weight: bold;
+}
+.pay_result .btn {
+  width: 175px;
+  padding: 20rpx 0;
+  font-size: 32rpx;
+  background: #0266C4;
+  border-radius: 16rpx;  
+  color: #fff;
+  margin: 300rpx auto;
+}

@@ -1,0 +1,159 @@
+.like-list {
+  margin-top: 20rpx;
+  position: relative;
+}
+
+.like-list .item {
+  background-color: #ffffff;
+  padding: 36rpx 40rpx;
+  display: flex;
+  margin-bottom: 20rpx;
+}
+
+.like-list .item .left {
+  position: relative;
+}
+
+.like-list .item .left .imgUrl {
+  width: 200rpx;
+  height: 200rpx;
+  background-position: center;
+  background-size: cover;
+  border: 2rpx solid #f5f5f5;
+  border-radius: 10rpx;
+  margin-right: 18rpx;
+  position: relative;
+}
+
+.like-list .item .left .imgUrl image {
+  width: 56rpx;
+  height: 26rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.like-list .item .left .sign {
+  width: 57rpx;
+  height: 26rpx;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.like-list .item .validityDate {
+  font-size: 24rpx;
+  color: #333333;
+  margin-top: 10rpx;
+}
+
+.like-list .item .image {
+  width: 230rpx;
+  height: 230rpx;
+  border: 2rpx solid #e1e1e1;
+  border-radius: 8rpx;
+}
+
+.like-list .right {
+  margin-left: 24rpx;
+  flex: 1;
+}
+
+.like-list .item .mc {
+  color: #333333;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.like-list .item .price {
+  margin-top: 8rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.like-list .item .jhj {
+  font-size: 22rpx;
+  color: #FF6C00;
+}
+
+.like-list .item .jhj .t1 {
+  font-size: 24rpx;
+}
+
+.like-list .item .jhj .t2 {
+  font-size: 36rpx;
+}
+
+.like-list .item .lsj {
+  font-size: 22rpx;
+  color: #868686;
+}
+
+.like-list .item .gong {
+  color: #868686;
+  margin-top: 14rpx;
+  display: flex;
+  align-items: center;  
+}
+
+.like-list .item .gong view {
+  background-color: #f2f2f2;
+  font-size: 18rpx;
+  padding: 2rpx 8rpx;
+  margin-right: 12rpx;
+  color: #868686;
+  border-radius: 6rpx;
+}
+
+.like-list .item .gong text {
+  font-size: 24rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.like-list .item .chang {
+  color: #868686;
+  margin-top: 14rpx;
+  display: flex;
+  align-items: center;  
+}
+
+.like-list .item .chang view {
+  background-color: #f2f2f2;
+  font-size: 18rpx;
+  padding: 2rpx 8rpx;
+  margin-right: 12rpx;
+  color: #868686;
+  border-radius: 6rpx;
+}
+
+.like-list .item .chang text {
+  font-size: 24rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width:400rpx;
+}
+
+.empty-data {
+  margin-top: -100rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: calc(100vh);
+  justify-content: center;
+  flex: 1;
+}
+
+.empty-data image {
+  width: 232rpx;
+  height: 208rpx;
+}
+
+.empty-data text {
+  color: #615F60;
+  font-size: 28rpx;
+  margin-top: 55rpx;
+}

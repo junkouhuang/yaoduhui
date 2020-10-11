@@ -1,0 +1,33 @@
+<!--pages/put_record/detail/index.wxml-->
+<view class="medical-care">
+  <view class="medical-item">
+    <view class="medical-left">
+        <view class="definition-mode">
+          <text class="definition">{{userInfo.enterpriseName}}</text>
+          <text class="mode">{{userInfo.modeName}}</text>
+        </view>
+        <view class="name-phone">
+          <text class="name">{{userInfo.userName}}</text>
+          <text class="phone">{{userInfo.mobileNumber}}</text>
+        </view>
+        <text class="address">{{userInfo.location}}</text>
+        <view class="shipping-companies">配送企业：{{userInfo.supplierName}}</view>
+        <text class="reason" wx:if="{{userInfo.status==1}}">拒绝原因：{{userInfo.auditOpinion}}</text>
+    </view>
+        <!-- 不通过 -->
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/not_adopt.png" wx:if="{{userInfo.status==1}}"></image>
+        <!-- 通过 -->
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/adopt.png" wx:if="{{userInfo.status==2}}"></image>
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/trial.png" wx:if="{{userInfo.status==0}}"></image>
+  </view>
+</view>
+
+<view class="message-detail">
+  <text class="title">{{customerDetail.qualificationsName}}</text>
+  <view class="image-list" wx:if="{{customerDetail.qualificationsPaths[0]}}">
+    <image  wx:for="{{customerDetail.qualificationsPaths[0]}}" bindtap="handlePreviewImage" data-item="{{item}}" wx:key="index" src="{{item}}"></image>
+  </view>
+  <view class="image-list" wx:if="{{!customerDetail.qualificationsPaths[0]&&show}}">
+    <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/noimg12.png"></image>
+  </view>
+</view>

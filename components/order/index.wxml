@@ -1,0 +1,138 @@
+<wxs src="../../wxs/filter.wxs" module="tools" />
+<alert show="{{showAlert}}" title="待确认付款说明"
+  content="因渤海银行业务限制，您当前状态的订单款项目前仍在渤海银行存管状态，并未支付给供应商，需要您确认付款后，款项才会正式支付给供应商，供应商只有在收到款项后才会安排订单发货，如给您带来不便，敬请谅解。"></alert>
+<swiper class="tab-box" data-current="{{currentTab}}" duration="300" bindchange="swiperChange">
+  <swiper-item wx:for="{{len}}" wx:key="index" class="tab-content">
+    <block wx:if="{{show == 1}}">
+      <scroll-view scroll-y="true" class='scoll-h' bindscrolltolower='lower'>
+        <view wx:if="{{ruleForm.status==1 && source == 'purchase_order' && list.length>0}}" class="what" bindtap="what">什么是待确认付款？</view>
+        <view class="item" wx:for="{{list}}" wx:key="index">
+          <view bindtap="detail" class="contian"
+            data-orderid="{{source == 'purchase_order'?item.purchaseOrderId:source == 'sale_order'?item.salesOrderId:''}}"
+            data-pindex="{{index}}">
+            <view class="psf" catchtap="goCompany" data-supplierid="{{source == 'purchase_order'?item.supplierId:source == 'sale_order'?item.sourceDataId:''}}" data-regionId="{{item.regionId}}">
+              <view class="supplierName">
+                <view>{{source == 'purchase_order'?item.supplierName:source == 'sale_order'?item.enterpriseName:''}}
+                </view>
+                <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/right3.png"></image>
+              </view>
+              <text
+                style="color:#10B3FB">{{item.status==6?'确认中':item.status==0?'待付款':item.status==1?'待确认付款':item.status==2?'已付款':item.status==3?'待退款':item.status==4?'已完成':item.status==5?'已取消':item.status==7?'已退款':''}}</text>
+            </view>
+            <view class="goods"
+              wx:for="{{source == 'purchase_order'?item.purchaseOrderDetail:source == 'sale_order'?item.details:''}}"
+              wx:key="index" wx:for-item="items">
+              <view class="good_item">
+                <view class="picture">
+                  <view
+                    style="background-image:url({{items.imgUrl=='' || items.imgUrl==null ?'https://edm.xinquanjk.com/upload/iconfont/202003/20/classify1.png':items.imgUrl}});"
+                    class="imgUrl">
+                    <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/0yuancai.png"
+                      wx:if="{{items.drugTag == 1}}"></image>
+                  </view>
+                </view>
+                <view class="xq">
+                  <text class="mc">{{items.productName}}</text>
+                  <view class="gs"><view>厂</view><text class="manufacturer">{{items.manufacturer}}</text></view>
+                  <view class="spec" wx:if="{{items.spec != null && items.spec != ''}}">规格：{{items.spec}}</view>
+                  <view class="jg">单价：￥<text>{{items.unitPriceWithTax}}</text></view>
+                </view>
+              </view>
+              <view class="bt">
+                <view class="cgl">采购数量：{{items.quantity}}</view>
+                <view class="yf">小计：<text class="rmb">￥</text><text
+                    class="xj">{{tools.toFixed(items.unitPriceWithTax*items.quantity)}}</text></view>
+              </view>
+              <view class="audit" wx:if="{{items.quantity == 0 || items.amountWithTax == 0}}">
+                <view class="o-audit">
+                  <view class="fail">该商品审核不通过</view>
+                  <view class="reson" wx:if="{{items.errorMessage}}">拒绝原因：{{items.errorMessage}}</view>
+                </view>
+              </view>
+              <view class="line">
+                <view></view>
+              </view>
+            </view>
+            <view class="good-b">
+              <text>{{source == 'purchase_order'?'开单人：':source == 'sale_order'?'客户：':''}}</text>
+              <text>{{item.creator}}</text>
+            </view>
+            <view class="good-b">
+              <text>{{source == 'purchase_order'?'采购订单号：':source == 'sale_order'?'销售订单号：':''}}</text>
+              <text>{{source == 'purchase_order'?item.purchaseOrderNo:source == 'sale_order'?item.salesOrderNo:''}}</text>
+            </view>
+            <view class="good-b">
+              <text>开单时间：</text>
+              <text>{{tools.formatTime(item.createTime)}}</text>
+            </view>
+            <view class="good-b" wx:if="{{ (item.status == 2 || item.status == 3 || item.status == 4 || item.status == 5 || item.status == 7) && item.payTime!=null}}">
+              <text>支付时间：</text>
+              <text wx:if="{{item.payTime}}">{{tools.formatTime(item.payTime)}}</text>
+            </view>
+            <view class="good-b" wx:if="{{ item.status == 7}}">
+              <text>退款时间：</text>
+              <text>{{tools.formatTime(item.refundTime)}}</text>
+            </view>
+            <view class="good-b">
+              <text>订单金额：</text>
+              <text style="color:#FD8E23">￥{{tools.toFixed(item.amountWithTax)}}</text>
+            </view>
+          </view>
+          <view class="purchase_order_status" wx:if="{{source == 'purchase_order'}}">
+            <view>
+              <view class="purchase_order_status_auto" wx:if="{{ item.status==0}}">
+                <block wx:if="{{item.shengTime}}"><text>{{item.shengTime}}</text>后未支付将会自动取消订单</block>
+              </view>
+              <view class="cancelRefund" wx:if="{{item.status==3}}">退款申请已提交，等待供应商审核。</view>
+            </view>
+            <!--0-待付款 1-待确认付款 2-已付款 3-待退款 4-已完成 5-取消/退款 6-待第三方确认订单-->
+            <view class="">
+              <view class="right_confirm_pay operate" data-id="{{item.purchaseOrderId}}"
+                wx:if="{{item.status==0 && item.error_message[0]==null}}" bindtap="pay">立即支付</view>
+              <view class="right_concel_pay operate" wx:if="{{item.status==0 || item.status==6 }}" bindtap="cancelOrder"
+                data-id="{{item.purchaseOrderId}}" data-pindex="{{index}}">取消订单</view>
+              <view class="confirmPay1 operate" wx:if="{{item.status==1}}" bindtap="confirmPay"
+                data-id="{{item.purchaseOrderId}}">确认支付</view>
+              <view class="confirmPay2 operate" wx:if="{{item.status==2}}" bindtap="sh"
+                data-id="{{item.purchaseOrderId}}">确认收货</view>
+              <view class="applyRefund operate" wx:if="{{item.status==2}}" bindtap="applyRefund"
+                data-id="{{item.purchaseOrderId}}">申请退款</view>
+              <view class="qxtk operate" wx:if="{{item.status==3}}" bindtap="cancelRefund"
+                data-id="{{item.purchaseOrderId}}">取消申请退款</view>
+            </view>
+          </view>
+          <view class="sale_order_status" wx:if="{{source == 'sale_order' && item.status==0 && item.shengTime}}">
+            <view class="autoCancel">
+              <text>{{item.shengTime}}</text>后未支付将会自动取消订单
+            </view>
+          </view>
+          <view class="sale_order_status" wx:if="{{source == 'sale_order' && item.status==3}}">
+            <view class="autoCancel2">
+              请审核该订单的退款申请
+            </view>
+            <view>
+              <view class="handleRefund2" wx:if="{{item.status==3}}" bindtap="handleRefund"
+                data-id="{{item.salesOrderId}}" data-flag="{{true}}">同意退款</view>
+              <view class="handleRefund1" wx:if="{{item.status==3}}" bindtap="handleRefund"
+                data-id="{{item.salesOrderId}}" data-flag="{{false}}">拒绝退款</view>
+            </view>
+          </view>
+        </view>
+        <import src="../../template/loading/index.wxml" />
+        <template is="wxLoading" data="{{status}}"></template>
+      </scroll-view>
+    </block>
+    <nodata wx:if="{{show == 2}}"></nodata>
+    <band wx:if="{{show == 3}}"></band>
+  </swiper-item>
+</swiper>
+<!--隐藏区域  -->
+<view class='maskLayer' wx:if="{{chooseSize}}" bindtap='hideModal'></view>
+<view class='choose' wx:if="{{chooseSize}}" animation='{{animationData}}'>
+  <view class="box_img" catchtap="chooseImg" style="background-image:url({{tempFilePaths}});"></view>
+  <view class="btn">
+    <view catchtap="cancelsh" class="cancel">取消收货</view>
+    <view catchtap="confirmReceipt" class="ok btnActive" wx:if="{{can}}">确定收货</view>
+    <view class="ok" wx:else>确定收货</view>
+  </view>
+</view>

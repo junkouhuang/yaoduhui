@@ -1,0 +1,55 @@
+<!--pages/integral/purchase/index.wxml-->
+<view class="purchase-header">
+  <view class="header-detail">
+    <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20//jifenka.png"></image>
+    <view class="integral-msg">
+      <text class="title">积分卡</text>
+      <view class="integral-detail">
+        <text class="available">可用积分：0分 </text>
+        <text class='frozen'>冻结积分：0分 </text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="select-user">
+  <text class="title">请选择购买积分的用户</text>
+  <view class="user-list">
+    <text class="user-item {{index==activeIndex?'active':''}}" wx:if="{{index<showIndex}}" wx:for="{{16}}" wx:key="index" bindtap="handleSelectItem" data-index="{{index}}">小泉泉</text>
+  </view>
+  <view class="more-look" bindtap="handleLookMore">
+    <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/bottom.png" wx:if="{{showIndex==12}}"></image>
+    <image src="../../band/img/top.png" wx:else></image>
+    <text>查看更多</text>
+  </view>
+</view>
+
+<view class="order-detail">
+  <text class="order-title">订单详情</text>
+  <view class="integral-card">
+    <view class="integral-left">
+      <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/jifen_ka.png"></image>
+      <view class="integral-detail">
+        <text class="name">1000积分卡购买</text>
+        <text class="money"><text>￥</text>{{integralPrise}}.00</text>
+      </view>
+    </view>
+    <view class="count">
+      <view class="left" bindtap="reduce">-</view>
+      <view class="number">{{integralNumber}}</view>
+      <view class="right" bindtap="add">+</view>
+    </view>
+  </view>
+</view>
+
+<view class="tips" bindtap="handleSelectAgreement">
+  <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/select.png" wx:if="{{lookAgreement}}"></image>
+  <view class="circle" wx:else></view>
+  <text>我已了解：鑫健康医药链平台积分购买规则和相关风险。 平台积分购买协议 </text>
+</view>
+
+<view class="submit-order">
+  <text class="left">应付款</text>
+  <text class="money"><text>￥</text>{{totalMoney}}.00</text>
+  <view class="button" bindtap="handleSubmit">提交订单</view>
+</view>

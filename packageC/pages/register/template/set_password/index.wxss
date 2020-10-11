@@ -1,0 +1,150 @@
+/* pages/set_password/index.wxss */
+.set_password {
+  background-color: #ffffff;
+  height: calc(100vh)
+}
+.flow2 {
+  padding-top: 94rpx;
+  text-align: center;
+  border-top: 2rpx solid #e1e1e1;
+}
+.flow2 image {
+  width: 566rpx;
+  height: 44rpx;
+}
+.flow2 .title {
+  text-align: center;
+  font-size: 22rpx;
+  color: #999999;
+}
+.flow2 .title {
+  width: 566rpx;
+  position: relative;
+  margin: 0 auto;
+}
+.flow2 .active {
+  color: #3996E1;
+  left: -47rpx;
+  position: absolute;
+}
+.flow2 .set {
+   color: #3996E1;
+}
+.flow2 .last {
+  position: absolute;
+  right: -20rpx;
+}
+.flow2 .form .username {
+  border: 2rpx solid #DBDBDB;
+  border-radius: 60rpx;
+  width: 600rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  margin: auto;
+  align-items: center;
+  display: flex;
+}
+.flow2 .form .username .topic {
+  width: 38rpx;
+  height: 40rpx;
+  margin: 0 20rpx 0 40rpx;
+}
+.flow2 .form .username input {
+  flex: 1;
+  padding: 10rpx 0;
+  text-align: left;
+  font-size: 28rpx;
+}
+.flow2 .form .username .close {
+  width: 40rpx;
+  height: 40rpx;
+  margin: 0 30rpx;
+}
+.flow2 .form .code {
+  border: 2rpx solid #DBDBDB;
+  border-radius: 60rpx;
+  width: 600rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  margin: auto;
+  align-items: center;
+  display: flex;
+  margin-top: 52rpx;
+  font-size: 28rpx;
+}
+.flow2 .form .code .person {
+  width: 40rpx;
+  height: 40rpx;
+  margin: 0 20rpx 0 40rpx;
+}
+.flow2 .form .code input {
+  flex: 1;
+  padding: 10rpx 0;
+  text-align: left;
+}
+.flow2 .form .code .scan {
+  width: 40rpx;
+  height: 40rpx;
+  margin: 0 30rpx;
+}
+.flow2 .form .password {
+  border: 2rpx solid #DBDBDB;
+  border-radius: 60rpx;
+  width: 600rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  margin: auto;
+  align-items: center;
+  display: flex;
+  margin-top: 52rpx;
+}
+.flow2 .form .password .lock {
+  width: 36rpx;
+  height: 36rpx;
+  margin: 0 20rpx 0 40rpx;
+}
+.flow2 .form .password input {
+  flex: 1;
+  padding: 10rpx 0;
+  text-align: left;
+  font-size: 28rpx;
+}
+.flow2 .form .password .code {
+  flex: 1;
+  padding: 10rpx 0;
+}
+.flow2 .password .eyes_close {
+  width: 48rpx;
+  height: 18rpx;
+  margin: 0 30rpx;
+}
+.flow2 .password .eyes_open {
+  width: 48rpx;
+  height: 40rpx;
+  margin: 0 30rpx;
+}
+.flow2 .form .inputActive {
+  border:1px solid #04BEFE;
+}
+.btn_register {
+  width: 600rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 32rpx;
+  color: #ffffff;
+  background-image: linear-gradient(to right,#04BEFE, #4481EB);
+  border-radius: 60rpx;
+  text-align: center;
+  margin: 74rpx auto 0;
+  box-shadow: 0 0.206667rem 0.26rem 0 rgba(67,115,234,.3);
+  opacity: .54;
+}
+.btnActive {
+  opacity: 1;
+}
+.reminder {
+  font-size: 22rpx;
+  color: #333;
+  width: 600rpx;
+  margin: 20rpx auto;
+}

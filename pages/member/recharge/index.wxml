@@ -1,0 +1,27 @@
+<view class="transfer-msg">
+  <view class="message-item">
+    <text class="item">渤海银行余额</text>
+    <text class="detail">￥{{available}}</text>
+  </view>
+  <view class="message-item">
+    <text class="item"><text></text>绑定银行卡</text>
+    <!-- <input type="number" placeholder-style="color:#868686;" placeholder="请输入收款人鑫泉账户"></input> -->
+    <text class="detail">{{carNo}}</text>
+
+  </view>
+</view>
+
+
+<view class="transfer-munber">
+  <view class="title-top">
+    <view class="title">充值金额</view>
+    <!-- <view class="all">全部提现</view> -->
+  </view>
+  <view class="message-money">
+    <text class="symbol">￥</text>
+    <input type="text" placeholder="请输入充值金额" placeholder-style="color:#E4E4E4;font-size:48rpx;" value="{{moneyNumber}}" bindinput="handleGetMoney"></input>
+  </view>
+</view>
+
+
+<view class="next-step" size="default" bindtap="handleNextStop">下一步</view>

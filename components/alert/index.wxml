@@ -1,0 +1,9 @@
+<!--components/confirm.wxml-->
+<view class="mask" wx:if="{{show}}"  bindtap="cancel" ></view>
+<view class="confirm"  wx:if="{{show}}">
+  <view class="title" wx:if="{{title}}">{{title}}</view>
+  <rich-text>{{content}}</rich-text>
+  <view class="btn">
+    <view class="yes" bindtap="yes">知道了</view>
+  </view>
+</view>

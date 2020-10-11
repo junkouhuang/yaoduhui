@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "发送企业首营资料",
+  "usingComponents": {
+    "build":"../../../../components/build/index"
+  }
+}

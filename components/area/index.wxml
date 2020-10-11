@@ -1,0 +1,39 @@
+<view wx:if="{{show}}">
+  <view class="modalDetail"  bindtap="closeMask" style="opacity:{{opacity}}"></view>
+  <view class="dq" style="bottom:{{bottom}}">
+    <view class="top">
+      <view class="sent">请选择地址</view>
+      <view class="tbs">
+        <view bindtap="getProvince" class="name {{indexs === 0?'active':''}}">{{ruleForm.provinceName}}</view>
+        <view bindtap="getCity" class="name {{indexs === 1?'active':''}}">{{ruleForm.cityName}}</view>
+        <view bindtap="getCounty" class="name {{indexs === 2?'active':''}}">{{ruleForm.district}}</view>
+      </view>
+    </view>
+    <scroll-view class="content" scroll-y="true" style="height: 656rpx">
+      <block wx:if="{{dataList.length>0}}">
+        <block wx:for="{{dataList}}" wx:key="index">
+          <block wx:if="{{indexs === 0}}">
+            <block wx:for="{{item.provinces}}" wx:key="index">
+              <view class="provinceName" bindtap="selProvice" data-provinceid="{{item.provinceId}}"  data-provincename="{{item.provinceName}}">{{item.provinceName}}
+                <image src='https://edm.xinquanjk.com/upload/iconfont/202003/20/ok.png' wx:if="{{item.provinceId === ruleForm.provinceId}}" class="ok"></image>
+              </view>
+            </block>
+          </block>
+          <block wx:if="{{indexs === 1}}">
+            <block wx:for="{{item.cities}}" wx:key="index">
+              <view class="cityName" bindtap="selCity" data-cityid="{{item.cityId}}"  data-cityname="{{item.cityName}}">{{item.cityName}}
+                <image src='https://edm.xinquanjk.com/upload/iconfont/202003/20/ok.png' wx:if="{{item.cityId === ruleForm.cityId}}" class="ok"></image>
+              </view>
+            </block>
+          </block>
+          <block wx:if="{{indexs === 2}}">
+            <view class="regionName" bindtap="selCounty" data-districtid="{{item.id}}"  data-district="{{item.district}}">{{item.district}}
+              <image src='https://edm.xinquanjk.com/upload/iconfont/202003/20/ok.png' wx:if="{{item.id === ruleForm.districtId}}" class="ok"></image>
+            </view>
+          </block>
+        </block>
+      </block>
+    </scroll-view>
+  </view>
+</view>
+

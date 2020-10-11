@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "查看申请记录",
+  "usingComponents": {
+    "nodata": "../../../../components/nodata/index"
+  }
+}

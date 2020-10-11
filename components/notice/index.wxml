@@ -1,0 +1,14 @@
+<!--components/confirm.wxml-->
+<view class="mask" wx:if="{{show}}" bindtap="isee" catchtouchmove='true'></view>
+<view class="msgbox" wx:if="{{show}}">
+	<view class="buildSuccess" wx:for="{{announcement}}" wx:key="index">
+		<view class="title11">{{item.announcement.title}}</view>
+		<view class="richText" wx:if="{{item.announcement}}">
+			<rich-text nodes="{{item.announcement.content}}"></rich-text>
+		</view>
+		<view class="richText" wx:else>
+			暂无公告信息
+		</view>
+		<view class="btn" bindtap="isee">我知道了</view>
+	</view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "收益",
+  "usingComponents": {
+    "nodata": "../../../components/nodata/index"
+  }
+}

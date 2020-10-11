@@ -1,0 +1,308 @@
+
+
+.tips-msg {
+  height: 70rpx;
+  line-height: 70rpx;
+  background-color: #e3f1fc;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+}
+
+.tips-msg image {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.tips-msg .tips {
+  color: #333;
+  font-size: 24rpx;
+  margin-left: 12rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.tips-msg .tips text {
+  color: #FF0000;
+}
+
+.information-title {
+  padding: 28rpx 30rpx;
+  font-size: 32rpx;
+  color: #333;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+
+.item_qualificationsName {
+  /* width: 550rpx; */
+}
+
+.change {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.information-title .status {
+  color: #3996E1;
+  font-size: 28rpx;
+  float: right;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.changeing{
+  color: #3996E1;
+  font-size: 28rpx;
+}
+
+.update-shell {
+  background-color: #fff;
+  border-radius: 15rpx 15rpx 0 0 ;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 40rpx 45rpx 45rpx 45rpx;
+}
+
+.update-shell .update-list .image-item:not(:last-child) {
+  margin-right: 30rpx;
+}
+
+.update-shell .update-list {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 660rpx;
+}
+
+.update-shell .update-list .image-item {
+  width: 200rpx;
+  height: 200rpx;
+  position: relative;
+  margin-bottom: 40rpx;
+}
+
+.update-list .image-item .detail {
+  width: 100%;
+  height: 100%;
+  border-radius: 16rpx;
+}
+
+.update-list .image-item .close-shell {
+  width: 34rpx;
+  height: 34rpx;
+  border-radius: 50%;
+  background-color: #b2b2b2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: -10rpx;
+  top: -10rpx;
+  z-index: 10;
+}
+
+.update-list .image-item .close {
+  width: 15rpx;
+  height: 15rpx;
+}
+
+.update-shell .explain {
+  font-size: 24rpx;
+  color: #868686;
+  margin-top: 28rpx;
+}
+
+.update-shell .explain .num {
+  width: 60rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  background: rgba(124, 188, 239, 1);
+  opacity: 1;
+  border-radius: 16rpx;
+  float: right;
+  font-size: 20rpx;
+  text-align: center;
+  color: #fff;
+}
+
+
+.next-step {
+  width: 690rpx;
+  height: 88rpx;
+  background: linear-gradient(90deg, rgba(4, 190, 254, 1), rgba(68, 129, 235, 1));
+  margin-left: 30rpx;
+  margin-top: 114rpx;
+  text-align: center;
+  color: #fff;
+  line-height: 88rpx;
+  border-radius: 44rpx;
+  font-weight: 500;
+  margin-bottom: 20rpx;
+}
+
+.disabled {
+  opacity: 0.54
+}
+
+.essential-information {
+  background-color: #fff;
+  border-radius: 0 0 15rpx 15px;
+  box-sizing: border-box;
+  padding: 0 34rpx 0 42rpx;
+}
+
+.essential-information .information-item {
+  height: 96rpx;
+  display: flex;
+  align-items: center;
+  color: #333333;
+  font-size: 28rpx;
+  position: relative;
+}
+
+.essential-information .information-item:not(:last-child)::after {
+  position: absolute;
+  box-sizing: border-box;
+  content: ' ';
+  pointer-events: none;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-bottom: 1px solid #ebedf0;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+
+.essential-information .information-item:last-child {
+  border-bottom: none;
+}
+
+.essential-information .information-item .item-text {
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  max-width: 310rpx;
+  margin-right: 20rpx;
+}
+
+.essential-information .information-item .enterpriseName {
+  width: 500rpx;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.essential-information .information-item .long-term {
+  color: #333;
+  font-size: 28rpx;
+}
+
+.essential-information .information-item .item-text-name {
+  display: felx;
+  align-items: center;
+  font-size: 28rpx;
+  width: 90rpx;
+}
+
+.essential-information .information-item .validTime {
+  color: #333;
+  font-size: 28rpx;
+  margin-left: 16rpx;
+}
+
+.essential-information .information-item .symbol {
+  color: #FF0000;
+}
+
+.essential-information .information-item .validity-date {
+  color: #333;
+  font-size: 28rpx;
+  width: 168rpx;
+}
+
+.essential-information .information-item .symbol_view {
+  width: 20rpx;
+  height: 100%;
+  color: #FF0000;
+}
+
+.essential-information .information-item .nameId {
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.essential-information .information-item input {
+  flex: 1;
+}
+
+/*checkbox 整体大小  */
+checkbox {
+  width: 32rpx;
+}
+
+/*checkbox 选项框大小  */
+checkbox .wx-checkbox-input {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+/*checkbox选中后样式  */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  background: #3996E1;
+}
+
+/*checkbox选中后图标样式  */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  width: 28rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  text-align: center;
+  font-size: 22rpx;
+  color: #fff;
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}
+
+.sub {
+  font-size: 26rpx;
+  color: #333;
+  padding: 30rpx;
+}
+
+.sub .col_red {
+  color: #FF0000;
+}
+
+.exceed {
+  margin-bottom: 10rpx;
+}
+
+.sl {
+  margin-top: 30rpx;
+  margin-left: 30rpx;
+  font-size: 24rpx;
+}
+
+.sl text {
+  color: #3996E1;
+}
+
+textarea {
+  flex: 1;
+  }

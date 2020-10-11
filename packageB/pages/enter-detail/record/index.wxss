@@ -1,0 +1,149 @@
+
+page {
+  border-top: 1rpx solid #DCDCDC;
+}
+
+.nav {
+  height: 84rpx;
+  line-height: 84rpx;
+  display: flex;
+  background: #fff;
+  position: relative;
+}
+
+.line {
+  width: 90rpx;
+  height: 5rpx;
+  background: linear-gradient(90deg, rgba(4, 190, 254, 1), rgba(68, 129, 235, 1));
+  position: absolute;
+  /* left:140rpx; */
+  bottom: 0;
+  transition: 0.3s all;
+}
+
+.nav .item {
+  flex: 1;
+  font-size: 30rpx;
+  color: #6D6D6D;
+  text-align: center;
+}
+
+.nav .item.active {
+  color: #333;
+}
+
+.cent-item {
+  margin: 20rpx 30rpx;
+  border-radius: 26rpx;
+  padding: 32rpx 20rpx;
+  background: #fff;
+  overflow: hidden;
+}
+
+.cent-item .top {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-bottom: 28rpx;
+}
+
+.cent-item .top::after {
+  position: absolute;
+  box-sizing: border-box;
+  content: ' ';
+  pointer-events: none;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-bottom: 1px solid #ebedf0;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+
+.cent-item .icon {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 18rpx;
+  margin-right: 16rpx;
+}
+
+.cent-item .center {
+  color: #333;
+  width: 450rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.cent-item .center .name {
+  font-size: 28rpx;
+}
+
+.cent-item .center .qualificationsName {
+  font-weight: bold;
+}
+
+.cent-item .center .way {
+  font-size: 26rpx;
+  margin-top: 18rpx;
+  color: #808080;
+}
+
+.cent-item .status {
+  color: #3996E1;
+  font-size: 28rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.cent-item .status.nopass {
+  color: #F13C3C;
+  font-size: 28rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.code {
+  font-size: 26rpx;
+  color: #333;
+  margin-top: 20rpx;
+}
+
+.time {
+  font-size: 24rpx;
+  color: #6D6D6D;
+  margin-top: 20rpx;
+}
+
+.remark {
+  margin-top: 20rpx;
+  font-size: 24rpx;
+  color: #F13C3C;
+  background: #F3F4F5;
+  padding: 16rpx;
+  border-radius: 16rpx;
+  float: left;
+}
+
+.empty-data {
+  /* margin-top:200rpx; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+  margin-top: -100rpx;
+}
+
+.empty-data image {
+  width: 250rpx;
+  height: 250rpx;
+}
+
+.empty-data text {
+  color: #615F60;
+  font-size: 28rpx;
+  margin-top: 55rpx;
+}

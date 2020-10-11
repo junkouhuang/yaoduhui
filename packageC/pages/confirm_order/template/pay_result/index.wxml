@@ -1,0 +1,13 @@
+<!--pages/confirm_order/template/pay_result.wxml-->
+<view class="pay_result">
+  <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/pay_success.png" class="ico"></image>
+  <view class="txt">订单已提交</view>
+  <view class="describle1">1、向
+    【<text  wx:for="{{shopEnterpriseName}}" wx:key="index">{{item}}</text>】
+    采购的订单，需等待
+    <!-- 【<text  wx:for="{{shopEnterpriseName}}" wx:key="index">{{item}}</text>】 -->
+    确认（预计5-10分钟），订单确认后我们将微信短信通知您；
+  </view>
+  <view class="describle2">2、其他订单可直接<text>付款</text>操作</view>
+  <view class="btn" bindtap="xgd">查看订单</view>
+</view>

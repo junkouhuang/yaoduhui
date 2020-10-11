@@ -1,0 +1,50 @@
+
+.essential-information{
+  background-color: #fff;
+  box-sizing: border-box;
+  padding:0 34rpx 0 42rpx;
+  border-top:1rpx solid #DCDCDC;
+}
+
+.essential-information .information-item{
+  border-bottom:1rpx solid #DCDCDC;
+  height:96rpx;
+  display: flex;
+  align-items:center;
+  justify-content: space-between
+}
+
+.essential-information .information-item:last-child{
+  border-bottom:none
+}
+
+.information-item .picker{
+  font-size:28rpx;
+  color:#333;
+}
+
+.information-item .item-text{
+  display: felx;
+  align-items:center;
+  font-size:28rpx;
+}
+
+
+
+.information-item .item-text .item-name{
+  color:#333;
+}
+
+.information-item .right{
+  color:#999;
+  /* line-height:96rpx; */
+  font-size:28rpx;
+  display: flex;
+  align-items: center;
+}
+
+.information-item image{
+  width:12rpx;
+  height:21rpx;
+  margin-left:10rpx;
+}

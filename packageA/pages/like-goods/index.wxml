@@ -1,0 +1,45 @@
+<!--pages/member/like-goods/index.wxml-->
+<import src="../../../template/loading/index.wxml" />
+<wxs src="../../../wxs/filter.wxs" module="tools" />
+<view wx:if="{{showLikeGoods}}">
+  <block wx:if="{{show == 1}}">
+    <view class="like-list" wx:if="{{likeList.length>0}}">
+      <view class="item" wx:for="{{likeList}}" wx:key="index">
+        <view class="left" bindtap="detail" data-drugno="{{item.drugNo}}" data-amount="{{item.amount}}">
+          <view style="background-image:url({{item.imgUrl=='' || item.imgUrl==null ?'https://edm.xinquanjk.com/upload/iconfont/202003/20/classify1.png':item.imgUrl}});" class="imgUrl">
+            <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/0yuancai.png" wx:if="{{item.drugTag == 1}}"></image>
+          </view>
+        </view>
+        <view class="right">
+          <view bindtap="detail" data-drugno="{{item.drugNo}}" data-amount="{{item.amount}}">
+            <view class="mc">{{item.name}}</view>
+            <view class="gong">
+              <view>供</view>
+              <text>{{item.enterpriseName}}</text>
+            </view>
+            <view class="chang">
+              <view>厂</view>
+              <text>{{item.producerName}}</text>
+            </view>
+            <view class="validityDate">有效期：{{tools.formatDate(item.validityDate)}}</view>
+            <view class="price">
+              <view class="jhj">预约价：
+                <text wx:if="{{item.price == null}}" class="t1">仅企业可看</text>
+                <block wx:else>
+                ￥<text  class="t2">{{item.price}}</text>
+                </block>
+              </view>
+              <view class="lsj">建议零售价￥{{item.suggestPrice}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <template is="wxLoading" data="{{status}}"></template>
+    </view>
+  </block>
+  <view class="empty-data" wx:if="{{show == 2}}">
+    <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/noimg_like.png"></image>
+    <text>暂无数据</text>
+  </view>
+</view>
+<band wx:else></band>

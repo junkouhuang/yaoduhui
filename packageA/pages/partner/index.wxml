@@ -1,0 +1,21 @@
+<!--pages/partner/index.wxml-->
+<view class="top" wx:if="{{topShow}}">
+  <view class="name" wx:if="{{baseInfo.contacts !=='' && baseInfo.contacts !==null && baseInfo.contacts !==undefined}}">姓名：{{baseInfo.contacts}}</view>
+  <view class="currentLevel" wx:if="{{baseInfo.salesmanType !=='' && baseInfo.salesmanType !==null && baseInfo.salesmanType !==undefined}}">
+    当前级别：{{baseInfo.salesmanType == 0?'区域合伙人':baseInfo.salesmanType == 1?'省级合伙人':baseInfo.salesmanType == 2?'市级合伙人':baseInfo.salesmanType == 3?'业务推广员':''}}
+  </view>
+  <view class="enterpriseName" wx:if="{{baseInfo.enterpriseName !=='' && baseInfo.enterpriseName !==null && baseInfo.enterpriseName !==undefined}}">合伙企业：{{baseInfo.enterpriseName}}</view>
+  <view class="address" wx:if="{{baseInfo.address !=='' && baseInfo.address !==null && baseInfo.address !==undefined}}">合作地区：{{baseInfo.address}}</view>
+</view>
+<view class="pantner-list">
+  <view class="pantner-item" wx:for="{{pantnerList}}" wx:key="index" bindtap="handleSelectItem" data-index="{{index}}">
+    <text>{{item.name}}</text>
+    <image wx:if="{{item.check}}" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/select.png"></image>
+    <view class="circular" wx:else></view>
+  </view>
+</view>
+<!-- <view class="tips">会员申请代理时不允许申请比自己推荐人级别高的等级。</view> -->
+<view class="next-step" wx:if="{{pantnerList.length>0}}">
+  <view class="button {{isDisabled ? 'disabled' : ''}}" bindtap="{{isDisabled ? '' : 'next'}}">下一步</view>
+  <view class="look" bindtap="applyRecord">查看申请记录</view>
+</view>

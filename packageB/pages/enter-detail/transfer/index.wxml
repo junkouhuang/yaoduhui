@@ -1,0 +1,25 @@
+
+<view class="transfer" wx:if="{{has}}">
+	<view class="item" wx:for="{{checkPending}}" wx:key="index" bindtap="checkHandle" data-index="{{index}}" data-accountid="{{item.accountId}}" data-enterpriseid="{{item.enterpriseId}}" >
+		<view class="left">
+			<view class="contacts">{{item.contacts}}</view>
+			<view class="mobileNumber">手机号码：{{item.mobileNumber}}</view>
+			<view class="idCode">身份证号码：{{item.idCode}}</view>
+		</view>
+		<view class="right">
+			<image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/select.png" wx:if="{{item.check}}" class="check"></image>
+			<view class="circular" wx:else></view>
+		</view>
+	</view>
+	<view class="btn" wx:if="{{checkPending.length>0}}">
+		<view class="finsh {{isDisable?'disable':''}}" bindtap="{{isDisable?'':'finsh'}}">确定</view>
+	</view>
+  <import src="../../../../template/loading/index.wxml" />
+  <template is="wxLoading" data="{{status}}"></template>
+</view>
+<block wx:else>
+	<view class="empty-data">
+		<image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/no_data_icon.png"></image>
+		<text>暂无数据</text>
+	</view>
+</block>

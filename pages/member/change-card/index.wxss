@@ -1,0 +1,58 @@
+/* pages/member/binding-card/index.wxss */
+
+.card-list{
+  border-top:1rpx solid #DCDCDC;
+  background-color: #fff;
+  border-radius: 0 0 15rpx 15rpx;
+  box-sizing: border-box;
+  padding:0 38rpx;
+}
+
+.card-list .item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height:96rpx;
+  border-bottom:1rpx solid #DCDCDC;
+}
+
+.card-list .item:last-child{
+  border-bottom:none;
+}
+
+.card-list .item .left{
+  color:#333;
+  font-size:28rpx;
+}
+
+
+.card-list .item .left text{
+  color:#FF0000;
+}
+
+.card-list .item input{
+  text-align:right;
+  font-size:28rpx;
+  width:400rpx;
+}
+
+
+
+
+.next-step{
+  width:690rpx;
+  height:88rpx;
+  background:linear-gradient(90deg,rgba(4,190,254,1),rgba(68,129,235,1));
+  margin-left:30rpx;
+  margin-top:57rpx;
+  text-align:center;
+  color:#fff;
+  line-height:88rpx;
+  border-radius: 44rpx;
+  font-weight: 500;
+  box-shadow: 0 0.206667rem 0.26rem 0 rgba(67,115,234,.3);
+}
+
+.disabled{
+  opacity: 0.54
+}

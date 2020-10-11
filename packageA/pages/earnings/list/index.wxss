@@ -1,0 +1,222 @@
+
+.customer-page{
+  display: flex;
+  flex-direction: column;
+  height:100%;
+}
+
+.search-enterprise{
+  background-color: #fff;
+  box-sizing: border-box;
+  padding:17rpx 36rpx 0;
+}
+
+picker {
+  color: #808080;
+  font-size: 28rpx;
+  margin: 32rpx 0 0 32rpx;
+}
+picker .picker {
+  display: flex;
+  align-items: center;
+}
+picker image {
+  width: 18rpx;
+  height: 10rpx;
+  margin-left: 10rpx;
+}
+.search-enterprise .search-shell{
+  width: 678rpx;
+  height: 72rpx;
+  border-radius: 36rpx;
+  background: #F3F4F5;
+  box-sizing: border-box;
+  padding-left: 20rpx;
+  display: flex;
+  align-items: center;
+}
+
+.search-shell image{
+  width:60rpx;
+  height:60rpx;
+}
+
+.search-shell input{
+  margin-left:25rpx;
+  width:570rpx;
+  font-size: 28rpx;
+}
+
+.search-shell .close-shell{
+  width:34rpx;
+  height:34rpx;
+  border-radius: 50%;
+  background-color: #b2b2b2;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  position: absolute;
+  right:65rpx;
+  z-index:10;
+}
+
+.search-shell .close{
+  width:15rpx;
+  height:15rpx;
+}
+
+.search-enterprise .tabble-toggle{
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding:0 40rpx;
+  height:84rpx;
+  position: relative;
+}
+
+.tabble-toggle .toggle-item{
+  font-size:30rpx;
+  color:#333;
+  line-height:84rpx;
+  height:100%;
+}
+
+.tabble-toggle .line{
+  width:90rpx;
+  height:5rpx;
+  background: linear-gradient(90deg,rgba(4,190,254,1),rgba(68,129,235,1));
+  position: absolute;
+  /* left:140rpx; */
+  bottom:0;
+  transition: 0.3s all;
+}
+
+.medical-care{
+  display: flex;
+  margin-top:20rpx;
+  flex-direction: column;
+  flex:1
+}
+
+.medical-care .medical-item{
+  box-sizing: border-box;
+  padding:35rpx 42rpx;
+  background-color: #fff;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  position: relative;
+}
+
+.medical-care .medical-item::after {
+  position: absolute;
+  box-sizing: border-box;
+  content: ' ';
+  pointer-events: none;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-bottom: 1px solid #ebedf0;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+.medical-care .medical-item:last-child {
+  border: none;
+}
+
+.medical-item image{
+  width:160rpx;
+  height:160rpx;
+}
+
+.medical-item .medical-left{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.medical-item .medical-left .definition-mode{
+  font-size:26rpx;
+  color:#333333;
+  display: flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.medical-item .medical-left .definition-mode .name{
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.medical-item .medical-left .definition-mode .definition{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width:320rpx;
+  margin-left: 10rpx;
+  color: #808080;
+}
+
+.medical-left .definition-mode .mode{
+  margin-left:20rpx;
+  color:#868686;
+  font-size:22rpx;
+  line-height:16rpx;
+}
+
+.medical-left .name-phone  .name{
+  color: #808080;
+  font-size: 24rpx;
+}
+
+.medical-left .name-phone  .definition {
+   color: #808080;
+  font-size: 24rpx;
+}
+
+
+.medical-left .name-phone{
+  margin-top:25rpx;
+  display: flex;
+  align-items:center;
+  font-size:30rpx;
+  color:#333;
+  justify-content:space-between;
+}
+
+.medical-left .reason{
+  font-size:26rpx;
+  color: #EA0505;
+
+}
+
+.medical-left .name-phone image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 40rpx;
+}
+
+.medical-left .name-phone .phone{
+  margin-left:80rpx;
+  font-size:30rpx;
+}
+
+.medical-left .address{
+  margin-top:25rpx;
+  font-size:26rpx;
+  color:#333;
+  max-width: 250px
+}
+
+.medical-left .shipping-companies{
+  font-size:24rpx;
+  line-height:24rpx;
+  color:#868686;
+  margin-top:25rpx;
+}
+
+.medical-left .reason{
+  color:#EA0505;
+  font-size:26rpx;
+  margin-top:25rpx;
+}

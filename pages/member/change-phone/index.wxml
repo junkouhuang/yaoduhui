@@ -1,0 +1,8 @@
+<!--pages/member/change-phone/index.wxml-->
+<view class="phone-number">
+  <view class="change-phone">
+    <text>新手机号</text>
+    <input placeholder="请输入新手机号码" type="number" maxlength="11" value="{{phoneNumber}}" bindinput="handleGetPhone" placeholder-style="color:#999;" />
+  </view>
+</view>
+<view class="next-step {{isDisabled?'disabled':''}}" bindtap="handleNextStop">下一步</view>

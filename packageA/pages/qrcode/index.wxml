@@ -1,0 +1,16 @@
+
+<view class="qrcode">
+ <return title="邀请码"></return>
+  <view class="qrcontent">
+    <view class="topic">
+      <image src="{{avatar}}" class="topic_icon" bindtap="previewImg" data-src="{{avatar}}"></image>
+      <view class="right">
+        <view class="nickname">{{nickname}}</view>
+        <view class="telephone">{{telephone}}</view>
+      </view>
+    </view>
+    <image src="{{imgUrl}}" bindtap="previewImg" class="qrcodeimage" data-src="{{imgUrl}}"></image>
+    <view class="tip">【新药都荟】企业入驻邀请码</view>
+  </view>
+</view>
+

@@ -1,0 +1,8 @@
+{
+  "enablePullDownRefresh": true,
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "skeleton": "../../components/skeleton/index",
+    "goods": "../../components/goods/index"
+  }
+}

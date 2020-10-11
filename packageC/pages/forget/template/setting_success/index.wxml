@@ -1,0 +1,10 @@
+<!--pages/register_success/index.wxml-->
+<view class="setting_success">
+  <view class="flow3">
+    <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/register_success.png" class="suceess"></image>
+    <view class="success">修改密码成功</view>
+    <view class="secode">{{secode}}秒后返回登录页面</view>
+  </view>
+</view>
+
+

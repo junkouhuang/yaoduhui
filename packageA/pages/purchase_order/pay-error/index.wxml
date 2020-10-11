@@ -1,0 +1,6 @@
+
+<view class="pay_result">
+  <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/error.png" class="ico"></image>
+  <view class="txt">支付失败</view>
+  <view class="btn" bindtap="anew">重新支付</view>
+</view>

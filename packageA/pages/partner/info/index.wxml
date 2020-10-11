@@ -1,0 +1,85 @@
+ <!--
+    show="{{show}}"  // 向组件传递show值，true为显示省市区组件，false为关闭省市区组件
+    bind:getData="getData" // 获取组件内传递出来的值(这里主要获取省市区名称和id)
+  -->
+<area show="{{show}}" bind:getData="getData" id="area"></area>
+  <view class="real-page">
+
+    <view class="type" wx:if="{{enterpriseName}}">
+      <text class="title">企业信息</text>
+      <view class="real-shell">
+        <view class="real-item">
+          <view class="left"><text>*</text>合作企业</view>
+          <view class="enterpriseName">{{enterpriseName}}</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="real-user">
+      <text class="title">基本信息</text>
+      <view class="real-shell">
+        <view class="real-item">
+          <view class="left"><text>*</text>真实姓名</view>
+          <input type="text" placeholder="请输入真实姓名" bindinput="handleGetInputData" data-sign="contacts" value="{{ruleForm.contacts}}"/>
+        </view>
+        <view class="real-item">
+          <view class="left"><text>*</text>手机号码</view>
+          <input type="text" placeholder="请输入手机号码" bindinput="handleGetInputData" data-sign="mobileNumber" type="number" maxlength="11"  value="{{ruleForm.mobileNumber}}"/>
+        </view>
+        <view class="real-item">
+          <view class="left"><text>*</text>联系邮箱</view>
+          <input type="text" placeholder="请输入联系邮箱" bindinput="handleGetInputData" data-sign="email" value="{{ruleForm.email}}"/>
+        </view>
+        <view class="real-item">
+          <view class="left"><text>*</text>联系地址</view>
+          <input type="text" placeholder="选择地区"  disabled bindtap="areaSel" value="{{china}}" placeholder-style="color:#333333;"/>
+          <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/dot.png" class="dot"  bindtap="areaSel"></image>
+        </view>
+        <view class="real-item">
+          <view class="left"><text>*</text>详细地址</view>
+          <input type="text" placeholder="请输入详细地址" bindinput="handleGetInputData" data-sign="location" value="{{ruleForm.location}}"/>
+        </view>
+        <view class="real-item">
+          <view class="left"><text>*</text>身份证号码</view>
+          <input type="idcard" maxlength="18" placeholder="请输入身份证号码" bindinput="handleGetInputData" data-sign="idCode" value="{{ruleForm.idCode}}"/>
+        </view>
+      </view>
+    </view>
+
+    <view class="upload-message">
+      <view class="title"><text>*</text>上传证件资料</view>
+      <view class="idcard-msg">
+          <view class="idcard-item" bindtap="uploadIdCardData" data-sign="front">
+            <image wx:if="{{ruleForm.idCardFrontPath}}" src="{{ruleForm.idCardFrontPath}}"></image>
+            <image wx:else src="https://edm.xinquanjk.com/upload/iconfont/202003/20/zhengmian.png"></image>
+            <text>请上传身份证正面</text>
+          </view>
+          <view class="idcard-item" bindtap="uploadIdCardData" data-sign="back">
+            <image wx:if="{{ruleForm.idCardBackPath}}" src="{{ruleForm.idCardBackPath}}"></image>
+            <image wx:else src="https://edm.xinquanjk.com/upload/iconfont/202003/20/fanmian.png"></image>
+            <text>请上传身份证反面</text>
+          </view>
+      </view>
+    </view>
+
+    <view class="upload-message">
+      <view class="title"><text>*</text>上传保单/社保卡</view>
+      <view class="idcard-msg">
+          <view class="idcard-item" bindtap="uploadIdCardData" data-sign="all">
+            <image wx:if="{{ruleForm.policyPath}}" src="{{ruleForm.policyPath}}"></image>
+            <image wx:else src="https://edm.xinquanjk.com/upload/iconfont/202003/20/shebao.png"></image>
+            <text>请上传保单/社保卡</text>
+          </view>
+      </view>
+    </view>
+
+    
+
+    <view class="submit">
+      <view class="button {{isDisable?'disable':''}}" bindtap="{{isDisable?'':'submitData'}}">确认提交资料</view>
+      <text class="msg">我们会在<text>1-2</text>个工作日审核确认</text>
+    </view>
+  </view>
+
+
+

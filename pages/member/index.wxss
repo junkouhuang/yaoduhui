@@ -1,0 +1,542 @@
+/* pages/member/index.wxss */
+page {
+  background: #353A4D url(https://edm.xinquanjk.com/upload/iconfont/202003/20/beijing_stripe.png) no-repeat;
+  background-size: contain;
+  border: none;
+}
+.header2 {
+  width: 100%;
+  color: #ffffff;
+  text-align: center;
+  height: 200rpx;
+  z-index: 999;
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+}
+.header2 .left {
+  width: 34rpx;
+  height: 34rpx;
+  margin-left: 18rpx;
+}
+.header2 text {
+  float: left;
+  margin-left: 3%;
+  font-size: 30rpx;
+}
+.integral-msg{
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding:0 38rpx 84rpx 38rpx;
+}
+
+.integral-msg .userinfo-msg{
+  height:124rpx;
+  display: flex;
+  align-items:center;
+}
+
+.noBandEnterprise {
+  height: 220rpx;
+  margin-top: 34rpx;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 30rpx;
+  padding:34rpx 30rpx;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  box-shadow:0px 2px 8px rgba(167,167,167,0.3);
+}
+
+.noBandEnterprise image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 122rpx;
+  height: 38rpx;
+}
+
+.noBandEnterpriseGe {
+  height: 160rpx;
+  box-shadow:0px 2px 8px rgba(167,167,167,0.06);
+}
+
+.noBandEnterprise .tips {
+  width: 100%;
+  font-size: 28rpx;
+  color: #444;
+  text-align: center;
+}
+
+.enterpriseOpenAccount,
+.individualOpenAccount {
+  border-radius: 40rpx;
+  border:1rpx solid #707070;
+  color: #707070;
+  height: 56rpx;
+  font-size: 28rpx;
+  margin-top: 64rpx;
+  line-height: 56rpx;
+  text-align: center;
+  width: 150rpx;
+}
+
+.binding-enterprise{
+  border-radius: 20rpx;
+  background-color:#3996e1;
+  color:#fff;
+  height:40rpx;
+  font-size:24rpx;
+  /* padding:0 15rpx; */
+  margin-top:10rpx;
+  line-height:40rpx;
+  text-align:center;
+  width:130rpx;
+}
+
+.integral-msg .userinfo-msg image{
+  width:120rpx;
+  height:120rpx;
+  border-radius: 50%;
+}
+
+.integral-msg .userinfo-msg .userinfo-detail{
+  margin-left:15rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+
+.userinfo-msg .userinfo-detail .name{
+  color:#333;
+  font-size:28rpx;
+  line-height:28rpx;
+  max-width:500rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.userinfo-msg .userinfo-detail .enterprise{
+  color:#fff;
+  font-size:30rpx;
+  margin-bottom:20rpx;
+  max-width:500rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.userinfo-msg .userinfo-detail .virtualAccountId{
+  color:#fff;
+  font-size:28rpx;
+}
+
+.userinfo-msg .userinfo-detail .accountId{
+  color:#666666;
+  font-size: 20rpx;
+}
+
+.integral-msg .integral-detail{
+  width:675rpx;
+  height:464rpx;
+  position: relative;
+  margin-top:30rpx;
+  background:#F9F9F9;
+  box-shadow: 0px 2px 8px rgba(167,167,167,0.3);
+  border-radius: 36rpx;
+}
+.integral-msg .enterpriseAccountResult{
+  height: 478rpx;
+  background: #F9F9F9;
+}
+.integral-detail .bg{
+  width: 122rpx;
+  height: 38rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.integral-detail .integral-message{
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  z-index: 1;
+  width:100%;
+  height:100%;
+  box-sizing: border-box;
+  padding:40rpx 0 0;
+  border-radius: 36rpx;
+  overflow: hidden;
+}
+
+
+.integral-detail .integral-message .message-left_enterprise{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  background: url('https://edm.xinquanjk.com/upload/iconfont/202003/20/enterprise_bg.png') no-repeat;
+  background-size: 40%;
+  background-position: right 80rpx;
+}
+.integral-detail .integral-message .message-left_enterprise .enterprise_bg {
+   position: absolute;
+   right: 0;
+   bottom: 100rpx;
+   width: 280rpx;
+   height: 280rpx;
+}
+.integral-detail .integral-message .message-left_person{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  background: url('https://edm.xinquanjk.com/upload/iconfont/202003/20/person_bg.png') no-repeat;
+  background-size: 40%;
+  background-position: right 80rpx;
+}
+.integral-detail .integral-message .message-left_person .person_bg {
+   position: absolute;
+   right: 0;
+   bottom: 100rpx;
+   width: 204rpx;
+   height: 236rpx;
+}
+
+.integral-message .message-left .enterpriseName {
+  font-size:30rpx;
+  color:#333333;
+  line-height:28rpx;
+  padding: 0 40rpx;
+  font-weight: 500;
+  line-height: 34rpx;
+  white-space: nowrap;
+  overflow:hidden;
+  text-overflow: ellipsis;
+}
+.integral-message .message-left .available{
+  font-size:26rpx;
+  color:#808080;
+  margin-top: 10rpx;
+  padding: 0 40rpx;
+}
+.integral-message .message-left .available text{
+  font-size: 50rpx;
+  color: #333333;
+}
+.integral-message .message-left .totalFreeze {
+  font-size:26rpx;
+  color:#808080;
+  margin-top: 12rpx;
+  padding: 0 40rpx;
+}
+.integral-message .message-left .totalFreeze text {
+  color: #333;
+}
+.integral-message .message-left .account {
+  font-size:28rpx;
+  color:#333;
+  line-height:26rpx;
+  margin-top: 16rpx;
+  padding: 0 40rpx;
+  display: flex;
+  align-items: center;
+}
+
+.integral-message .message-left .virtualAccountId {
+  font-size:28rpx;
+  color:#333;
+  margin-top: 24rpx;
+  padding: 0 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.integral-message .message-left .virtualAccountId .id {
+  display: flex;
+  align-items: center;
+}
+
+.integral-message .message-left .virtualAccountId .id view  {
+  background-color: #F9F1DC;
+  font-size: 18rpx;
+  border-radius: 6rpx;
+  color: #DAAC58;
+  padding: 4rpx;
+  margin-left: 20rpx;
+}
+
+.integral-message .message-left .virtualAccountId .id .copy_yellow  {
+  color: #DAAC58;
+  font-size: 18rpx;
+  padding: 0 4rpx;
+  border-radius: 6rpx;
+  border: 1rpx solid #DAAC58;
+  margin-left: 20rpx;
+}
+
+.integral-message .message-left .account .copy_yellow {
+  color: #DAAC58;
+  font-size: 18rpx;
+  padding: 0 4rpx;
+  border-radius: 6rpx;
+  border: 1rpx solid #DAAC58;
+  margin-left: 20rpx;
+}
+
+.integral-message .message-left .account .copy_blue {
+  color: #3996E1;
+  font-size: 18rpx;
+  padding: 0 4rpx;
+  border-radius: 6rpx;
+  border: 1rpx solid #3996E1;
+  margin-left: 20rpx;
+}
+
+.copy_blue {
+  color: #3996E1;
+  font-size: 18rpx;
+  padding: 0 4rpx;
+  border-radius: 6rpx;
+  border: 1rpx solid #3996E1;
+  margin-left: 20rpx;
+}
+
+.integral-message .message-left .virtualAccountId image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.integral-message .message-left .fraction{
+  font-size:50rpx;
+  color:#fff;
+  line-height:50rpx;
+  margin-top:26rpx;
+}
+
+.integral-message .message-left .frozen{
+  font-size:28rpx;
+  color:#fff;
+  line-height:28rpx;
+  margin-top:34rpx;
+  padding: 0 40rpx;
+}
+
+.integral-message .message-left .operation{
+  display: flex;
+  align-items:center;
+  margin-top:26rpx;
+  padding: 0 40rpx;
+}
+
+.activation {
+  display: flex;
+  justify-content: space-between;
+}
+
+.integral-message .message-left  .footoor1 {
+  display: flex;
+  padding: 20rpx 40rpx;
+  justify-content: space-between;
+  background: #F9F1DC;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 0 0 36rpx 36rpx;
+}
+
+.integral-message .message-left  .footoor2 {
+  display: flex;
+  padding: 20rpx 40rpx;
+  justify-content: space-between;
+  background: #E8F5FF;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 0 0 36rpx 36rpx;
+}
+
+.integral-message .message-left .operation .transfer-accounts,
+.integral-message .message-left .operation .reflect{
+  width:110rpx;
+  height:52rpx;
+  border-radius: 30rpx;
+  border:1rpx solid #707070;
+  text-align:center;
+  line-height:52rpx;
+  font-size:28rpx;
+  color:#707070;
+  margin-right:28rpx;
+}
+
+.transfer-accounts2 {
+  display: none;
+}
+
+.integral-message .message-left .operation  .czStyle  {
+  flex: 1;
+  text-align: right;
+}
+
+.integral-message .message-left .operation  .czStyle text {
+  font-size: 24rpx;
+  color: #808080;
+  margin-right: 20rpx;
+
+}
+
+.integral-message .message-left .operation  .czStyle image {
+  width:14rpx;
+  height:25rpx;
+
+}
+
+.integral-message .message-left .operation .activation{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.integral-message .message-left .operation .activation .await {
+  width:127rpx;
+  height:56rpx;
+  border-radius: 30rpx;
+  border:1rpx solid #707070;
+  text-align:center;
+  line-height:56rpx;
+  font-size:28rpx;
+  color:#707070;
+}
+.integral-message .message-left .operation .activation .style text {
+  font-size: 24rpx;
+  color: #808080;
+  margin-right: 20rpx;
+}
+
+
+.integral-message .message-left .operation .activation .style image {
+  width:14rpx;
+  height:25rpx;
+}
+
+.integral-message .message-left .operation .reflect{
+  margin-right:28rpx;
+}
+
+.integral-message .message-right{
+  display: flex;
+  align-items: center;
+  height:30rpx;
+}
+
+.integral-message .message-right image{
+  width:14rpx;
+  height:25rpx;
+}
+
+.integral-message .message-right text{
+  font-size: 26rpx;
+  color: #4A3413;
+  margin-right: 20rpx;
+}
+
+.bank-message{
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  align-items:center;
+  font-size: 26rpx;
+  color: #808080;
+  justify-content: space-between;
+  position: relative;
+}
+
+.accountAdmin::after{
+  content: '';
+  height: 100%;
+  width: 2rpx;
+  background: #808080;
+  opacity: .45;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.accountAdmin {
+  /* justify-content: flex-start; */
+  justify-content: flex-start;
+}
+
+.billAdmin {
+  /* justify-content: flex-end; */
+  justify-content: flex-end;
+}
+
+.bank-message text{
+  font-size:26rpx;
+  color:#4A3413;
+  margin-right: 20rpx;
+}
+
+.bank-message .open-account{
+  width:153rpx;
+  height:60rpx;
+  border-radius: 30rpx;
+  border:1rpx solid #333333;
+  text-align:center;
+  line-height:60rpx;
+  font-size:28rpx;
+  color:#333;
+}
+
+.bank-message image {
+  width: 14rpx;
+  height: 25rpx;
+}
+.bank-message .change{
+  display: flex;
+  align-items: center;
+}
+
+.bank-message .change view{
+  width:127rpx;
+  height:52rpx;
+  border-radius: 30rpx;
+  border:1rpx solid #333333;
+  text-align:center;
+  line-height:52rpx;
+  font-size:28rpx;
+  color:#333;
+}
+
+.bank-message .change view.band-card{
+  margin-right:15rpx;
+}
+
+.next-step{
+  width:690rpx;
+  height:88rpx;
+  background:linear-gradient(90deg,rgba(4,190,254,1),rgba(68,129,235,1));
+  margin-left:30rpx;
+  margin-top:67rpx;
+  text-align:center;
+  color:#fff;
+  line-height:88rpx;
+  border-radius: 44rpx;
+  font-weight: 500;
+  margin-bottom:20rpx;
+  box-shadow: 0 0.206667rem 0.26rem 0 rgba(67,115,234,.3);
+}
+
+.virtualAccountId_copy_blue{
+  display: flex;
+  align-items: center;
+}

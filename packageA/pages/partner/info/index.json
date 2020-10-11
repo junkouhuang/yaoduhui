@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "申请合伙人",
+  "usingComponents": {
+    "area": "../../../../components/area/index"
+  }
+}

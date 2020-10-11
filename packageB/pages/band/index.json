@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "企业入驻",
+  "usingComponents":{
+    "area":"../../../components/area/index"
+  }
+}

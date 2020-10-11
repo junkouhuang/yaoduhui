@@ -1,0 +1,135 @@
+.help {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.search-help {
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 17rpx 36rpx 17rpx;
+  flex-basis: 100rpx;
+}
+
+.search-help .search-shell {
+  width: 678rpx;
+  height: 72rpx;
+  border-radius: 36rpx;
+  background: #F3F4F5;
+  box-sizing: border-box;
+  padding-left: 20rpx;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.search-shell image {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.search-shell input {
+  font-size: 28rpx;
+  margin-left: 25rpx;
+  width: 500rpx;
+}
+
+.search-shell .closed {
+  width: 40px;
+  height: 100%;
+  border-radius: 0 36rpx 36rpx 0;
+  line-height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.search-shell .close-shell {
+  width: 34rpx;
+  height: 34rpx;
+  border-radius: 50%;
+  background-color: #b2b2b2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 60rpx;
+  z-index: 10;
+}
+
+.search-shell .close {
+  width: 15rpx;
+  height: 15rpx;
+}
+
+.not-settled {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 210rpx;
+}
+
+.not-settled image {
+  width: 400rpx;
+  height: 250rpx;
+}
+
+.not-settled .click-here {
+  margin-top: 89rpx;
+  font-size: 32rpx;
+  color: #333333;
+  display: inline-block;
+}
+
+.not-settled .click-here view {
+  color: #3996E1;
+  display: inline-block;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-top: 20rpx;
+}
+
+.item {
+  padding: 38rpx 34rpx 38rpx 42rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  position: relative;
+}
+
+.item::after {
+  position: absolute;
+  box-sizing: border-box;
+  content: ' ';
+  pointer-events: none;
+  right: 34rpx;
+  bottom: 0;
+  left: 42rpx;
+  border-bottom: 1px solid #ebedf0;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+
+.item view {
+  flex: 1;
+  content: #333;
+  font-size: 28rpx;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.right {
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 20rpx;
+}

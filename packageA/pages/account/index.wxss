@@ -1,0 +1,93 @@
+/* pages/my/template/set_pwd.wxss */
+.account_infomation {
+  padding: 0 34rpx 0 42rpx;
+  background-color: #fff;
+}
+.uno {
+  height: 96rpx;
+  line-height: 96rpx;
+  font-size: 28rpx;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  position: relative;
+}
+.uno ::after {
+  position: absolute;
+  box-sizing: border-box;
+  content: ' ';
+  pointer-events: none;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: relative;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+.uno::after {
+  position: absolute;
+  box-sizing: border-box;
+  content: ' ';
+  pointer-events: none;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-bottom: 1px solid #ebedf0;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+.uno .name {
+  color: #666666;
+}
+.telephone {
+  height: 96rpx;
+  line-height: 96rpx;
+  font-size: 28rpx;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  position: relative;
+}
+.telephone::after {
+  position: absolute;
+  box-sizing: border-box;
+  content: ' ';
+  pointer-events: none;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-bottom: 1px solid #ebedf0;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+.telephone .name {
+  color: #666666;
+}
+.password {
+  margin-top: 10rpx;
+  height: 96rpx;
+  line-height: 96rpx;
+  font-size: 28rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.password view {
+  display: flex;
+  align-items: center;
+}
+.password .set {
+  margin-right: 10rpx;
+  color: #666666;
+}
+.password image{
+  width: 14rpx;
+  height: 24rpx;
+}
+.tip {
+  font-size: 24rpx;
+  color: #666666;
+  padding: 0 34rpx 0 42rpx;
+  margin-top: 10rpx;
+}

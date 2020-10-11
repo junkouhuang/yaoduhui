@@ -1,0 +1,98 @@
+<wxs src="../../../wxs/filter.wxs" module="tools" />
+<view class="confirm_order">
+  <navigator url="/packageA/pages/address_list/index?id=0" hover-class="none">
+    <block wx:if="{{defaultAddress.length>0}}">
+      <view class="shxx1" wx:for="{{defaultAddress}}" wx:key="index">
+        <view class="shxx1_left">
+          <view class="shr">
+            <view class="consignee">
+              <!-- <view>收货人：</view> -->
+              <view wx:if="{{item.consignee}}" class="consignee_name">
+              {{item.consignee}}
+              </view>
+              <view class="name_null" wx:else>
+                请填写收货人信息
+              </view>
+            </view>
+            <view class="phoneNumber">
+              <view wx:if="{{item.phoneNumber}}">
+              {{item.phoneNumber}}
+              </view>
+              <!-- <view class="phoneNumber_null" wx:else>
+                收货人电话
+              </view> -->
+            </view>
+          </view>
+          <view class="shdz">
+            <text class="dz">{{item.combinedAddress}}</text>
+          </view>
+        </view>
+        <view class="right">
+            <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/confirm_order_right.png"></image>
+        </view>
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/line.png" class="vol"></image>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="shxx2">
+        <view class="shdz">
+          <view class="plase">请填写收货地址</view>
+          <view class="right"><image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/confirm_order_right.png"></image></view>
+        </view>
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/line.png" class="vol"></image>
+      </view>
+    </block>
+  </navigator>
+  <view class="order_good">订单商品</view>
+  <view class="item" wx:for="{{list}}" wx:key="index">
+    <view class="content">
+      <view class="company">
+        <text class="name">{{item.enterpriseName}}</text>
+        <text class="sent_price">店铺起送金额：￥{{tools.toFixed(item.minimumPurchasePrice)}}</text>
+      </view>
+    </view>
+    <view class="goods" wx:for="{{item.shoppingCarDTOList}}" wx:key="index">
+      <view class="good_item">
+        <view class="picture">
+          <view style="background-image:url({{item.imgUrl=='' || item.imgUrl==null ?'https://edm.xinquanjk.com/upload/iconfont/202003/20/classify1.png':item.imgUrl}});" class="imgUrl">
+            <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/0yuancai.png" wx:if="{{item.drugTag == 1}}"></image>
+          </view>
+          <!-- <image  src="{{item.imgUrl}}"></image> -->
+        </view>
+        <view class="xq">
+          <text class="mc">{{item.name}}</text>
+          <text class="gs">{{item.producerName}}</text>
+          <view class="spec" wx:if="{{item.spec != null && item.spec != ''}}">规格：{{item.spec}}</view>
+          <view class="jg">单价：￥<text>{{item.price}}</text></view>
+          <!-- <view class="gg">
+            <view class="spec" wx:if="{{item.spec != null && item.spec != ''}}">{{item.spec}}</view>
+            <view class="spec" wx:if="{{item.amount != null && item.amount != ''}}">{{item.batchNo}}</view>
+            <view class="spec" wx:if="{{item.licenseNo != null  && item.licenseNo != ''}}">{{item.licenseNo}}</view>
+            <view class="spec" wx:if="{{item.packageAmount != null}}">起批量{{item.packageAmount}}</view>
+          </view> -->
+        </view>
+      </view>
+      <view class="bt">
+        <view class="cgl">采购数量：{{item.quantity}}</view>
+        <view class="yf">小计：<text class="rmb">￥</text><text class="xj">{{tools.toFixed(item.price*item.quantity)}}</text></view>
+      </view>
+      <view class="line">
+        <view></view>
+      </view>
+    </view>
+  </view>
+  <view class="pay">
+    <text class="sty">支付方式</text>
+    <view class="right">
+      <text>线上支付</text>
+      <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/confirm_order_right.png"></image>
+    </view>
+  </view>
+  <view class="btn">
+    <view class="amount">
+      支付总金额：
+      <view class="totalAmount">￥<text>{{tools.toFixed(totalAmount)}}</text></view>
+    </view>
+    <view class="submit" bindtap="submit">提交订单</view>
+  </view>
+</view>

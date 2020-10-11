@@ -1,0 +1,65 @@
+/* pages/member/account_detail/index.wxss */
+.account-detail{
+  border-top:1rpx solid #DCDCDC;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding:50rpx 40rpx 80rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius:0px 0px 15px 15px;
+}
+
+.account-detail .explain-image{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.account-detail .explain-image image{
+  width:50rpx;
+  height:50rpx;
+  margin-right:12rpx;
+}
+
+.account-detail .explain-image text{
+  color:#333333;
+  font-size:26rpx;
+}
+
+.account-detail .money{ 
+  font-size:40rpx;
+  color:#333;
+  margin-top:20rpx;
+}
+
+.account-detail .state{
+  margin-top:24rpx;
+  color:#EA623A;
+  font-size:24rpx;
+}
+
+.account-detail .receivables-item{
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  margin-top:40rpx;
+  width:100%;
+}
+
+.account-detail .receivables-item.first{
+  margin-top:60rpx;
+}
+
+.item{
+  color:#868686;
+  font-size:28rpx;
+  line-height:28rpx;
+}
+
+.detail{
+  font-size:28rpx;
+  line-height:28rpx;
+  color:#333;
+}

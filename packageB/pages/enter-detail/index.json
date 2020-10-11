@@ -1,0 +1,8 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents":{
+    "confirm":"../../../components/confirm/index",
+    "build":"../../../components/build/index",
+    "alert":"../../../components/alert/index"
+  }
+}

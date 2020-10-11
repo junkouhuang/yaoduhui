@@ -1,0 +1,133 @@
+<view class="my">
+	<view class="header2" bindtap="return">
+		<!-- <text>我的</text> -->
+	</view>
+	<view class="top">
+		<view class="item_top">
+			<view class="topic">
+				<image class="userAvatarUrl" wx:if="{{toux}}" src="{{userInfo.avatar}}" bindtap="setUserInfo"></image>
+				<image class="userAvatarUrl" wx:else src="https://edm.xinquanjk.com/upload/iconfont/202003/20/toux.jpg"></image>
+			</view>
+			<view class="name">
+				<view class="name-left">
+					<view class="userNickName">
+						<view class="nickname" wx:if="{{toux}}">{{userInfo.nickname}}</view>
+						<view wx:else class="nickname">昵称</view>
+						<view wx:if="{{realData.status==1}}" class="sming">
+							<text>已认证</text>
+						</view>
+					</view>
+					<view class="company" bindtap="selectEnterprise">
+						<block wx:if="{{has}}">
+							<block wx:if="{{exit}}">
+								<!-- <view class="mc1" wx:if="{{realData.status==1}}">{{enterpriseName}}</view> -->
+								<view class="mc">{{enterpriseName}}</view>
+								<view class="switch" wx:if="{{enterpriseName}}">切换</view>
+							</block>
+							<block wx:else>
+								<view class="mc1">请选择企业</view>
+							</block>
+						</block>
+						<view wx:else class="binding-enterprise" bindtap="handleAddEenterprise">点击绑定/新增企业</view>
+					</view>
+					<view class="level" wx:if="{{salesmanType>=0 && salesmanType!=null}}">
+						<image wx:if="{{salesmanType == 0}}" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/quyu.png" class="start"></image>
+						<image wx:if="{{salesmanType == 1}}" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/shengji.png" class="start"></image>
+						<image wx:if="{{salesmanType == 2}}" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/shiji.png" class="start"></image>
+						<image wx:if="{{salesmanType == 3}}" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/yewu.png" class="start"></image>
+						{{salesmanType == 0?'区域合伙人':salesmanType == 1?'省级合伙人':salesmanType == 2?'市级合伙人':salesmanType == 3?'业务推广员':''}}
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="center">
+			<!-- <text>会员中心</text> -->
+			<view class="open" bindtap="handleMemberCenter">{{flag?'立即进入':'立即开通'}}</view>
+		</view>
+	</view>
+	<view class="admin1">
+		<view class="title">
+			管理
+		</view>
+		<view class="content">
+			<view class="item" wx:for="{{adminList}}" wx:key="index">
+				<navigator url="{{item.url}}" hover-class="none">
+					<image src="{{item.img}}" class="icon" />
+					<view class="mc">{{item.name}}</view>
+				</navigator>
+			</view>
+			<view class="item" wx:if="{{supplierType == 1}}">
+				<navigator url="/packageA/pages/shop-guanli/index" hover-class="none" >
+					<image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/b22.png" class="icon" />
+					<view class="mc">店铺管理</view>
+				</navigator>
+			</view>
+			<view class="item">
+				<navigator url="/packageA/pages/setting/index" hover-class="none">
+					<image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/setting01.png" class="icon" />
+					<view class="mc">设置</view>
+				</navigator>
+			</view>
+		</view>
+	</view>
+
+	<view class="tools">
+		<view class="title">
+			合伙人
+		</view>
+		<view class="item" wx:for="{{toolsList}}" wx:key="index">
+			<view wx:if="{{item.name == '邀请码'}}" bindtap="qrcode">
+				<image src="{{item.img}}" class="icon" />
+				<view class="mc">{{item.name}}</view>
+			</view>
+			<navigator url="{{item.url}}" hover-class="none" wx:if="{{item.name != '邀请码'  }}">
+				<image src="{{item.img}}" class="icon" />
+				<view class="mc">{{item.name}}</view>
+			</navigator>
+		</view>
+	</view>
+
+	<view class="service">
+		<view class="title">
+			服务
+		</view>
+		<view bindtap="addressAdmin" class="item">
+			<image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/address_admin01.png" class="icon" />
+			<view class="mc">地址管理</view>
+		</view>
+		<view class="item">
+			<navigator url="/packageA/pages/like-goods/index" hover-class="none">
+				<image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/langsc01.png" class="icon" />
+				<view class="mc">我的收藏</view>
+			</navigator>
+		</view>
+		<view bindtap="hotLine" class="item">
+			<image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/a401.png" class="icon" />
+			<view class="mc">客服电话</view>
+		</view>
+		<view class="item">
+			<navigator url="/packageA/pages/help/index" hover-class="none">
+				<image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/help01.png" class="icon" />
+				<view class="mc">帮助中心</view>
+			</navigator>
+		</view>
+	</view>
+	<view class="loginout">
+		<view class="btn" bindtap="loginout">退出</view>
+	</view>
+</view>
+
+<view class="mask-page" wx:if="{{showMask}}">
+	<view class="bg" bindtap="closeMask" style="opacity:{{opacity}}"></view>
+	<view class="enterprise-shell" style="bottom:{{bottom}}">
+		<view class="bt" wx:if="{{enterpriseList[0]}}">选择要切换的企业</view>
+		<scroll-view scroll-y class="enterprise-list" wx:if="{{enterpriseList[0]}}">
+			<view class="item" wx:for="{{enterpriseList}}" wx:key="index" data-index="{{index}}" bindtap="handleSelectItem">
+				<text>{{item.enterpriseName}}</text>
+				<image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/select.png" wx:if="{{item.loginStatus==1}}"></image>
+				<view class="circular" wx:else></view>
+			</view>
+		</scroll-view>
+		<view class="add" bindtap="handleAddEenterprise">+新增企业/企业入驻</view>
+	</view>
+</view>

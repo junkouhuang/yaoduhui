@@ -1,0 +1,103 @@
+/* pages/partner/index.wxss */
+.top {
+  margin:  20rpx;
+  border-radius: 16rpx;
+  background: #fff;
+  font-size: 26rpx;
+  padding: 22rpx;
+  color: #333;
+}
+
+.top view {
+  margin-bottom: 8rpx;
+}
+
+.pantner-list {
+  display: flex;
+  margin-top: 20rpx;
+  background-color: #fff;
+  border-radius: 15rpx;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  flex-direction: column;
+}
+
+.pantner-list .pantner-item {
+  height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.pantner-list .pantner-item::after {
+  position: absolute;
+  box-sizing: border-box;
+  content: ' ';
+  pointer-events: none;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-bottom: 1px solid #ebedf0;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+
+.pantner-list .pantner-item:last-child {
+  border-bottom: none;
+}
+
+.pantner-list .pantner-item text {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.pantner-list .pantner-item image {
+  width: 34rpx;
+  height: 34rpx;
+}
+
+.pantner-list .pantner-item .circular {
+  width: 30rpx;
+  height: 30rpx;
+  border: 3rpx solid #ABABB4;
+  border-radius: 50%;
+}
+
+.tips {
+  font-size: 24rpx;
+  color: #808080;
+  margin-top: 20rpx;
+  margin-left: 30rpx;
+}
+
+.next-step {
+  position: fixed;
+  bottom: 50rpx;
+  left: 30rpx;
+  width: 690rpx;
+
+}
+
+.next-step .button {
+  width: 690rpx;
+  height: 90rpx;
+  background: linear-gradient(90deg, rgba(4, 190, 254, 1) 0%, rgba(68, 129, 235, 1) 100%);
+  text-align: center;
+  color: #fff;
+  line-height: 90rpx;
+  font-size: 32rpx;
+  border-radius: 45px;
+}
+
+.next-step .look {
+  width: 100%;
+  text-align: center;
+  margin-top: 38rpx;
+  font-size: 26rpx;
+  color: #333333
+}
+
+.next-step .disabled {
+  opacity: .54;
+}

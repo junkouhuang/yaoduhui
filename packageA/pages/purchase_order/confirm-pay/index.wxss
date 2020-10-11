@@ -1,0 +1,108 @@
+page {
+  border: none;
+}
+
+.name {
+  margin: 30rpx;
+  display: flex;
+  align-items: center;
+}
+
+.name image {
+  width: 34rpx;
+  height: 34rpx;
+}
+
+.name text {
+  font-size: 32rpx;
+  color: #333;
+  margin-left: 16rpx;
+  font-weight: bold;
+}
+
+.item {
+  padding: 16rpx 30rpx;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.rcvVirtualAccountName,
+.enterpriseName {
+  padding-top: 36rpx;
+}
+
+.rcvVirtualAccountId,
+.chinesization,
+.code {
+  padding-bottom: 36rpx;
+  position: relative;
+}
+
+
+.rcvVirtualAccountId::after {
+  position: absolute;
+  box-sizing: border-box;
+  content: ' ';
+  pointer-events: none;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-bottom: 1px solid #ebedf0;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+
+.item .phone {
+  text-align: right;
+}
+
+.item .code {
+  flex: 1;
+  display: flex;
+}
+
+.item .code .getCodeBtn {
+  background: #0266C4;
+  border: none;
+  height: 60rpx;
+  line-height: 62rpx;
+  width: 188rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 24rpx;
+  font-weight: 400;
+  border-radius: 15rpx;
+  margin-left: 60rpx;
+}
+
+.item .right {
+  display: flex;
+  align-items: center;
+}
+
+.item .right input {
+  text-align: right;
+  margin-right: 20rpx;
+}
+
+.item .right image {
+  width: 16rpx;
+  height: 28rpx;
+}
+
+.item .mi text {
+  color: #FF0000;
+}
+
+.pay_now {
+  margin: 60rpx 32rpx;
+  padding: 20rpx 0;
+  background: #0266C4;
+  border-radius: 16rpx;
+  font-size: 32rpx;
+  color: #fff;
+  text-align: center;
+}

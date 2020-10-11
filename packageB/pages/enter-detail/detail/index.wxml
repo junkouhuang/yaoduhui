@@ -1,0 +1,11 @@
+
+<wxs src="../../../../wxs/filter.wxs" module="tools" />
+<view class="first">
+	{{type=='my'?'姓名':type=='worker'?'员工姓名':''}}：{{item.contacts}}
+	<view wx:if="{{type=='my'}}" class="tip">法人/负责人</view>
+</view>
+<view class="item">手机号码：{{item.mobileNumber}}</view>
+<view class="item">身份证号码：{{item.idCode}}</view>
+<view class="item">申请时间：{{tools.formatTime(item.createTime)}}</view>
+<view class="unband" bindtap="unband" wx:if="{{type == 'worker'}}">解绑该员工与企业的关系</view>
+<view class="transfer" bindtap="transfer" wx:if="{{type == 'my'}}">管理权转让</view>

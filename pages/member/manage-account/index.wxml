@@ -1,0 +1,26 @@
+<view class="essential-information">
+  <view class="information-item" bindtap="handleGoToPage" data-sign="phone"  wx:if="{{accountType == 1002}}">
+    <view class="item-text">
+      <text class="item-name">账户手机号码</text>
+    </view>
+    <view class="right">修改
+      <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/right3.png"></image>
+    </view>
+  </view>
+  <view class="information-item" bindtap="handleGoToPage" data-sign="card" wx:if="{{accountType == 1002}}">
+    <view class="item-text">
+      <text class="item-name">绑定银行卡</text>
+    </view>
+    <view class="right">修改
+      <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/right3.png"></image>
+    </view>
+  </view>
+  <view class="information-item" bindtap="changePassword">
+    <view class="item-text">
+      <text class="item-name">交易密码</text>
+    </view>
+    <view class="right">修改
+      <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/right3.png"></image>
+    </view>
+  </view>
+</view>

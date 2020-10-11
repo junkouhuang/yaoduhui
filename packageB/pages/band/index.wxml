@@ -1,0 +1,79 @@
+<view class="tips-msg">
+  <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/tips.png"></image>
+  <text class="tips">带<text class="quotation-symbol">"<text class="symbol">*</text>"</text>号为必填项，不带可以跳过不填写。</text>
+</view>
+<view class="information-title">基本信息</view>
+<view class="essential-information">
+  <view class="information-item">
+    <view class="item-text">
+      <text class="symbol">*</text>
+      <text class="item-name">企业全称：</text>
+    </view>
+    <input type="text" placeholder="请输入营业执照上企业全称" placeholder-style="color:#C2C2C2" bindinput="handleInputValue"
+      data-sign="enterpriseName" value="{{enterpriseName}}"></input>
+  </view>
+
+  <view class="information-item">
+    <view class="item-text">
+      <text class="symbol">*</text>
+      <text class="item-name">注册地址：</text>
+    </view>
+    <area  bind:getData="getData" id="area"></area>
+    <view class="select-address {{registerAddress == -1?'':'exit'}}" bindtap="handleSelectAddress">
+      {{registerAddress == -1?'请选择地区':registerAddress}}</view>
+    <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/right3.png" class="right"></image>
+  </view>
+
+  <view class="information-item">
+    <view class="item-text">
+      <text class="symbol">*</text>
+      <text class="item-name">详细地址：</text>
+    </view>
+    <input type="text" placeholder="请输入详细地址，如街道、大厦、门牌号" placeholder-style="color:#C2C2C2" bindinput="handleInputValue"
+      value="{{location}}" data-sign="location"></input>
+
+  </view>
+
+  <view class="information-item">
+    <view class="item-text">
+      <text class="symbol"></text>
+      <text class="item-name">法人/负责人：</text>
+    </view>
+    <input type="text" placeholder="请输入法人或负责人姓名" placeholder-style="color:#C2C2C2" bindinput="handleInputValue"
+      data-sign="contacts" value="{{contacts}}"></input>
+  </view>
+  <view class="information-item">
+    <view class="item-text">
+      <text class="symbol"></text>
+      <text class="item-name">身份证号码：</text>
+    </view>
+    <!-- <input type="idcard" maxlength="18" placeholder="请输入法人或负责人身份证号码" placeholder-style="color:#C2C2C2" value="{{idCode}}" bindinput="handleInputValue" data-sign="idCode" disabled = "{{idCode?true:false}}"></input> -->
+    <input type="idcard" maxlength="18" placeholder="请输入法人或负责人身份证号码" placeholder-style="color:#C2C2C2"
+      value="{{idCode}}" bindinput="handleInputValue" data-sign="idCode"></input>
+  </view>
+  <view class="information-item">
+    <view class="item-text">
+      <!-- <text class="symbol">*</text> -->
+      <text class="item-name">邀请码：</text>
+    </view>
+    <input type="text" placeholder="请扫业务合伙人邀请码" value="{{referralCode}}" disabled placeholder-style="color:#C2C2C2"
+      bindinput="handleInputValue" data-sign="referralCode"></input>
+    <image class="qrcode" bindtap="handleGetQrcode"
+      src="https://edm.xinquanjk.com/upload/iconfont/202003/20/qrcode.png"></image>
+  </view>
+</view>
+<view class="modo-operation">
+  <view class="mode-title">
+    <text class="symbol">*</text>
+    <text class="words">企业类型</text>
+  </view>
+  <view class="select-list">
+    <block wx:for="{{optionsList}}" wx:key="index">
+      <view class="options-item {{modeIndex==index?'active':''}} {{item.state==1?'active1':''}}"
+        bindtap="handleSelectOptions" data-state="{{item.state}}" data-modeId="{{item.modeId}}"
+        data-modename="{{item.modeName}}" data-index="{{index}}" wx:if="{{item.modeName!='原辅料商'}}">{{item.modeName}}
+      </view>
+    </block>
+  </view>
+</view>
+<view class="next-step {{isDisable?'disable':''}}" size="default" bindtap="{{isDisable?'':'handleNextStop'}}">下一步</view>

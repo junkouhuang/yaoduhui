@@ -1,0 +1,30 @@
+<!--pages/member/transfer/index.wxml-->
+<view class="transfer-msg">
+  <view class="message-item">
+    <text class="item">转账账户</text>
+    <text class="detail">渤海银行</text>
+  </view>
+  <view class="message-item">
+    <text class="item">提现到银行卡</text>
+    <text class="detail">{{carNo}}</text>
+  </view>
+</view>
+<view class="transfer-munber">
+  <view class="title-top">
+    <view class="title">提现金额</view>
+    <view class="all" bindtap="handleAll">全部提现</view>
+  </view>
+  <view class="message-money">
+    <text class="symbol">￥</text>
+    <input type="text" placeholder="请输入提现金额" placeholder-style="color:#E4E4E4;font-size:48rpx;" value="{{moneyNumber}}" bindinput="handleGetMoney"></input>
+  </view>
+</view>
+
+<text class="available-money">可用余额{{available}}元</text>
+
+<view class="leaving-message">
+  <text class="title">提现附言</text>
+  <textarea bindinput="handleGetMemo" value="{{memo}}"></textarea>
+</view>
+
+<view class="next-step {{isDisabled?'disabled':''}}" bindtap="handleNextStop">下一步</view>

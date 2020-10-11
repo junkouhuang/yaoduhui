@@ -1,0 +1,63 @@
+<wxs src="../../../../wxs/filter.wxs" module="tools" />
+<build show="{{showBuilding}}" content="{{content}}" announcement="{{announcement}}" bind:getBuildInfo="getBuildInfo" id="buildInfo"    bind:getDataBuild="getDataBuild"></build>
+<view class="sent">
+  <view class="sent_time">已选建立首营关系供应商</view>
+  <view class="information-item" wx:for="{{item}}" wx:key="index">
+		<image wx:if="{{item.logo}}" src="{{item.logo}}" class="logo3" ></image>
+		<view class="logo4" wx:else>
+			<block wx:if="{{item.enterpriseName}}">{{tools.firstCHN(item.enterpriseName)}}</block>
+		</view>
+		<view class="center">
+			<view class="item-name">
+				<text style="color:#FF0000"></text>
+				<text class="nameInfo">{{item.enterpriseName}}</text>
+			</view>
+			<view class="validate">
+				销售范围：{{item.sellArea}}
+			</view>
+		</view>
+		<view class="image-right">
+			<image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/select.png" style="width:30rpx;height:30rpx;margin-right:15rpx"></image>
+		</view>
+  </view>
+  <view class="tip">注：发起申请后，需尽快寄送纸质资料给供应商</view>
+  <view class="sent_time">首营资料</view>
+	<view class="information-item" wx:for="{{arr}}" wx:key="index" bindtap="{{item.nameId == 23?'handleUpdateImage':''}}" data-item="{{item}}">
+		<image class="icon" wx:if="{{item.qualificationsPath}}" src="{{item.qualificationsPath[0]}}"></image>
+		<view class="center">
+			<view class="item-name">
+				<text style="color:#FF0000" wx:if="{{item.check == 1 || item.nameId == 23}}">*</text>
+				<text class="qualificationsName">{{item.qualificationsName}}</text>
+				<text>{{item.qualificationsPath?'':'（未上传）'}}</text>
+			</view>
+			<block wx:if="{{item.expiryDate}}">
+				<view class="validate">
+					<view>有效期：{{item.expiryDate}}
+					<!--changeStatus  0:变更中，2变更失败-->
+					<!--expiryStatus  1:过期-->
+					<!-- readStatus   0：未读   1:已读-->
+					<block wx:if="{{ item.expiryStatus == 1}}">
+						<text style="color:#FF0000;margin-left:16rpx;">已过期</text>
+					</block>
+					</view>
+				</view>
+			</block>
+			<block wx:else>
+				<block wx:if="{{item.nameId==17}}">
+					<text class="validate">有效期：长期有效</text>
+				</block>
+				<block wx:else>
+					<text class="validate" wx:if="{{item.qualificationsPath}}">有效期：--</text>
+				</block>
+			</block>
+		</view>
+		<view class="image-right">
+			<image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/select.png" style="width:34rpx;height:34rpx;margin-right:15rpx" wx:if="{{item.qualificationsPath}}"></image>
+			<text style="color:#666;" wx:else>点击上传</text>
+			<image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/right3.png" class="right" wx:if="{{!item.qualificationsPath}}"></image>
+		</view>
+	</view>
+	<view class="applyBuild">
+  	<view bindtap="sentHandle" class="{{isCan?'isCan':''}}" >确认发送</view>
+	</view>
+</view>

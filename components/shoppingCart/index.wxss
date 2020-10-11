@@ -1,0 +1,33 @@
+/* components/shoppingCart/index.wxss */
+.alreadyCar {
+  width: 90rpx;
+  height: 90rpx;
+  background-color: #fff;
+  text-align: center;
+  border: 0.026667rem solid #ccc;
+  box-shadow: 0 0.08rem 0.213333rem 0 rgba(184, 184, 184, 0.72);
+  border-radius: 100%;
+  position: fixed;
+  bottom: 200rpx;
+  right: 20rpx;
+  z-index: 99;
+}
+
+.alreadyCar .selNum {
+  width: 32rpx;
+  height: 32rpx;
+  border: 0.026667rem solid #ff801a;
+  color: #ff801a;
+  background: #fff;
+  position: absolute;
+  top: -6rpx;
+  right: 0;
+  font-size: 24rpx;
+  border-radius: 100%;
+}
+
+.alreadyCar .car {
+  width: 60rpx;
+  height: 60rpx;
+  margin-top: 15rpx;
+}

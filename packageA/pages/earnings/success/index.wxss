@@ -1,0 +1,48 @@
+
+.settle {
+  margin-top: 20rpx;
+  padding: 98rpx 24rpx 48rpx;
+  background-color: #ffffff;
+}
+.ok_green {
+  text-align: center;
+}
+.ok_green image {
+  width: 119rpx;
+  height: 119rpx;
+  margin: auto;
+}
+.ok_green text {
+  margin-top: 42rpx;
+  font-size: 32rpx;
+  color: #333;
+  display: block;
+}
+.withdraw {
+  width: 100%;
+  margin-top: 110rpx;
+  color: #333;
+  font-size: 30rpx;
+}
+.withdraw  text {
+  font-size: 46rpx;
+}
+.time {
+  width: 100%;
+  font-size: 30rpx;
+  margin-top: 46rpx;
+  color: #333;
+}
+.button {
+  border-radius: 60rpx;
+  background-color: #04BEFE;
+  font-size: 32rpx;
+  width: 300rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  color: #ffffff;
+  text-align: center;
+  background-image: linear-gradient(to right, #04BEFE, #4481EB);
+  box-shadow: 0 0.206667rem 0.26rem 0 rgba(67, 115, 234, .3);
+  margin: 98rpx  auto;
+}

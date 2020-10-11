@@ -1,0 +1,13 @@
+<!--pages/partner/type/index.wxml-->
+<view class="type">
+  <view class="platform" bindtap="platformHandle">
+    <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/platform_active.png" wx:if="{{platformActive}}"></image>
+    <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/platform.png" wx:else></image>
+    <text class="{{platformActive?'active':''}}">平台合伙人</text>
+  </view>
+  <view class="enterprise"  bindtap="enterpriseHandle">
+    <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/enterprise_active.png" wx:if="{{enterpriseActive}}"></image>
+    <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/enterprise.png" wx:else></image>
+    <text  class="{{enterpriseActive?'active':''}}">企业合伙人</text>
+  </view>
+</view>

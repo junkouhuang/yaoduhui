@@ -1,0 +1,58 @@
+<block wx:if="{{showAddress}}">
+  <view class="address_list" wx:if="{{pages>0}}">
+    <!-- <view  class="enterpriseName">当前企业：{{enterpriseName}}</view> -->
+    <view wx:for="{{addressList}}" wx:key="index" wx:for-index="pindex" wx:for-item="items" class="addressList">
+      <block wx:if="{{items.shippingAddress.length>0}}">
+        <view class="addressTop">
+          <view class="enterpriseName">
+            <view class="enterpriseName_txt">{{items.enterpriseName}}</view>
+            <!-- <text wx:if="{{ items.enterpriseId == enterpriseId}}" class="defalut">当前企业默认地址</text> -->
+          </view>
+          <view class="enterpriseType">企业类型： {{items.modeName}} 
+            <text class="present" wx:if="{{ items.enterpriseId == enterpriseId}}">当前企业</text>
+          </view>
+        </view>
+        <view class="addressBottom">
+          <block wx:for="{{items.shippingAddress}}" wx:key="index" wx:for-index="cindex">
+            <view class="item" bindtap="{{id==0?'chickHandle':''}}"  data-pindex="{{pindex}}" catchtap="editor"  data-cindex="{{cindex}}" data-addressid = "{{item.addressId}}">
+              <view class="left">
+                <view class="top">
+                  <view class="name_phone" wx:if="{{item.consignee && item.phoneNumber}}">
+                    <view class="name">收货人： {{item.consignee}}</view>
+                    <view class="phone">
+                      <text>{{item.phoneNumber}}</text>
+                    </view>
+                  </view>
+                  <view class="name_phone" wx:else>点击编辑收货人信息</view>
+                </view>
+                <view class="address">
+                  <view class="labelEl">企业地址：</view>
+                  <view class="valueEl">{{item.provinceName}}{{item.cityName}}{{item.district}}{{item.location}}</view>
+                </view>
+              </view>
+              <view class="right">
+                <view class="operation">
+                  <view class="editor">
+                    <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/editor.png"></image>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </block>
+        </view>
+      </block>
+    </view>
+    <import src="../../../template/loading/index.wxml" />
+    <template is="wxLoading" data="{{status}}"></template>
+  </view>
+  <view class="default" wx:else>
+    <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/noimg_dizhi.png"></image>
+    <text>暂无地址</text>
+    <!--<view class="go" bindtap="add">新增地址</view>-->
+  </view>
+</block>
+<view class="band" wx:else>
+  <image class="icon" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/cart-bind.png"></image>
+  <text class="emptyData">绑定企业后，可将商品加入到预约单进行结算</text>
+  <view bindtap="band" class="btn_band">绑定企业</view>
+</view>

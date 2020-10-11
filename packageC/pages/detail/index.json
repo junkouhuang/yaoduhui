@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "详情",
+  "usingComponents": {
+    "skeleton": "../../../components/skeleton/index",
+    "build":"../../../components/build/index"
+  }
+}

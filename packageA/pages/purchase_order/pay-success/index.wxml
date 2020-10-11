@@ -1,0 +1,15 @@
+
+<view class="pay_result">
+  <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/pay_success_green.png" class="ico"></image>
+  <view class="txt">订单支付成功</view>
+  <view class="describle1" wx:if="{{type == '1'}}">因渤海银行业务限制，需要您<text>【确认支付】</text>后，款项才会 正式支付给供应商，供应商只有在收到款项后才会安排订 单发货，如给您带来不便，敬请谅解。</view>
+  <view class="describle1" wx:else>订单支付成功，请等待供应商发货，您可以 在【我的】>【采购订单】查看订单详情。</view>
+  <block wx:if="{{type == '1'}}">
+    <view class="btn" bindtap="paySuccess">确认支付</view>
+    <view class="cgd" bindtap="xgd">查看订单</view>
+  </block>
+  <block wx:else>
+    <view class="btn" bindtap="jumpFinsh">查看订单</view>
+    <view class="cgd" bindtap="home">返回首页</view>
+  </block>
+</view>

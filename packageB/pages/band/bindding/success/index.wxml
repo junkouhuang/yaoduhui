@@ -1,0 +1,5 @@
+<!--pages/band/bindding/success/index.wxml-->
+<image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/band_success.png"> </image>
+<view class="t1">您的企业绑定申请已提交</view>
+<view class="t2">等待企业法人/负责人审核确认</view>
+<view class="isee" bindtap="isee">知道了</view>

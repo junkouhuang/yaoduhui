@@ -1,0 +1,126 @@
+/* pages/put_record/customer/index.wxss */
+.medical-care{
+  display: flex;
+  flex-direction: column;
+  border-top:1px solid #DCDCDC;
+}
+
+.medical-care .medical-item{
+  box-sizing: border-box;
+  padding:0 42rpx 35rpx 35rpx;
+  background-color: #fff;
+  display: flex;
+  justify-content:space-between;
+
+}
+
+.medical-item image{
+  width:155rpx;
+  height:135rpx;
+}
+
+.medical-item .medical-left{
+  display: flex;
+  flex-direction: column;
+  padding-top:40rpx;
+}
+
+.medical-item .medical-left .definition-mode{
+  font-size:26rpx;
+  color:#333333;
+  display: flex;
+  align-items:center;
+}
+
+.medical-item .medical-left .definition-mode .definition{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width:320rpx;
+}
+
+.medical-left .definition-mode .mode{
+  margin-left:20rpx;
+  color:#868686;
+  font-size:22rpx;
+  line-height:16rpx;
+}
+
+.medical-left .name-phone{
+  margin-top:25rpx;
+  display: flex;
+  align-items:center;
+  font-size:30rpx;
+  color:#333;
+}
+
+.medical-left .name-phone .phone{
+  margin-left:80rpx;
+  font-size:30rpx;
+}
+
+.medical-left .address{
+  margin-top:25rpx;
+  font-size:26rpx;
+  color:#333;
+  max-width: 250px
+}
+
+.medical-left .shipping-companies{
+  font-size:24rpx;
+  line-height:24rpx;
+  color:#868686;
+  margin-top:25rpx;
+}
+
+.medical-left .reason{
+  color:#EA0505;
+  font-size:26rpx;
+  margin-top:25rpx;
+}
+
+.message-list{
+  background-color: #fff;
+  padding-left:35rpx;
+  padding-right:40rpx;
+  box-sizing: border-box;
+  margin-top:20rpx;
+  border-radius: 15rpx;
+  overflow: hidden;
+}
+
+.message-list .message-item{
+  height:97rpx;
+  width:674rpx;
+  border-bottom:1rpx solid #DCDCDC;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.message-list .message-item:last-child{
+  border-bottom:none;
+}
+
+.message-list .message-item text{
+  font-size:28rpx;
+  color:#333;
+}
+
+.message-item .image-right{
+  display: flex;
+  align-items:center;
+}
+
+.message-item .image-right image{
+  width:16rpx;
+  height:28rpx;
+  
+}
+
+.message-item .image-right image.complete{
+  width:30rpx;
+  height:30rpx;
+  margin-right:34rpx;
+}
+

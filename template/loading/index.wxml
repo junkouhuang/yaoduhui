@@ -1,0 +1,9 @@
+<template name="wxLoading">
+  <view  class="loadding" wx:if="{{status==1}}">
+    <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/load.gif"></image>
+    <text>加载中...</text>
+  </view>
+  <view class="loadding" wx:if="{{status==2}}">
+    <text>已加载全部</text>
+  </view>
+</template>

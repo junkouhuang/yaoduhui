@@ -1,0 +1,660 @@
+/* packageC/pages/company/index.wxss */
+
+.top {
+  display: flex;
+  flex-direction: column;
+  height: 390rpx;
+  border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+  /* opacity: 0.5; */
+  padding: 0 30rpx 0 29rpx;
+  background-position:50% 50%;/*这个是按从左往右，从上往下的百分比位置进行调整*/
+  background-size: 100% 100%;
+  background-repeat:no-repeat;/*还有repeat-x,y等*/
+}
+
+.container_1{
+  display: flex;
+  flex-direction: column;
+  height: 390rpx;
+  width: 100%;
+  border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+  /* opacity: 0.5; */
+  width: calc(100vw - 59rpx);
+  padding: 0 30rpx 0 30rpx;
+  background: rgba(0,0,0,.7);
+  position: absolute;
+}
+
+/**搜索*/
+.searchBox {
+  display: flex;
+  height: 72rpx;
+  background: #F6F7F8;
+  opacity: 1;
+  border-radius: 36rpx;
+  margin: 20rpx 0 0 0;
+}
+
+.searchBox .s_img {
+  width: 60rpx;
+  height: 60rpx;
+  margin: 0 10rpx 0 20rpx;
+}
+
+.searchBox .search {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 60rpx;
+  position: relative;
+  /* margin-left: 3%; */
+}
+
+
+
+.companyName {
+  display: flex;
+  flex-direction: row;
+  height: 100rpx;
+  margin-top: 40rpx;
+  justify-content: space-between;
+  z-index: 99999;
+}
+
+.companyName .companyName_left {
+  display: flex;
+  flex-direction: row;
+}
+
+.companyName .companyName_left .image {
+  height: 100rpx;
+  width: 100rpx;
+  background: #FFFFFF;
+  opacity: 1;
+  border-radius: 15px;
+}
+
+.companyName .companyName_left .img {
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 15rpx;
+}
+
+.companyName .nameInfo {
+  font-size: 28rpx;
+  font-weight: 400;
+  line-height: 37rpx;
+  color: #E2E2E2;
+  opacity: 1;
+  margin-left: 19rpx;
+}
+
+.companyName .nameInfo .name {
+  margin: 5rpx 0 6rpx 0;
+  width: 392rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+
+.companyName .companyName_rigth {
+  display: flex;
+  height: 100rpx;
+  width: 106rpx;
+  align-items: flex-end;
+}
+
+.qualifications {
+  display: flex;
+  align-items: center;
+  margin-top: 12rpx;
+}
+
+.qualifications_img {
+  width: 130rpx;
+  height: 35rpx;
+}
+
+.qualifications .ml {
+  margin-left: 20rpx;
+}
+
+.qualifications .zizhi{
+  width: 120rpx;
+  height: 32rpx;
+  background: rgba(255,255,255,.2);
+  border-radius: 20rpx;
+  font-size: 22rpx;
+  font-weight: 300;
+  line-height: 32rpx;
+  color: #E2E2E2;
+  text-align: center;
+}
+.companyName_rigth .button {
+  display: flex;
+  width: 106rpx;
+  height: 44rpx;
+  /* background: #10B3FB; */
+  opacity: 1;
+  border-radius: 23rpx;
+  font-size: 20rpx;
+  font-weight: 300;
+  line-height: 28rpx;
+  color: #FFFFFF;
+  align-items: center;
+  justify-content: center;
+}
+
+.button1 {
+  /* background: #10B3FB; */
+  background-image: linear-gradient(to right, #04BEFE, #4481EB);
+
+}
+
+.companyInfo{
+  display: flex;
+  margin-top: 42rpx;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16rpx;
+  z-index: 99999;
+}
+
+.companyInfo .flex1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+}
+
+.companyInfo .flex1 .fz1{
+  font-size: 28rpx;
+  font-weight: 300;
+  line-height: 37rpx;
+  color: #FBFBFB;
+  opacity: 1;
+}
+
+.companyInfo .flex1 .fz2{
+  font-size: 22rpx;
+  font-weight: 300;
+  line-height: 33rpx;
+  color: #ACACAC;
+  opacity: 1;
+  margin-top: 8rpx;
+}
+
+.switch {
+  display: flex;
+  flex-direction: row;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom: 1px solid #E8E8E8;
+  position: relative;
+  top: 0;
+  z-index: 99999;
+  background: #FFFFFF;
+  align-items: center;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.sticky1 {
+  height: calc(100vh - 100rpx)!important;
+}
+
+.one { position: sticky; top: 90px; }
+
+.switch .switchName {
+  display: flex; 
+  font-size: 32rpx;
+  /* font-weight: 300; */
+  height: 100rpx;
+  /* color: #666666; */
+  color: #333;
+  opacity: 1;
+  padding-left: 59rpx;
+  position: relative;
+  align-items: center;
+}
+
+.active2 {
+  /* color: #1EB7FB!important; */
+  font-weight: bold;
+  color: #333;
+}
+
+.active2::after {
+  content: "";
+  width: 128rpx;
+  height: 6rpx;
+  /* background-color: #1EB7FB; */
+  background-image: linear-gradient(to right, #04befe, #4481eb);
+  position: absolute;
+  left: 59rpx;
+  bottom: 0;
+}
+
+/**分类**/
+.classify {
+  display: flex;
+  height: calc(100vh);
+}
+.left {
+  width: 180rpx;
+  /* height: calc(100vh - 2rpx); */
+  background-color: #F5f5F5;
+  font-size: 28rpx;
+  text-align: center;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  /* background: #FFFFFF; */
+}
+.left .item {
+  padding: 0 20rpx;
+  height: calc(100% / 11);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:#999999;
+  font-size: 28rpx;
+  text-align: center;
+}
+.left .item .typeName {
+  width: 100%;
+  line-height: 34rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.left .item.active {
+  background-color: #ffffff;
+  position: relative;
+  /* color:#1EB7FB; */
+  color: #333333;
+}
+.left .item.wordSize {
+  font-size: 24rpx;
+  text-align: left;
+}
+.left .item.active::after {
+  content: "";
+  height: 44rpx;
+  width: 6rpx;
+  background-color: #1EB7FB;
+  /* background-image: linear-gradient(to right,#04BEFE, #4481EB); */
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0,-50%);
+}
+.left .item.active.wordSize::after {
+  content: "";
+  height: 66rpx;
+  width: 8rpx;
+  background-color: #04BEFE;
+  background-image: linear-gradient(to right,#04BEFE, #4481EB);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0,-50%);
+}
+.right {
+  flex: 1;
+  background-color: #F2F2F2;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+}
+.right .banner {
+  height: 260rpx;
+  position: relative;
+  overflow: hidden;
+  padding: 26rpx;
+  background-color: #ffffff;
+  border-radius: 0 0 16rpx 16rpx;
+}
+.right .swiper1 {
+  height: 256rpx;
+}
+.right .b_img {
+  width: 100%;
+  height: 252rpx;
+  border-radius: 10rpx;
+}
+.dots {
+  position: absolute;
+  left: 0;
+  right: 26rpx;
+  bottom: 10rpx;
+  display: flex;
+  justify-content:flex-end;
+  z-index: 3;
+}
+.dots .dot {
+  margin: 0 2rpx;
+  width: 24rpx;
+  height: 8rpx;
+  background: #D3D3D3;
+  border-radius: 60rpx;
+  transition: all 0.6s;
+}
+.dots .dot.active {
+  width: 40rpx;
+  background-color: #04BEFE;
+  background-image: linear-gradient(to right,#04BEFE, #4481EB);
+}
+.right .list {
+  position: absolute; 
+  /* top: 330rpx ;  */
+  top:0;
+  left: 0 ; 
+  right: 0;
+  bottom: 0;
+  background-color: #ffffff;
+  padding:  24rpx;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch
+}
+.right .list .item {
+  width: 33%;
+  float: left;
+  text-align: center;
+}
+.right .list .item .icon {
+  width: 150rpx;
+  height: 150rpx;
+  background-position: center;
+  background-size: cover;
+  border-radius: 10rpx;
+}
+.right .list .item .name {
+  font-size:26rpx;
+  margin: 0 0 66rpx;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  white-space:nowrap;
+  padding-right: 10rpx;
+}
+.right .nodata {
+  position: absolute; 
+  top: 0; 
+  left: 0 ; 
+  right: 0;
+  bottom: 0;
+  background-color: #ffffff;
+  padding: 44rpx 24rpx;
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  flex-flow: column;
+  padding-top: 115px;
+}
+.right .nodata image {
+  width: 182rpx;
+  height: 210rpx;
+}
+.right .nodata .tip {
+  margin-top: 60rpx;
+  color: #615F60;
+  font-size: 30rpx;
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+
+/**商铺简介*/
+
+.companyShop{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20rpx;
+}
+.companyShop .lebelName{
+  /* width: 112rpx; */
+  height: 40rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  line-height: 40rpx;
+  color: #333333;
+  opacity: 1;
+  margin: 32rpx 0 14rpx 30rpx;
+}
+
+.companyShop .companyShopCard {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  background: #FFFFFF;
+  opacity: 1;
+  border-radius: 26rpx;
+  margin: 0 30rpx;
+  padding: 30rpx 20rpx 82rpx 20rpx;
+}
+
+.companyShopCard2 {
+  height: auto!important;
+}
+
+.companyShopCard3 {
+  height: 628rpx!important;
+}
+.companyShop .companyShopCardName {
+  width: 468rpx;
+  height: 37rpx;
+  font-size: 26rpx;
+  font-weight: 500;
+  line-height: 37rpx;
+  color: #333333;
+  opacity: 1;
+}
+
+.companyShop .companyShopCardText{
+  margin-top: 17rpx;
+  font-size: 26rpx;
+  /* display: flex; */
+  position: relative;
+}
+
+.companyShop .companyShopCardText .text1{ 
+  font-size: 26rpx;
+  font-weight: 500;
+  line-height: 37rpx;
+  color: #666666;
+  opacity: 1;
+}
+
+.companyShop .companyShopCardText3 .text1{ 
+  font-size: 26rpx;
+  font-weight: 500;
+  line-height: 37rpx;
+  color: #666666;
+  opacity: 1;
+}
+
+.companyShop .companyShopCardText .text2{
+  font-size: 26rpx;
+  font-weight: 300;
+  line-height: 37rpx;
+  color: #666666;
+  opacity: 1;
+}
+
+.companyShop .companyShopCardText3 .text2{
+  font-size: 26rpx;
+  font-weight: 300;
+  line-height: 37rpx;
+  color: #666666;
+  opacity: 1;
+}
+
+.companyShop .companyShopCardText .text3{
+  font-size: 26rpx;
+  font-weight: 300;
+  line-height: 37rpx;
+  color: #1DB7FB;
+  opacity: 1;
+  margin-right: 14rpx;
+}
+
+.text4{ 
+  font-size: 26rpx;
+  font-weight: 300;
+  line-height: 37rpx;
+  color: #999999;
+  opacity: 1;
+}
+
+.companyShop .companyShopCardText .companyShopCardTextPhone{
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.companyShop .companyShopCardText .phone_Img{
+  width: 22rpx;
+  height: 22rpx;
+}
+
+.companyShopCardText3{
+  margin-top: 17rpx;
+  display: flex;
+}
+.companyShopCardAddress3{
+  flex: 2;
+  display: flex;
+}
+
+.showMore{
+  /* width: 188rpx; */
+  height: 33rpx;
+  font-size: 24rpx;
+  font-weight: 300;
+  line-height: 33rpx;
+  color: #1DB7FB;
+  opacity: 1;
+  margin-top: 21rpx;
+  position: absolute;
+  right:0;
+  bottom: -40rpx;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+
+
+/**经营资质**/
+.companyShop .companyShopCardPhoto {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  background: #FFFFFF;
+  opacity: 1;
+  border-radius: 26rpx;
+  margin: 0 30rpx;
+  padding: 30rpx 20rpx 0 20rpx;
+  margin-bottom: 100rpx;
+}
+
+.companyShopPhoto{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40rpx;
+}
+
+.companyShopPhotoLable{
+  font-size: 26rpx;
+  font-weight: 300;
+  line-height: 37rpx;
+  color: #333333;
+  opacity: 1;
+}
+
+.companyShopPhoto .businessLicense {
+  width: 204rpx;
+  height: 204rpx;
+  background: #EFEFEF;
+  opacity: 1;
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.companyShopPhoto .businessLicense_img {
+  width: 154rpx;
+  height: 204rpx;
+}
+
+.companyShopPhoto .businessLicense2 {
+  width: 204rpx;
+  height: 204rpx;
+  background: #EFEFEF;
+  opacity: 1;
+  margin-top: 20rpx;
+  display: flex;
+  align-items: center;
+}
+
+.companyShopPhoto .businessLicense_img2 {
+  height: 139rpx;
+  width: 204rpx;
+}
+
+.companyShopPhoto_3 {
+  display: flex;
+  flex-direction: row;
+}
+.companyShopPhoto .businessLicense3 {
+  width: 204rpx;
+  height: 204rpx;
+  background: #EFEFEF;
+  opacity: 1;
+  margin-top: 20rpx;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin-right: 21rpx;
+}
+
+.companyShopPhoto .businessLicense_img3 {
+  height: 139rpx;
+  width: 204rpx;
+}
+
+.address{
+  overflow: hidden;
+  text-align: justify;
+  background-color: #fff;
+  position: relative;
+  height: 150rpx;
+}
+address1{
+  overflow: hidden;
+  text-align: justify;
+  background-color: #fff;
+  position: relative;
+  height: auto;
+}
+
+.isShowImg{
+  width: 20rpx;
+  height: 12rpx;
+  margin-left: 11rpx;
+}

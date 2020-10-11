@@ -1,0 +1,15 @@
+
+<wxs src="../../../../wxs/filter.wxs" module="tools" />
+<view class="settle">
+  <view class="amount"><text>￥</text>{{tools.formatPrice(withdraw)}}</view>
+  <view class="tip">可结算金额</view>
+  <view class="fs">
+    <text class='txt1'>结算方式</text>
+    <text class='txt2'>微信</text>
+  </view>
+  <view class="desc">
+    <view class="v1">到账时间</view>
+    <view class="v2">结算到账时间为1~3个工作日，最快当天到帐，您可前往“微 信钱包”查看提现账单。</view>
+  </view>
+</view>
+<view class="button" bindtap="settleApply">确认提现</view>

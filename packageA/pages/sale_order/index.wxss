@@ -1,0 +1,319 @@
+
+.sale_order {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.box {
+  background-color: #ffffff;
+  margin-top: 2rpx;
+  height: 116rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+.searchbox {
+  width: 92%;
+  display: flex;
+  align-items: center;
+  background: #F3F4F5;
+  border-radius: 60rpx;
+  position: relative;
+  margin-left: 4%;
+  margin-top: 34rpx;
+}
+.searchbox .s_img {
+  width: 60rpx;
+  height: 60rpx;
+  margin: 0 10rpx 0 20rpx;
+}
+.searchbox input {
+  color:#333333;
+  padding: 15rpx 15rpx;
+  flex: 1;
+  border: none;
+  font-size: 28rpx;
+}
+.close_icon {
+  margin: 0 30rpx;
+  float: right;
+  width: 100rpx;
+}
+.close_icon .close {
+  width: 40rpx;
+  height: 40rpx;
+  float: right;
+}
+.nav {
+  height: 96rpx;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  line-height: 96rpx;
+  background: #ffffff;
+  font-size: 16px;
+  white-space: nowrap;
+  z-index: 99;
+  position: fixed;
+  top:116rpx;
+  left: 0;
+  right: 0;
+}
+.nav .item {
+  width: 20%;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  font-size: 30rpx;
+}
+.nav .item1 {
+  width: 25%;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  font-size: 30rpx;
+}
+.nav .item2 {
+  width: 26%;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  font-size: 30rpx;
+}
+.nav .active {
+  font-weight: bold;
+}
+.nav .active::after {
+  content: "";
+  width: 60rpx;
+  height: 6rpx;
+  background-color: #04BEFE;
+  background-image: linear-gradient(to right,#04BEFE, #4481EB);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -30rpx;
+}
+.nav .item .down {
+  width: 14rpx;
+  height: 7rpx;
+  position: absolute;
+  right: 20rpx;
+  bottom: 40rpx;
+}
+.nav .item .default {
+  width: 14rpx;
+  height: 18rpx;
+  position: absolute;
+  right: 20rpx;
+  bottom: 40rpx;
+}
+.tab-box .item {
+  border-top: 18rpx solid #f5f5f5;
+  overflow: hidden;
+}
+.tab-box .item navigator {
+  background-color: #ffffff;
+  border-top-left-radius: 16rpx;
+  border-top-right-radius: 16rpx;
+}
+.tab-box .item .contian {
+  background-color: #ffffff;
+  border-radius:16rpx;
+}
+.tab-box .psf {
+  color: #333333;
+  font-size: 30rpx;
+  display: flex;
+  justify-content:space-between;
+  padding: 17rpx 46rpx 13rpx;
+  border-bottom: 2rpx solid #DCDCDC;
+}
+.tab-box .cgd {
+  color: #333333;
+  font-size: 30rpx;
+  display: flex;
+  justify-content:space-between;
+  padding: 19rpx 46rpx 19rpx;
+}
+.tab-box .cgd .name {
+  color: #868686;
+  font-size: 28rpx;
+}
+.tab-box .createTime {
+  color: #333333;
+  font-size: 30rpx;
+  display: flex;
+  justify-content:space-between;
+  padding: 0 46rpx 19rpx;
+}
+.tab-box .createTime .name {
+  color: #868686;
+  font-size: 28rpx;
+}
+.tab-box .amountWithTax {
+  color: #333333;
+  font-size: 30rpx;
+  display: flex;
+  justify-content:space-between;
+  padding: 0 46rpx 19rpx;
+  border-bottom: 2rpx solid #DCDCDC;
+}
+.tab-box .amountWithTax .name {
+  color: #868686;
+  font-size: 28rpx;
+}
+.tab-box .amountWithTax .amount {
+  color: #FF6C00;
+  font-size: 28rpx;
+}
+.tab-box .status {
+  color: #333333;
+  font-size: 30rpx;
+  padding: 22rpx 46rpx;
+  overflow: hidden;
+  border-bottom-left-radius: 16rpx;
+  border-bottom-right-radius: 16rpx;
+  background-color: #ffffff;
+}
+.tab-box .status .left {
+  float: left;
+  color: #FF6C00;
+}
+.tab-box .status .cancelOrder {
+  color: #333333;
+  font-size: 24rpx;
+  border-radius: 30rpx;
+  border: 2rpx solid #333333;
+  padding: 14rpx 28rpx;
+  float: right;
+}
+.tab-box .status .handleCancelRefund {
+  color: #333333;
+  font-size: 24rpx;
+  border-radius: 30rpx;
+  border: 2rpx solid #333333;
+  padding: 14rpx 28rpx;
+  float: right;
+}
+.tab-box .status .handleCancelRefund {
+  color: #333333;
+  font-size: 24rpx;
+  border-radius: 30rpx;
+  border: 2rpx solid #333333;
+  padding: 14rpx 28rpx;
+  float: right;
+}
+.tab-box .status .handleRefund {
+  color: #333333;
+  font-size: 24rpx;
+  border-radius: 30rpx;
+  border: 2rpx solid #333333;
+  padding: 14rpx 28rpx;
+  float: right;
+}
+.tab-box .status .handleRefund1 {
+  color: #333333;
+  font-size: 24rpx;
+  border-radius: 30rpx;
+  border: 2rpx solid #333333;
+  padding: 14rpx 28rpx;
+  float: right;
+}
+.tab-box .status .handleRefund2{
+  color:#fff;
+  background: linear-gradient(270deg,#4373ea,#439dea);
+  border:none;
+  font-size: 24rpx;
+  border-radius: 30rpx;
+  padding: 14rpx 28rpx;
+  float: right;
+  margin-right: 18rpx;
+}
+
+.tab-box .status .right_confirm_pay {
+  color: #FF6C00;
+  font-size: 24rpx;
+  border-radius: 30rpx;
+  border: 2rpx solid #FF6C00;
+  padding: 10rpx 28rpx;
+  float: right;
+}
+.tab-box .sh {
+  width: 76rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  text-align: center;
+  color: #ffffff;
+  border-radius: 60rpx;
+  background-image: linear-gradient(to right,#04BEFE, #4481EB);
+  box-shadow: 0 0.206667rem 0.26rem 0 rgba(67,115,234,.3);
+
+}
+.default {
+  text-align: center;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  height: 100%;
+  margin-top: -100rpx;
+}
+.default image {
+  width: 182rpx;
+  height: 210rpx;
+}
+.default text {
+  margin-top: 60rpx;
+  color: #615F60;
+  font-size: 28rpx;
+}
+.default .go {
+  width: 216rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  color: #ffffff;
+  margin-top: 74rpx;
+  border-radius: 60rpx;
+  background-image: linear-gradient(to right,#04BEFE, #4481EB);
+  box-shadow: 0 0.206667rem 0.26rem 0 rgba(67,115,234,.3);
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.band {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.band .icon {
+  width: 326rpx;
+  height: 264rpx;
+  margin: 0 auto;
+}
+.band .emptyData {
+  color: #7D7E7F;
+  font-size: 28rpx;
+  margin: 50rpx auto 0;
+}
+.band .btn_band {
+  width: 216rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  color: #ffffff;
+  margin-top: 74rpx;
+  border-radius: 60rpx;
+  background-image: linear-gradient(to right,#04BEFE, #4481EB);
+  box-shadow: 0 0.206667rem 0.26rem 0 rgba(67,115,234,.3);
+  margin: 150rpx auto 0;
+  text-align: center;
+}

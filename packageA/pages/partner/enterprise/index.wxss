@@ -1,0 +1,173 @@
+
+.customer-page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.search-enterprise{
+  background-color: #fff;
+  height:106rpx;
+  box-sizing: border-box;
+  padding:17rpx 36rpx;
+
+}
+
+.search-enterprise .search-shell{
+  width: 678rpx;
+  height: 72rpx;
+  border-radius: 36rpx;
+  background: #F3F4F5;
+  box-sizing: border-box;
+  padding-left: 30rpx;
+  display: flex;
+  align-items: center;
+}
+
+.search-shell .search{
+  width:60rpx;
+  height:60rpx;
+}
+
+.search-shell input{
+  font-size:28rpx;
+  margin-left:25rpx;
+  width:470rpx;
+}
+
+.search-shell .close-shell{
+  width:34rpx;
+  height:34rpx;
+  border-radius: 50%;
+  background-color: #b2b2b2;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  position: absolute;
+  right:60rpx;
+  z-index:10;
+}
+
+.search-shell .close{
+  width:15rpx;
+  height:15rpx;
+}
+
+.not-settled{
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+  margin-top:210rpx;
+}
+
+.not-settled image{
+  width:400rpx;
+  height:250rpx;
+}
+
+.not-settled .click-here{
+  margin-top:89rpx;
+  font-size:32rpx;
+  color:#333333;
+  display: inline-block;
+}
+
+.not-settled .click-here view{
+  color:#3996E1;
+  display: inline-block;
+}
+
+
+.enterprise-list{
+  display: flex;
+  border-radius: 15rpx;
+  box-sizing: border-box;
+  flex-direction: column;
+  flex: 1;
+  padding-top: 10rpx;
+}
+
+.enterprise-list .enterprise-item{
+  height:100rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom:2rpx solid #f7f7f7;
+  background-color: #ffffff;
+}
+
+.enterprise-list .enterprise-item:last-child {
+  border-bottom:none;
+}
+
+.enterprise-item .enterprise-name{
+  font-size:30rpx;
+  color:#333333;
+  line-height:30rpx;
+  margin-left:35rpx;
+  width: 600rpx;
+}
+
+.enterprise-item image{
+  width:34rpx;
+  height:34rpx;
+}
+
+.circular {
+  width: 30rpx;
+  height: 30rpx;
+  border: 3rpx solid #ABABB4;
+  border-radius: 50%;
+  margin-right: 30rpx;
+}
+
+.loadding{
+  height:60rpx;
+  font-size:28rpx;
+  color:#333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.loadding .icon{
+  border:1rpx solid #333;
+  height:30rpx;
+  width:30rpx;
+  border-radius: 50%;
+  border-top-color: transparent;
+  margin-left:10rpx;
+  animation:loading 0.7s linear infinite;
+  
+}
+
+
+@keyframes loading{
+0%{
+  transform: rotate(0deg)
+}
+100%{
+  transform: rotate(360deg)
+}
+}
+
+.default {
+  text-align: center;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.default image {
+  width: 298rpx;
+  height: 250rpx;
+  margin-top: -100rpx;
+}
+.default text {
+  color: #615F60;
+  font-size: 28rpx;
+  margin-top: 55rpx;
+} 

@@ -1,0 +1,22 @@
+<wxs src="../../../wxs/filter.wxs" module="tools" />
+<view class="resl-data" wx:if="{{realData}}">
+  <view class="real-page">
+    <view class="real-msg">
+      <view class="message-left">
+          <view class="name">{{realData.authRealName}}</view>
+          <text class="idcard">{{realData.authIdCardNo}}</text>
+          <text class="time">{{tools.formatTimeTwo(realData.authTime)}}</text>
+      </view>
+      <image  wx:if="{{realData.status==0}}" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/shz.png"></image>
+    </view>
+  </view>
+
+  <view class="tips" wx:if="{{realData.status==0}}">我们会在1-2个工作日审核确认</view>
+
+  <view class="tips-msg" wx:if="{{realData.status==2}}">
+    <text>审核失败原因：<text style="color:#FF0000">{{realData.description||''}}</text></text>
+    <text style="margin-top:12rpx">审核时间：{{tools.formatTimeTwo(realData.auditTime)}}</text>
+  </view>
+
+  <view class="next-step" wx:if="{{realData.status==2}}"  bindtap="handleNextStop">重新实名认证</view>
+</view>

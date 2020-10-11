@@ -1,0 +1,11 @@
+page {
+  padding-top: 20rpx;
+  border: none;
+}
+.tripList_root{
+  left: 0px;
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  z-index: 0;
+}

@@ -1,0 +1,30 @@
+<!--pages/my/template/set_pwd.wxml-->
+<view class="update_password">
+  <view class="password">
+    <span>*</span>
+    <view>原密码</view>
+    <input type="password" placeholder="请输入原密码" bindinput="ioldPassword" wx:if="{{seen1}}" value="{{oldPassword}}" maxlength="18" />
+    <input type="text" placeholder="请输入原密码" bindinput="ioldPassword" wx:else value="{{oldPassword}}" maxlength="18" />
+    <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/eye_en_close.png" class="eyes_close1" bindtap="seen1" wx:if="{{seen1}}"></image>
+    <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/eye_en_open.png" class="eyes_close2" bindtap="seen1" wx:else></image>
+  </view>
+  <view class="password newpassword">
+    <span>*</span>
+    <view>新密码</view>
+    <input type="password" placeholder="请输入新密码" bindinput="inewPassword" wx:if="{{seen2}}" value="{{newPassword}}" maxlength="18" />
+    <input type="text" placeholder="请输入新密码" bindinput="inewPassword" wx:else value="{{newPassword}}" maxlength="18" />
+    <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/eye_en_close.png" class="eyes_close1" bindtap="seen2" wx:if="{{seen2}}"></image>
+    <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/eye_en_open.png" class="eyes_close2" bindtap="seen2" wx:else></image>
+  </view>
+  <view class="password newpassword">
+    <span>*</span>
+    <view>确认密码</view>
+    <input type="password" placeholder="再次输入新密码" bindinput="iconfirmPassword" wx:if="{{seen3}}" value="{{confirmPassword}}" maxlength="18" />
+    <input type="text" placeholder="再次输入新密码" bindinput="iconfirmPassword" wx:else value="{{confirmPassword}}" maxlength="18" />
+    <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/eye_en_close.png" class="eyes_close1" bindtap="seen3" wx:if="{{seen3}}"></image>
+    <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/eye_en_open.png" class="eyes_close2" bindtap="seen3" wx:else></image>
+  </view>
+</view>
+<view class="tip">密码必须至少6个字符，以字母开头，同时包含字母和数字。</view>
+<view class="save_btn btnActive" bindtap="saveBtn" wx:if="{{can}}">保存</view>
+<view class="save_btn" wx:else>保存</view>

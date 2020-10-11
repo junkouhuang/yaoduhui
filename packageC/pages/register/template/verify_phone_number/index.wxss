@@ -1,0 +1,199 @@
+/* pages/verify_phone_number/index.wxss */
+.flow1 .form .password {
+  border: 2rpx solid #DBDBDB;
+  border-radius: 60rpx;
+  width: 600rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  margin: auto;
+  align-items: center;
+  display: flex;
+  margin-top: 52rpx;
+}
+.conformpassword {
+  margin-top:22rpx!important;
+}
+.flow1 .form .password .lock {
+  width: 36rpx;
+  height: 36rpx;
+  margin: 0 20rpx 0 40rpx;
+}
+.flow1 .form .password input {
+  flex: 1;
+  padding: 10rpx 0;
+  text-align: left;
+  font-size: 28rpx;
+}
+.flow1 .form .password .code {
+  flex: 1;
+  padding: 10rpx 0;
+}
+.flow1 .password .eyes_close {
+  width: 48rpx;
+  height: 18rpx;
+  margin: 0 30rpx;
+}
+.flow1 .password .eyes_open {
+  width: 48rpx;
+  height: 40rpx;
+  margin: 0 30rpx;
+}
+.reminder {
+  font-size: 22rpx;
+  color: #333;
+  width: 600rpx;
+  margin: 20rpx auto;
+}
+.verify_phone_number {
+  background-color: #ffffff;
+  height: calc(100vh - 2rpx);
+}
+.flow1 {
+  padding-top: 94rpx;
+}
+.flow1 image {
+  width: 566rpx;
+  height: 44rpx;
+}
+.flow1 .title {
+  text-align: center;
+  font-size: 22rpx;
+  color: #999999;
+}
+.flow1 .title {
+  width: 566rpx;
+  position: relative;
+  margin: 0 auto;
+}
+.flow1 .active {
+  color: #3996E1;
+  left: -47rpx;
+  position: absolute;
+}
+.flow1 .last {
+  position: absolute;
+  right: -20rpx;
+}
+.flow1 .form .phone {
+  border: 2rpx solid #DBDBDB;
+  border-radius: 60rpx;
+  width: 600rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  margin: auto;
+  align-items: center;
+  display: flex;
+}
+.flow1 .form .phone image {
+  width: 34rpx;
+  height: 40rpx;
+  margin: 0 20rpx 0 40rpx;
+}
+.flow1 .form .phone input {
+  flex: 1;
+  padding: 10rpx 0;
+  text-align: left;
+  font-size: 28rpx;
+}
+.flow1 .form .phone .code {
+  height: 54rpx;
+  line-height: 54rpx;
+  color: #ffffff;
+  border-radius: 60rpx;
+  font-size: 26rpx;
+  padding: 0 20rpx;
+  margin: 0 20rpx;
+  background-color: #3996E1;
+  box-shadow: 0 0.206667rem 0.26rem 0 rgba(67,115,234,.3);
+  opacity: .54;
+}
+.flow1 .form .phone .vericodeActive {
+  opacity: 1;
+}
+.flow1 .form .vericode {
+  border: 2rpx solid #DBDBDB;
+  border-radius: 60rpx;
+  width: 600rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  margin: auto;
+  align-items: center;
+  display: flex;
+  margin-top: 22rpx;
+}
+.flow1 .form .vericode image {
+  width: 36rpx;
+  height: 36rpx;
+  margin: 0 20rpx 0 40rpx;
+}
+.flow1 .form .vericode input {
+  flex: 1;
+  padding: 10rpx 0;
+  text-align: left;
+  font-size: 28rpx;
+}
+.flow1 .form .vericode .code {
+  flex: 1;
+  padding: 10rpx 0;
+}
+.flow1 .form .inputActive {
+  border:1px solid #04BEFE;
+}
+.next {
+  width: 600rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 34rpx;
+  color: #ffffff;
+  background-image: linear-gradient(to right,#04BEFE, #4481EB);
+  border-radius: 60rpx;
+  text-align: center;
+  margin: 74rpx auto 20rpx;
+  box-shadow: 0 0.206667rem 0.26rem 0 rgba(67,115,234,.3);
+  opacity: .54;
+}
+.btnActive {
+  opacity: 1;
+}
+.agreement {
+  color: #666666;
+  display: flex;
+  align-items: center;
+  width: 600rpx;
+  height: 90rpx;
+  margin: auto;
+  font-size: 30rpx;
+}
+.agreement view  {
+  margin-left: 16rpx;
+  margin-top: 8rpx;
+  font-size: 28rpx;
+}
+.agreement view text {
+  color: #3996E1;
+}
+/*checkbox 整体大小  */
+checkbox {
+  width: 32rpx;
+}
+/*checkbox 选项框大小  */
+checkbox .wx-checkbox-input {
+  width: 32rpx;
+  height: 32rpx;
+}
+/*checkbox选中后样式  */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  background: #3996E1;
+}
+/*checkbox选中后图标样式  */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  width: 28rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  text-align: center;
+  font-size: 22rpx;
+  color: #fff;
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}

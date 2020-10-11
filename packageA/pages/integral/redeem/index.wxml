@@ -1,0 +1,23 @@
+<!--pages/integral/redeem/index.wxml-->
+<view class="purchase-header">
+  <view class="header-detail">
+    <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/jifenka.png"></image>
+    <view class="integral-msg">
+      <text class="title">积分卡</text>
+      <view class="integral-detail">
+        <text class="available">可用积分：0分 </text>
+        <text class='frozen'>冻结积分：0分 </text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="redeem-integral">
+  <text class="integral-title">本次赎回积分</text>
+  <input type="text" placeholder="输入要赎回的积分数值" placeholder-style="color:#E4E4E4;font-size:40rpx;font-weight:bold;"></input>
+</view>
+
+<view class="redeem-bottom">
+  <text>本次赎回积分合计：0分</text>
+  <view class="button">赎回</view>
+</view>

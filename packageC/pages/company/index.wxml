@@ -1,0 +1,168 @@
+<!--packageC/pages/company/index.wxml-->
+<gradientNavigationBar></gradientNavigationBar>
+<view class="mycompany">
+  <!-- 容器 -->
+  <view class="container_1"></view>
+  <view class="top" style="background-image: url({{enterpriseList.picture}});">
+    <view class="searchBox">
+      <view class="search skeleton-radius" bindtap="search" data-name="">
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/search_icon.png" class='s_img'></image>
+        <input placeholder="搜索商铺内的商品" placeholder-style="color: #9C9CA3;font-size: 28rpx;" disabled/>
+      </view>
+    </view>
+    <view class="companyName">
+      <view class="companyName_left">
+        <view class="image">
+          <image src="{{enterpriseList.logo}}" class="img"></image>
+        </view>
+        <view class="nameInfo">
+          <view class="name">{{enterpriseList.enterpriseName}}</view>
+          <view class="qualifications">
+          <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/qiye_img_4.png" class="qualifications_img"></image>
+          <!-- <text class="ml zizhi">资质认证</text> -->
+          </view>
+        </view>
+      </view>
+      <view class="companyName_rigth" wx:if="{{index==1}}">
+        <view class="button {{status2==0?'':'button1'}}" wx:if="{{status2!=2 && status2!=-1}}" bindtap="{{status2==1 || status2==null?'goRecord':''}}">{{status2==0?'首营建档中': (status2==1 || status2==null)?'首营建档':''}}</view>
+      </view>
+    </view>
+    <view class="companyInfo">
+      <view class="flex1">
+        <view class="fz1">{{enterpriseList.minimumPurchasePrice==0 || enterpriseList.minimumPurchasePrice?enterpriseList.minimumPurchasePrice+'元':'-'}}</view>
+        <view class="fz2">起送金额</view>
+      </view>
+      <view class="flex1">
+        <view class="fz1">{{enterpriseList.quantity==0 || enterpriseList.quantity?enterpriseList.quantity+'种':'-'}}</view>
+        <view class="fz2">商品数量</view>
+      </view> 
+      <view class="flex1">
+        <view class="fz1">{{enterpriseList.count==0 || enterpriseList.count?enterpriseList.count+'家':'-'}}</view>
+        <view class="fz2">首营企业</view>
+      </view> 
+      <view class="flex1">
+        <view class="fz1">{{enterpriseList.sellArea?enterpriseList.sellArea:'-'}}</view>
+        <view class="fz2">销售范围</view>
+      </view>  
+    </view>
+  </view>
+  <view class="switch {{isSticky?'sticky':''}}">
+    <view class="switchName {{switchPage==0?'active2':''}}" data-i="0" bindtap="goSwitch">全部商品</view>
+    <view class="switchName {{switchPage==1?'active2':''}}" data-i="1" bindtap="goSwitch">商铺简介</view>
+  </view>
+  <block wx:if="{{switchPage==0}}">
+    <view class="classify  {{isSticky?'sticky1':''}}">
+      <scroll-view class="left" scroll-y="true" >
+        <view wx:for="{{classifyList}}" wx:key="index" class="item {{index == currentIndex? ' active' : ''}}  {{item.typeName.length>5?'wordSize':''}}" data-index="{{index}}" data-id="{{item.id}}" data-typeName="{{item.typeName}}"  bindtap='flHandle'>
+          <view class="typeName" >{{item.typeName}}</view>
+        </view>
+      </scroll-view>
+      <view class="right">
+        <block wx:if="{{pages>0}}">
+          <view class="list">
+            <view class="item" wx:for="{{promotion}}" wx:key="index" bindtap="search_good" data-id="{{item.id}}" data-categoryId="{{item.categoryId}}" data-typename="{{item.typeName}}">
+              <image src="{{item.img}}" class="icon" wx:if="{{item.img}}"></image>
+              <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/classify1.png" class="icon" wx:else></image>
+              <view class="name">{{item.typeName}}</view>
+            </view>
+          </view>
+        </block>
+        <block wx:else>
+          <view class="nodata">
+            <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/no_data_icon.png"></image>
+            <view class="tip">暂无分类~</view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <!--商铺信息  -->
+    <view class="companyShop">
+      <view class="lebelName">商铺信息</view>
+      <view class="companyShopCard">
+        <view class="companyShopCardName">供应商：{{enterpriseShopInfoList.enterpriseName?enterpriseShopInfoList.enterpriseName:''}}</view>
+        <view class="companyShopCardText">
+          <text class="text1">企业类型：</text>
+          <text class="text2">{{enterpriseShopInfoList.modeName?enterpriseShopInfoList.modeName:''}}</text>
+        </view>
+        <view class="companyShopCardText">
+          <text class="text1">起送金额：</text>
+          <text class="text2">{{enterpriseShopInfoList.minimumPurchasePrice?enterpriseShopInfoList.minimumPurchasePrice:0}}元</text>
+        </view>
+        <view class="companyShopCardText">
+          <text class="text1">客服电话：</text>
+          <text class="text2" decode="{{true}}">{{enterpriseShopInfoList.customerServiceTelephone1?enterpriseShopInfoList.customerServiceTelephone1:''}}<text wx:if="{{enterpriseShopInfoList.customerServiceTelephone1}}" decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>{{enterpriseShopInfoList.customerServiceTelephone2?enterpriseShopInfoList.customerServiceTelephone2:''}}
+          </text>
+          <view class="companyShopCardTextPhone" bindtap="tel" data-phone="1">
+            <text class="text3">点击拨打</text>
+            <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/phone_img1.png" class="phone_Img"></image>
+          </view>
+        </view>
+        <view class="companyShopCardText">
+          <text class="text1">咨询投诉电话：</text>
+          <text class="text2" decode="{{true}}">{{enterpriseShopInfoList.complaintTelephone?enterpriseShopInfoList.complaintTelephone:0}}</text>
+          <view class="companyShopCardTextPhone" bindtap="tel" data-phone="2">
+            <text class="text3">点击拨打</text>
+            <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/phone_img1.png" class="phone_Img"></image>
+          </view>
+        </view>
+        <view class="companyShopCardText3">
+          <text class="text1">企业地址：</text>
+          <view class="companyShopCardAddress3">
+            <text class="text2">{{enterpriseShopInfoList.provinceName}}{{enterpriseShopInfoList.cityName}}{{enterpriseShopInfoList.district}}{{enterpriseShopInfoList.location}}</text>
+            <!-- <text class="text4">（纸质资料邮寄接受地址）</text> -->
+          </view>
+        </view>
+        <view class="companyShopCardText3" style="position: relative;">
+          <text class="text1">发货说明：</text>
+          <view class="companyShopCardAddress3 {{isShow?'address1':'address'}}" wx:if="{{enterpriseShopInfoList.description}}">
+            <rich-text nodes="{{enterpriseShopInfoList.description}}" class="text2 questionContent"></rich-text>
+            <!-- <view class="text2">所有药品都带票（除特殊药品）</view> 
+            <view class="text2" style="letter-spacing: 1rpx;">（—）、发货时间：周一到周六8:30—17:30，当天12:00之前订单在核实客户支付成功货款24小时内发货，12:00以后的36小时内发货。周日、节假日顺延。</view>
+            <view class="text2" wx:if="{{isShow}}">（二）、运输说明：顺丰快递、邮政快递、京东快递；收到货物请当时验收，如有破损，请当场拒收，并及时与我方负责人联系，共同协商解决赔偿问题。公司不承担因延时造成的破损、污染、短少等售后，时效为当天（因快递运输过程中产生的问题由我方先行赔付）。</view>
+            <view class="text2" wx:if="{{isShow}}">（三）、客诉说明：药品非质量问题概不退换货，如有任何其问题，请在收到货12小时内与我司联系！</view>
+            <view class="text2" wx:if="{{isShow}}">（四）、客户提交订单前请仔细核对所采购的品种明细（注:单价、规格、有效期）。</view> -->
+          </view>
+          <view class="showMore" bindtap="open" wx:if="{{enterpriseShopInfoList.description}}">
+            <view>{{isShow?'收起  ':'展开  '}}</view>
+            <image wx:if="{{!isShow}}" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/conpany_down_1.png" class="isShowImg"></image>
+            <image wx:if="{{isShow}}" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/conpany_up_1.png" class="isShowImg"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 经营资质 -->
+    <view class="companyShop">
+      <view class="lebelName">经营资质</view>
+      <view class="companyShopCardPhoto">
+        <view class="companyShopPhoto">
+          <view class="companyShopPhotoLable">营业执照</view>
+          <view class="businessLicense" bindtap="goPreviewImage" data-img="0" data-i="0">
+            <image src="{{enterpriseShopInfoList.qualificationsDTOList[0].qualificationsPath[0]}}" class="businessLicense_img"></image>
+          </view>
+        </view>
+        <view class="companyShopPhoto">
+          <view class="companyShopPhotoLable">药品经营许可证</view>
+          <view class="businessLicense2" bindtap="goPreviewImage" data-img="1" data-i="0">
+            <image src="{{enterpriseShopInfoList.qualificationsDTOList[1].qualificationsPath[0]}}" class="businessLicense_img2"></image>
+          </view>
+        </view>
+        <view class="companyShopPhoto">
+          <view class="companyShopPhotoLable">药品经营质量管理规范认证证书（GSP)</view>
+          <view class="companyShopPhoto_3">
+            <view class="businessLicense3" bindtap="goPreviewImage" data-img="2" data-i="{{index}}" wx:for="{{enterpriseShopInfoList.qualificationsDTOList[2].qualificationsPath}}" wx:key="index">
+              <image src="{{enterpriseShopInfoList.qualificationsDTOList[2].qualificationsPath[index]}}" class="businessLicense_img3"></image>
+            </view>
+            <!-- <view class="businessLicense3">
+              <image src="{{enterpriseShopInfoList.qualificationsDTOList[2].qualificationsPath[1]}}" class="businessLicense_img3"></image>
+            </view>
+            <view class="businessLicense3">
+              <image src="{{enterpriseShopInfoList.qualificationsDTOList[2].qualificationsPath[2]}}" class="businessLicense_img3"></image>
+            </view> -->
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

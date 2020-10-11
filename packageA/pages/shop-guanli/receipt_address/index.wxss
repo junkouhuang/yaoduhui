@@ -1,0 +1,140 @@
+.tip {
+  background-color: #FFF3D9;
+  color: #FF8B0F;
+  border-top: 2rpx solid #DCDCDC;
+  padding: 16rpx 40rpx;
+  font-size: 24rpx;
+}
+.tip text {
+  margin-left: 18rpx;
+}
+.add {
+  padding: 0 40rpx;
+  background-color: #ffffff;
+
+}
+.tip .notice {
+  width: 32rpx;
+  height: 24rpx;
+}
+.shr,
+.phone,
+.area,
+.location
+ {
+  display: flex;
+  align-items: center;
+  height: 100rpx;
+  line-height: 100rpx;
+  position: relative;
+}
+.shr::after,
+.phone::after,
+.area::after,
+.telphoneInput::after,
+.location::after {
+  position: absolute;
+  box-sizing: border-box;
+  content: ' ';
+  pointer-events: none;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-bottom: 1px solid #ebedf0;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+.telphoneInput {
+  display: flex;
+  align-items: center;
+  height: 100rpx;
+  position: relative;
+}
+.postcode {
+  display: flex;
+  align-items: center;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.shr .ti,
+.phone .ti,
+.telphoneInput .ti,
+.area .ti,
+.location .ti,
+.postcode .ti
+ {
+  font-size: 28rpx;
+  color: #333333;
+  width: 150rpx;
+}
+.shr view text,
+.phone view text,
+.telphoneInput view text,
+.area view text,
+.location view text,
+.postcode view text
+ {
+  color: #FF0000;
+}
+.shr input,
+.phone input,
+.telphoneInput input,
+.area input,
+.location input,
+.postcode input {
+  flex: 1;
+  font-size: 28rpx;
+}
+.area .dot {
+  width: 30rpx;
+  height: 40rpx;
+}
+.default {
+  display: flex;
+  align-items: center;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.default .ti {
+  font-size: 28rpx;
+  color: #333333;
+  width: 150rpx;
+  flex: 1;
+}
+/*swtich整体大小及背景色*/
+.wx-switch-input{
+  width:82rpx !important;
+  height:36rpx !important;
+  background: #4481EB!important;
+  border:none!important;
+}
+/*白色样式（false的样式）*/
+.wx-switch-input::before{
+  width:88rpx !important;
+  height: 36rpx !important;
+  border: 2rpx solid #f1f1f1;
+}
+/*绿色样式（true的样式）*/
+.wx-switch-input::after{
+  width: 40rpx !important;
+  height: 36rpx !important;
+  border:none!important;
+}
+.save {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  height: 90rpx;
+  line-height: 90rpx;
+  background-image: linear-gradient(to right,#04BEFE, #4481EB);
+  box-shadow: 0 0.206667rem 0.26rem 0 rgba(67,115,234,.3);
+  opacity: .54;
+  border-radius: 60rpx;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 32rpx;
+  margin: 100rpx 46rpx;
+}
+.btnActive {
+  opacity: 1;
+}

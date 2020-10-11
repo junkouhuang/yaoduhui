@@ -1,0 +1,160 @@
+<!--pages/member/data-replenish/index.wxml-->
+<view class="replnish-page">
+	<view class="notice tspan">为更加满足监管对于客户身份识别的要求，近期渤海银行将对系统 开户进行优化调整，完善客户信息采集。</view>
+	<view class="uploadtitle">
+		<text class="text1" wx:if="{{accountType==1001}}">*</text>
+		<text class="text2">{{accountType==1001?'上传开户人身份证照片':'开户企业营业执照资料'}}</text>
+	</view>
+	<block wx:if="{{accountType==1001}}">
+		<view class="upload-message">
+			<view class="idcard-msg">
+				<view class="idcard-item" bindtap="uploadIdCardData" data-sign="front">
+					<image wx:if="{{idImgFront}}" src="{{idImgFront}}"></image>
+					<image wx:else src="https://edm.xinquanjk.com/upload/iconfont/202003/20/front.png"></image>
+					<text>请上传身份证正面</text>
+				</view>
+				<view class="idcard-item" bindtap="uploadIdCardData" data-sign="back">
+					<image wx:if="{{idImgBack}}" src="{{idImgBack}}"></image>
+					<image wx:else src="https://edm.xinquanjk.com/upload/iconfont/202003/20/back.png"></image>
+					<text>请上传身份证反面</text>
+				</view>
+			</view>
+		</view>
+		<view class="ps-tips">
+			<text class="title2">拍摄身份证要求：</text>
+			<text class="msg">
+				大陆公民持有的本人有效二代身份证
+				拍摄时确保身份证<text>边缘完整，字体清晰，亮度平均</text>
+			</text>
+			<view class="image-list">
+				<view class="image-item">
+					<image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/a.png"></image>
+					<text>标准</text>
+				</view>
+				<view class="image-item">
+					<image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/b.png"></image>
+					<text>边角缺失</text>
+				</view>
+				<view class="image-item">
+					<image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/c.png"></image>
+					<text>照片模糊</text>
+				</view>
+				<view class="image-item">
+					<image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/d.png"></image>
+					<text>闪光强烈</text>
+				</view>
+			</view>
+		</view>
+	</block>
+	<block wx:else>
+		<view class="information-title">
+			<text style="color:red;">*</text>营业执照照片
+		</view>
+		<view class="update-shell">
+			<view class="update-list">
+				<view class="image-item" wx:for="{{qualificationsPaths}}" wx:key="index">
+					<image class="detail" src="{{item}}" bindtap="handleSelectImage" data-src="{{qualificationsPaths}}" data-index="{{index}}"></image>
+					<view class="close-shell" bindtap="handleCloseImage" data-index="{{index}}">
+						<image class="close" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/close.png"></image>
+					</view> 
+				</view>
+				<view class="image-item" bindtap="uploadIdCardData" data-sign="businessLicenseImg" wx:if="{{ qualificationsPaths.length<2 }}">
+					<image class="detail" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/uploadphotos_bg.png"></image>
+				</view>
+				<!-- <view class="count_3">{{qualificationsPaths.length}}/1</view> -->
+				<view class="text">请将营业执照正面拍照上传，图片请不要做任何修改，请确保在有效期内和文字清晰可见。</view>
+			</view>
+		</view>
+	
+		<view class="essential-information">
+			<view class="information-item">
+				<view class="item-text"  style="width: 280rpx;">
+					<text class="symbol">*</text>
+					<text class="item-name">住所：</text>
+				</view>
+				<view class="enterpriseName">{{bizAddress?bizAddress:''}}</view>
+			</view>
+			<view class="information-item">
+				<view class="item-text" style="width: 360rpx;">
+					<text class="symbol">*</text>
+					<text class="item-name">统一社会信用代码：</text>
+				</view>
+				<input type="text" placeholder="请输入统一社会信用代码" maxlength="20"  placeholder-style="color:#C2C2C2" bindinput="getInputValue" data-sign="businessLicenseCode" modle:value="{{businessLicenseCode}}"></input>
+			</view>		
+			<view class="information-item">
+				<view class="item-text">
+					<text class="symbol">*</text>
+					<view class="validity-date">证件发出日期：</view>
+				</view>
+				<!-- <text wx:if="{{check}}" class="long-term">证件长期有效</text> -->
+				<picker bindchange="pickDate" data-time="visaDate" mode = "date" value="{{visaDate}}">
+					<view class="picker">
+						<input value='{{visaDate}}' placeholder='选择时间' disabled/>
+					</view>
+				</picker>
+			</view>
+			<view class="information-item">
+				<view class="item-text">
+					<text class="symbol">*</text>
+					<view class="validity-date">证件过期日期：</view>
+				</view>
+				<!-- <text wx:if="{{check}}" class="long-term">证件长期有效</text> -->
+				<picker bindchange="pickDate" data-time="lostDate" mode = "date" value="{{lostDate}}">
+					<view class="picker">
+						<input value='{{lostDate}}' placeholder='选择时间' disabled/>
+					</view>
+				</picker>
+			</view>  
+			<view class="information-item">
+					<checkbox checked="{{check}}" bindtap="checkHandle" />
+					<text class="validTime" bindtap="checkHandle" >证件长期有效</text>
+				</view>
+		</view>
+		<view class="information-title">
+			<text style="color:red;">*</text>上传开户人身份证照片
+		</view>
+		<view class="upload-message padding-message">
+			<view class="idcard-msg">
+				<view class="idcard-item" bindtap="uploadIdCardData" data-sign="front">
+					<image wx:if="{{idImgFront}}" src="{{idImgFront}}"></image>
+					<image wx:else src="https://edm.xinquanjk.com/upload/iconfont/202003/20/front.png"></image>
+					<text>请上传身份证正面</text>
+				</view>
+				<view class="idcard-item" bindtap="uploadIdCardData" data-sign="back">
+					<image wx:if="{{idImgBack}}" src="{{idImgBack}}"></image>
+					<image wx:else src="https://edm.xinquanjk.com/upload/iconfont/202003/20/back.png"></image>
+					<text>请上传身份证反面</text>
+				</view>
+			</view>
+		</view>
+		<view class="ps-tips">
+			<text class="title2">拍摄身份证要求：</text>
+			<text class="msg">
+				大陆公民持有的本人有效二代身份证
+				拍摄时确保身份证<text>边缘完整，字体清晰，亮度平均</text>
+			</text>	
+		</view>
+	</block>
+  <view class="card-list">
+    <view class="title">
+      <text>手机号码验证</text>
+    </view>
+    <view class="options">
+      <view class="item">
+        <text class="left"><text class="text1">*</text> 手机号码：</text>
+        <view class="valueBox">
+          <input type="text" model:value="{{phone}}" maxlength="11" data-sign="phone"  placeholder="请输入手机号" placeholder-style="color:#B0B0B0;"  bindinput="getInputValue" bindblur="setParams"></input>
+        </view>
+      </view>
+      <view class="item">
+        <view class="left"><text class="text1">*</text> 短信验证码：</view>
+        <view class="valueBox">
+          <input type="number" model:value="{{code}}" maxlength="6"  data-sign="code" placeholder="请输入短信验证码" placeholder-style="color:#B0B0B0;" bindinput="getInputValue" bindblur="setParams"></input>
+          <getCodeBtn my-class="getCodeBtn" prop="{{codeProp}}" bind:getData="getData"/>
+        </view>
+      </view>
+    </view>
+  </view>
+<!--  {{accountType==1002?'button_commit':''}} -->
+  <view class="next-step button_commit" bindtap="handleNextStop">确认提交资料</view>
+</view>

@@ -1,0 +1,5 @@
+<!--components/shoppingCart/index.wxml-->
+<view class="alreadyCar" bindtap="toCar" hidden="{{isHide}}">
+  <text class="selNum">{{selN}}</text>
+  <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/car_black.png" class="car"></image>
+</view>

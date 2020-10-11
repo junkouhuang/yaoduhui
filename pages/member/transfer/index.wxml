@@ -1,0 +1,30 @@
+<view class="transfer-msg">
+  <view class="message-item">
+    <text class="item">转账账户</text>
+    <text class="detail">鑫泉账户</text>
+  </view>
+  <view class="message-item">
+    <text class="item"><text>*</text>{{accountType=='1001'?'收款人账户':accountType=='1002'?'收款人鑫泉账户':''}}</text>
+    <input type="number" placeholder-style="color:#868686;" value="{{account}}" data-sign="account" bindinput="handleGetInputData" placeholder="请输入{{accountType=='1001'?'收款人账户':accountType=='1002'?'收款人鑫泉账户':''}}"></input>
+  </view>
+</view>
+
+
+<view class="transfer-munber">
+  <view class="title-top">
+    <view class="title">转账金额</view>
+  </view>
+  <view class="message-money">
+    <text class="symbol">￥</text>
+    <input type="text" placeholder="请输入转账金额" data-sign="number" value="{{number}}" bindinput="handleGetInputData" placeholder-style="color:#E4E4E4;font-size:48rpx;"></input>
+  </view>
+</view>
+
+<text class="available-money">可用余额{{available}}元</text>
+
+<view class="leaving-message">
+  <text class="title">转账附言</text>
+  <textarea value="{{message}}" bindinput="handleGetInputData" data-sign="message"></textarea>
+</view>
+
+<view class="next-step {{isDisabled?'disabled':''}}" size="default" bindtap="{{isDisabled?'':'handleNextStop'}}">下一步</view>

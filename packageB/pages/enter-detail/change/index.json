@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "首营资料上传",
+  "usingComponents": {
+    "model":"../../../../components/model/index"
+  }
+}

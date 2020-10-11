@@ -1,0 +1,36 @@
+
+<view class="integral-msg">
+  <view class="userinfo-msg">
+    <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/toux.png"></image>
+    <view class="userinfo-detail">
+      <text class="name">昵称</text>
+      <text class="enterprise">深圳市鑫泉健康网络有限公司</text>
+    </view>
+  </view>
+  <view class="integral-detail">
+    <image class="bg" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/jifen.png"></image>
+    <view class="integral-message">
+      <view class="message-left">
+        <text class="available">可用积分</text>
+        <text class="fraction">0分</text>
+        <text class="frozen">冻结积分</text>
+        <text class="branch">0分</text>
+      </view>
+      <navigator class="message-right" url="/packageA/pages/integral/record/index" hover-class="none">
+        <text class="detailed">积分明细</text>
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/right1.png"></image>
+      </navigator>
+    </view>
+  </view>
+</view>
+
+<view class="operation-list">
+  <navigator hover-class="none" class="operation-item" url="/packageA/pages/integral/purchase/index">
+    <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/mai.png"></image>
+    <text>购买</text>
+  </navigator>
+  <navigator hover-class="none" class="operation-item" url="/packageA/pages/integral/redeem/index">
+    <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/hui.png"></image>
+    <text>赎回</text>
+  </navigator>
+</view>

@@ -1,0 +1,208 @@
+
+.statisticsPage {
+  display: flex;
+  flex-direction: column;
+  /* height: 100%; */
+}
+.care-h{
+  height: calc(100vh - 310px);
+}
+.statistics {
+  background:rgba(48,148,241,1);
+  width: calc(100vw - 40rpx);
+  height: 450rpx;
+  border-radius:8px;
+  margin: 20rpx;
+}
+.item1 {
+  color: #ffffff;
+  padding-top: 40rpx;
+  text-align: center;
+}
+.item1 .sumProfit {
+  font-size: 66rpx;
+}
+.item1 text {
+  margin-top: 20rpx;
+  font-size: 24rpx;
+  color: #C1DBFE;
+}
+.item2 {
+  color: #ffffff;
+  display: flex;
+  text-align: center;
+}
+.item3 {
+  color: #ffffff;
+  display: flex;
+  text-align: center;
+}
+.item3 view {
+  flex: 1;
+}
+.item2 .center::before {
+  position: absolute;
+  left: 0;
+  content: '';
+  width: 2rpx;
+  height: 80rpx;
+  background: rgb(255, 255, 255,0.1);
+  bottom: 0;
+}
+.item2 .center::after {
+  position: absolute;
+  right: 0;
+  content: '';
+  width: 2rpx;
+  height: 80rpx;
+  background: rgb(255, 255, 255,0.1);
+  bottom: 0;
+}
+.item2 .left,
+.item2 .center,
+.item2 .right {
+  flex: 1;
+  position: relative;
+}
+.item2 .left view,
+.item2 .center view,
+.item2 .right view{
+  font-size: 40rpx;
+  margin-top: 70rpx;
+}
+.item2 .left text,
+.item2 .center text,
+.item2 .right text{
+  font-size: 20rpx;
+  margin-top: 26rpx;
+  color: #C1DBFE;
+}
+.item2 .right {
+  justify-content:flex-end;
+}
+.settleRecord{
+  font-size: 24rpx;
+  margin-top: 40rpx;
+  color: #ffffff;
+  text-align: center;
+}
+.settle view {
+  width:128rpx;
+  height:60rpx;
+  line-height: 60rpx;
+  background:rgba(255,255,255,1);
+  border-radius:46rpx;
+  font-size:28rpx!important;
+  color: #4498E0;
+  margin-top: 40rpx!important;
+  margin: auto;
+}
+.customer-page{
+  display: flex;
+  flex-direction: column;
+}
+.search-enterprise{
+  background-color: #fff;
+  box-sizing: border-box;
+  padding:17rpx 36rpx 0;
+  flex-basis: 103rpx;
+}
+.search-enterprise .tabble-toggle{
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding:0 140rpx;
+  height:84rpx;
+  position: relative;
+}
+.medical-care {
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+}
+.tabble-toggle .toggle-item{
+  font-size:30rpx;
+  color:#333;
+  line-height:84rpx;
+  height:100%;
+}
+.name-item {
+  display: flex;
+  justify-content:space-between;
+  font-size: 32rpx;
+}
+.name-item2{
+  margin-top: 16rpx;
+  padding-bottom: 26rpx;
+  display: flex;
+  justify-content:space-between;
+  position: relative;
+}
+.name-item2::after {
+  position: absolute;
+  box-sizing: border-box;
+  content: ' ';
+  pointer-events: none;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-bottom: 1px solid #ebedf0;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+.name-item .amounts {
+  color: #808080;
+  font-size: 24rpx;
+}
+.name-item2 .createTime {
+  color: #808080;
+  font-size: 24rpx;
+}
+.medical-item {
+  padding: 32rpx 30rpx;
+  background-color: #ffffff;
+}
+
+.tabble-toggle .line{
+  width:90rpx;
+  height:5rpx;
+  background: linear-gradient(90deg,rgba(4,190,254,1),rgba(68,129,235,1));
+  position: absolute;
+  /* left:140rpx; */
+  bottom:0;
+  transition: 0.3s all;
+}
+.empty-data{
+  /* margin-top:200rpx; */
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  height:100%;
+  justify-content: center;
+  margin-top:-100rpx;
+}
+
+.empty-data image{
+  width:250rpx;
+  height:250rpx;
+}
+
+.empty-data text{
+  color:#615F60;
+  font-size:28rpx;
+  margin-top:55rpx;
+}
+
+.empty-data navigator{
+  background:linear-gradient(90deg,rgba(4,190,254,1),rgba(68,129,235,1));
+  width:217rpx;
+  height:60rpx;
+  line-height:60rpx;
+  text-align:center;
+  border-radius: 30rpx;
+  color:#fff;
+  font-size:28rpx;
+  margin-top:70rpx;
+}

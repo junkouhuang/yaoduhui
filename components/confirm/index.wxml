@@ -1,0 +1,13 @@
+<!--components/confirm.wxml-->
+<view class="mask" wx:if="{{show}}"  bindtap="cancel" ></view>
+<view class="confirm"  wx:if="{{show}}">
+  <view class="title">{{title}}</view>
+  <view class="content">
+    <textarea placeholder="{{placeholderText}}" placeholder-style="color:#B2B2B2;font-size:28rpx;" maxlength="50" bindinput="inputNum" adjust-position="{{flag}}" class="textarea"/>
+    <text class="text">{{num}}/50</text>
+  </view>
+  <view class="btn">
+    <view class="cancel" bindtap="cancel">取消</view>
+    <view class="yes" bindtap="yes">确定</view>
+  </view>
+</view>

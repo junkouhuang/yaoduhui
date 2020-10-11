@@ -1,0 +1,27 @@
+<!--pages/my/template/help/index.wxml-->
+<view class="help">
+  <view class="search-help">
+    <view class="search-shell">
+      <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/search_icon.png"></image>
+      <input type="text" placeholder-style="color:#c1c1c1" placeholder="请输入标题" bindconfirm="handleSearchData" value="{{keyWord}}" bindinput="handleGetSearch" confirm-type ="search"></input>
+      <view class="closed"  bindtap="handleClose">
+        <view class="close-shell" wx:if="{{keyWord}}">
+          <image  class="close" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/close.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <block wx:if="{{pages}}">
+    <view class="content">
+      <view   wx:for="{{list}}" wx:key="index">
+        <view class="item" bindtap="toDetail" data-item="{{item}}">
+          <view>{{item.questionTitle}}</view>
+          <image class="right" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/right05.png"></image>
+        </view>
+      </view>
+      <import src="../../../template/loading/index.wxml" />
+      <template is="wxLoading" data="{{status:status}}"></template>
+    </view>
+  </block>
+  <nodata wx:else></nodata>
+</view>

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "采购订单",
+  "usingComponents": {
+    "orderHeader":"../../../components/orderHeader/index",
+    "order":"../../../components/order/index"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "接收地址设置",
+  "usingComponents": {
+    "area": "../../../../components/area/index"
+  }
+}

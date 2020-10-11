@@ -1,0 +1,151 @@
+.user1 {
+  padding: 0 34rpx 0 42rpx;
+  background-color: #ffffff;
+}
+.user2 {
+  padding: 0 34rpx 0 42rpx;
+  background-color: #ffffff;
+}
+.user3 {
+  padding: 0 34rpx 0 42rpx;
+  background-color: #ffffff;
+}
+.topic {
+  background: #ffffff;
+  font-size: 28rpx;
+  display: flex;
+  margin-bottom: 20rpx;
+  align-items: center;
+  justify-content:space-between;
+  padding: 30rpx 18rpx;
+}
+.topic view {
+  flex: 1;
+}
+.topic .icon {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 100%;
+}
+.topic .right {
+  width: 20rpx;
+  height: 34rpx;
+  margin-left: 8rpx;
+}
+.no  {
+  background: #ffffff;
+  font-size: 28rpx;
+  display: flex;
+  position: relative;
+  padding: 30rpx 18rpx;
+  align-items: center;
+}
+.no ::after {
+  position: absolute;
+  box-sizing: border-box;
+  content: ' ';
+  pointer-events: none;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-bottom: 1px solid #ebedf0;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+.no view
+ {
+  width: 120rpx;
+}
+.no text {
+  margin-left: 80rpx;
+  color: #969799;
+}
+.phone {
+  background: #ffffff;
+  font-size: 28rpx;
+  display: flex;
+  padding: 30rpx 18rpx;
+  margin-bottom: 20rpx;
+  align-items: center;
+}
+.phone view
+ {
+  width: 120rpx;
+}
+.phone text {
+  margin-left: 80rpx;
+  color: #969799;
+}
+.nickname,
+.sex
+ {
+  background: #ffffff;
+  font-size: 28rpx;
+  display: flex;
+  padding: 30rpx 18rpx;
+  position: relative;
+}
+.nickname::after,
+.sex::after {
+  position: absolute;
+  box-sizing: border-box;
+  content: ' ';
+  pointer-events: none;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-bottom: 1px solid #ebedf0;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+.birthday
+ {
+  background: #ffffff;
+  font-size: 28rpx;
+  display: flex;
+  padding: 30rpx 18rpx;
+}
+.nickname .viw,
+.sex .viw,
+.birthday .viw
+ {
+   width: 120rpx;
+ }
+.birthday picker {
+  margin-left: 80rpx;
+  width: 300rpx;
+}
+.nickname text,
+.sex text,
+.birthday text {
+  margin-left: 80rpx;
+}
+.nickname input {
+  margin-left: 80rpx;
+  width: 300rpx;
+}
+
+.sex picker {
+  margin-left: 80rpx;
+  width: 300rpx;
+}
+.save_btn{
+  width: 700rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 34rpx;
+  color: #ffffff;
+  border-radius: 60rpx;
+  text-align: center;
+  margin: 74rpx auto;
+  background-image: linear-gradient(to right,#04BEFE, #4481EB);
+  box-shadow: 0 0.206667rem 0.26rem 0 rgba(67,115,234,.3);
+  opacity: .54;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.btnActive {
+  opacity: 1;
+}

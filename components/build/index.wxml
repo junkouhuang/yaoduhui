@@ -1,0 +1,25 @@
+<!--components/confirm.wxml-->
+<view class="mask" wx:if="{{show}}" bindtap="cancel"></view>
+<view class="msgbox" wx:if="{{show}}">
+	<view class="buildSuccess">
+		<view class="title11">您已成功发起首营建档申请</view>
+		<view class="richText">
+			<view class="content11">
+				供应商会进行线上首营建档审核，审核通过后，您才可以能通过平台采购，但是您必须在7个工作日内寄送您的企业首营资料给供应商，如有疑问，请联系供应商。
+			</view>
+			<view class="title22">企业首营资料</view>
+			<view class="content22">{{content}}
+				<text class="txt">授权委托书(均需加盖公章)</text>
+			</view>
+			<view wx:for="{{announcement}}" wx:key="key">
+				<view class="title33">寄送地址信息</view>
+				<view class="content44">收件人：{{item.shop.consigneeName}}</view>
+				<view class="content55">手机号码：{{item.shop.mobileNumber}}</view>
+				<view class="content55">电话号码：{{item.shop.telphone}}</view>
+				<view class="content33">地址：{{item.shop.province}}{{item.shop.city}}{{item.shop.region}}{{item.shop.location}}<view bindtap='copyText'  data-index="{{index}}" class="copy">复制</view></view>
+				<view class="content66" wx:if="{{item.shop.postCode}}">邮编：{{item.shop.postCode}}</view>
+			</view>
+		</view>
+		<view class="btn" bindtap="isee">我知道了</view>
+	</view>
+</view>

@@ -1,0 +1,14 @@
+<!--pages/member/binding-card/index.wxml-->
+
+<view class="card-list">
+  <view class="item">
+    <text class="left"><text>*</text>银行卡号</text>
+    <input type="number" value="{{bankCardId}}" maxlength="20" data-sign="bankCardId" placeholder="请输入银行卡帐号" placeholder-style="color:#C2C2C2;" bindinput="getInputValue"></input>
+  </view>
+  <view class="item">
+    <text class="left"><text>*</text>持卡人/开户名称</text>
+    <input type="text" value="{{cardOwner}}" data-sign="cardOwner" placeholder="请输入持卡人/开户名称" bindinput="getInputValue" placeholder-style="color:#C2C2C2;"></input>
+  </view>
+</view>
+
+<view class="next-step {{isDisabled?'disabled':''}}" bindtap="handleNextStop">下一步</view>

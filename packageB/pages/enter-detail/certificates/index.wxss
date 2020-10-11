@@ -1,0 +1,157 @@
+
+.search-enterprise {
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 17rpx 36rpx 0;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 140rpx;
+  height: 84rpx;
+  position: relative;
+}
+
+.line {
+  width: 90rpx;
+  height: 5rpx;
+  background: linear-gradient(90deg, rgba(4, 190, 254, 1), rgba(68, 129, 235, 1));
+  position: absolute;
+  /* left:140rpx; */
+  bottom: 0;
+  transition: 0.3s all;
+}
+
+.nav .item {
+  font-size: 30rpx;
+  color: #333;
+  line-height: 84rpx;
+  height: 100%;  
+}
+
+.nav .item.active {
+  color: #333;
+}
+
+.cent-item {
+  margin: 20rpx 30rpx;
+  border-radius: 26rpx;
+  padding: 32rpx 20rpx;
+  background: #fff;
+  overflow: hidden;
+}
+
+.cent-item .top {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.cent-item .icon {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 18rpx;
+  margin-right: 16rpx;
+}
+
+.cent-item .center {
+  color: #333;
+  width: 450rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.cent-item .center .name {
+  font-size: 28rpx;
+  display: flex;
+}
+
+.cent-item .center .qualificationsName {
+  font-weight: bold;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 450rpx;
+}
+
+.cent-item .center .date {
+  font-size: 26rpx;
+}
+
+.cent-item .status {
+  color: #3996E1;
+  font-size: 28rpx;
+  position: absolute;
+  top: 12rpx;
+  right: 0;
+}
+
+.cent-item .status.nopass {
+  color: #F13C3C;
+  font-size: 28rpx;
+  position: absolute;
+  top: 12rpx;
+  right: 0;
+}
+
+.code {
+  font-size: 26rpx;
+  color: #333;
+  margin-top: 20rpx;
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+
+.code view {
+  max-width: 500rpx;
+}
+
+.code .nameInfo {
+  max-width: 310rpx;
+}
+
+.code .qualificationsNumber {
+  max-width: 410rpx;
+  word-break: break-all;
+}
+
+.time {
+  font-size: 24rpx;
+  color: #6D6D6D;
+  margin-top: 20rpx;
+}
+
+.remark {
+  margin-top: 20rpx;
+  font-size: 24rpx;
+  color: #F13C3C;
+  background: #F3F4F5;
+  padding: 16rpx;
+  border-radius: 16rpx;
+  float: left;
+}
+
+.empty-data {
+  /* margin-top:200rpx; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: calc(100vh - 2rpx);
+  justify-content: center;
+  margin-top: -100rpx;
+}
+
+.empty-data image {
+  width: 182rpx;
+  height: 210rpx;
+}
+
+.empty-data text {
+  color: #615F60;
+  font-size: 28rpx;
+  margin-top: 55rpx;
+}

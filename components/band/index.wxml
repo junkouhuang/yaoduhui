@@ -1,0 +1,6 @@
+<view class="band">
+  <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/noimg_band.png" class="icon"></image>
+  <text class="emptyData">未绑定企业</text>
+  <view bindtap="band" class="btn_band">绑定企业</view>
+</view>
+

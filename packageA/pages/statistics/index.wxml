@@ -1,0 +1,32 @@
+
+<wxs src="../../../wxs/filter.wxs" module="tools" />
+<view class="statistics">
+  <view class="item1">
+    <view class="sumProfit">{{arr.sumProfit}}</view>
+    <text>总收益(元)</text>
+  </view>
+  <view class="item2">
+    <view class="left">
+      <view class="sumProfit">{{arr.ydProfit}}</view>
+      <text>昨日收益(元)</text>
+    </view>
+    <view class="center">
+      <view class="sumProfit">{{arr.customerNumber}}</view>
+      <text>总客户(人)</text>
+    </view>
+    <view class="right">
+      <view class="sumProfit">{{arr.ydCustomerNumber}}</view>
+      <text>昨日新增客户(人)</text>
+    </view>	
+  </view>
+</view>
+
+<view class="myCharts">
+	<view class="title">最近7日统计表</view>
+	<view class="canvas-box">
+    <view class="container1">
+      <ec-canvas id="mychart-one" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
+    </view>
+	</view>
+</view>
+

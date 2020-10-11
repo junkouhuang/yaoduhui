@@ -1,0 +1,104 @@
+<!--pages/car/index.wxml-->
+<wxs src="../../wxs/filter.wxs" module="tools" />
+<view class="car" wx:if="{{showCar}}">
+  <block wx:if="{{show == 1}}">
+    <view class="title">
+      <text>共{{amountSp}}件商品</text>
+      <view bindtap="operation" class="editor" wx:if="{{editor}}">管理</view>
+      <view bindtap="operation" class="finsh" wx:else>完成</view>
+    </view>
+    <view class="car_container">
+      <view class="list" wx:for="{{list}}" wx:key="index" wx:for-index="pindex">
+        <view class="enterpriseName">
+          <view class="radio" bindtap="checkedEnterpriseName" data-index="{{pindex}}">
+            <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/select.png" wx:if="{{item.checked}}"></image>
+            <view class="circular" wx:else></view>
+          </view>
+          <view class="enterpriseName_right">
+            <view class="name">{{item.enterpriseName}}</view>
+            <view class="minimumPurchasePrice">最低配送金额：{{item.minimumPurchasePrice}}元（起）</view>
+          </view>
+        </view>
+        <block wx:key="index" wx:for="{{item.shoppingCarDTOList}}" wx:for-index="cindex">
+          <view data-pindex="{{pindex}}" data-cindex="{{cindex}}" class="order-item" bindtouchstart="drawStart" bindtouchmove="drawMove" bindtouchend="drawEnd" style="right:{{item.right}}rpx">
+            <view class="slider">
+              <view class="item">
+                <view class="radio"  bindtap="checked" data-pindex="{{pindex}}" data-cindex="{{cindex}}">
+                  <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/select.png" wx:if="{{item.checked}}"></image>
+                  <view class="circular" wx:else></view>
+                </view>
+                <view class="img" bindtap="detail" data-drugno="{{item.drugNo}}">
+                  <view style="background-image:url({{item.imgUrl=='' || item.imgUrl==null ?'https://edm.xinquanjk.com/upload/iconfont/202003/20/classify1.png':item.imgUrl}});" class="imgUrl">
+                    <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/0yuancai.png" wx:if="{{item.drugTag == 1}}"></image>
+                  </view>
+                </view>
+                <view class="content">
+                  <view class="name" bindtap="detail" data-drugno="{{item.drugNo}}">{{item.name}}</view>
+                  <view class="producerName">{{item.producerName}}</view>
+                  <view class="spec">规格：{{item.spec}}</view>
+                  <view class="bottom">
+                    <view class="left" bindtap="detail" data-drugno="{{item.drugNo}}">  
+                      <view class="price">
+                        <text>￥</text>{{tools.toFixed(item.price)}}
+                      </view>
+                    </view>
+                    <view class="right">
+                      <view class="num">
+                        <view class="sub" bindtap="sub" data-pindex="{{pindex}}" data-cindex="{{cindex}}">
+                          <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/sub.png"></image>
+                        </view>
+                        <input type="number" value="{{item.quantity}}" bindblur="getQuantity" data-pindex="{{pindex}}" data-cindex="{{cindex}}" />
+                        <view class="add" bindtap="add" data-pindex="{{pindex}}" data-cindex="{{cindex}}">
+                          <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/add1.png"></image>
+                        </view>
+                      </view>
+                      <view class="dw">{{item.unit}}</view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+              <view class="line"></view>
+            </view>
+            <view class="remove" bindtap="slideDel" data-pindex="{{pindex}}" data-cindex="{{cindex}}" data-id="{{item.id}}">删除 </view>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view class="btn">
+      <view class="radio1">
+        <label bindtap="checkAll">
+          <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/select.png" wx:if="{{checkAll}}" ></image>
+          <view class="circular"  wx:else></view>
+          <text>全选</text>
+        </label>
+      </view>
+      <view class="right">
+        <block wx:if="{{editor}}">
+          <view class="total">
+            应付款
+            <text class="t1">￥</text>
+            <text class="t2">{{tools.toFixed(amount)}}</text>
+          </view>
+        </block>
+        <block wx:if="{{editor}}">
+          <view class="submit {{can?'active':''}}" bindtap="{{can?'next':''}}">
+            <text>提交订单</text>
+          </view>
+        </block>
+        <block wx:else>
+          <view class="delete {{can?'active':''}}" bindtap="{{can?'delete':''}}">
+            <text>删除</text>
+          </view>
+        </block>
+      </view>
+    </view>
+  </block>
+  <block wx:if="{{show == 2}}">
+    <view class="default">
+      <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/nodata.png"></image>
+      <text>暂无商品</text>
+      <view class="go" bindtap="home">去首页逛逛</view>
+    </view>
+  </block>
+</view>
+<band class="band" wx:else></band>

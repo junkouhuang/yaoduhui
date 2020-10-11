@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "结算记录",
+  "usingComponents": {
+    "nodata": "../../../../components/nodata/index"
+  }
+}

@@ -1,0 +1,21 @@
+<view class="add">
+  <view class="shr">
+    <view class="ti"><text>*</text>收货人：</view>
+    <input placeholder="请输入收货人姓名" placeholder-style="color:#CBCBCB;" bindinput="consigneeInput"
+      value="{{ruleForm.consignee}}" maxlength="25"></input>
+  </view>
+  <view class="phone">
+    <view class="ti"><text>*</text>手机号码：</view>
+    <input placeholder="请输入手机号码" placeholder-style="color:#CBCBCB;" bindinput="phoneNumberInput" type="number"
+      maxlength="11" value="{{ruleForm.phoneNumber}}"></input>
+  </view>
+  <view class="area">
+    <view class="ti"><text>*</text>所在地：</view>
+    <view>{{ruleForm.provinceName}}{{ruleForm.cityName}}{{ruleForm.district}}</view>
+  </view>
+  <view class="location">
+    <view class="ti"><text>*</text>详细地址：</view>
+    <view>{{ruleForm.location}}</view>
+  </view>
+</view>
+<view class="save {{can ? 'btnActive' : ''}}" bindtap="{{can ? 'save' : ''}}">保存</view>

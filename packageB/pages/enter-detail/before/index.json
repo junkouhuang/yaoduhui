@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "证件详情",
+  "usingComponents": {
+    "model":"../../../../components/model/index"
+  }
+}

@@ -1,0 +1,17 @@
+
+<wxs src="../../../../wxs/filter.wxs" module="tools" />
+<view class="settle">
+  <view  class="ok_green">
+    <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/ok_green.png"></image>
+    <text>结算申请成功</text>
+  </view>
+  <view class="withdraw">
+    结算金额:￥
+    <text>{{tools.formatPrice(withdraw)}}</text>
+  </view>
+  <view class="time">
+    申请时间:
+    <text>{{tools.formatTimes(time)}}</text>
+  </view>
+</view>
+<view class="button" bindtap="isee">知道了</view>

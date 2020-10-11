@@ -1,0 +1,96 @@
+/* pages/band/bindding/index.wxss */
+.bindding-page{
+  background-color: #fff;
+  padding-top:20rpx;
+}
+
+.bindding-page .enterprise-msg{
+  width:714rpx;
+  box-shadow:0px 1px 5px 0px rgba(109,109,109,0.3);
+  border-radius:15px;
+  margin-left:18rpx;
+  box-sizing: border-box;
+  padding:46rpx 30rpx;
+}
+
+.enterprise-msg text{
+  font-size:30rpx;
+  color:#333;
+  display: block;
+  font-weight: bold;
+}
+
+.bindding-page .enterprise-msg .mode{
+  color:#808080;
+  font-size:26rpx;
+  margin-top:18rpx;
+}
+
+.bindding-page .userinfo-msg{
+  box-sizing: border-box;
+  padding:0 34rpx 0 42rpx;
+}
+
+.userinfo-msg .info-item{
+  height:116rpx;
+  width:674rpx;
+  display: flex;
+  align-items:center;
+  position: relative;
+}
+
+.userinfo-msg .info-item::after {
+  position: absolute;
+  box-sizing: border-box;
+  content: ' ';
+  pointer-events: none;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-bottom: 1px solid #ebedf0;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+
+.userinfo-msg .info-item:last-child{
+  border-bottom:none;
+}
+
+.userinfo-msg .info-item .attribute{
+  width:198rpx;
+  font-size:28rpx;
+  color:#333;
+
+}
+
+.info-item .attribute text{
+  color:#FF0000;
+}
+
+.userinfo-msg .info-item .name{
+  color:#868686;
+  font-size:28rpx;
+}
+
+.userinfo-msg .info-item input{
+  color:#333;
+  font-size:28rpx;
+}
+
+.next-step{
+  width:690rpx;
+  height:88rpx;
+  background:linear-gradient(90deg,rgba(4,190,254,1),rgba(68,129,235,1));
+  margin-left:30rpx;
+  margin-top:80rpx;
+  text-align:center;
+  color:#fff;
+  line-height:88rpx;
+  border-radius: 44rpx;
+  font-weight: 500;
+  margin-bottom:20rpx;
+}
+
+.next-step.disable{
+  opacity:0.54
+}

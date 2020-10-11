@@ -1,0 +1,37 @@
+
+<view class="customer-page">
+
+  <view class="search-enterprise">
+    <view class="search-shell">
+      <image class="search" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/search_icon.png"></image>
+      <input type="text" placeholder-style="color:#c1c1c1" placeholder="请输入企业名称" bindconfirm="handleSearchKeyword" value="{{keyword}}" bindinput="handleInputKey" confirm-type="search"></input>
+      <view class="close-shell" wx:if="{{keyword}}" bindtap="handleClose">
+        <image  class="close" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/close.png"></image>
+      </view>
+    </view>
+  </view>
+
+  <view class="not-settled" wx:if="{{!enterpriseList[0]&&isrequset}}">
+    <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/settled.png"></image>
+    <view class="click-here">企业未入驻的，<view bindtap="goToSettledIn">点击入驻</view></view>
+  </view>
+
+  <view class="enterprise-list" wx:else>
+    <block wx:if="{{enterpriseList.length>0}}">
+      <view class="enterprise-item" wx:for="{{enterpriseList}}" wx:key="index" bindtap="handleSelectItem" data-index="{{index}}">
+        <text class="enterprise-name">{{item.enterpriseName}}</text>
+        <image wx:if="{{item.check}}" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/select.png"></image>
+        <view class="circular" wx:else></view>
+      </view>
+      <import src="../../../../template/loading/index.wxml" />
+      <template is="wxLoading" data="{{status}}"></template>
+    </block>
+    <block wx:else>
+      <view class="default">
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/data_null.png"></image>
+        <text>请搜索企业</text> 
+      </view>
+    </block>
+  </view>
+
+</view>

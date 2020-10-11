@@ -1,0 +1,92 @@
+/* pages/integral/record/index.wxss */
+.navbar-shell{
+  height:103rpx;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding:13rpx 28rpx 0 42rpx;
+  position: relative;
+  border-top:1rpx solid #DCDCDC;
+}
+
+.navbar-shell .navbar-list{
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+  height:100%;
+} 
+
+.navbar-shell .navbar-list .navber-item{
+  color:#333;
+  font-size:30rpx;
+  line-height:30rpx;
+}
+
+.navbar-shell .line{
+  width:64rpx;
+  height:5rpx;
+  background:linear-gradient(90deg,rgba(4,190,254,1),rgba(68,129,235,1));
+  transition: all 0.3s;
+  position: absolute;
+  bottom:0;
+}
+
+.record-list{
+  margin-top:25rpx;
+  background-color: #fff;
+  border-radius: 15rpx;
+  box-sizing: border-box;
+  padding:0 20rpx 0 35rpx;
+  margin-bottom:20rpx;
+}
+
+.record-list .record-item{
+  height:160rpx;
+  border-bottom:1rpx solid #F0F0F0;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding:40rpx 0;
+}
+
+.record-list .record-item:last-child{
+  border-bottom:none;
+}
+
+.record-list .record-item .recorc-left{
+  display: flex;
+  height:100%;
+  align-items: center;
+}
+
+.record-item .recorc-left image{
+  width:72rpx;
+  height:72rpx;
+}
+
+.record-item .recorc-left .record-detail{
+  display: flex;
+  flex-direction: column;
+  margin-left:18rpx;
+}
+
+.recorc-left .record-detail .classify{
+  font-size:32rpx;
+  color:#333;
+  line-height:32rpx;
+}
+
+.recorc-left .record-detail .year{
+  font-size:26rpx;
+  color:#868686;
+  line-height:26rpx;
+  margin-top:20rpx;
+}
+
+.recorc-left .record-detail .year .time{
+  margin-left:30rpx;
+}
+
+.record-item .raction{
+  font-size:34rpx;
+  color:#FF4141;
+}

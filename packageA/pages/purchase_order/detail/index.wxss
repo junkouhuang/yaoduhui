@@ -1,0 +1,229 @@
+
+.header {
+  width: 100%;
+  color: #ffffff;
+  text-align: center;
+  height: 140rpx;
+  line-height: 140rpx;
+  z-index: 999;
+  font-size: 30rpx;
+}
+.header text {
+  float: left;
+  margin-left: 3%;
+  margin-top: 30rpx;
+}
+.header2 {
+  width: 100%;
+  color: #ffffff;
+  text-align: center;
+  height: 200rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+}
+.header2 .left {
+  width: 34rpx;
+  height: 34rpx;
+  margin-left: 18rpx;
+}
+.header2 text {
+  float: left;
+  margin-left: 3%;
+  font-size: 30rpx;
+}
+.status {
+  top: 200rpx;
+  left: 0;
+  right: 0;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+.status .gan {
+  width: 34rpx;
+  height: 34rpx;
+}
+.status .zt {
+  margin-left: 14rpx;
+  font-size: 32rpx;
+}
+.bjimg {
+  width: 100%;
+  height: 330rpx;
+}
+.userInfo {
+  padding: 42rpx 44rpx;
+  color: #333333;
+  font-size: 30rpx;
+  border-radius: 16rpx;
+  background-color: #ffffff;
+  position: relative;
+  top: -20rpx;
+}
+.userInfo .name_phone {
+  display: flex;
+}
+.userInfo .consignee {
+ max-width: 400rpx;
+ text-overflow: ellipsis;
+ white-space: nowrap;
+ overflow: hidden;
+}
+.userInfo .consigneePhone {
+ margin-left: 44rpx;
+}
+.userInfo .shippingAddress {
+  color: #868686;
+  font-size: 26rpx;
+  margin-top: 28rpx;
+}
+.content {
+  margin: 22rpx 0;
+  border-radius: 16rpx;
+}
+.totalAmount {
+  background-color: #ffffff;
+  padding: 32rpx 40rpx;
+  display: flex;
+  justify-content:space-between;
+}
+.totalAmount .name {
+  color: #333333;
+  font-size: 28rpx;
+}
+.totalAmount .amount {
+  font-size: 24rpx;
+  color: #FF6C00;
+}
+.totalAmount .amount text {
+  font-size: 30rpx;
+}
+.item {
+  background-color: #ffffff;
+  padding: 44rpx;
+  position: relative;
+}
+.item:not(:last-child)::after {
+  content: "";
+  width: calc(100vw - 88rpx);
+  height: 2rpx;
+  background-color: #D3D3D3;
+  position: absolute;
+  bottom: 0;
+}
+.purchaseOrderDetail {
+  display: flex;
+}
+.item .imgUrl {
+  width: 150rpx;
+  height: 150rpx;
+  background-position: center;
+  background-size: cover;
+  border: 2rpx solid #f5f5f5;
+  border-radius: 10rpx;
+}
+.item .mx {
+  margin-left: 34rpx;
+  flex: 1;
+}
+.item .mx .productName {
+  font-size: 26rpx;
+  color: #333333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.item .mx .manufacturer {
+  font-size: 20rpx;
+  color: #858585;
+}
+.item .mx .unitPriceWithTax {
+  font-size: 20rpx;
+  color: #858585FF;
+  margin-top: 10rpx;
+}
+.item .mx .validityDate {
+  font-size: 20rpx;
+  color: #585858;
+  margin-top: 10rpx;
+}
+.item .mx .spec {
+  overflow: hidden;
+  font-size: 22rpx;
+  margin-top: 10rpx;
+}
+.item .mx .spec text {
+  background-color: #F2F2F2;
+  color: #868686;
+  font-size: 18rpx;
+  padding: 8rpx 16rpx;
+  border-radius: 60rpx;
+  margin-right: 10rpx;
+  display: inline-block;
+}
+.item .mx .quantity_amountWithTax {
+  display: flex;
+  justify-content:space-between;
+  margin-top: 20rpx;
+}
+.item .mx .quantity {
+  color: #868686;
+  font-size: 24rpx;
+}
+.item .mx .amountWithTax {
+  color: #FF6C00;
+  font-size: 24rpx;
+  margin-top: 10rpx;
+}
+.item .mx .xj {
+  color: #FF6C00;
+  font-size: 24rpx;
+}
+.item .mx .xj text {
+  font-size: 30rpx;
+}
+.tip {
+  color: red;
+  font-size: 24rpx;
+  background-color: #ffffff;
+  padding: 30rpx 0 0  0;
+}
+.bottom {
+  margin: 22rpx 0;
+  border-radius: 16rpx;
+  background-color: #ffffff;
+  font-size: 28rpx;
+}
+.bottom .orderInfo {
+  color: #868686;
+  padding: 36rpx  42rpx;
+  border-bottom: 2rpx solid #D3D3D3;
+}
+.bottom .supplierName,
+.bottom .purchaseOrderNo,
+.bottom .creator {
+  color: #868686;
+  margin: 34rpx  42rpx 0 42rpx ;
+}
+.bottom .createTime {
+  color: #868686;
+  padding: 34rpx  42rpx 46rpx 42rpx ;
+}
+.bottom .supplierName text,
+.bottom .purchaseOrderNo text,
+.bottom .creator text,
+.bottom .createTime text {
+  color: #333333;
+  float: right;
+}

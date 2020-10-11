@@ -1,0 +1,11 @@
+<!--pages/register_success/index.wxml-->
+<view class="register_success">
+  <view class="flow3">
+    <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/register_success.png" class="suceess"></image>
+    <view class="success">注册成功</view>
+    <view class="goshopping" bindtap="band">去绑定企业</view>
+    <view bindtap="home" class="gohome">进入首页</view>
+  </view>
+</view>
+
+

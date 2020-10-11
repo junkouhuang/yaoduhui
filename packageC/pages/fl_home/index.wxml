@@ -1,0 +1,4 @@
+<view class=" {{scrolly?'tripList_root':''}}" model:style="top:-{{mtop}}px">
+  <goods source="fl_home" parameterType="{{parameterType}}" id="goods" bind:myevent="myevent">
+  </goods>
+</view>

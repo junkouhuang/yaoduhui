@@ -1,0 +1,10 @@
+<!--pages/my/template/help_detail/index.wxml-->
+<import src="../../../wxParse/wxParse.wxml"/>
+<view class="help_detail">
+  <view class="questionTitle" wx:if="{{questionTitle}}"><text>Q:</text>{{questionTitle}}</view>
+  <view class="questionContent"  wx:if="{{questionContent}}">
+    <!-- <rich-text nodes="{{questionContent}}" class="questionContent"></rich-text> -->
+    <text>A:</text>
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+  </view>
+</view>

@@ -1,0 +1,67 @@
+
+<wxs src="../../../../wxs/filter.wxs" module="tools" />
+<view class="customer-page">
+  <view class="search-enterprise">
+    <view class="tabble-toggle">
+      <view class="toggle-item" wx:for="{{navbarList}}" wx:key="index" bindtap="handleToggle" data-index="{{index}}">
+        {{item}}
+      </view>
+      <view class="line" style="left:{{lineLeft}};"></view>
+    </view>
+  </view>
+  <block wx:if="{{lineIndex==0 && has}}">
+    <view class="medical-item"  wx:for="{{checkPending}}" wx:key="index" >
+      <view class="audited-list">
+        <view class="audited-item">
+          <view class="left">
+            <view class="contacts">{{item.contacts}}<text class="status_wait">待审核</text></view>
+            <view class="item">手机号码：{{item.mobileNumber}}</view>
+            <view class="item">身份证号码：{{item.idCode}}</view>
+            <view class="creatime">申请时间：{{tools.formatTime(item.createTime)}}</view>
+          </view>
+          <view class="btn">
+            <view class="cancel" bindtap="reject" data-id="{{item.bindApplyId}}">拒绝</view>
+            <view class="yes" bindtap="pass" data-id="{{item.bindApplyId}}">通过</view>
+          </view>
+          <confirm show="{{show}}" title="拒绝原因" placeholderText="请输入拒绝原因" bind:getData="getData"></confirm>
+        </view>
+      </view>
+    </view>
+    <import src="../../../../template/loading/index.wxml" />
+    <template is="wxLoading" data="{{status}}"></template>
+  </block>
+  <block wx:elif="{{lineIndex==1 && has}}">
+    <view class="medical-item"  wx:for="{{checkPending}}" wx:key="index"  >
+      <view class="audited-list">
+        <view class="audited-item">
+          <view class="left">
+            <view class="contacts">{{item.contacts}}<text class="status_wait">已通过</text></view>
+            <view class="item">手机号码：{{item.mobileNumber}}</view>
+            <view class="item">身份证号码：{{item.idCode}}</view>
+            <view class="creatime">申请时间：{{tools.formatTime(item.createTime)}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <import src="../../../../template/loading/index.wxml" />
+    <template is="wxLoading" data="{{status}}"></template>
+  </block>
+  <block wx:elif="{{lineIndex==2 && has}}">
+    <view class="medical-item"  wx:for="{{checkPending}}" wx:key="index">
+      <view class="audited-list">
+        <view class="audited-item">
+          <view class="left">
+            <view class="contacts"><view>{{item.contacts}} </view><text class="status_nopass">未通过</text></view>
+            <view class="item">手机号码：{{item.mobileNumber}}</view>
+            <view class="item">身份证号码：{{item.idCode}}</view>
+            <view class="item">申请时间：{{tools.formatTime(item.createTime)}}</view>
+            <view class="reject">拒绝原因：{{item.remark}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <import src="../../../../template/loading/index.wxml" />
+    <template is="wxLoading" data="{{status}}"></template>
+  </block>
+  <nodata   wx:else></nodata>
+</view>

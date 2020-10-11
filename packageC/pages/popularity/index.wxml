@@ -1,0 +1,5 @@
+<!--pages/popularity/index.wxml-->
+<view class="bt {{scrolly?'tripList_root':''}}" model:style="top:-{{mtop}}px">
+  <view class="container1"></view>
+  <goods source="popularity" id="goods" bind:myevent="myevent"></goods>
+</view>

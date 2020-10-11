@@ -1,0 +1,34 @@
+/* packageB/pages/band/success/index.wxss */
+.enter_success {
+  background: #fff;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.enter_success_icon {
+  width: 234rpx;
+  height: 234rpx;
+}
+.tip {
+  font-size:32rpx ;
+  color: #333;
+  margin-top: 82rpx;
+}
+.tips {
+  font-size: 30rpx;
+  color: #6D6D6D;
+  margin-top: 24rpx;
+}
+.isee {
+  width:250rpx;
+  height:70rpx;
+  line-height: 70rpx;
+  background:#3996E1;
+  font-size: 28rpx;
+  color: #fff;
+  border-radius:44rpx;
+  margin: 246rpx auto 0;
+}

@@ -1,0 +1,42 @@
+<!--pages/verify_phone_number/index.wxml-->
+<view class="verify_phone_number">
+  <view class="flow1">
+    <view class="form">
+      <view class="phone {{focus === 0 ? 'inputActive' : ''}}">
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/phone1.png" wx:if="{{focus === 0}}"></image>
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/phone.png" wx:else></image>
+        <input placeholder="请输入手机号" placeholder-style="color:#CBCBCB;" value="{{ruleForm.phone}}" maxlength="11" bindfocus="phoneFocus" bindinput="phoneInput"></input>
+        <view class="code vericodeActive" bindtap="getvericode" wx:if="{{sent}}">{{mess}}</view>
+        <view class="code" wx:else>{{mess}}</view>
+      </view>
+      <view class="vericode {{focus === 1 ? 'inputActive' : ''}}">
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/vericode1.png" wx:if="{{focus === 1}}"></image>
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/vericode.png" wx:else></image>
+        <input placeholder="请输入验证码" placeholder-style="color:#CBCBCB;" value="{{ruleForm.vericode}}" maxlength="6" bindfocus="vericodeFocus" bindinput="getValue" data-sign="vericode" type="number"></input>
+      </view>
+      <view class="password {{focus === 2 ? 'inputActive' : ''}}">
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/pass1.png" wx:if="{{focus === 2}}" class="lock"></image> 
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/pass.png" wx:else class="lock"></image> 
+        <input placeholder="设置密码" placeholder-style="color:#CBCBCB;" maxlength="18" value="{{ruleForm.password}}" type="text" bindfocus="passwordFocus" bindinput="getValue" data-sign="password" wx:if="{{hide1}}"></input>
+         <input placeholder="设置密码" placeholder-style="color:#CBCBCB;" maxlength="18" value="{{ruleForm.password}}" type="password" bindfocus="passwordFocus" bindinput="getValue" data-sign="password" wx:else></input>
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/e02.png" class="eyes_open"  wx:if="{{hide1}}" bindtap="seen1"></image>
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/e01.png" class="eyes_close" wx:else bindtap="seen1"></image>
+      </view>
+      <view class="password conformpassword {{focus === 3 ? 'inputActive' : ''}}">
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/pass1.png" wx:if="{{focus === 3}}" class="lock"></image> 
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/pass.png" wx:else class="lock"></image> 
+        <input placeholder="确认密码" placeholder-style="color:#CBCBCB;" maxlength="18" value="{{ruleForm.confirm}}" type="text" bindfocus="confirmpasswordFocus" bindinput="getValue" data-sign="confirm"  wx:if="{{hide2}}"></input>
+        <input placeholder="确认密码" placeholder-style="color:#CBCBCB;" maxlength="18" value="{{ruleForm.confirm}}" type="password" bindfocus="confirmpasswordFocus" bindinput="getValue" data-sign="confirm" wx:else ></input>
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/e02.png" class="eyes_open"  wx:if="{{hide2}}"  bindtap="seen2"></image>
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/e01.png" class="eyes_close" wx:else bindtap="seen2"></image>
+      </view>
+      <view class="reminder">密码必须至少6个字符，以字母开头，同时包含字母和数字。</view>
+      <view class="next {{can ? 'btnActive' : ''}}" bindtap="{{can ? 'next' : 'next'}}" >下一步</view>
+    </view>
+  </view>
+  <view class="agreement">
+    <!-- <checkbox checked="{{check}}" bindtap="check"/> -->
+    <view>注册即代表您已同意<text  bindtap="protocol">《药都荟服务协议》</text>
+    </view>
+  </view>
+</view>

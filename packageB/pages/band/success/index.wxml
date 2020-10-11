@@ -1,0 +1,7 @@
+<!--packageB/pages/band/success/index.wxml-->
+<view class="enter_success">
+  <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/band_success.png" class="enter_success_icon"></image>
+  <view class="tip">您的企业入驻申请已提交</view>
+  <view class="tips">平台会在1-2个工作日审核确认</view>
+  <view class="isee" bindtap="isee">我知道了</view>
+</view>

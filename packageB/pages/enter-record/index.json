@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "企业绑定记录",
+  "usingComponents": {
+    "nodata": "../../../components/nodata/index"
+  }
+}

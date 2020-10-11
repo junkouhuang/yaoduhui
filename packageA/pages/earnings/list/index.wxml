@@ -1,0 +1,138 @@
+<import src="../../../../template/loading/index.wxml" />
+<wxs src="../../../../wxs/filter.wxs" module="tools" />
+<view class="customer-page">
+<view class="search-enterprise">
+  <view class="tabble-toggle">
+    <view class="toggle-item" wx:for="{{navbarList}}" wx:key="index" bindtap="handleToggle" data-index="{{index}}">
+      {{item}}
+    </view>
+    <view class="line" style="left:{{lineLeft}};"></view>
+  </view>
+</view>
+
+<block wx:if="{{lineIndex==0}}">
+  <picker bindchange="pickDate" mode = "date"  fields="month" header-text="选择时间" value="{{expiryDate}}">
+    <view class="picker" >
+      {{expiryDate}}
+      <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/down.png"></image>
+    </view>
+  </picker>
+  <scroll-view class="medical-care" scroll-y="true" bindscrolltolower="handleScrollBottom">
+    <block  wx:if="{{show == 1}}" >
+      <view class="medical-item"wx:for="{{list}}" wx:key="index"  data-detail="{{item}}">
+        <view class="medical-left">
+            <view class="definition-mode">
+              <view>
+                <text class="name">{{item.contact}}</text>
+                <text class="definition"> {{item.salesmanType == 0?'区域合伙人':item.salesmanType == 1?'省级合伙人':item.salesmanType == 2?'市级合伙人':item.salesmanType == 3?'业务推广员':''}}</text>
+              </view>
+              <text>￥{{item.settlementPrice}}</text>
+            </view>
+            <view class="name-phone">
+              <text class="name">{{tools.formatTime(item.createTime)}}</text>
+              <text class="definition">{{item.status == 0?'待审核':item.status == 1?'审核通过':item.status == 2?'审核不通过':item.status == 3?'已付款':''}}</text>
+            </view>
+            <view class="reason" wx:if="{{item.status == 2}}">
+              <text>拒绝原因：{{item.remark}}</text>
+            </view>
+        </view>
+      </view>
+      <template is="wxLoading"  data="{{status}}"></template>
+    </block>
+    <nodata  wx:if="{{show == 2}}"></nodata>
+  </scroll-view>
+</block>
+
+<block wx:if="{{lineIndex==1}}">
+  <picker bindchange="pickDate" mode = "date" fields="month"  value="{{expiryDate}}">
+    <view class="picker" >
+      {{expiryDate}}
+      <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/down.png"></image>
+    </view>
+   </picker>
+  <scroll-view class="medical-care" scroll-y="true" bindscrolltolower="handleScrollBottom">
+    <block wx:if="{{show == 1}}">
+      <view class="medical-item"  wx:for="{{list}}" wx:key="index"  data-detail="{{item}}">
+        <view class="medical-left">
+            <view class="definition-mode">
+              <view>
+                <text class="name">{{item.contact}}</text>
+                <text class="definition"> {{item.salesmanType == 0?'区域合伙人':item.salesmanType == 1?'省级合伙人':item.salesmanType == 2?'市级合伙人':item.salesmanType == 3?'业务推广员':''}}</text>
+              </view>
+              <text>￥{{item.settlementPrice}}</text>
+            </view>
+            <view class="name-phone">
+              <text class="name">{{tools.formatTime(item.createTime)}}</text>
+              <text class="definition">{{item.status == 0?'待审核':item.status == 1?'审核通过':item.status == 2?'审核不通过':item.status == 3?'已付款':''}}</text>
+            </view>
+        </view>
+      </view>
+      <template is="wxLoading"  data="{{status}}"></template>
+    </block>
+    <nodata  wx:if="{{show == 2}}"></nodata>
+  </scroll-view>
+</block>
+
+<block wx:if="{{lineIndex==2}}">
+  <picker bindchange="pickDate" mode = "date"  fields="month" value="{{expiryDate}}">
+    <view class="picker" >
+      {{expiryDate}}
+      <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/down.png"></image>
+    </view>
+   </picker>
+  <scroll-view class="medical-care" scroll-y="true" bindscrolltolower="handleScrollBottom">
+    <block wx:if="{{show == 1}}">
+      <view class="medical-item" wx:for="{{list}}" wx:key="index"  data-detail="{{item}}">
+        <view class="medical-left">
+            <view class="definition-mode">
+              <view>
+                <text class="name">{{item.contact}}</text>
+                <text class="definition"> {{item.salesmanType == 0?'区域合伙人':item.salesmanType == 1?'省级合伙人':item.salesmanType == 2?'市级合伙人':item.salesmanType == 3?'业务推广员':''}}</text>
+              </view>
+              <text>￥{{item.settlementPrice}}</text>
+            </view>
+            <view class="name-phone">
+              <text class="name">{{tools.formatTime(item.createTime)}}</text>
+              <text class="definition">{{item.status == 0?'待审核':item.status == 1?'审核通过':item.status == 2?'审核不通过':item.status == 3?'已付款':''}}</text>
+            </view>
+        </view>
+      </view>
+      <template is="wxLoading" wx:if="{{!isRequsetTwo||auditedList[0]&&isRequsetTwo}}" data="{{status:status}}"></template>
+    </block>
+    <nodata wx:if="{{show == 2}}"></nodata>
+  </scroll-view>
+</block>
+
+<block wx:if="{{lineIndex==3}}">
+  <picker bindchange="pickDate" mode = "date"  fields="month" value="{{expiryDate}}">
+    <view class="picker" >
+      {{expiryDate}}
+      <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/down.png"></image>
+    </view>
+  </picker>
+  <scroll-view class="medical-care" scroll-y="true" bindscrolltolower="handleScrollBottom">
+    <block wx:if="{{show == 1}}">
+      <view class="medical-item" wx:for="{{list}}" wx:key="index"  data-detail="{{item}}">
+        <view class="medical-left">
+            <view class="definition-mode">
+              <view>
+                <text class="name">{{item.contact}}</text>
+                <text class="definition"> {{item.salesmanType == 0?'区域合伙人':item.salesmanType == 1?'省级合伙人':item.salesmanType == 2?'市级合伙人':item.salesmanType == 3?'业务推广员':''}}</text>
+              </view>
+              <text>￥{{item.settlementPrice}}</text>
+            </view>
+            <view class="name-phone">
+              <text class="name">{{tools.formatTime(item.createTime)}}</text>
+              <text class="definition">{{item.status == 0?'待审核':item.status == 1?'审核通过':item.status == 2?'审核不通过':item.status == 3?'已付款':''}}</text>
+            </view>
+            <view class="reason">
+              <text>拒绝原因：{{item.remark}}</text>
+            </view>
+        </view>
+      </view>
+      <template is="wxLoading"  data="{{status}}"></template>
+    </block>
+    <nodata class="empty-data" wx:if="{{show == 2}}"></nodata>
+  </scroll-view>
+</block>
+</view>

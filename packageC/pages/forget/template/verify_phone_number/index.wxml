@@ -1,0 +1,23 @@
+<!--pages/verify_phone_number/index.wxml-->
+<view class="verify_phone_number">
+  <view class="flow1">
+    <view class="title">
+      请填写您要找回的账号手机号码
+    </view>
+    <view class="form">
+      <view class="phone {{focus === 0 ? 'inputActive' : ''}}">
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/phone1.png" wx:if="{{focus === 0}}"></image>
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/phone.png" wx:else></image>
+        <input placeholder="输入手机号" placeholder-style="color:#CBCBCB;" value="{{ruleForm.phone}}" maxlength="11" bindfocus="phoneFocus" bindinput="phoneInput" ></input>
+        <view class="code vericodeActive" bindtap="getvericode" wx:if="{{sent}}">{{mess}}</view>
+        <view class="code" wx:else>{{mess}}</view>
+      </view>
+      <view class="vericode {{focus === 1 ? 'inputActive' : ''}}">
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/vericode1.png" wx:if="{{focus === 1}}"></image>
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/vericode.png" wx:else></image>
+        <input placeholder="输入验证码" placeholder-style="color:#CBCBCB;" value="{{ruleForm.vericode}}" maxlength="6" bindfocus="vericodeFocus" bindinput="vericodeInput" type="number"></input>
+      </view>
+      <view class="next {{can ? 'btnActive' : ''}}" bindtap="{{can ? 'next' : ''}}" >下一步</view>
+    </view>
+  </view>
+</view>

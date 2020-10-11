@@ -1,0 +1,53 @@
+<!--pages/member/data-replenish-detail/index.wxml-->
+<view class="replnish-page">
+	<view class="essential-information">
+			<view class="information-title">
+				<text style="color:red;">*</text>营业执照照片
+			</view>
+			<view class="img_flex">
+				<view class="view_imgage">
+					<image class="img" src="{{businessLicenseImg}}"></image>
+				</view>
+				<!-- <view class="view_imgage">
+					<image class="img" src="{{businessLicenseImg}}"></image>
+				</view>
+				<view class="view_imgage">
+					<image class="img" src="{{businessLicenseImg}}"></image>
+				</view> -->
+		</view>
+		<view class="information-item">
+			<view class="item-text" style="width:280rpx;">
+				<text class="symbol">*</text>
+				<text class="item-name">住所：</text>
+			</view>
+			<view class="enterpriseName">{{bizAddress?bizAddress:''}}</view>
+		</view>
+		<view class="information-item">
+			<view class="item-text">
+				<text class="symbol">*</text>
+				<text class="item-name">统一信用代码：</text>
+			</view>
+			<view class="enterpriseName">{{businessLicenseCode?businessLicenseCode:''}}</view>
+		</view>
+		<view class="information-item">
+			<view class="item-text" style="width: 240rpx;">
+				<text class="symbol">*</text>
+				<view class="validity-date">证件发出日期：</view>
+			</view>
+			<view class="picker">
+				<input value='{{visaDate}}' placeholder='选择时间' disabled />
+			</view>
+		</view>
+		<view class="information-item">
+			<view class="item-text" style="width: 240rpx;">
+				<text class="symbol">*</text>
+				<view class="validity-date">证件过期日期：</view>
+			</view>
+			<view class="picker">
+				<input value='{{lostDate}}' placeholder='选择时间' disabled />
+			</view>
+		</view>
+	</view>
+	<view class="commitStatu {{supplementStatus==1?'textBlue':supplementStatus==3?'textRed':''}}">{{supplementStatus==1?'已提交':supplementStatus==3?'确认失败':''}}</view>
+	<view class="next-step" bindtap="handleNextStop" wx:if="{{supplementStatus==3}}">重新提交资料</view>
+</view>

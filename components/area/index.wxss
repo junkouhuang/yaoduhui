@@ -1,0 +1,93 @@
+.modalDetail {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: #000;
+  opacity: 0.5;
+  z-index: 3;
+  transition: all 0.3s
+}
+.dq {
+  background-color: #ffffff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 800rpx;
+  z-index: 10;
+  transition: all 0.3s;
+  border-radius: 8rpx 8rpx 0 0;
+}
+.dq .top {
+  height: 144rpx;
+  width: 100%;
+}
+.dq .top .sent {
+  font-size: 30rpx;
+  font-weight: bold;
+  padding: 20rpx;
+  width: 100%;
+}
+.dq .top .tbs {
+  display: flex;
+  width: 100%;
+  padding: 0 20rpx 0 20rpx;
+  font-size: 30rpx;
+}
+.dq .top .tbs .active {
+  color: #4481EB;
+}
+.dq .top .tbs .active::after {
+  content: '';
+  width: 60%;
+  left: 0;
+  height: 2rpx;
+  position: absolute;
+  background-image: linear-gradient(to right,#04BEFE, #4481EB);
+  bottom: -20rpx;
+} 
+.dq .top .tbs .name {
+  position: relative;
+  margin-right: 30rpx;
+  max-width:200rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.content {
+  width: 100%;
+  height: calc(100vh - 164rpx);
+  background-color: #ffffff;
+  border-top: 2rpx solid #f4f4f4;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.content .provinceName {
+  color: #333333;
+  font-size: 30rpx;
+  margin: 20rpx;
+}
+.content .cityName {
+  color: #333333;
+  font-size: 30rpx;
+  margin: 20rpx;
+}
+.content .regionName {
+  color: #333333;
+  font-size: 28rpx;
+  margin: 20rpx;
+}
+.content .ok {
+  width: 30rpx;
+  height: 30rpx;
+}
+.content .ok {
+  width: 30rpx;
+  height: 30rpx;
+}
+.content .ok {
+ width: 30rpx;
+ height: 30rpx;
+}

@@ -1,0 +1,24 @@
+.empty-data{
+  /* margin-top:200rpx; */
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  height:100%;
+  justify-content: center;
+  position:absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.empty-data .image{
+  width:250rpx;
+  height:250rpx;
+}
+
+.empty-data .text{
+  color:#615F60;
+  font-size:28rpx;
+  margin-top:55rpx;
+}
+

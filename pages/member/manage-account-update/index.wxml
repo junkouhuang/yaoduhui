@@ -1,0 +1,40 @@
+<!--pages/member/manage-accout-update/index.wxml-->
+<wxs  module="filter"  src="../../../wxs/filter.wxs"/>
+<view class="card-list">
+  <!-- <view class="title">
+    <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/fillIn.png"></image>
+    <text>账户被绑银行卡</text>
+  </view>
+  <view class="bankCard">
+    <view class="bankName">中国银行</view>
+    <view class="bankId">
+      <view class="bankId-row">
+        <view class="li {{index==3 || index==7 || index==11?'li-mr':''}}" wx:for="{{12}}" wx:key="index"></view>
+        <view>{{virtualAccountId?filter.toSlice(virtualAccountId):'0000'}}</view>
+      </view>
+    </view>
+    <view class="bank-3" bindtap="goUpdateBankCard">
+      <view class="bankupdate">变更银行卡</view>
+      <view class="statu-right">
+        <image class="rightIcon" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/right05-1.png"></image>
+      </view>
+    </view>
+  </view> -->
+  <view class="card-data-info" bindtap="changePassword">
+    <view>交易密码</view>
+    <view class="statu-right">
+      <text>修改</text>
+      <image class="card-data-info-rightIcon" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/right05.png"></image>
+    </view>
+  </view>
+  <view class="card-data-info" bindtap="goSupplement">
+    <view>资料补充</view>
+    <view class="statu-right">
+      <text wx:if="{{supplementStatus==0}}">未补充，点击补充资料</text>
+      <text wx:if="{{supplementStatus==1}}" style="color:#0266C4;">已提交</text>
+      <text wx:if="{{supplementStatus==2}}">已补充</text>
+      <text wx:if="{{supplementStatus==3}}"><i style="color:red;">确认失败，</i>重新提交资料</text>
+     <image class="card-data-info-rightIcon" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/right05.png"></image>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,44 @@
+<!--
+    show="{{show}}"  // 向组件传递show值，true为显示省市区组件，false为关闭省市区组件
+    bind:getData="getData" // 获取组件内传递出来的值(这里主要获取省市区名称和id)
+-->
+<area show="{{show}}" bind:getData="getData" id="area"></area>
+<view class="tip">
+  <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/notice.png" class="notice"></image>
+  <text>该地址提供给有意向采购您商品的采购商，可以根据该联系 方式和地址进行首营建档。</text>
+</view>
+<view  class="add">
+  <view class="shr">
+    <view class="ti"><text>*</text>收件人</view>
+    <input placeholder="请输入收件人" placeholder-style="color:#CBCBCB;" bindinput="consigneeNameInput" value="{{ruleForm.consigneeName}}" maxlength="25" disabled="{{auth != 1}}"></input>
+  </view>
+  <view class="phone">
+    <view class="ti"><text>*</text>手机号码</view>
+    <input placeholder="请输入手机号码" placeholder-style="color:#CBCBCB;" bindinput="mobileNumberInput" type="number" maxlength="11"  value="{{ruleForm.mobileNumber}}" disabled="{{auth != 1}}"></input>
+  </view>
+  <view class="telphoneInput">
+    <view class="ti"><text>*</text>电话号码</view>
+    <input placeholder="请输入电话号码" placeholder-style="color:#CBCBCB;" value="{{ruleForm.telphone}}" bindinput="telphoneInput" maxlength="12" disabled="{{auth != 1}}"></input>
+  </view>
+  <view class="area">
+    <view class="ti"><text>*</text>所在地</view>
+    <input placeholder="请选择地区" placeholder-style="color:#CBCBCB;" disabled bindtap="{{auth == 1?'areaSel':''}}" value="{{china}}" disabled="{{auth != 1}}"></input>
+    <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/dot.png" class="dot"  bindtap="{{auth == 1?'areaSel':''}}"></image>
+  </view>
+  <view class="location">
+    <view class="ti"><text>*</text>详细地址</view>
+    <input placeholder="请输入街道，楼牌号等" placeholder-style="color:#CBCBCB;"  value="{{ruleForm.location}}" bindinput="locationInput" disabled="{{auth != 1}}"></input>
+  </view>
+  <view class="postcode">
+    <view class="ti"><text></text>邮政编号</view>
+    <input placeholder="请输入邮政编号" placeholder-style="color:#CBCBCB;" value="{{ruleForm.postCode}}" bindinput="postcodeInput" maxlength="6" disabled="{{auth != 1}}"></input>
+  </view>
+  <!-- <view class="default">
+    <view class="ti"><text></text>设为默认</view>
+    <switch checked="{{ruleForm.isDefault ==0?false:true}}" bindchange="switch1Change"/>
+  </view> -->
+</view>
+<block wx:if="{{auth == 1}}">
+  <view class="save {{can ? 'btnActive' : ''}}" bindtap="{{can ? 'save' : ''}}" >保存</view>
+  <!--wx:if="{{enterpriseId == 4095 || enterpriseId == 1 || enterpriseId == 2894}}"-->
+</block>

@@ -1,0 +1,26 @@
+<!--pages/my/template/setting.wxml-->
+<view class="setting-information">
+  <navigator hover-class="none" url="/packageA/pages/user/index" class="accountSecurity accountInfo" bindtap="accountInfo">
+    <text>个人信息</text>
+    <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/right3.png"></image>
+  </navigator>
+  <view class="accountSecurity account" bindtap="account">
+    <text>账户与安全</text>
+    <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/right3.png"></image>
+  </view>
+  <view class="realName" bindtap="handleGoReal" wx:if="{{realData.status>=0}}">
+    <text>实名认证</text>
+    <view>
+      <view class="status">
+        <text wx:if="{{realData.status==0}}">实名认证审核中</text>
+        <text wx:if="{{realData.status==1}}">已认证</text>
+        <text wx:if="{{realData.status==2}}">审核失败</text>
+        <text wx:if="{{!realData.status&&realData.status!==0}}">未实名认证</text>
+      </view>
+      <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/right3.png"></image>
+    </view>
+  </view>
+  <view class="version">当前版本：{{version}}</view>
+</view>
+
+<view class="loginout" bindtap="loginout">退出</view>

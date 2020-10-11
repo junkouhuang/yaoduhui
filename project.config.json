@@ -1,0 +1,403 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"enhance": true,
+		"postcss": true,
+		"preloadBackgroundData": false,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"nodeModules": true,
+		"autoAudits": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"uglifyFileName": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": false,
+		"uploadWithSourceMap": true,
+		"compileHotReLoad": false,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"bundle": false,
+		"useIsolateContext": true,
+		"useCompilerModule": true,
+		"userConfirmedUseCompilerModuleSwitch": false,
+		"useMultiFrameRuntime": false,
+		"useApiHook": true,
+		"packNpmManually": false,
+		"packNpmRelationList": []
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.12.2",
+	"appid": "wx13c2d9a6ea92f506",
+	"projectname": "%E6%96%B0%E8%8D%AF%E9%83%BD%E8%8D%9F",
+	"cloudfunctionTemplateRoot": "",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"scripts": {},
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "确认绑定",
+					"pathName": "pages/band/bindding/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "客户审核",
+					"pathName": "pages/put_record/customer/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 10,
+					"name": "购物车",
+					"pathName": "pages/car/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "历史记录",
+					"pathName": "pages/search_goods/template/history/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "首页",
+					"pathName": "pages/home/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "积分记录",
+					"pathName": "pages/integral/record/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "购买积分",
+					"pathName": "pages/integral/purchase/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "赎回积分",
+					"pathName": "pages/integral/redeem/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "会员中心",
+					"pathName": "pages/member/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "账单明细",
+					"pathName": "pages/member/bill_details/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "账单详情",
+					"pathName": "pages/member/account_detail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 27,
+					"name": "转账",
+					"pathName": "pages/member/transfer/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "提现",
+					"pathName": "pages/member/cash-withdrawal/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "用户详情审核",
+					"pathName": "pages/put_record/detail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/my/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "修改手机号码",
+					"pathName": "pages/member/change-phone/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "充值",
+					"pathName": "pages/member/recharge/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "修改银行卡信息",
+					"pathName": "pages/member/change-card/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "实名认证",
+					"pathName": "pages/member/real-name/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "跳转",
+					"pathName": "pages/web-view/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "绑定银行卡",
+					"pathName": "pages/member/binding-card/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "合伙人类型",
+					"pathName": "pages/partner/type/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "test",
+					"pathName": "pages/test/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "帮助中心",
+					"pathName": "pages/my/template/help/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "企业开户",
+					"pathName": "pages/member/account-two/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "设置密码",
+					"pathName": "pages/register/template/set_password/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "注册成功",
+					"pathName": "pages/register/template/register_success/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "web-view",
+					"pathName": "pages/web-view/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 63,
+					"name": "蒙版",
+					"pathName": "pages/making/making",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "分类",
+					"pathName": "pages/classify/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "绑定成功",
+					"pathName": "pages/band/bindding/success/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 66,
+					"name": "弹出框",
+					"pathName": "components/alert/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 32,
+					"name": "企业入驻成功",
+					"pathName": "packageB/pages/band/success/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 33,
+					"name": "排行版",
+					"pathName": "packageC/pages/popularity/index",
+					"query": "",
+					"scene": 1001
+				},
+				{
+					"id": 34,
+					"name": "详情",
+					"pathName": "packageC/pages/detail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 35,
+					"name": "统计",
+					"pathName": "packageA/pages/statistics/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "登录",
+					"pathName": "packageC/pages/login/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "地址",
+					"pathName": "packageA/pages/address_list/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "收益",
+					"pathName": "packageA/pages/earnings/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "采购订单支付",
+					"pathName": "packageA/pages/purchase_order/pay/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 40,
+					"name": "确定支付",
+					"pathName": "packageA/pages/purchase_order/confirm-pay/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "采购单",
+					"pathName": "packageA/pages/purchase_order/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "订单支付成功",
+					"pathName": "packageA/pages/purchase_order/pay-success/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "支付失败",
+					"pathName": "packageA/pages/purchase_order/pay-error/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "销售订单",
+					"pathName": "packageA/pages/sale_order/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "web-view",
+					"pathName": "pages/web-view/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageB/pages/enter-detail/detail/index",
+					"pathName": "packageB/pages/enter-detail/detail/index",
+					"scene": null
+				}
+			]
+		}
+	}
+}

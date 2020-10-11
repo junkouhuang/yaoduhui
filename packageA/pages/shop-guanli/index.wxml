@@ -1,0 +1,10 @@
+
+
+<view class="essential-information">
+  <view class="information-item" wx:for="{{essentialList}}" wx:key="index" bindtap="handleGoToPage" data-url="{{item.url}}">
+    <view class="item-text">
+      <text class="item-name">{{item.qualificationsName}}</text>
+    </view>
+    <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/right3.png"></image>
+  </view>
+</view>

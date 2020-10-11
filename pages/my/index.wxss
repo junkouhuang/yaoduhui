@@ -1,0 +1,573 @@
+page {
+  background: #F2F2F2 url('https://edm.xinquanjk.com/upload/iconfont/202003/20/bj06.png') no-repeat;
+  background-size: 100% 450rpx;
+}
+.my{
+  padding-bottom: 16rpx;
+}
+.header2 {
+  background: #F2F2F2 url('https://edm.xinquanjk.com/upload/iconfont/202003/20/bj00.png') no-repeat;
+  width: 100%;
+  color: #ffffff;
+  text-align: center;
+  height: 146rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+  background-size: 100%;
+}
+
+.header2 .left {
+  width: 34rpx;
+  height: 34rpx;
+  margin-left: 18rpx;
+}
+
+.header2 text {
+  float: left;
+  margin-left: 3%;
+  font-size: 30rpx;
+  margin-top: 50rpx;
+}
+
+.top {
+  width: 100%;
+  height: 340rpx;
+  position: relative;
+  top: 120rpx;
+  display: flex;
+  align-items: center;
+}
+
+.item_top {
+  width: calc(100vw - 80rpx);
+  margin-left: 40rpx;
+  position: absolute;
+  left: 0;
+  top:40rpx;
+  display: flex;
+}
+
+.top .bj2 {
+  width: 90%;
+  margin-left: 5%;
+  position: absolute;
+  height: 206rpx;
+  bottom: -90rpx;
+}
+
+.top .bj1 {
+  width: calc(100vw - 68rpx);
+  margin-left: 34rpx;
+  position: absolute;
+  height: 126rpx;
+  bottom: -30rpx;
+}
+
+.top .topic {
+  width: 140rpx;
+  height: 140rpx;
+  display: flex;
+  align-items: center;
+  border-radius: 100%;
+}
+
+.top .topic .userAvatarUrl {
+  width: 130rpx;
+  height: 130rpx;
+  display: block;
+  border-radius: 100%;
+  box-shadow: 0 0.206667rem 0.26rem 0 rgba(67, 115, 234, .3);
+}
+
+.top .topic .real-name {
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  bottom: 10rpx;
+  right: 10px;
+}
+
+.top .name {
+  height: 140rpx;
+  width: 540rpx;
+  display: flex;
+  align-items: center;
+}
+
+.top .name .name-left {
+  width: 540rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start;
+  margin-left: 20rpx;
+}
+
+.top .name .bj1 {
+  width: 100%;
+}
+
+.user-shell {
+  display: flex;
+  align-items: center;
+}
+
+.top .name .userNickName {
+  display: flex;
+  font-size: 30rpx;
+  height: 50rpx;
+  color: #ffffff;
+  font-family: 'DIN-Medium';
+  max-width: 500rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  align-items: center;
+}
+
+.top .name .userNickName .nickname {
+  max-width: 400rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.top .name .userNickName .sming {
+  margin-left: 6rpx;
+  /* border: 1px solid rgba(255, 255, 255, .5); */
+  color: rgba(255, 255, 255, .8);
+  border-radius: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0rpx 10rpx;
+  background: rgba(0, 0, 0, .1);
+}
+
+.top .name .userNickName .sming image {
+  width: 18rpx;
+  height: 22rpx;
+  margin-right: 6rpx;
+}
+
+.top .name .userNickName .sming text {
+  font-size: 20rpx;
+}
+
+.top .name .company {
+  color: #ffffff;
+  font-size: 28rpx;
+  height: 50rpx;
+  display: flex;
+  align-items: center;
+  max-width: 500rpx;
+}
+
+.top .name .company .switch {
+  font-size: 22rpx;
+  border-radius: 26rpx;
+  border: 1px solid rgba(255,255,255,0.5);
+  padding: 0 10rpx;
+  color: rgba(255, 255, 255, 0.5);
+  margin-left:10rpx ;
+}
+
+.top .name .level {
+  height: 50rpx;
+  border-radius: 24rpx;
+  float: left;
+  color: #ffffff;
+  font-size: 24rpx;
+  display: flex;
+  align-items: center;
+}
+
+.top .name .level .start {
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 6rpx;
+}
+
+.top .name .company .mc {
+  text-overflow: ellipsis;
+  max-width: 420rpx;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.top .name .company .mc1 {
+  text-overflow: ellipsis;
+  max-width: 390rpx;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+
+.top .name .image {
+  width: 12rpx;
+  height: 22rpx;
+  margin-left: 10rpx;
+  margin-right: 35rpx;
+}
+
+.top .name .binding-enterprise {
+  border-radius: 20rpx;
+  color: #fff;
+  height: 36rpx;
+  line-height: 36rpx;
+  font-size: 20rpx;
+  margin-top: 10rpx;
+  text-align: center;
+  display: flex;
+  padding: 0 18rpx;
+  float: left;
+  border: 1rpx solid rgba(255, 255, 255, 0.5  );
+  position: relative;
+}
+
+
+.top .name .name-right {
+  display: flex;
+  align-items: center;
+  margin-right: 37rpx;
+}
+
+.top .name .name-right text {
+  font-size: 22rpx;
+  color: #fff;
+  line-height: 24rpx;
+}
+
+.top .name .name-right image {
+  width: 14rpx;
+  height: 25rpx;
+  margin-left: 10rpx;
+}
+
+.top .center {
+  width: calc(100vw - 68rpx);
+  margin-left: 34rpx;
+  position: absolute;
+  height: 126rpx;
+  line-height: 126rpx;
+  bottom: 0rpx;
+  background: #272C41 url(https://edm.xinquanjk.com/upload/iconfont/202003/20/sming_success01.png) no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-radius: 20rpx;
+}
+
+.top .center1 {
+  width: calc(100vw - 68rpx);
+  margin-left: 34rpx;
+  position: absolute;
+  height: 126rpx;
+  line-height: 126rpx;
+  bottom: -30rpx;
+  background: #272C41 url(https://edm.xinquanjk.com/upload/iconfont/202003/20/sming_success01.png) no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-radius: 20rpx;
+}
+
+.top .center text {
+  margin-left: 70rpx;
+}
+
+.top .open {
+  color: #272C41;
+  background: linear-gradient(to right, #F1D78D, #F9CA76);
+  height: 48rpx;
+  line-height: 48rpx;
+  border-radius: 60rpx;
+  width: 148rpx;
+  text-align: center;
+  font-size: 22rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20rpx;
+}
+
+.top .open image {
+  width: 26rpx;
+  height: 26rpx;
+  vertical-align: middle;
+  margin: 0 8rpx;
+}
+
+.admin {
+  border-radius: 16rpx;
+  margin-top: 116rpx;
+  background-color: #ffffff;
+  overflow: hidden;
+  text-align: center;
+}
+
+.admin1 {
+  border-radius: 16rpx;
+  margin-top: 140rpx;
+  background-color: #ffffff;
+  overflow: hidden;
+  text-align: center;
+  width: calc(100vw - 68rpx);
+  margin-left: 34rpx;
+  box-shadow: 0px 2px 8px rgba(103, 102, 102, 0.1);
+}
+
+.title {
+  padding: 34rpx 0 20rpx 40rpx;
+  text-align: left;
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #444;
+  position: relative;
+}
+
+.title::after {
+  position: absolute;
+  box-sizing: border-box;
+  content: ' ';
+  pointer-events: none;
+  right: 16px;
+  bottom: 0;
+  left: 16px;
+  border-bottom: 1px solid #ebedf0;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+
+.admin1 .content {
+  padding: 20rpx 0 50rpx;
+  overflow: hidden;
+}
+
+.admin1 .item {
+  margin: 20rpx 0;
+}
+
+.item {
+  width: 25%;
+  float: left;
+  margin: 40rpx 0;
+}
+
+.item .icon {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.item .mc {
+  color: #333333;
+  font-size: 26rpx;
+}
+
+.service {
+  border-radius: 16rpx;
+  margin-top: 16rpx;
+  background-color: #ffffff;
+  overflow: hidden;
+  text-align: center;
+  padding-bottom: 40rpx;
+  width: calc(100vw - 68rpx);
+  margin-left: 34rpx;
+  box-shadow: 0px 2px 8px rgba(103, 102, 102, 0.1);
+}
+
+.service .title {
+  padding: 34rpx 0 20rpx 40rpx;
+  text-align: left;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.service .item {
+  width: 25%;
+  float: left;
+  margin: 40rpx 0;
+  height: 100rpx;
+}
+
+.service .item .icon {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.service .item .mc {
+  color: #333333;
+  font-size: 26rpx;
+}
+
+.tools {
+  border-radius: 16rpx;
+  margin-top: 16rpx;
+  background-color: #ffffff;
+  overflow: hidden;
+  text-align: center;
+  padding-bottom: 40rpx;
+  width: calc(100vw - 68rpx);
+  margin-left: 34rpx;
+  box-shadow: 0px 2px 8px rgba(103, 102, 102, 0.1);
+}
+
+.tools .title {
+  padding: 34rpx 0 20rpx 40rpx;
+  text-align: left;
+  font-size: 28rpx;
+  width: calc(100vw - 40rpx);
+}
+
+.tools .item {
+  width: 25%;
+  float: left;
+  margin: 40rpx 0;
+  height: 100rpx;
+}
+
+.tools .item .icon {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.tools .item .mc {
+  color: #333333;
+  font-size: 26rpx;
+}
+
+.loginout {
+  width: 100%;
+  padding: 40rpx 0;
+  display: none;
+
+}
+
+.loginout .btn {
+  border-radius: 60rpx;
+  background-color: #04BEFE;
+  font-size: 32rpx;
+  width: calc(100vw - 68rpx);
+  height: 90rpx;
+  line-height: 90rpx;
+  color: #ffffff;
+  text-align: center;
+  background-image: linear-gradient(to right, #04BEFE, #4481EB);
+  box-shadow: 0 0.206667rem 0.26rem 0 rgba(67, 115, 234, .3);
+  margin-left: 34rpx;
+}
+
+
+.mask-page {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.mask-page .bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #000;
+  opacity: 0.5;
+  transition: all 0.3s
+}
+
+.mask-page .enterprise-shell {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 57rpx 40rpx 30rpx 40rpx;
+  border-radius: 15rpx 15rpx 0 0;
+  transition: all 0.3s
+}
+
+.mask-page .enterprise-shell .bt {
+  font-size: 30rpx;
+  color: #333333;
+  line-height: 30rpx;
+  font-weight: bold;
+}
+
+.mask-page .enterprise-shell .enterprise-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 35rpx;
+  /* margin-bottom:100rpx; */
+  max-height: 430rpx;
+}
+
+.mask-page .enterprise-shell .enterprise-list .item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  margin: 0;
+  padding: 40rpx 0;
+}
+
+.mask-page .enterprise-shell .enterprise-list .item:not(:last-child)::after {
+  position: absolute;
+  box-sizing: border-box;
+  content: ' ';
+  pointer-events: none;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-bottom: 1px solid #ebedf0;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+
+.mask-page .enterprise-shell .enterprise-list .item image {
+  width: 34rpx;
+  height: 34rpx;
+}
+
+.mask-page .enterprise-shell .enterprise-list .item text {
+  font-size: 28rpx;
+  color: #333333;
+  margin-left: 20rpx;
+  max-width: 600rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+}
+
+.mask-page .enterprise-shell .enterprise-list .item .circular {
+  width: 30rpx;
+  height: 30rpx;
+  border: 3rpx solid #ABABB4;
+  border-radius: 50%;
+}
+
+
+.mask-page .enterprise-shell .add {
+  border-radius: 40rpx;
+  background-color: #04BEFE;
+  font-size: 32rpx;
+  width: 650rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  color: #ffffff;
+  text-align: center;
+  background-image: linear-gradient(to right, #04BEFE, #4481EB);
+  box-shadow: 0 0.206667rem 0.26rem 0 rgba(67, 115, 234, .3);
+  margin-left: 10rpx;
+  margin-top: 30rpx;
+}

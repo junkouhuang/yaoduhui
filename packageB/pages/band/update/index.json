@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "资质上传",
+  "usingComponents": {
+    "model":"../../../../components/model/index"
+  }
+}

@@ -1,0 +1,2 @@
+<!--components/verificationCode/index.wxml-->
+<view class="my-class" style="opacity:{{getCodeBtnText==prop.btnText ? '1' : '0.5'}}" bindtap="{{getCodeBtnText==prop.btnText ? 'getCode' : ''}}">{{getCodeBtnText}}</view>

@@ -1,0 +1,21 @@
+<!--pages/member/open-complete/index.wxml-->
+<view class="content">
+  <image src="{{content.imgUrl}}"></image>
+  <view class="title">{{content.title}}</view>
+  <view class="detail" wx:if="{{content.detail}}">{{content.detail}}</view>
+  <view class="transferInfo" wx:if="{{status=='transferSuccessful'}}">
+    <view class="transferInfo-text">
+      <view>收款方名称：</view>
+      <view>这是收款方名称</view>
+    </view>
+    <view class="transferInfo-text">
+      <view>收款方账户：</view>
+      <view>{{rcvAccount?rcvAccount:0}}</view>
+    </view>
+    <view class="transferInfo-text">
+      <view>转账金额：</view>
+      <view>{{moneyNumber?moneyNumber:0}}元</view>
+    </view>
+  </view>
+  <view class="btn" bindtap="complete">{{content.btnText}}</view>
+</view>

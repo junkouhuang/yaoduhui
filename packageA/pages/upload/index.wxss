@@ -1,0 +1,13 @@
+@import "../../../components/we-cropper/style/common.wxss";
+
+.cropper {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.cropper-buttons {
+  background-color: #333;
+  color: #3996e1;
+  z-index: 999;
+}

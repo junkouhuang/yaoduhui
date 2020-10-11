@@ -1,0 +1,48 @@
+/* pages/confirm_order/template/pay_result.wxss */
+.pay_result {
+  background-color: #fff;
+  text-align: center;
+  height: calc(100vh)
+}
+.pay_result .ico {
+  width: 150rpx;
+  height: 150rpx;
+  margin: 100rpx auto 40rpx;
+}
+.pay_result .txt {
+  color: #333333;
+  font-size: 36rpx;
+  text-align: center;
+  font-weight: bold;
+}
+.pay_result .describle1 {
+  color: #333333;
+  font-size: 26rpx;
+  text-align: left;
+  margin: 100rpx 56rpx 0;
+  line-height: 50rpx;
+}
+.pay_result .describle1 text {
+  color: #FF0000;
+}
+.pay_result .describle2 {
+  color: #333333;
+  font-size: 26rpx;
+  text-align: left;
+  margin: 50rpx 56rpx 100rpx;
+  line-height: 50rpx;
+}
+.pay_result .describle2 text {
+  color: #FF0000;
+}
+.pay_result .btn {
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 32rpx;
+  color: #ffffff;
+  border-radius: 60rpx;
+  text-align: center;
+  margin: 0 56rpx;
+  background-image: linear-gradient(to right,#04BEFE, #4481EB);
+  box-shadow: 0 0.206667rem 0.26rem 0 rgba(67,115,234,.3);
+}

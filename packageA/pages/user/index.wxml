@@ -1,0 +1,42 @@
+<wxs src="../../../wxs/filter.wxs" module="tools" />
+<view class="user1">
+  <view class="topic">
+    <view>头像</view>
+    <image src="{{ruleForm.avatar}}" class="icon"  bindtap="upload"></image>
+    <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/right3.png" class="right"></image>
+  </view>
+</view>
+<view class="user2">
+  <view class="no">
+    <view>会员号</view>
+    <text>{{ruleForm.uno}}</text>
+  </view>
+  <view class="phone">
+    <view>手机号</view>
+    <text>{{ruleForm.telephone}}</text>
+  </view>
+</view>
+<view class="user3">
+  <view class="nickname">
+    <view  class="viw">昵称</view> 
+    <input value="{{ruleForm.nickname}}" placeholder="请输入昵称" bindinput="nicknameInput"></input>
+  </view>
+  <view class="sex">
+    <view class="viw">性别</view>
+    <picker bindchange="pickSex" value="{{ruleForm.sex -1}}" range="{{gender}}" >
+      <view class="picker">
+        {{ruleForm.sex == 1?'男':ruleForm.sex == 2?'女':'未知'}}
+      </view>
+    </picker>
+  </view>
+  <view class="birthday">
+    <view  class="viw">生日</view>
+    <picker bindchange="pickDate" mode = "date" value="{{tools.formatDate(ruleForm.birthday)}}" wx:if="{{ruleForm.birthday}}">
+      <view class="picker">
+        {{tools.formatDate(ruleForm.birthday)}}
+      </view>
+    </picker>
+  </view>
+</view>
+<view class="save_btn {{can ? 'btnActive' : ''}}" bindtap="{{can ? 'update' : ''}}">保存</view>
+

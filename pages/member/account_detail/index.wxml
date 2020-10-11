@@ -1,0 +1,39 @@
+<wxs src="../../../wxs/filter.wxs" module="tools" />
+<!--pages/member/account_detail/index.wxml-->
+<view class="account-detail" wx:if="{{accountData}}">
+  <view class="explain-image">
+    <image wx:if="{{accountData.billType==0}}" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/cz.png"></image>
+    <image wx:if="{{accountData.billType==3}}" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/tx.png"></image>
+    <image wx:if="{{accountData.billType==1||accountData.billType==2}}" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/zf.png"></image>
+    <image wx:if="{{accountData.billType==4}}" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/zz.png"></image>
+    <text wx:if="{{accountData.billType==0}}">充值</text>
+    <text wx:if="{{accountData.billType==1}}">转账(收)</text>
+    <text wx:if="{{accountData.billType==2}}">转账(支)</text>
+    <text wx:if="{{accountData.billType==3}}">提现</text>
+    <text wx:if="{{accountData.billType==4}}">支付</text>
+  </view>
+  <text class="money" wx:if="{{accountData.totalAmount<0}}">{{accountData.totalAmount}}</text>
+  <text class="money" style="color:#FF4141" wx:else>{{accountData.totalAmount}}</text>
+  <text class="state">{{accountData.billStatusDesc}}</text>
+  <view class="receivables-item first">
+    <text class="item" wx:if="{{accountData.billType==2}}">付款方名称</text>
+    <text class="item" wx:else>收款方名称</text>
+    <text class="detail">{{accountData.virtualAccountName}}</text>
+  </view>
+  <view class="receivables-item" wx:if="{{accountData.paymentTime}}">
+    <text class="item">交易时间</text>
+    <text class="detail">{{tools.formatTime(accountData.paymentTime)}}</text>
+  </view>
+  <view class="receivables-item" wx:elif="{{accountData.createTime}}">
+    <text class="item">交易时间</text>
+    <text class="detail">{{tools.formatTime(accountData.createTime)}}</text>
+  </view>
+  <view class="receivables-item">
+    <text class="item">流水单号</text>
+    <text class="detail">{{accountData.billTradeNo}}</text>
+  </view>
+  <view class="receivables-item">
+    <text class="item">备注</text>
+    <text class="detail">{{accountData.remark||'无备注'}}</text>
+  </view>
+</view>

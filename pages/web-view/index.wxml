@@ -1,0 +1,11 @@
+
+<view class='maskLayer' bindtap='hideModal' wx:if="{{showBuild}}"></view>
+<view class="buildSuccess" wx:if="{{hidden}}">
+	<view class="conten2t">
+		<view class="bohai_hint" data-src="https://edm.xinquanjk.com/upload/iconfont/202003/20/bohai_notice1.png"></view>
+		<text>在开户过程中切勿点击【关闭】</text>按钮，否则会导致 开户失败，开户成功后点击返回按钮【<image src='https://edm.xinquanjk.com/upload/iconfont/202003/20/left.png'>
+			</image>
+			】即可。
+			<view class="btn" bindtap="hideModal">我知道了</view>
+	</view>
+</view>

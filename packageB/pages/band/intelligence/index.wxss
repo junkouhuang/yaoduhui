@@ -1,0 +1,123 @@
+
+.tips-msg{
+  height:60rpx;
+  background-color: #E3F1FC;
+  display: flex;
+  align-items:center;
+  box-sizing: border-box;
+  padding-left:40rpx;
+
+}
+.tips-msg image{
+  width:30rpx;
+  height:30rpx;
+}
+
+.tips-msg .tips{
+  color:#333;
+  font-size:24rpx;
+  margin-left:12rpx;
+
+}
+
+.tips-msg .tips .quotation-symbol{
+  margin:0 15rpx;
+}
+
+
+.symbol{
+  color:#FF0000;
+  line-height:40rpx;
+}
+
+.information-title{
+  padding:28rpx 60rpx;
+  font-size:30rpx;
+  color:#333;
+  position: relative;
+  font-weight: bold;
+}
+
+.information-title::after {
+  width: 3px;
+  height: 30rpx;
+  position: absolute;
+  left: 50rpx;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  content: '';
+  background: #3996E1;
+}
+
+.essential-information{
+  background-color: #fff;
+  border-radius: 15px;
+  box-sizing: border-box;
+  padding:0 34rpx 0 42rpx;
+}
+
+.essential-information .information-item{
+  height:96rpx;
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+  position: relative;
+}
+.essential-information .information-item::after {
+  position: absolute;
+  box-sizing: border-box;
+  content: ' ';
+  pointer-events: none;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-bottom: 1px solid #ebedf0;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+.essential-information .information-item:last-child{
+  border-bottom:none
+}
+
+.information-item .picker{
+  font-size:28rpx;
+  color:#333;
+}
+
+.information-item .item-text{
+  display: felx;
+  align-items:center;
+  font-size:28rpx;
+}
+
+
+
+.information-item .item-text .item-name{
+  color:#333;
+}
+
+.information-item image{
+  width:16rpx;
+  height:28rpx;
+}
+
+.next-step{
+  width:690rpx;
+  height:88rpx;
+  background:linear-gradient(90deg,rgba(4,190,254,1),rgba(68,129,235,1));
+  box-shadow: 0 0.206667rem 0.26rem 0 rgba(67,115,234,.3);
+  margin-left:30rpx;
+  margin-top:67rpx;
+  text-align:center;
+  color:#fff;
+  line-height:88rpx;
+  border-radius: 44rpx;
+  font-weight: 500;
+  margin-bottom:20rpx;
+  position: fixed;
+  bottom: 100rpx;
+}
+
+.next-step.disabled{
+  opacity: 0.54
+}

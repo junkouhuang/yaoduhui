@@ -1,0 +1,55 @@
+<!--pages/member/bill_details/index.wxml-->
+<import src="../../../template/loading/index.wxml" />
+<wxs src="../../../wxs/filter.wxs" module="tools" />
+<view class="screen">
+  <view class="screen-header">
+    <view class="screen-content" bindtap="handleShowMask">
+      <text>筛选</text>
+      <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/saixuan.png"></image>
+    </view>
+    <view class="line"></view>
+  </view>
+
+  <scroll-view scroll-y class="enterprise-list" bindscrolltolower="handleScrollBottom" wx:if="{{accountList[0]}}">
+    <view class="enterprise-item" wx:for="{{accountList}}" wx:key="index" bindtap="handleLookDetail" data-id="{{item.billsId}}">
+      <image wx:if="{{item.billType==0}}" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/cz.png"></image>
+      <image wx:if="{{item.billType==3}}" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/tx.png"></image>
+      <image wx:if="{{item.billType==1||item.billType==2}}"  src="https://edm.xinquanjk.com/upload/iconfont/202003/20/zf.png"></image>
+      <image wx:if="{{item.billType==4}}" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/zz.png"></image>
+      <view class="item-right">
+        <view class="name-number">
+          <text class="name">{{item.virtualAccountName}}</text>
+          <text class="number" wx:if="{{item.totalAmount<0}}">{{item.totalAmount}}</text>
+          <text class="number" wx:else style="color:#FF4141">+{{item.totalAmount}}</text>
+        </view>
+        <view class="transfer-accounts">
+          <text class="accounts">渤海账户</text>
+          <text wx:if="{{item.billType==0}}" class="remarks">充值</text>
+          <text wx:if="{{item.billType==1}}" class="remarks">转账(收)</text>
+          <text wx:if="{{item.billType==2}}" class="remarks">转账(支)</text>
+          <text wx:if="{{item.billType==3}}" class="remarks">提现</text>
+          <text wx:if="{{item.billType==4}}" class="remarks">支付</text>
+        </view>
+        <!-- <text class="time" wx:if="{{item.paymentTime}}">{{tools.formatTime(item.paymentTime)}}</text> -->
+        <text class="time" wx:if="{{item.createTime}}">{{tools.formatTime(item.createTime)}}</text>
+      </view>
+    </view>
+    <template is="wxLoading" wx:if="{{!isRequset||accountList[0]&&isRequset}}" data="{{status:status}}"></template>
+  </scroll-view>
+  <view class="empty-data" wx:if="{{!accountList[0]&&isRequset}}">
+      <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/no_data_icon.png"></image>
+      <text>暂无数据</text>
+      <!-- <navigator>去建档</navigator> -->
+  </view>
+
+  <view class="options-mask" wx:if="{{showMask}}">
+    <view class="bg" bindtap="closeMask" style="opacity:{{opacity}}"></view>
+    <view class="options-shell" style="bottom:{{bottom}}">
+      <text class="title">选择交易类型</text>
+      <view class="options-list">
+        <view class="options-item {{typeActiveIndex==index?'active':''}}" wx:key="index" wx:for="{{typeList}}" bindtap="handleSelectItem" data-type="{{item.type}}" data-index="{{index}}">{{item.name}}</view>
+      </view>
+      <view class='cancel' bindtap="closeMask">取消</view>
+    </view>
+  </view>
+</view>

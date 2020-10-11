@@ -1,0 +1,86 @@
+
+<wxs src="../../../wxs/filter.wxs" module="tools" />
+<import src="../../../template/loading/index.wxml" />
+<view class="statisticsPage">
+  <view class="statistics">
+    <view class="item1">
+      <view class="sumProfit">{{data.sum}}</view>
+      <text>总收益(元)</text>
+    </view>
+    <view class="item2">
+      <view class="left">
+        <view class="sumProfit">{{data.withdraw}}</view>
+        <text>收益余额(元)</text>
+      </view>
+      <view class="center">
+        <view class="sumProfit">{{data.alreadyWithdrawal}}</view>
+        <text>已结算(元)</text>
+      </view>
+      <view class="right">
+        <view class="sumProfit">{{data.auditSettlePrice}}</view>
+        <text>审核中(元)</text>
+      </view>
+    </view>
+    <view class="item3">
+      <view bindtap="settleRecord" class="settleRecord">查看结算记录</view>
+      <view class="settleRecord"></view>
+      <view class="settle">
+        <view bindtap="settle">结算</view>
+      </view>
+    </view>
+  </view>
+  <view class="customer-page">
+    <view class="search-enterprise">
+      <view class="tabble-toggle">
+        <view class="toggle-item" wx:for="{{navbarList}}" wx:key="index" bindtap="handleToggle" data-index="{{index}}">
+          {{item}}
+        </view>
+        <view class="line" style="left:{{lineLeft}};"></view>
+      </view>
+    </view>
+  </view>
+  <block wx:if="{{lineIndex==0}}">
+    <scroll-view class="medical-care {{show == 2?'care-h':''}}" scroll-y="true" bindscrolltolower="handleScrollBottom">
+      <block wx:if="{{show == 1}}">
+        <view class="medical-item" wx:for="{{list}}" wx:key="index" bindtap="handleLookDetail" >
+          <view class="medical-left">
+              <view class="name-item">
+                <text class="phone">{{item.enterpriseName}}</text>
+                <text class="amounts">￥{{item.amounts}}</text>
+              </view>
+              <view class="name-item2">
+                <text class="createTime">{{tools.formatTimes(item.createTime)}}</text>
+                <text class="incomePrice">+￥{{item.incomePrice}}</text>
+              </view>
+          </view>
+        </view>
+        <template is="wxLoading" data="{{status}}"></template>
+      </block>
+      <nodata wx:if="{{show == 2}}"></nodata>
+    </scroll-view>
+  </block>
+  <block wx:if="{{lineIndex==1}}">
+    <scroll-view class="medical-care {{show == 2?'care-h':''}}" scroll-y="true" bindscrolltolower="handleScrollBottom">
+      <block wx:if="{{show == 1}}">
+        <view class="medical-item"  wx:for="{{list}}" wx:key="index" bindtap="handleLookDetail" data-detail="{{item}}">
+          <view class="medical-left">
+              <view class="name-item">
+                <text class="phone">{{item.enterpriseName}}</text>
+                <!-- <text class="amounts">￥{{item.amounts}}</text> -->
+              </view>
+              <view class="name-item2">
+                <text class="createTime">{{tools.formatTimes(item.createTime)}}</text>
+                <text class="incomePrice">+￥{{item.incomePrice}}</text>
+              </view>
+          </view>
+          <!-- 不通过 -->
+          <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/not_adopt.png" wx:if="{{item.status==2}}"></image>
+          <!-- 通过 -->
+          <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/adopt.png" wx:if="{{item.status==1}}"></image>
+        </view>
+        <template is="wxLoading" data="{{status}}"></template>
+      </block>
+      <nodata  wx:if="{{show == 2}}"></nodata>
+    </scroll-view>
+  </block>
+</view>

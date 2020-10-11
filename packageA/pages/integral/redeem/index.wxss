@@ -1,0 +1,96 @@
+/* pages/integral/redeem/index.wxss */
+.purchase-header{
+  height:355rpx;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding:34rpx 25rpx 43rpx;
+  border-top:1rpx solid #DCDCDC;
+}
+
+.purchase-header .header-detail{
+  height:278rpx;
+  width:700rpx;
+  position: relative;
+}
+
+.purchase-header .header-detail image{
+  width:100%;
+  height:100%;
+  position: absolute;
+}
+
+.purchase-header .header-detail .integral-msg{
+  position: absolute;
+  z-index: 1;
+  width:100%;
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-detail .integral-msg .title{
+  color:#fff;
+  font-size:85rpx;
+  font-weight: bold;
+  margin-bottom:40rpx;
+  line-height:85rpx
+}
+
+.header-detail .integral-msg .integral-detail{
+  display: flex;
+  justify-content: center;
+}
+
+.integral-msg .integral-detail .available{
+  font-size:24rpx;
+  color:#fff;
+}
+
+.integral-msg .integral-detail .frozen{
+  font-size:24rpx;
+  color:#fff;
+  margin-left:50rpx;
+}
+
+.redeem-integral{
+  height:225rpx;
+  border-radius: 15rpx;
+  background-color: #fff;
+  padding:38rpx 0 60rpx 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top:20rpx;
+}
+
+.redeem-bottom{
+  height:98rpx;
+  background-color: #fff;
+  padding:0 40rpx 0 30rpx;
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom:0rpx;
+  width:100%;
+  display: flex;
+}
+
+.redeem-bottom text{
+  font-size:24rpx;
+  color:#333;
+}
+
+.redeem-bottom view{
+  width:180rpx;
+  height:76rpx;
+  background:linear-gradient(90deg,rgba(240,152,25,1),rgba(255,88,88,1));
+  border-radius:38rpx;
+  text-align:center;
+  line-height:76rpx;
+  color:#fff;
+  font-size:30rpx;
+}

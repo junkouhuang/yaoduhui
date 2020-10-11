@@ -1,0 +1,17 @@
+
+<view class="tips">
+  <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/laba.png"></image>
+  <text>采购商向您下订单的金额，如低于该金额，不可下单。</text>
+</view>
+
+<view class="set-prise">
+  <view class="name-left">
+    <text class="symbol">*</text>
+    <text class="name">起送价设置</text>
+  </view>
+  <input placeholder="请输入大于0的金额" placeholder-style="color:#C2C2C2" value="{{minimumPurchasePrice}}" bindinput="minimumPurchasePriceHandle" type="digit" disabled="{{auth != 1}}"></input>
+</view>
+
+
+
+<view class="next-step {{disabled ?'disabled':''}}" size="default" bindtap="save" wx:if="{{auth == 1}}">保存</view>

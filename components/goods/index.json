@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "cart": "../../components/shoppingCart/index",
+    "build":"../../components/build/index",
+    "notice":"../../components/notice/index"
+  }
+}

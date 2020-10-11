@@ -1,0 +1,11 @@
+/* pages/protocol/index.wxss */
+.protocol {
+  color:#4D4F50;
+  font-size: 28rpx;
+  padding: 20rpx;
+  background-color: #ffffff;
+  line-height: 44rpx;
+}
+.protocol .h4 {
+  margin: 40rpx 0 20rpx;
+}

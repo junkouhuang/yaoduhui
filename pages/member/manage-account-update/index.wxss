@@ -1,0 +1,143 @@
+/* pages/member/manage-accout-update/index.wxss */
+
+
+.card-list{
+  /* border-top:1rpx solid #DCDCDC; */
+  /* background-color: #fff; */
+  border-radius: 0 0 15rpx 15rpx;
+  box-sizing: border-box;
+}
+
+.card-list>.title{
+  padding: 40rpx 30rpx 30rpx;
+  font-size: 32rpx;
+  color: #333333;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box; 
+  font-weight: 500;  
+  font-family: Source Han Sans CN;
+}
+
+.card-list .title image {
+  width: 34rpx;
+  height: 34rpx;
+  margin-right: 15rpx;
+}
+
+.bankCard{
+  margin: 0 38rpx 0 36rpx;
+  height: 250rpx;
+  opacity: 1;
+  opacity: 1;
+  border-radius: 38rpx;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  background-image: url('https://edm.xinquanjk.com/upload/iconfont/202003/20/bank-bg.png');
+  background-position:50% 50%;/*这个是按从左往右，从上往下的百分比位置进行调整*/
+  background-size: 100% 100%;
+  background-repeat:no-repeat;/*还有repeat-x,y等*/
+}
+
+.bankName{
+  height: 34rpx;
+  font-size: 34rpx;
+  font-family: SourceHanSansCN-Regular;
+  line-height: 41rpx;
+  color: #FFFFFF;
+  letter-spacing: 2rpx;
+  opacity: 1;
+  margin: 25rpx 0 0 48rpx;
+  position: relative;
+}
+
+.bankId{
+  height: 118rpx;
+  font-size: 34rpx;
+  font-family: SourceHanSansCN-Regular;
+  line-height: 118rpx;
+  color: #FFFFFF;
+  letter-spacing: 2rpx;
+  opacity: 1;
+  margin: 0 0 0 48rpx;
+
+}
+
+.bankId-row{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.li{
+  width: 17rpx;
+  height: 17rpx;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  opacity: 1;
+  margin-right: 13rpx;
+
+}
+
+.li-mr{
+  margin-right: 34rpx;
+}
+
+.bankupdate{
+  height: 73rpx;
+  font-size: 28rpx;
+  font-family: SourceHanSansCN-Regular;
+  line-height: 73rpx;
+  color: #FFFFFF;
+  letter-spacing: 2rpx;
+  opacity: 1;
+  margin-left: 48rpx;
+}
+
+.bank-3{
+  height: 73rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.rightIcon{
+  width: 42rpx;
+  height: 42rpx;
+  margin-right: 42rpx;
+}
+
+.card-data-info{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 116rpx;
+  background: #FFFFFF;
+  opacity: 1;
+  border-radius: 26rpx;
+  font-size: 28rpx;
+  margin: 46rpx 30rpx 0 29rpx;
+  padding: 0 20rpx;
+}
+
+.card-data-info view{
+  color: #333333;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+}
+
+.card-data-info text{
+  color: #767676;
+}
+
+.card-data-info-rightIcon{
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.statu-right{
+  align-items: center;
+  display: flex;
+}
+

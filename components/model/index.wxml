@@ -1,0 +1,6 @@
+<view class="mask" wx:if="{{show}}"  bindtap="iSee" ></view>
+<view class="model"  wx:if="{{show}}">
+  <view class="title">{{title}}</view>
+  <image src="{{imgUrl}}"  bindtap="previewImg" data-src="{{imgUrl}}" class="imge"></image>
+  <view class="iSee" bindtap="iSee">我知道了</view>
+</view>

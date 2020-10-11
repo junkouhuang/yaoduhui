@@ -1,0 +1,114 @@
+
+<import src="../../../template/loading/index.wxml" />
+<wxs src="../../../wxs/filter.wxs" module="tools" />
+<view class="customer-page">
+  <view class="search-enterprise">
+    <view class="tabble-toggle">
+      <view class="toggle-item {{lineIndex == index?'active':''}}" wx:for="{{navbarList}}" wx:key="index" bindtap="handleToggle" data-index="{{index}}">
+        {{item}}
+      </view>
+      <view class="line" style="left:{{lineLeft}};"></view>
+    </view>
+  </view>
+  <block wx:if="{{lineIndex==0 && has}}">
+    <view class="medical-item" wx:for="{{checkPending}}" wx:key="index" bindtap="handleLookDetail" data-detail="{{item}}">
+      <view class="medical-left">
+          <view class="definition-mode">
+            <image wx:if="{{item.logo}}" src="{{item.logo}}" class="logo2"></image>
+            <view class="logo" wx:else>{{tools.firstCHN(item.supplierName)}}</view>
+            <view class="left">
+              <view class="definition">{{item.supplierName}}</view>
+              <view class="modeName">销售范围：{{item.sellArea}}</view>
+            </view>
+            <view class="status">待审核</view>
+          </view>
+          <view class="name-contacts">
+            申请人：{{item.userName}}
+          </view>
+          <view class="name-item">
+            手机号码：{{item.mobileNumber}}
+          </view>
+          <view class="name-item">
+            <view>地址：</view>
+            <view class="dizhi">{{item.provinceName?item.provinceName:''}}{{item.cityName?item.cityName:''}}{{item.district?item.district:''}}{{item.location?item.location:''}}
+            </view>
+          </view>
+          <view class="name-item">
+            申请时间：{{tools.formatTime(item.createTime)}}
+          </view>
+          <text class="reason" wx:if="{{item.status==1}}">{{item.remark}}</text>
+      </view>
+    </view>
+    <import src="../../../template/loading/index.wxml" />
+    <template is="wxLoading" data="{{status}}"></template>
+  </block>
+  <block wx:elif="{{lineIndex==1 && has}}">
+    <view class="medical-item" wx:for="{{checkPending}}" wx:key="index" bindtap="handleLookDetail" data-detail="{{item}}">
+      <view class="medical-left">
+          <view class="definition-mode">
+            <image wx:if="{{item.logo}}" src="{{item.logo}}" class="logo2"></image>
+            <view class="logo" wx:else>{{tools.firstCHN(item.supplierName)}}</view>
+            <view class="left">
+              <view class="definition">{{item.supplierName}}</view>
+              <view class="modeName">销售范围：{{item.sellArea}}</view>
+            </view>
+          <view class="status">已通过</view>
+          </view>
+          <view class="name-contacts">
+            申请人：{{item.userName}}
+          </view>
+          <view class="name-item">
+            手机号码：{{item.mobileNumber}}
+          </view>
+          <view class="name-item">
+            <view>地址：</view>
+            <view class="dizhi">{{item.provinceName?item.provinceName:''}}{{item.cityName?item.cityName:''}}{{item.district?item.district:''}}{{item.location?item.location:''}}
+            </view>
+          </view>
+          <view class="name-item">
+            申请时间：{{tools.formatTime(item.createTime)}}
+          </view>
+      </view>
+    </view>
+    <import src="../../../template/loading/index.wxml" />
+    <template is="wxLoading" data="{{status}}"></template>
+  </block>
+  <block wx:elif="{{lineIndex==2 && has}}">
+    <view class="medical-item"  wx:for="{{checkPending}}" wx:key="index" bindtap="handleLookDetail" data-detail="{{item}}">
+      <view class="medical-left">
+          <view class="definition-mode">
+          <image wx:if="{{item.logo}}" src="{{item.logo}}" class="logo2"></image>
+          <view class="logo" wx:else>{{tools.firstCHN(item.supplierName)}}</view>
+          <view class="left">
+              <view class="definition">{{item.supplierName}}</view>
+              <view class="modeName">销售范围：{{item.sellArea}}</view>
+            </view>
+            <view class="status2">未通过</view>
+          </view>
+          <view class="name-contacts">
+            申请人：{{item.userName}}
+          </view>
+          <view class="name-item">
+            手机号码：{{item.mobileNumber}}
+          </view>
+          <view class="name-item">
+            <view>地址：</view>
+            <view class="dizhi">{{item.provinceName?item.provinceName:''}}{{item.cityName?item.cityName:''}}{{item.district?item.district:''}}{{item.location?item.location:''}}
+            </view>
+          </view>
+          <view class="name-item">
+            申请时间：{{tools.formatTime(item.createTime)}}
+          </view>
+          <view class="reason" wx:if="{{item.status==1}}">
+            <view>拒绝原因：{{item.auditOpinion}}</view>
+          </view>
+      </view>
+    </view>
+    <import src="../../../template/loading/index.wxml" />
+    <template is="wxLoading" data="{{status}}"></template>
+  </block>
+  <view class="empty-data" wx:else>
+    <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/no_data_icon.png"></image>
+    <text>暂无记录</text>
+  </view>
+</view>

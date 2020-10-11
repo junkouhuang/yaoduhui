@@ -1,0 +1,4 @@
+<view class="empty-data">
+  <image class="image" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/no_data_icon.png"></image>
+  <text class="text">暂无数据</text>
+</view>

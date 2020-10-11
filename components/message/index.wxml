@@ -1,0 +1,23 @@
+<!--components/confirm.wxml-->
+<view class="mask" wx:if="{{show}}" bindtap="cancel"></view>
+<view class="msgbox" wx:if="{{show}}">
+	<view class="buildSuccess" wx:if="{{show}}">
+		<view class="title11">您已成功发起建档申请</view>
+		<view class="richText">
+			<view class="content11">
+				供应商将先进行线上建档审核，审核通过后，您可先进行采购，但是，请注意您必须在7个工作日内，寄送纸质建档资料给供应商，否则将无法正常采购，如有疑问，请联系400-833-7998。
+			</view>
+			<view class="title22">建档资料</view>
+			<view class="content22">营业执照（三证合一）、药品经营许可证、GSP证、
+				<text>授权委托书(均需加盖公章)</text>
+			</view>
+			<view class="title33">寄送地址</view>
+			<view class="content44">收件人：安徽华源-电子商务2部</view>
+			<view class="content55">手机号码：18600001111</view>
+			<view class="content55">电话号码：0558-2933989</view>
+			<view class="content33">地址：安徽省 阜阳市 太和县 长征南路工业销售分公司4楼</view>
+			<view class="content66">邮编：518000</view>
+		</view>
+		<view class="btn" bindtap="isee">我知道了</view>
+	</view>
+</view>

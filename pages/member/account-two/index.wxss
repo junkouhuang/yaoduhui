@@ -1,0 +1,389 @@
+/* pages/member/open-account/index.wxss */
+
+.account-message .title{
+  display: block;
+  height:60rpx;
+  padding-left:37rpx;
+  font-size:24rpx;
+  color:#868686;
+  line-height:60rpx;
+  box-sizing: border-box;
+}
+
+.account-message .message-list{
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 15rpx;
+  box-sizing: border-box;
+  padding-left:40rpx;
+  padding-right:35rpx;
+}
+
+.account-message .message-item{
+  display: flex;
+  justify-content: space-between;
+  /* height:95rpx; */
+  align-items:center;
+  box-sizing: border-box;
+  padding:30rpx 0;
+  position: relative;
+}
+
+.account-message .message-item::after {
+    position: absolute;
+    box-sizing: border-box;
+    content: ' ';
+    pointer-events: none;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-bottom: 1px solid #ebedf0;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+}
+
+.enterpriseName,.bindingText {
+  background-color: #ffffff;
+  margin-bottom: 10rpx;
+  border-bottom:none!important;
+  padding-left: 40rpx!important;
+  padding-right: 35rpx!important;
+}
+
+.account-message .message-item:last-child{
+  border-bottom:none;
+}
+
+.account-message .message-item .name{
+  font-size:28rpx;
+  color:#333;
+  width:200rpx;
+  line-height:36rpx;
+}
+
+.account-message .message-item .name text{
+  color:#FF0000;
+}
+
+.account-message .message-item .detail{
+  font-size:28rpx;
+  color:#333333;
+  max-width: 500rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.account-message .message-item .right{
+  display: flex;
+  align-items:center;
+}
+
+.account-message .message-item .right .bind-classify{
+  font-size:28rpx;
+  color:#333333;
+  margin-right:20rpx;
+}
+
+.account-message .message-item image{
+  width:16rpx;
+  height:28rpx;
+}
+
+.account-message .message-item input{
+  font-size:28rpx;
+  flex:1;
+  text-align:right;
+}
+
+.next-step{
+  width:690rpx;
+  height:88rpx;
+  background:linear-gradient(90deg,rgba(4,190,254,1),rgba(68,129,235,1));
+  margin-left:30rpx;
+  margin-top:65rpx;
+  text-align:center;
+  color:#fff;
+  line-height:88rpx;
+  border-radius: 44rpx;
+  font-weight: 500;
+  margin-bottom:20rpx;
+  box-shadow: 0 0.206667rem 0.26rem 0 rgba(67,115,234,.3);
+}
+
+.next-step.disable{
+  opacity: 0.54
+}
+
+.explain-tips{
+  margin-top:70rpx;
+  box-sizing: border-box;
+  padding:0 40rpx 70rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.explain-tips .title{
+  color:#666666;
+  font-size:28rpx;
+}
+
+.explain-tips .tips-item{
+  color:#666666;
+  font-size:25rpx;
+  margin-top:37rpx;
+}
+
+
+
+.open-mask{
+  position: fixed;
+  left:0;
+  top:0;
+  bottom:0;
+  right:0;
+  width:100%;
+  height:100%;
+  z-index:10;
+}
+
+.open-mask .bg{
+  position: absolute;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,1);
+  opacity:0.5;
+  transition: opacity 0.3s;
+}
+
+.open-mask .account-detail{
+  position: absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:850rpx;
+  background-color: #fff;
+  border-radius: 15rpx 15rpx 0 0;
+  box-sizing: border-box;
+  padding-top:20rpx;
+  transition: bottom 0.3s
+}
+
+.open-mask .account-detail .title{
+  display: block;
+  height:90rpx;
+  box-sizing: border-box;
+  padding-left:43rpx;
+  line-height:90rpx;
+  color:#333333;
+  font-size:30rpx;
+  border-bottom:1rpx solid #DCDCDC;
+}
+
+.open-mask .account-detail .list-shell{
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding:0 38rpx;
+}
+
+.open-mask .account-detail .list-shell .item{
+  border-bottom:1rpx solid #DCDCDC;
+  height:90rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.account-detail .list-shell .item .left{
+  font-size:28rpx;
+  color:#333;
+}
+
+.account-detail .list-shell .item .right{
+  color:#868686;
+  font-size:28rpx;
+}
+
+.open-mask .button{
+  width:654rpx;
+  height:80rpx;
+  border-radius: 40rpx;
+  background:linear-gradient(90deg,rgba(4,190,254,1),rgba(68,129,235,1));
+  margin-top:67rpx;
+  margin-left:50%;
+  transform: translateX(-50%);
+  text-align:center;
+  line-height:80rpx;
+  color:#fff;
+  font-size:32rpx;
+}
+
+
+
+
+.open-mask .account-set{
+  position: absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:850rpx;
+  background-color: #fff;
+  border-radius: 15rpx 15rpx 0 0;
+  box-sizing: border-box;
+  padding-top:20rpx;
+  transition: bottom 0.3s
+}
+
+.open-mask .account-set .title{
+  display: block;
+  height:90rpx;
+  box-sizing: border-box;
+  padding-left:43rpx;
+  line-height:90rpx;
+  color:#333333;
+  font-size:30rpx;
+  border-bottom:1rpx solid #DCDCDC;
+}
+
+.open-mask .account-set .list-shell{
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding:0 38rpx;
+}
+
+
+.open-mask .account-set .list-shell .item{
+  border-bottom:1rpx solid #DCDCDC;
+  height:90rpx;
+  display: flex;
+  align-items: center;
+}
+
+.account-set .list-shell .item .left{
+  width:196rpx;
+  line-height:90rpx;
+  font-size:28rpx;
+  color:#333333;
+}
+
+.account-set .list-shell .item .right{
+  flex:1;
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+}
+
+.account-set .list-shell .item .right .obtain{
+  min-width:185rpx;
+  height:60rpx;
+  background:linear-gradient(90deg,rgba(4,190,254,1),rgba(68,129,235,1));
+  /* background-color: #C2C2C2; */
+  line-height:60rpx;
+  font-size:22rpx;
+  color:#FFFFFF;
+  text-align:center;
+  border-radius: 30rpx;
+}
+
+.account-set .list-shell .item .right .obtain.active{
+  background: #C2C2C2;
+}
+
+.open-mask .account-set .tips-massage{
+  margin-top:60rpx;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding-left:37rpx;
+}
+
+.open-mask .account-set .tips-massage text{
+  font-size:24rpx;
+  color:#868686;
+  margin-bottom:20rpx;
+}
+
+.binding-card{
+  position: fixed;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  z-index:10;
+}
+
+.binding-card .binding-bg{
+  position: absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,1);
+  opacity:0.5;
+  transition: opacity 0.3s;
+}
+
+.binding-card .select-shell{
+  position: absolute;
+  width:100%;
+  left:0;
+  bottom:0;
+  height:620rpx;
+  background-color: #fff;
+  border-radius: 15rpx 15rpx 0 0;
+  box-sizing: border-box;
+  padding:60rpx 48rpx 46rpx;
+  transition: bottom 0.3s;
+}
+
+.binding-card .select-shell .title{
+  color:#333333;
+  font-size:30rpx;
+  line-height:30rpx;
+}
+
+.binding-card .select-shell .select-list{
+  display: flex;
+  margin-top:50rpx;
+  flex-direction: column;
+}
+
+.binding-card .select-shell .select-list .item{
+  display: flex;
+  align-items:center;
+  margin-bottom:40rpx;
+}
+
+.select-shell .select-list .item image{
+  width:34rpx;
+  height:34rpx;
+}
+
+
+.select-shell .select-list .item .circular{
+  width: 30rpx;
+  height: 30rpx;
+  border: 3rpx solid #ABABB4;
+  border-radius: 50%;
+}
+
+.select-shell .select-list .item text{
+  color:#333;
+  font-size:28rpx;
+  margin-left:20rpx;
+}
+
+.select-shell .cancel{
+  position: absolute;
+  width:654rpx;
+  height:80rpx;
+  border:1rpx solid #333333;
+  left:48rpx;
+  bottom:30rpx;
+  border-radius: 40rpx;
+  text-align:center;
+  line-height:80rpx;
+}

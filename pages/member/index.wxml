@@ -1,0 +1,190 @@
+<view class="header2" bindtap="return">
+	<image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/left1.png" class="left"></image>
+	<text>钱包账户</text>
+</view>
+<view class="integral-msg">
+	<view class="userinfo-msg">
+		<image wx:if="{{avatar}}" src="{{avatar}}"></image>
+		<image wx:else src="https://edm.xinquanjk.com/upload/iconfont/202003/20/toux.png"></image>
+		<view class="userinfo-detail">
+			<text class="enterprise" wx:if="{{nickname}}">{{nickname}}</text>
+			<text class="virtualAccountId" wx:if="{{accountId}}">会员号：{{accountId}}</text>
+		</view>
+	</view>
+
+	<block wx:if="{{has}}">
+		<view class="integral-detail enterpriseAccountResult" wx:if="{{memberData.enterpriseAccountResult.bsyStatus != 6}}">
+			<image class="bg" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/qi_account.png"></image>
+			<view class="integral-message">
+				<view class="message-left message-left_enterprise">
+					<view class="enterpriseName">{{memberData.enterpriseAccountResult.enterpriseName}}</view>
+					<view class="virtualAccountId">
+						<view class="id">企业账户：{{seen?memberData.enterpriseAccountResult.virtualAccountId:'*********'}}
+							<view bindtap="copy" data-content="{{memberData.enterpriseAccountResult.virtualAccountId}}"
+								class="copy_yellow">复制</view>
+							<view>
+								{{memberData.enterpriseAccountResult.userType == 4?'对私卡':memberData.enterpriseAccountResult.userType == 2?'对公卡':''}}
+							</view>
+						</view>
+						<image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/eye_en_open.png" wx:if="{{seen}}"
+							bindtap="seen"></image>
+						<image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/eye_en_close.png" wx:else bindtap="seen">
+						</image>
+					</view>
+					<view class="account">
+						<text>鑫泉账户：{{seen?memberData.enterpriseAccountResult.account:'*********'}}</text>
+						<!-- <view bindtap="copy" data-content="{{memberData.enterpriseAccountResult.account}}" class="copy_yellow">复制</view> -->
+					</view>
+					<view class="available">账户余额：{{seen?'￥':''}}
+						<text>{{seen?memberData.enterpriseAccountResult.available||0:'****'}}</text>
+					</view>
+					<view class="totalFreeze">冻结金额：{{seen?'￥':''}}
+						<text>{{seen?memberData.enterpriseAccountResult.totalFreeze||0:'****'}}</text>
+					</view>
+					<view class="operation"
+						wx:if="{{memberData.enterpriseAccountResult.bsyStatus==0 || memberData.enterpriseAccountResult.bsyStatus==7  || memberData.enterpriseAccountResult.bsyStatus==10}}">
+						<block
+							wx:if="{{memberData.enterpriseAccountResult.bsyStatus==0  || memberData.enterpriseAccountResult.bsyStatus==10}}">
+							<view class="transfer-accounts" bindtap="handleTransferAccounts"
+								wx:if="{{memberData.enterpriseAccountResult.userType ==4 || memberData.enterpriseAccountResult.userType ==2}}"
+								data-type="0">转账</view>
+							<view class="reflect" bindtap="handleCashWithdrawal"
+								wx:if="{{memberData.enterpriseAccountResult.userType ==4 || memberData.enterpriseAccountResult.userType ==2}}"
+								data-type="0">提现</view>
+							<view class="reflect" bindtap="handleRecharge"
+								wx:if="{{memberData.enterpriseAccountResult.userType ==4 }}" data-type="0">充值</view>
+							<view class="czStyle" bindtap="czType" wx:else>
+								<text>充值方式</text>
+								<image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/right3.png"></image>
+							</view>
+						</block>
+						<block wx:if="{{memberData.enterpriseAccountResult.bsyStatus==7}}">
+							<view class="activation">
+								<view class="await">待激活</view>
+								<view class="style" bindtap="activation">
+									<text>激活方式</text>
+									<image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/right3.png"></image>
+								</view>
+							</view>
+						</block>
+					</view>
+					<!-- <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/enterprise_bg.png" class="enterprise_bg"></image> -->
+					<view class="footoor1">
+						<!-- <view></view> -->
+						<!-- bsyStatus(开户状态): 0-正常 9-普通客户开户处理中 8-平台户开户处理中 7-客户绑卡未激活 6-未开户"-->
+						<view class="bank-message" wx:if="{{memberData.enterpriseAccountResult.bsyStatus==9}}">
+							<text>渤海账户管理</text>
+							<view class="change">
+								<view class="band-card" bindtap="handlebindingCard" data-type="0">绑卡</view>
+								<view bindtap="handleChangeMsg" data-type="0">变更</view>
+							</view>
+						</view>
+
+						<block wx:else>
+							<view class="bank-message accountAdmin" bindtap="handleManageAccount" data-type="0">
+								<text>渤海账户管理</text>
+								<image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/right3.png"></image>
+							</view>
+
+							<view class="bank-message billAdmin" bindtap="handleManageAccount">
+								<view class="message-right" bindtap="billAdmin">
+									<text>账单管理</text>
+									<image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/right3.png"></image>
+								</view>
+							</view>
+						</block>
+					</view>
+				</view>
+			</view>
+		</view>
+
+		<view class="noBandEnterprise" wx:if="{{memberData.enterpriseAccountResult.bsyStatus == 6}}">
+			<image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/qi_account_gray1.png"></image>
+			<view class="tips" wx:if="{{memberData.enterpriseAccountResult.enterpriseName}}">
+				{{memberData.enterpriseAccountResult.enterpriseName}}</view>
+			<text class="tips" wx:else>未绑定企业</text>
+			<view class="enterpriseOpenAccount" bindtap="handleOpenAccount" data-accountType="{{1002}}">企业开户</view>
+		</view>
+
+		<modal hidden="{{hidden1}}" title="企业对公账户激活方式" cofirm-text="我知道了" bindconfirm="closemGG" no-cancel="true">
+			<view class="content">
+				<view class="title">企业对公账户激活方式</view>
+				<view class="subheading">企业通过被绑对公银行账户的网银转账到平台开通的渤海银行“99”开头账户，收款单位填写营业执照上企业全称。转账时选择的支行为“渤海银行深圳龙华支行”。</view>
+			</view>
+		</modal>
+
+		<modal hidden="{{hidden2}}" title="企业对公账户充值方式" cofirm-text="我知道了" bindconfirm="closemCZ" no-cancel="true">
+			<view class="content">
+				<view class="title">企业对公账户充值方式</view>
+				<view class="subheading">企业通过被绑对公银行账户的网银转账到平台开通的渤海银行“99”开头账户，收款单位填写营业执照上企业全称。转账时选择的支行为“渤海银行深圳龙华支行”。</view>
+			</view>
+		</modal>
+
+		<view class="integral-detail"
+			style="{{memberData.individualAccountResult.bsyStatus==0 || memberData.individualAccountResult.bsyStatus==7  || memberData.individualAccountResult.bsyStatus==8 || memberData.individualAccountResult.bsyStatus==10?'height: 474rpx': memberData.individualAccountResult.bsyStatus==9?'height: 444rpx':''}}"
+			wx:if="{{memberData.individualAccountResult.bsyStatus != 6}}">
+			<image class="bg" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/ge_account.png"></image>
+			<view class="integral-message">
+				<view class="message-left message-left_person">
+					<view class="enterpriseName">
+						{{memberData.individualAccountResult.acctName?memberData.individualAccountResult.acctName:''}}</view>
+					<view class="virtualAccountId">
+						<view class="virtualAccountId_copy_blue">
+							<text>个人账户：{{see?memberData.individualAccountResult.virtualAccountId:'********'}}</text>
+							<view bindtap="copy" data-content="{{memberData.individualAccountResult.virtualAccountId}}"
+								class="copy_blue">复制</view>
+						</view>
+						<image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/eye_en_open.png" wx:if="{{see}}"
+							bindtap="see"></image>
+						<image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/eye_en_close.png" wx:else bindtap="see">
+						</image>
+					</view>
+					<view class="account">
+						<text>鑫泉账户：{{see?memberData.individualAccountResult.account:'********'}}</text>
+						<!-- <view bindtap="copy" data-content="{{memberData.individualAccountResult.account}}" class="copy_blue">复制</view> -->
+					</view>
+					<view class="available">账户余额：{{see?'￥':''}}
+						<text>{{see?memberData.individualAccountResult.available||0:'****'}}</text>
+					</view>
+					<view class="totalFreeze">冻结金额：{{see?'￥':''}}{{see?memberData.individualAccountResult.totalFreeze||0:'****'}}
+					</view>
+					<view class="operation"
+						wx:if="{{memberData.individualAccountResult.bsyStatus==0 || memberData.individualAccountResult.bsyStatus==7  || memberData.individualAccountResult.bsyStatus==10 || memberData.individualAccountResult.virtualAccountType == 3 && memberData.individualAccountResult.bsyStatus==8}}">
+						<view class="transfer-accounts transfer-accounts2" bindtap="handleTransferAccounts" data-type="1">转账</view>
+						<view class="reflect" bindtap="handleCashWithdrawal" data-type="1">提现</view>
+						<view class="reflect" bindtap="handleRecharge" data-type="1">充值</view>
+					</view>
+					<view class="footoor2">
+						<!-- bsyStatus(开户状态): 0-正常 9-普通客户开户处理中 8-平台户开户处理中 7-客户绑卡未激活 6-未开户"-->
+						<view class="bank-message" wx:if="{{memberData.individualAccountResult.bsyStatus==9}}">
+							<text>渤海账户管理</text>
+							<view class="change">
+								<view class="band-card" bindtap="handlebindingCard" data-type="1">绑卡</view>
+								<view bindtap="handleChangeMsg" data-type="1">变更</view>
+							</view>
+						</view>
+						<block wx:else>
+							<view class="bank-message accountAdmin" bindtap="handleManageAccount" data-type="1">
+								<text>渤海账户管理</text>
+								<image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/right3.png"></image>
+							</view>
+							<view class="bank-message billAdmin" bindtap="handleManageAccount">
+								<navigator class="message-right"
+									url="/pages/member/bill_details/index?account={{memberData.individualAccountResult.account}}&accountId={{memberData.individualAccountResult.accountId}}"
+									hover-class="none">
+									<text>账单管理</text>
+									<image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/right3.png"></image>
+								</navigator>
+							</view>
+						</block>
+					</view>
+				</view>
+			</view>
+		</view>
+
+		<view class="noBandEnterprise noBandEnterpriseGe" wx:if="{{memberData.individualAccountResult.bsyStatus == 6}}">
+			<image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/ge_account_gray1.png"></image>
+			<view class="individualOpenAccount" bindtap="handleOpenAccount" data-accountType="{{1001}}">个人开户</view>
+		</view>
+	</block>
+</view>

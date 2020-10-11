@@ -1,0 +1,15 @@
+<view class="header" bindtap="return"
+  style="color:{{type?'#333':'#fff'}};background:{{type?'#fff':''}}">
+  <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/left.png" class="left" wx:if="{{type}}">
+  </image>
+  <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/left1.png" class="left" wx:else></image>
+  <text class="text">{{title}}</text>
+</view>
+<view class="mask" wx:if="{{showDialog}}"></view>
+<view class="dialog" wx:if="{{showDialog}}">
+  <view class="dialog__bd">是否放弃该订单支付，{{lastModifyTime}}后系统会自动取消该订单。"</view>
+  <view class="dialog__ft">
+    <view class="dialog__btn_default" bindtap="cancel">放弃</view>
+    <view class="dialog__btn_primary" bindtap="contiune">继续支付</view>
+  </view>
+</view>

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "员工审核记录",
+  "usingComponents":{
+    "confirm":"../../../../components/confirm/index",
+    "nodata":"../../../../components/nodata/index"
+  }
+}

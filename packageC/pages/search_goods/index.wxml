@@ -1,0 +1,152 @@
+<!--pages/search/index.wxml-->
+<wxs src="../../../wxs/filter.wxs" module="tools" />
+<view class="customer-page {{scrolly?'tripList_root':''}}" model:style="top:-{{mtop}}px">
+  <view class="box2">
+    <view class="searchbox2">
+      <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/search_icon.png" class='s_img'></image>
+      <input placeholder="请输入商品名/首拼/厂家进行搜索" placeholder-style="color:#C1C1C1;" type='text' confirm-type="search"
+        bindconfirm="search" bindinput="inputHandle" maxlength="20" bindfocus="inputFocus" bindblur="inputBlur"
+        value="{{ruleForm.keyWord}}" />
+      <view class="close_icon" hidden="{{!ruleForm.keyWord}}" catchtap="clearHandle">
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/close.png" class="close"></image>
+      </view>
+    </view>
+  </view>
+  <view class="history" wx:if="{{showHistory}}">
+    <view class="content2">
+      <block wx:if="{{historyData.length>0}}">
+        <view class="title1">
+          <text>搜索历史</text>
+          <image class="del" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/delete.png" bindtap="clear">
+          </image>
+        </view>
+        <view class="content1">
+          <view class="item" wx:for="{{historyData}}" wx:key="index">
+            <view bindtap="clickYP" data-name="{{item.name}}">{{item.name}}</view>
+            <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/close_black.png" class="del" catchtap="del"
+              data-name="{{item.name}}"></image>
+          </view>
+        </view>
+        <view class="line"></view>
+      </block>
+      <view class="title2">
+        <text>推荐商品</text>
+      </view>
+      <view class="content3">
+        <view class="item" bindtap="clickYP" wx:for="{{hotData}}" wx:key="index" data-name="{{item.name}}">{{item.name}}
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="search" wx:else>
+    <view class="nav  {{sticky?'sticky':''}}">
+      <view class="item {{areaName =='全部'?'':'item0'}}" bindtap="{{source2!='company'?'clickHandle':''}}"
+        data-index="0">
+        <text class="areaName">{{areaName}}</text>
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/up_gray.png" class="down_ico"
+          wx:if="{{isExpanding}}"></image>
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/down_gray.png" class="up_ico" wx:else></image>
+      </view>
+      <view class="item" bindtap="clickHandle" data-index="1">价格
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/default_up1.png" class="default"
+          wx:if="{{ruleForm.priceSort == 'up'}}"></image>
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/default_down1.png" class="default"
+          wx:if="{{ruleForm.priceSort == 'down'}}"></image>
+      </view>
+      <view class="item {{currentIndex == 2?'active':''}}" bindtap="clickHandle" data-index="2">整件</view>
+      <view class="item {{currentIndex == 3?'active':''}}" bindtap="clickHandle" data-index="3">拆零</view>
+      <view class="item" bindtap="clickHandle" data-index="4">
+        <view class="child">{{typeName}}</view>
+      </view>
+      <view class="company" wx:if="{{isExpanding}}">
+        <view class="all" bindtap="chooseCompany" data-provinceid="0" data-name="全部" data-index="-1">
+          <text>全部</text>
+          <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/select.png" wx:if="{{allChecked}}"></image>
+          <view class="circular" wx:else></view>
+        </view>
+        <view class="item1" wx:for="{{areaData}}" wx:key="index" bindtap="chooseCompany"
+          data-nickname="{{item.nickName}}" data-provinceid="{{item.provinceId}}" data-name="{{item.enterpriseName}}"
+          data-index="{{index}}" data-enterpriseId="{{item.enterpriseId}}">
+          <image class="logo" src="{{item.logo}}"></image>
+          <view class="enterprise">
+            <view class="enterpriseName">{{item.enterpriseName}}</view>
+            <view class="scope">销售范围：{{item.enterpriseId==1?'全国':item.provinceName}}</view>
+          </view>
+          <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/select.png" wx:if="{{item.check}}"></image>
+          <view class="circular" wx:else></view>
+        </view>
+      </view>
+      <view class="classifyList" wx:if="{{isClassifyList}}">
+        <block wx:if="{{classifyData.length>0}}">
+          <view class="items {{fl_currentIndex == -1?'active11':''}}" bindtap="chooseFl" data-id="{{categoryId}}"
+            data-name="全部" data-index="-1">
+            全部
+          </view>
+          <view wx:for="{{classifyData}}" wx:key="index" class="items {{fl_currentIndex == index?'active11':''}}"
+            bindtap="chooseFl" data-id="{{item.id}}" data-name="{{item.typeName}}" data-index="{{index}}">
+            {{item.typeName}}
+          </view>
+        </block>
+        <view class="defallut" wx:else>
+          <text>暂无分类~</text>
+        </view>
+      </view>
+    </view>
+    <view class="scrollView">
+      <view wx:if="{{show == 1}}" style="margin-top:20rpx;">
+        <goods source="search" id="goods" bind:myevent="myevent"></goods>
+      </view>
+      <view class="band_enterprise" wx:if="{{showBand}}">
+        <image class="icon" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/cart-bind.png"></image>
+        <text class="emptyData">绑定企业后，可将商品加入到预约单进行结算</text>
+        <view bindtap="band" class="btn_band">绑定企业</view>
+      </view>
+      <view class="band_enterprise" wx:if="{{notProvince}}">
+        <image class="icon" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/cart-bind.png"></image>
+        <text class="emptyData">暂不能跨省预约</text>
+      </view>
+      <!-- </scroll-view> -->
+    </view>
+    <view class="area" wx:if="{{showArea}}">
+      <view class="title">
+        <text></text>
+        <image class="del" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/close_black.png"
+          bindtap="close_area"></image>
+      </view>
+      <view class="content4">
+        <view class="item {{area_currentIndex == -1?'active':''}}" bindtap="chooseArea" data-provinceid="0"
+          data-name="全国" data-index="-1">
+          全国
+        </view>
+        <view wx:for="{{areaData}}" wx:key="index" class="item {{area_currentIndex == index?'active':''}}"
+          bindtap="chooseArea" data-provinceid="{{item.provinceId}}" data-name="{{item.provinceName}}"
+          data-index="{{index}}">
+          {{item.provinceName}}
+        </view>
+      </view>
+      <view class="not_provice_tips">
+        <view>如未找到所在省份，可选“全国”</view>
+        <view>“全国”各省份均可预约</view>
+      </view>
+    </view>
+    <view class="fl" wx:if="{{showFl}}">
+      <view class="title">
+        <text>请选择功能性分类</text>
+        <image class="del" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/close_black.png" bindtap="close_fl">
+        </image>
+      </view>
+      <view class="content4">
+        <view class="item {{fl_currentIndex == -1?'active':''}}" bindtap="chooseFl" data-id="" data-name="全部"
+          data-index="-1">
+          全部
+        </view>
+        <view wx:for="{{classifyData}}" wx:key="index" class="item {{fl_currentIndex == index?'active':''}}"
+          bindtap="chooseFl" data-id="{{item.id}}" data-name="{{item.typeName}}" data-index="{{index}}">
+          {{item.typeName}}
+        </view>
+      </view>
+    </view>
+    <view class='maskLayer1' bindtap='hideModal1' wx:if="{{showBuild1}}"></view>
+    <view class='maskLayer1' bindtap='hideModal2' wx:if="{{showBuild2}}"></view>
+  </view>
+</view>

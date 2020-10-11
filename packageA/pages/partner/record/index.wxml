@@ -1,0 +1,128 @@
+
+<import src="../../../../template/loading/index.wxml" />
+<wxs src="../../../../wxs/filter.wxs" module="tools" />
+<view class="customer-page">
+<view class="search-enterprise">
+  <view class="tabble-toggle">
+    <view class="toggle-item" wx:for="{{navbarList}}" wx:key="index" bindtap="handleToggle" data-index="{{index}}">
+      {{item}}
+    </view>
+    <view class="line" style="left:{{lineLeft}};"></view>
+  </view>
+</view>
+<block wx:if="{{lineIndex==0}}">
+<scroll-view class="medical-care" scroll-y="true" bindscrolltolower="handleScrollBottom">
+  <block  wx:if="{{show == 1}}"  >
+    <view class="medical-item"wx:for="{{list}}" wx:key="index"  data-detail="{{item}}">
+      <view class="medical-left">
+          <view class="definition-mode">
+            <text class="definition">申请等级：{{item.salesmanType == 0?'区域合伙人':item.salesmanType == 1?'省级合伙人':item.salesmanType == 2?'市级合伙人':item.salesmanType == 3?'业务推广员':''}}</text>
+          </view>
+          <view class="name-phone">
+            <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/rentou.png"></image>
+            <text class="name">{{item.contacts}}</text>
+          </view>
+          <view class="name-phone">
+            <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/dianhua.png"></image>
+            <text class="name">{{item.mobileNumber}}</text>
+          </view>
+          <view class="name-phone">
+            <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/shenfenzheng.png"></image>
+            <text class="name">{{item.idCode}}</text>
+          </view>
+          <view class="name-phone">
+            <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/qiye1.png"></image>
+            <text class="name">{{item.enterpriseName || '鑫健康'}}</text>
+          </view>
+          <view class="name-phone">
+            <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/dizhi.png"></image>
+            <view class="name-address">{{item.composeAddress}}</view>
+          </view>
+      </view>
+      <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/dengdaishenhe.png"></image>
+    </view>
+    <template is="wxLoading"  data="{{status}}"></template>
+  </block>
+  <nodata wx:if="{{show == 2}}"></nodata>
+</scroll-view>
+</block>
+<block wx:if="{{lineIndex==1}}">
+<scroll-view class="medical-care" scroll-y="true" bindscrolltolower="handleScrollBottom">
+  <block  wx:if="{{show == 1}}">
+    <view class="medical-item" wx:for="{{list}}" wx:key="index"  data-detail="{{item}}">
+      <view class="medical-left">
+          <view class="definition-mode">
+            <text class="definition">申请等级：{{item.salesmanType == 0?'区域合伙人':item.salesmanType == 1?'省级合伙人':item.salesmanType == 2?'市级合伙人':item.salesmanType == 3?'业务推广员':''}}</text>
+          </view>
+          <view class="name-phone">
+            <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/rentou.png"></image>
+            <text class="name">{{item.contacts}}</text>
+          </view>
+          <view class="name-phone">
+            <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/dianhua.png"></image>
+            <text class="name">{{item.mobileNumber}}</text>
+          </view>
+          <view class="name-phone">
+            <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/shenfenzheng.png"></image>
+            <text class="name">{{item.idCode}}</text>
+          </view>
+          <view class="name-phone">
+            <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/qiye1.png"></image>
+            <text class="name">{{item.enterpriseName || '鑫健康'}}</text>
+          </view>
+          <view class="name-phone">
+            <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/dizhi.png"></image>
+            <view class="name-address">{{item.composeAddress}}</view>
+          </view>
+      </view>
+      <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/yijingtongguo.png"></image>
+    </view>
+    <template is="wxLoading"  data="{{status}}"></template>
+  </block>
+  <nodata wx:if="{{show == 2}}"></nodata>
+</scroll-view>
+</block>
+<block wx:if="{{lineIndex==2}}">
+<scroll-view class="medical-care" scroll-y="true" bindscrolltolower="handleScrollBottom">
+  <block  wx:if="{{show == 1}}">
+    <view class="medical-item" wx:for="{{list}}" wx:key="index"  data-detail="{{item}}">
+      <view class="medical-left">
+          <view class="definition-mode">
+            <text class="definition">申请等级：{{item.salesmanType == 0?'区域合伙人':item.salesmanType == 1?'省级合伙人':item.salesmanType == 2?'市级合伙人':item.salesmanType == 3?'业务推广员':''}}</text>
+          </view>
+          <view class="name-phone">
+            <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/rentou.png"></image>
+            <text class="name">{{item.contacts}}</text>
+          </view>
+          <view class="name-phone">
+            <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/dianhua.png"></image>
+            <text class="name">{{item.mobileNumber}}</text>
+          </view>
+          <view class="name-phone">
+            <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/shenfenzheng.png"></image>
+            <text class="name">{{item.idCode}}</text>
+          </view>
+          <view class="name-phone">
+            <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/qiye1.png"></image>
+            <text class="name">{{item.enterpriseName || '鑫健康'}}</text>
+          </view>
+          <view class="name-phone">
+            <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/dizhi.png"></image>
+            <view class="name-address">{{item.composeAddress}}</view>
+          </view>
+          <view class="auditDesc">
+            <view class="dot"></view>
+            <view class="name">拒绝原因：{{item.auditDesc}}</view>
+          </view>
+          <view class="createTime">
+            <text class="name">审核时间：{{tools.formatTime(item.createTime) }}</text>
+          </view>
+      </view>
+      <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/weitongguo.png"></image>
+    </view>
+    <template is="wxLoading" data="{{status}}"></template>
+  </block>
+  <nodata wx:if="{{show ==2}}"></nodata>
+</scroll-view>
+</block>
+</view>

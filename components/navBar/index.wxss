@@ -1,0 +1,66 @@
+/* components/navBar/index.wxss */
+.tabbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100rpx;
+  border-top: 0.5px solid #d5d5d5;
+  display: flex;
+  font-size: 0;
+  background: #fff;
+}
+.tabbar-item {
+  flex: 1;
+  text-align: center;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 8rpx 10rpx 0;
+  color: #333333;
+}
+
+.tabbar-item:nth-child(3){
+  position: relative;
+  bottom: 50rpx;
+  height:150rpx;
+  flex: 0.7;
+}
+
+.tabbar-item:nth-child(3) .tabbar-item-icon{
+  height: 100rpx;
+  background: #fff;
+  border-radius: 50%;
+  border-top: solid 1px gray;
+}
+
+.tabbar-item:nth-child(3) .tabbar-item-icon image{
+  width: 100rpx;
+  height: 106rpx;
+  padding-top: 6rpx;
+}
+
+.tabbar-item:nth-child(3) .tabbar-item-text{
+  line-height: 0;
+  font-size: 28rpx;
+  margin-top: 8px;
+  color: #808080;
+}
+
+.tabbar-item-icon {
+  margin-bottom: 6rpx;
+  height: 56rpx;
+}
+
+.tabbar-item-icon image {
+  width: 56rpx;
+  height: 56rpx;
+}
+
+.tabbar-item-text {
+  font-size: 28rpx;
+  line-height: 20rpx;
+  color: #808080;
+}
+.active {
+  color: #23ac38;
+}

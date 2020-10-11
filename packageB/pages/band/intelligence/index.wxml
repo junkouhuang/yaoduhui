@@ -1,0 +1,23 @@
+
+
+<view class="tips-msg">
+	<image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/tips.png"></image>
+	<text class="tips">带<text class="quotation-symbol">"<text class="symbol">*</text>"</text>号为必填项，不带可以跳过不填写。</text>
+</view>
+
+<view class="information-title">【{{modeName}}】资质上传</view>
+
+<view class="essential-information">
+	<view class="information-item" wx:for="{{certificateList}}" wx:key="index" bindtap="handleUpdateImage" data-name="{{item.qualificationsName.qualificationsName}}" data-nameId="{{item.nameId}}" data-index="{{index}}" data-must="{{item.check}}" data-nameinfo="{{item.qualificationsName.nameInfo}}">
+		<view class="item-text">
+			<text class="symbol" wx:if="{{item.check==1}}">*</text>
+			<text class="item-name">{{item.qualificationsName.qualificationsName}}</text>
+		</view>
+		<view class="image-right">
+			<image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/select.png" wx:if="{{item.isChecked}}" style="width:30rpx;height:30rpx;margin-right:15rpx"></image>
+			<image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/right3.png"></image>
+		</view>
+	</view>
+</view>
+
+<view class="next-step {{isDisabled?'disabled':''}}" bindtap="handleSubmit">确认提交资料</view>

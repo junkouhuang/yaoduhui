@@ -1,0 +1,8 @@
+{
+  "navigationStyle": "custom",
+  "component": true,
+  "navigationBarTitleText": "确定支付",
+  "usingComponents": {
+    "return": "../../../../components/return/index"
+  }
+}

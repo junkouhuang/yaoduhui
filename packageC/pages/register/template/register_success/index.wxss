@@ -1,0 +1,71 @@
+/* pages/register_success/index.wxss */
+.register_success {
+  background-color: #ffffff;
+  height: calc(100vh)
+}
+.flow3 {
+  padding: 110rpx 0;
+  text-align: center;
+}
+.flow3 image {
+  width: 566rpx;
+  height: 44rpx;
+}
+.flow3 .title {
+  text-align: center;
+  font-size: 22rpx;
+  color: #999999;
+}
+.flow3 .title {
+  width: 566rpx;
+  position: relative;
+  margin: 0 auto;
+}
+.flow3 .active {
+  color: #4481EB;
+  left: -47rpx;
+  position: absolute;
+}
+.flow3 .set {
+   color: #4481EB;
+}
+.flow3 .last {
+  position: absolute;
+  right: -20rpx;
+  color: #4481EB;
+}
+.flow3 .suceess {
+  margin-top: 88rpx;
+  width: 160rpx;
+  height: 160rpx;
+}
+.success {
+  width: 100%;
+  text-align: center;
+  color: #333333;
+  font-size: 30rpx;
+  margin-top: 28rpx;
+}
+.goshopping {
+  width: 600rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 32rpx;
+  color: #ffffff;
+  background-image: linear-gradient(to right,#04BEFE, #4481EB);
+  border-radius: 60rpx;
+  text-align: center;
+  margin: 74rpx auto 0;
+  /* box-shadow: 0 0.206667rem 0.26rem 0 rgba(67,115,234,.3); */
+}
+.gohome {
+  width: 600rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 32rpx;
+  color: #333;
+  border-radius: 60rpx;
+  text-align: center;
+  margin: 74rpx auto 0;
+  border: 1rpx solid #333;
+}

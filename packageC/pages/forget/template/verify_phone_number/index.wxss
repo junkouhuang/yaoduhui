@@ -1,0 +1,98 @@
+/* pages/verify_phone_number/index.wxss */
+.verify_phone_number {
+  background-color: #ffffff;
+  height: calc(100vh - 2rpx);
+  border-top: 2rpx solid  #DCDCDC;
+}
+.flow1 {
+  padding: 50rpx 0;
+}
+.flow1 .title {
+  font-size: 24rpx;
+  color: #666666;
+  width: 600rpx;
+  margin: auto;
+}
+.flow1 .form .phone {
+  border: 2rpx solid #DBDBDB;
+  border-radius: 60rpx;
+  width: 600rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  margin: auto;
+  align-items: center;
+  display: flex;
+  margin-top: 40rpx;
+}
+.flow1 .form .phone image {
+  width: 34rpx;
+  height: 40rpx;
+  margin: 0 20rpx 0 40rpx;
+}
+.flow1 .form .phone input {
+  flex: 1;
+  padding: 10rpx 0;
+  text-align: left;
+  font-size: 28rpx;
+}
+.flow1 .form .phone .code {
+  height: 54rpx;
+  line-height: 54rpx;
+  color: #ffffff;
+  border-radius: 60rpx;
+  font-size: 26rpx;
+  padding: 0 20rpx;
+  margin: 0 20rpx;
+  background-color: #3996E1;
+  box-shadow: 0 0.206667rem 0.26rem 0 rgba(67,115,234,.3);
+  opacity: .54;
+}
+.flow1 .form .phone .vericodeActive {
+  opacity: 1;
+}
+.flow1 .form .vericode {
+  border: 2rpx solid #DBDBDB;
+  border-radius: 60rpx;
+  width: 600rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  margin: auto;
+  align-items: center;
+  display: flex;
+  margin-top: 52rpx;
+}
+.flow1 .form .vericode image {
+  width: 36rpx;
+  height: 36rpx;
+  margin: 0 20rpx 0 40rpx;
+}
+.flow1 .form .vericode input {
+  flex: 1;
+  padding: 10rpx 0;
+  text-align: left;
+  font-size: 28rpx;
+}
+.flow1 .form .vericode .code {
+  flex: 1;
+  padding: 10rpx 0;
+}
+.flow1 .form .inputActive {
+  border:1px solid #04BEFE;
+}
+.next {
+  width: 600rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 34rpx;
+  color: #ffffff;
+  background-image: linear-gradient(to right,#04BEFE, #4481EB);
+  border-radius: 60rpx;
+  text-align: center;
+  margin: 74rpx auto;
+  box-shadow: 0 0.206667rem 0.26rem 0 rgba(67,115,234,.3);
+  opacity: .54;
+}
+.btnActive {
+  opacity: 1;
+}
+

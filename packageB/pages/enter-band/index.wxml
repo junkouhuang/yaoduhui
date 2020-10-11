@@ -1,0 +1,41 @@
+<wxs src="../../../wxs/filter.wxs" module="tools" />
+<view class="customer-page">
+  <block wx:if="{{total>0}}">
+    <view class="medical-care">
+      <view class="top_name" wx:if="{{list.length>0}}">已绑定的企业</view>
+      <view class="medical-item" wx:for="{{list}}" wx:key="index"  bindtap="enterDetail" data-index="{{index}}">
+        <view class="top">
+          <image wx:if="{{item.logo}}" src="{{item.logo}}" class="logo2"></image>
+          <view class="logo" wx:else>{{tools.firstCHN(item.enterpriseName)}}</view>
+          <view class="company">
+            <view class="name"><view class="enterpriseName">{{item.enterpriseName}}</view></view>
+            <view class="way">企业类型：{{item.modeName}}<view wx:if="{{item.loginStatus == 1}}" class="loginStatus">当前企业</view></view>
+          </view>
+          <image class="right" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/right_black.png" bindtap="enterDetail" data-index="{{index}}"></image>
+        </view>
+        <view class="medical-left">
+          <view class="enter-address">
+            企业地址：{{item.provinceName}}{{item.cityName}}{{item.district}}{{item.location?item.location:''}}
+          </view>
+          <view class="enter-menber">
+            企业成员：{{item.staffCount+1}}人
+          </view>
+          <view class="shop-num">
+            首营管理：已建立首营{{item.archiveCount}}家
+          </view>
+        </view>
+      </view>
+      <view class="blank"></view>
+    </view>
+    <view class="business_button" wx:if="{{list.length>0}}">
+      <navigator url="/packageB/pages/enter-record/index" hover-class="none" class="enter_record">企业绑定记录</navigator>
+      <navigator url="/packageB/pages/band/search/index?hasBtn=true" hover-class="none" class="band_join">企业绑定/企业入驻</navigator>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="empty-data">
+      <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/no_data_icon.png"></image>
+      <text>暂无数据</text>
+    </view>
+  </block>
+</view>

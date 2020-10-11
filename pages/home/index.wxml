@@ -1,0 +1,93 @@
+<wxs src="../../wxs/filter.wxs" module="tools" />
+<skeleton wx:if="{{showSkeleton}}"></skeleton>
+<scroll-view>
+  <view class="content skeleton {{scrolly?'tripList_root':''}}" model:style="top:-{{mtop}}px">
+    <view class="topBox {{isFixedTop?'sticky':''}}">
+      <view class="titleBox">
+        <view>药都荟</view>
+      </view>
+      <view class="searchBox">
+        <view class="search skeleton-radius" bindtap="search" data-name="">
+          <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/search_icon.png" class='s_img'></image>
+          <input placeholder="请输入商品名/首拼/厂家进行搜索" placeholder-style="color:#C1C1C1;" disabled />
+        </view>
+      </view>
+    </view>
+    <view class="banner">
+      <swiper interval="5000" autoplay="true" duration="500" bindchange="bannerChange" class="swiper1 skeleton-rect">
+        <swiper-item wx:for="{{banner}}" wx:key="index"
+          style="background-image:url({{item.picture==''?'https://edm.xinquanjk.com/upload/iconfont/202003/20/noimg09.png':item.picture}});"
+          bindtap="detail" data-drugno="{{item.drugNo}}" data-amount="{{flag?'999':null}}">
+        </swiper-item>
+      </swiper>
+      <view class="dots1">
+        <view wx:for="{{banner}}" wx:key="index" class="dot{{index == active1? ' active1' : ''}}"></view>
+      </view>
+    </view>
+    <view class="classify skeleton-rect">
+      <swiper interval="5000" duration="500" bindchange="classifyChange" wx:if="{{classifyLen>0}}"
+        class="skeleton-rect">
+        <swiper-item wx:for="{{classifyLen}}" wx:key="index" class="swiperItem ">
+          <view class="item " wx:for="{{classifyList}}" wx:key="index" bindtap="toSearchGood" data-id="{{item.id}}"
+            data-categoryId="{{item.categoryId}}" data-typename="{{item.typeName}}">
+            <image src="{{item.homePageImg}}" class="icon " />
+            <view class="mc">{{item.typeName}}</view>
+          </view>
+        </swiper-item>
+      </swiper>
+      <view class="dots2" wx:if="{{classifyLen>1}}">
+        <view wx:for="{{classifyLen}}" wx:key="index" class="dot{{index == active2? ' active2' : ''}}"></view>
+      </view>
+    </view>
+    <!-- 进入企业入口 -->
+    <view class="enterprise skeleton-rect">
+      <view class="companyList" wx:for="{{enterpriseList}}" wx:key="index"
+      bindtap="goCompany" data-enterpriseid="{{item.enterpriseId}}" data-provinceid="{{item.provinceId}}">
+        <view class="left">
+          <view class="image1">
+            <image class="img" src="{{item.logo}}"></image>
+          </view>
+          <view class="name">
+            <view class="fz">{{item.enterpriseName}}</view>
+            <view class="range">{{item.sellArea}}<text
+                decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>{{item.quantity}}种商品</view>
+          </view>
+        </view>
+        <view>
+          <view class="button" catchtap="goCompany" data-enterpriseid="{{item.enterpriseId}}"
+            data-provinceid="{{item.provinceId}}" hover-stop-propagation="true">进入商铺</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="module skeleton-rect">
+      <view class="{{index == 0?'left':index == 1?'center':index == 2?'right':''}}" bindtap="styleHandle"
+        wx:for="{{flhandle}}" wx:key="index" data-id="{{item.sortNumber}}" data-name="{{item.title}}"
+        style="background-image:url({{item.picture==''?'https://edm.xinquanjk.com/upload/iconfont/202003/20/noimg09.png':item.picture}});">
+      </view>
+    </view>
+    <view class="popularity skeleton-radius">
+      <swiper interval="5000" duration="500" bindchange="bannerChange1" class="swiper2  skeleton-radius">
+        <swiper-item wx:for="{{popularity}}" wx:key="index"
+          style="background-image:url({{item.picture==''?'https://edm.xinquanjk.com/upload/iconfont/202003/20/noimg09.png':item.picture}});"
+          bindtap="popularity">
+        </swiper-item>
+      </swiper>
+      <view class="dots2" wx:if="{{popularity.length>1}}">
+        <view wx:for="{{popularity}}" wx:key="index" class="dot{{index == active2? ' active1' : ''}} "></view>
+      </view>
+    </view>
+    <!-- <view class='a_img'></view> -->
+    <view class="bt skeleton-rect">
+      <view class="tabble-toggle">
+        <view wx:for="{{navbarList}}" wx:key="index" bindtap="handleToggle" data-index="{{index}}"
+          class="toggle-item {{lineIndex == index?'active':''}}">
+          <view class="title">{{item.title}}</view>
+          <view class="subhead">{{item.subhead}}</view>
+        </view>
+        <view class="line" style="left:{{lineLeft}};"></view>
+      </view>
+      <goods source="home" id="goods" lineIndex="{{lineIndex}}" bind:myevent="myevent"></goods>
+    </view>
+  </view>
+</scroll-view>

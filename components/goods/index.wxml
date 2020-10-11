@@ -1,0 +1,130 @@
+<wxs src="../../wxs/filter.wxs" module="tools" />
+<cart id="cartComponent" isHide="{{isHide}}" />
+<build show="{{showBuilding}}" content="{{content}}" announcement="{{announcement}}" bind:getBuildInfo="getBuildInfo"
+  id="buildInfo" bind:myevent="myevent"></build>
+<notice show="{{showGg}}" announcement="{{announcement}}" bind:myevent="myevent"></notice>
+<view wx:if="{{pages>0}}">
+  <view class="movie-item" wx:for="{{list}}" wx:key="idx" wx:for-index="idx">
+    <view class="top" bindtap="detail" data-name="{{item.name}}" data-drugNo="{{item.drugNo}}"
+      data-amount="{{item.amount}}">
+      <view
+        style="background-image:url({{item.imgUrl=='' || item.imgUrl==null ?'https://edm.xinquanjk.com/upload/iconfont/202003/20/classify1.png':item.imgUrl}});"
+        class="imgUrl">
+        <block wx:if="{{source == 'popularity'}}">
+          <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/0yuancai.png" wx:if="{{item.drugTag == 1}}"
+            class="zerobuy"></image>
+          <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/hot1.png" wx:if="{{idx == 0}}" class="hot">
+          </image>
+          <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/hot2.png" wx:elif="{{idx == 1}}" class="hot">
+          </image>
+          <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/hot3.png" wx:elif="{{idx == 2}}" class="hot">
+          </image>
+          <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/hot4.png" wx:else class="hot"></image>
+          <text class="index">{{idx+1}}</text>
+        </block>
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/0yuancai.png"
+          wx:if="{{source == 'home' && lineIndex == 1}}" class="zero"></image>
+      </view>
+      <view class="content">
+        <view class="name skeleton-rect">{{item.name}}</view>
+        <view class="producerName skeleton-rect">
+          <view>供</view>
+          <text>{{item.enterpriseName}}</text>
+        </view>
+        <view class="producerName skeleton-rect">
+          <view>厂</view>
+          <text>{{item.producerName}}</text>
+        </view>
+        <view class="validityDate">有效期:{{tools.formatDate(item.validityDate)}}</view>
+        <view class="price_content">
+          <view class="price skeleton-rect">预约价:
+            <text wx:if="{{item.price == null}}" class="text1">仅企业可看</text>
+            <view wx:else>￥
+              <text class="text2">{{item.price}}</text>
+            </view>
+          </view>
+          <view class="advice skeleton-rect">建议零售价:￥{{item.suggestPrice}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="bottom">
+      <view class="spec_packageAmount">
+        <view class="spec" wx:if="{{item.spec != null && item.spec != ''}}">{{item.spec}}</view>
+        <view class="spec" wx:if="{{item.amount != null && item.amount != ''}}">{{item.batchNo}}</view>
+        <view class="spec" wx:if="{{item.licenseNo != null  && item.licenseNo != ''}}">{{item.licenseNo}}</view>
+        <block wx:if="{{item.packageAmount != null && item.retail == 0}}">
+          <view class="packageAmount">起批量{{item.packageAmount}}</view>
+        </block>
+        <block wx:if="{{item.midpackageAmount != null && item.retail == 1}}">
+          <view class="packageAmount">起批量{{item.midpackageAmount}}</view>
+        </block>
+        <block wx:if="{{item.packageAmount == null && item.midpackageAmount == null}}">
+          <view class="packageAmount">起批量--</view>
+        </block>
+      </view>
+      <view class="bulid" wx:if="{{item.amount != null}}">
+        <view wx:for="{{announcement}}" wx:key="index" wx:for-item="items">
+          <block wx:if="{{items.supplierId == item.enterpriseId}}">
+            <!--如果申请建档的企业是数据服务公司或者是向自己建档的话,返回status:-1-->
+            <view class="btn3" wx:if="{{items.status == 2}}">
+              <view bindtap="openGg" class="openGg" data-index="{{idx}}">公告
+                <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/right06.png" class="right06"></image>
+              </view>
+            </view>
+            <block wx:if="{{auth == 1}}">
+              <view class="btn2" catchtap="openBuild" data-index="{{index}}" data-item="{{item}}"
+                wx:if="{{items.status == 1 || items.status == null}}">
+                <text>申请建档</text>
+                <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/right_blue.png" class="right1"></image>
+              </view>
+            </block>
+            <view class="btn2" wx:if="{{items.status == 0}}" bindtap="openBuilding">
+              <text>建档中</text>
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+    <view class="line"></view>
+    <view class="sl">
+      <view class="v1">
+        <view class="num">
+          <view class="sub" catchtap="sub" data-index="{{idx}}">
+            <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/sub.png"></image>
+          </view>
+          <input type="number" value="{{item.quantity}}" bindblur="getQuantity" data-index="{{idx}}" />
+          <view class="add" catchtap="add" data-index="{{idx}}">
+            <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/add1.png"></image>
+          </view>
+        </view>
+        <text>{{item.unit!=null?item.unit:""}}</text>
+        <view class="stock">
+          库存：{{item.amount == null || item.amount == 0?'--':item.amount}}{{item.unit!=null?item.unit:""}}</view>
+      </view>
+      <view class="band" wx:if="{{item.amount == null}}" catchtap="band">
+        <view class="btn1">绑定企业</view>
+      </view>
+      <!--当公告的配送方supplierId与enterpriseId一致时显示加入预约单按钮-->
+      <view wx:for="{{announcement}}" wx:key="index" wx:for-item="items" wx:if="{{items.supplierId == item.enterpriseId}}">
+        <!-- <block wx:if="{{items.supplierId == item.enterpriseId}}"> -->
+          <view class="v2" catchtap="callCar" data-index="{{idx}}" data-status="{{items.status}}"
+            wx:if="{{item.amount!=null  && item.amount != 0}}">
+            加入预约单
+          </view>
+        <!-- </block> -->
+      </view>
+    </view>
+  </view>
+  <import src="../../template/loading/index.wxml" />
+  <template is="wxLoading" data="{{status}}"></template>
+</view>
+<block wx:if="{{pages == 0}}">
+  <view class="default">
+    <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/no_data_icon.png"></image>
+    <text>暂无商品</text>
+  </view>
+</block>
+<view class="band_enterprise" wx:if="{{notProvince}}">
+  <image class="icon" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/cart-bind.png"></image>
+  <view class="emptyData">暂不能跨省预约</view>
+</view>

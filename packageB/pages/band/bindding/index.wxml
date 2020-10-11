@@ -1,0 +1,25 @@
+<!--pages/band/bindding/index.wxml-->
+<view class="bindding-page">
+  <view class="enterprise-msg">
+    <text>{{enterpriseMsg.enterpriseName}}</text>
+    <view class="mode" wx:if="{{enterpriseMsg.modeName}}">企业类型：{{enterpriseMsg.modeName}}</view>
+  </view>
+  <view class="userinfo-msg">
+    <view class="info-item">
+      <text class="attribute"><text>*</text>姓名：</text>
+      <text class="name" wx:if="{{enterpriseMsg.contacts}}" style="color:#333;font-size:28rpx;">{{enterpriseMsg.contacts}}</text> 
+      <input wx:else type="text" value="{{enterpriseMsg.contacts}}" bindinput="handleGetInputData" data-sign="contacts" placeholder="请输入申请人姓名"/>
+    </view>
+    <view class="info-item">
+      <text class="attribute"><text>*</text>手机号码：</text>
+      <text class="name" wx:if="{{enterpriseMsg.mobileNumber}}" style="color:#333;font-size:28rpx;">{{enterpriseMsg.mobileNumber}}</text>
+      <input wx:else type="text" value="{{enterpriseMsg.mobileNumber}}" bindinput="handleGetInputData" maxlength="18" data-sign="mobileNumber" placeholder="请输入手机号码"/>
+    </view>
+    <view class="info-item">
+      <text class="attribute"><text>*</text>身份证号：</text>
+      <text class="name" wx:if="{{enterpriseMsg.idCode}}" style="color:#333;font-size:28rpx;">{{enterpriseMsg.idCode}}</text>
+      <input wx:else type="text" value="{{enterpriseMsg.idCode}}" bindinput="handleGetInputData" maxlength="18" data-sign="idCode" placeholder="请输入身份证号"/>
+    </view>
+  </view>
+</view>
+<view class="next-step {{isDisable?'disable':''}}" bindtap="{{isDisable?'':'binddingEnterprise'}}">确定提交资料</view>

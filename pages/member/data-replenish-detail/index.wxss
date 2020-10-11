@@ -1,0 +1,168 @@
+/* pages/member/data-replenish-detail/index.wxss */
+
+.replnish-page {
+  box-sizing: border-box;
+  padding-bottom: 60rpx;
+}
+
+/* 企业开户资料 */
+
+.essential-information {
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 0 34rpx 0 42rpx;
+}
+
+.essential-information .information-item {
+  border-bottom: 1rpx solid #DCDCDC;
+  height: 96rpx;
+  display: flex;
+  align-items: center;
+  color: #333333;
+  font-size: 28rpx;
+}
+
+.essential-information .information-item:last-child {
+  border-bottom: none;
+}
+
+.essential-information .information-item .item-text {
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  max-width: 310rpx;
+  margin-right: 20rpx;
+  width: 300rpx;
+}
+
+.essential-information .information-item .enterpriseName {
+  width: 500rpx;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+
+}
+
+.essential-information .information-item .long-term {
+  color: #999;
+  font-size: 28rpx;
+}
+
+.essential-information .information-item .item-text-name {
+  display: felx;
+  align-items: center;
+  font-size: 28rpx;
+  width: 90rpx;
+}
+
+.essential-information .information-item .validTime {
+  color: #333;
+  font-size: 28rpx;
+  margin-left: 16rpx;
+}
+
+.essential-information .information-item .symbol {
+  color: #FF0000;
+}
+
+.essential-information .information-item .validity-date {
+  color: #333;
+  font-size: 28rpx;
+  width: 209rpx;
+}
+
+.essential-information .information-item .symbol_view {
+  width: 20rpx;
+  height: 100%;
+  color: #FF0000;
+}
+
+.essential-information .information-item .nameId {
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.essential-information .information-item input {
+  flex: 1;
+}
+
+.essential-information .img_flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 234rpx;
+  background: #FFFFFF;
+  opacity: 1;
+}
+
+.essential-information .img_flex .view_imgage {
+  width: 180rpx;
+  height: 180rpx;
+  background: #EEEEEE;
+  opacity: 1;
+  border-radius: 15rpx;
+  margin-right: 25rpx;
+}
+
+.view_imgage .img {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 15rpx;
+}
+
+.information-title {
+  height: 50rpx;
+  padding: 20rpx 45rpx 0 0;
+  background: #FFFFFF;
+  font-size: 28rpx;
+}
+
+.commitStatu {
+  height: 28rpx;
+  font-size: 28rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  line-height: 28rpx;
+  opacity: 1;
+  margin: 35rpx 0 0 29rpx;
+}
+
+.commitStatu .textRed {
+  color: red;
+}
+
+.commitStatu .textBlue {
+  color: #0266C4;
+}
+
+/* 提交 */
+
+.next-step {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80rpx;
+  background: #0266C4;
+  opacity: 1;
+  border-radius: 15rpx;
+  font-size: 32rpx;
+  font-family: MicrosoftYaHei;
+  line-height: 36rpx;
+  color: #FFFFFF;
+  opacity: 1;
+  /* margin: 52rpx 30rpx 0 30rpx; */
+  position: absolute;
+  left: 30rpx;
+  right: 30rpx;
+  bottom: 30rpx;
+}

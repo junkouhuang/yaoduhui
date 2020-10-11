@@ -1,0 +1,152 @@
+/* pages/login/index.wxss */
+.login {
+  background-color: #ffffff;
+  height: 100%;
+}
+.help {
+  color: #666666;
+  font-size: 32rpx;
+  position: absolute;
+  top: 30rpx;
+  right: 30rpx;
+
+}
+.login .logo {
+  text-align: center;
+}
+.logo image {
+  width: 220rpx;
+  height: 220rpx;
+  margin: 80rpx auto ;
+}
+.login .username {
+  display: flex;
+  border: 2rpx solid #DBDBDB;
+  border-radius: 60rpx;
+  width: 600rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  margin: auto;
+  align-items: center;
+}
+.login .username .topic {
+  width: 36rpx;
+  height: 36rpx;
+  margin: 0 20rpx 0 40rpx;
+}
+.login .username  input {
+  display: flex;
+  padding: 10rpx 0;
+  flex: 1;
+  font-size: 28rpx;
+}
+.login .username .close_icon {
+  margin: 0 30rpx;
+  float: right;
+  width: 100rpx;
+}
+.login .username .close {
+  margin: 0 30rpx;
+  float: right;
+  width: 34rpx;
+  height: 34rpx;
+  border-radius: 50%;
+  background-color: #b2b2b2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login .username .close image {
+  width: 15rpx;
+  height: 15rpx;
+  float: right;
+}
+.login .password {
+  display: flex;
+  border: 2rpx solid #DBDBDB;
+  border-radius: 60rpx;
+  width: 600rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  margin: auto;
+  align-items: center;
+  margin-top: 42rpx;
+}
+.login .password .lock {
+  width: 36rpx;
+  height: 36rpx;
+  margin: 0 20rpx 0 40rpx;
+}
+.login .password  input {
+  display: flex;
+  padding: 10rpx 0;
+  flex: 1;
+  font-size: 28rpx;
+}
+.login .password .eyes_icon {
+  margin: 0 30rpx;
+  float: right;
+  width: 100rpx;
+}
+.login .password .eyes_close {
+  width: 48rpx;
+  height: 18rpx;
+  float: right;
+}
+.login .password .eyes_open {
+  width: 48rpx;
+  height: 40rpx;
+  float: right;
+}
+.login .inputActive {
+  border:1px solid #04BEFE;
+}
+.login .remember {
+  display: flex;
+  width: 600rpx;
+  margin:30rpx auto;
+  justify-content:space-between;
+  color: #666666;
+  font-size: 30rpx;
+}
+.login .remember .radio {
+  display: flex;
+  align-items: center;
+}
+.login .remember .radio image {
+  width: 36rpx;
+  height: 36rpx;
+}
+.login .remember .radio text {
+  margin-left: 8rpx;
+}
+.login_btn {
+  width: 600rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 34rpx;
+  color: #ffffff;
+  border-radius: 60rpx;
+  text-align: center;
+  margin: 74rpx auto;
+  background-image: linear-gradient(to right,#04BEFE, #4481EB);
+  box-shadow: 0 0.206667rem 0.26rem 0 rgba(67,115,234,.3);
+  opacity: .54;
+}
+.btnActive {
+  opacity: 1;
+}
+.new {
+  text-align: center;
+  color: #3996E1;
+  padding-bottom: 100rpx;
+}
+.new button {
+  padding: 0;
+  font-style: normal;
+  width: auto;
+  font-weight: normal;
+  color: #3996E1;
+  background-color:#ffffff;
+  font-size: 30rpx;
+}

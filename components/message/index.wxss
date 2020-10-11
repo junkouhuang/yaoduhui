@@ -1,0 +1,168 @@
+/* components/confirm.wxss */
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.3);
+  z-index: 5;
+}
+
+
+
+.buildSuccess {
+  transform: translateX(-50%) translateY(-50%);
+  width: 654rpx;
+  border-radius: 30rpx;
+  background-color: #fff;
+  z-index: 7;
+  color: #333;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  height: calc(70vh);
+  overflow: hidden;
+  display: flex;
+}
+
+.buildSuccess .title11 {
+  text-align: center;
+  font-size: 30rpx;
+  font-weight: bold;
+  height: 100rpx;
+  line-height: 100rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 1rpx solid #EFEFEF;
+  background: #fff;
+}
+
+.buildSuccess .richText {
+  padding: 10rpx 40rpx;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 100rpx 0 100rpx;
+}
+
+.buildSuccess .content11 {
+  margin: 34rpx 34rpx 0 34rpx;
+  font-size: 28rpx;
+}
+
+.buildSuccess .title22 {
+  font-size: 28rpx;
+  margin: 24rpx 50rpx 0 50rpx;
+  position: relative;
+  font-weight: bold;
+}
+
+.buildSuccess .content22 {
+  margin: 24rpx 34rpx 0 34rpx;
+  font-size: 28rpx;
+}
+
+.buildSuccess .content22 text {
+  color: #f00;
+}
+
+.buildSuccess .title33 {
+  font-size: 28rpx;
+  margin: 24rpx 50rpx 0 50rpx;
+  position: relative;
+  font-weight: bold;
+}
+
+.buildSuccess .content33 {
+  margin: 0 34rpx 0 34rpx;
+  font-size: 28rpx;
+}
+
+.buildSuccess .content66 {
+  margin: 0 34rpx 20rpx 34rpx;
+  font-size: 28rpx;
+}
+
+.buildSuccess .content44 {
+  margin: 24rpx 34rpx 0 34rpx;
+  font-size: 28rpx;
+}
+
+.buildSuccess .content55 {
+  padding: 0 17px 0 17px;
+  font-size: 28rpx;
+}
+
+.buildSuccess .title22::after {
+  content: "";
+  width: 4rpx;
+  height: 26rpx;
+  background-color: #3996e1;
+  position: absolute;
+  top: 50%;
+  margin-top: -13rpx;
+  left: 0;
+  margin-left: -14rpx;
+}
+
+.buildSuccess .title33::after {
+  content: "";
+  width: 4rpx;
+  height: 26rpx;
+  background-color: #3996e1;
+  position: absolute;
+  top: 50%;
+  margin-top: -13rpx;
+  left: 0;
+  margin-left: -14rpx;
+}
+
+.buildSuccess .btn {
+  background-color: #fff;
+  font-size: 30rpx;
+  text-align: center;
+  color: #3996e1;
+  height: 100rpx;
+  line-height: 100rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  justify-content: center;
+}
+
+.btn::after {
+  position: absolute;
+  box-sizing: border-box;
+  content: ' ';
+  pointer-events: none;
+  right: 0;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid #ebedf0;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+
+.btn .cancel {
+  color: #333;
+  flex: 1;
+  position: relative;
+}
+
+.btn .cancel::after {
+  position: absolute;
+  content: '';
+  width: 2rpx;
+  height: 100rpx;
+  background: #ebedf0;
+  right: 0;
+  transform: scaleX(0.5);
+}
+
+.btn .yes {
+  color: #3996E1;
+  flex: 1;
+}

@@ -1,0 +1,91 @@
+
+.transfer {
+  margin-bottom: 210rpx;
+}
+.item {
+  box-sizing: border-box;
+  background-color: #fff;
+  display: flex;
+  margin: 20rpx 30rpx;
+  border-radius: 26rpx;
+  padding: 30rpx 30rpx 30rpx 20rpx;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item .left .contacts {
+  font-size: 32rpx;
+  font-weight: bold;
+  width: 550rpx;
+  overflow: hidden; 
+  text-overflow: ellipsis;
+  white-space:nowrap;
+}
+
+.item .left .mobileNumber,
+.item .left .idCode {
+  font-size: 26rpx;
+  margin-top: 20rpx;
+}
+
+.circular {
+  width: 30rpx;
+  height: 30rpx;
+  border: 3rpx solid #ABABB4;
+  border-radius: 50%;
+}
+
+.check {
+  width: 34rpx;
+  height: 34rpx;
+}
+
+.btn {
+  height: 200rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right:0;
+  background-color: #f5f5f5;
+}
+
+.btn .finsh {
+  border-radius: 60rpx;
+  background:linear-gradient(90deg,rgba(4,190,254,1),rgba(68,129,235,1));
+  box-shadow: 0 0.206667rem 0.26rem 0 rgba(67,115,234,.3);
+  font-size: 32rpx;
+  width: calc(100vw - 68rpx);
+  height: 90rpx;
+  line-height: 90rpx;
+  color: #ffffff;
+  text-align: center;
+  background-image: linear-gradient(to right, #3996E1, #3996E1);
+  margin-left: 34rpx;
+  margin-top: 50rpx;
+}
+
+.disable {
+  opacity: .54;
+}
+
+.empty-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+  margin-top: -100rpx;
+}
+
+.empty-data image {
+  width: 250rpx;
+  height: 250rpx;
+}
+
+.empty-data text {
+  color: #615F60;
+  font-size: 28rpx;
+  margin-top: 55rpx;
+}

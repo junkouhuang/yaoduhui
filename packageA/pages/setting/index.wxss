@@ -1,0 +1,140 @@
+/* pages/my/template/setting.wxss */
+.setting-information {
+  padding: 0 34rpx 0 42rpx;
+  background: #fff;
+}
+
+.accountInfo {
+  border-bottom: none !important;
+}
+
+.accountSecurity {
+  height: 96rpx;
+  line-height: 96rpx;
+  font-size: 28rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.account {
+  height: 96rpx;
+  line-height: 96rpx;
+  font-size: 28rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  position: relative;
+}
+
+.account::after {
+  position: absolute;
+  box-sizing: border-box;
+  content: ' ';
+  pointer-events: none;
+  right: 0;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid #ebedf0;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+
+.accountSecurity text {
+  color: #333333;
+}
+
+.realName {
+  height: 96rpx;
+  line-height: 96rpx;
+  font-size: 28rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  position: relative;
+  display: none;
+}
+
+.realName::after {
+  position: absolute;
+  box-sizing: border-box;
+  content: ' ';
+  pointer-events: none;
+  right: 0;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid #ebedf0;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+
+.realName text {
+  color: #333333;
+}
+
+.accountSecurity image,
+.realName image {
+  width: 16rpx;
+  height: 28rpx;
+}
+
+.realName view {
+  display: flex;
+  align-items: center;
+}
+
+.realName .status {
+  margin-right: 10rpx;
+  color: #CECECE;
+}
+
+.realName .status text {
+  color: #666666;
+}
+
+.version {
+  height: 96rpx;
+  line-height: 96rpx;
+  font-size: 28rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  position: relative;
+}
+
+.version::after {
+  position: absolute;
+  box-sizing: border-box;
+  content: ' ';
+  pointer-events: none;
+  right: 0;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid #ebedf0;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+
+.loginout {
+  width: calc(100vw - 68rpx);
+  height: 96rpx;
+  line-height: 96rpx;
+  font-size: 32rpx;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  background-image: linear-gradient(to right, #F13C3C, #F13C3C);
+  border-radius: 44rpx;
+  box-shadow: 0 0.206667rem 0.26rem 0 rgba(67, 115, 234, .3);
+  margin-left: 34rpx;
+  position: relative;
+  position: absolute;
+  bottom: 50rpx;
+  left: 0;
+  right: 0;
+  justify-content: center;
+}

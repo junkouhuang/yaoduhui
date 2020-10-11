@@ -1,0 +1,112 @@
+<!--pages/member/open-account/index.wxml-->
+<view class="account-message">
+  <text class="title">填写企业资料</text>
+  <view class=" message-item enterpriseName">
+      <text class="name"><text>*</text>公司账户名称</text>
+      <text class="detail">{{enterpriseName}}</text>
+  </view>
+  <view class="message-item bindingText" bindtap="bindingClassify">
+      <text class="name"><text>*</text>绑卡类型</text>
+      <view class="right">
+        <text class="bind-classify">{{bindingText}}</text>
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/right3.png"></image>
+      </view>
+    </view>
+  <view class="message-list">
+    <view class="message-item">
+      <text class="name"><text>*</text>手机号码</text>
+      <input type="number" value="{{phoneNumber}}" maxlength="11" placeholder-style="color:#C2C2C2;" bindinput="getInputValue"  data-sign="phoneNumber" placeholder="被绑账户预留银行手机号"></input>
+    </view>
+
+    <view class="message-item">
+      <text class="name"><text>*</text>营业执照编号</text>
+      <input type="text" bindinput="getInputValue" data-sign="certificateNumber" value="{{certificateNumber}}" placeholder-style="color:#C2C2C2;" placeholder="请输入统一社会信用代码"></input>
+    </view>
+
+    <view class="message-item">
+      <text class="name"><text>*</text>法定代表人/负责人姓名</text>
+      <input type="text" bindinput="getInputValue" data-sign="userName" value="{{userName}}"  placeholder-style="color:#C2C2C2;" placeholder="请输入法定代表人/负责人姓名"></input>
+    </view>
+
+    <view class="message-item">
+      <text class="name"><text>*</text>法定代表人/负责人身份证号</text>
+      <input type="idcard" maxlength="18" bindinput="getInputValue" data-sign="idCard" value="{{idCard}}" placeholder-style="color:#C2C2C2;" placeholder="请输入法定代表人/负责人身份证"></input>
+    </view>
+  </view>
+</view>
+
+<view class="next-step {{isDisable?'disable':''}}" bindtap="{{isDisable?'':'handleNextStop'}}">下一步</view>
+
+<view class="explain-tips">
+  <text class="title">开户说明</text>
+  <text class="tips-item">1、本页面为渤海银行开户资料填写页面；</text>
+  <text class="tips-item">2、提交开户资料后，将自动跳转到渤海银行系统完成开户；</text>
+  <text class="tips-item">3、成功开户并绑卡后可使用该账户完成资金转账、充值、 提现、支付；</text>
+  <text class="tips-item">4、该账户资金由渤海银行监管。</text>
+</view>
+
+
+
+<view class="open-mask" wx:if="{{showMask}}">
+  <view class="bg" style="opacity:{{opacity}}" bindtap="closeMask"></view>
+  <block wx:if="{{showOneMask}}">
+    <view class="account-detail" style="bottom:{{bottom}}">
+      <view class="title">开户申请</view>
+      <view class="list-shell">
+        <view class="item" wx:for="{{6}}" wx:key="index">
+          <text class="left">企业名称</text>
+          <text class="right">药都荟</text>
+        </view>
+      </view>
+      <view class="button" bindtap="maskNext">下一步</view>
+    </view>
+  </block>
+
+  <block wx:if="{{!showOneMask}}">
+    <view class="account-set" style="bottom:{{bottom}}">
+      <view class="title">交易认证</view>
+      <view class="list-shell">
+        <view class="item">
+          <text class="left">手机号</text>
+          <input class="right" type="number" maxlength="11" placeholder="请输入手机号码" placeholder-style="color:#C2C2C2;font-size:28rpx;"></input>
+        </view>
+        <view class="item">
+          <text class="left">验证码</text>
+          <view class="right">
+            <input type="number" placeholder="请输入短信验证码" placeholder-style="color:#C2C2C2;font-size:28rpx;" maxlength="6"></input>
+            <view class="obtain {{verificationText!='获取验证码'?'active':''}}" bindtap="sendMessage">{{verificationText}}</view>
+          </view>
+        </view>
+        <view class="item">
+          <text class="left">交易密码</text>
+          <input class="right" type="text" placeholder="请输入密码" placeholder-style="color:#C2C2C2;font-size:28rpx;"></input>
+        </view>
+        <view class="item">
+          <text class="left">确认密码</text>
+          <input class="right" type="text" placeholder="请再次输入密码" placeholder-style="color:#C2C2C2;font-size:28rpx;"></input>
+        </view>
+      </view>
+      <view class="button">确认</view>
+      <view class="tips-massage">
+        <text>温馨提示:</text>
+        <text>密码长度为6至20位数，字母数字混合，字母区分大小写</text>
+      </view>
+    </view>
+  </block>
+</view>
+
+
+<view class="binding-card" wx:if="{{showBindMask}}">
+  <view class="binding-bg" style="opacity:{{bindOpacity}}"></view>
+  <view class="select-shell" style="bottom:{{bindBottom}}">
+    <text class="title">选择绑卡类型</text>
+    <view class="select-list">
+      <view class="item" bindtap="handleSelectClassify" wx:for="{{selectList}}" wx:key="index" data-type="{{item.type}}" data-index="{{index}}" data-name="{{item.text}}">
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/select.png" wx:if="{{index==bandingIndex}}"></image>
+        <view class="circular" wx:else></view>
+        <text>{{item.text}}</text>
+      </view>
+    </view>
+    <view class="cancel" bindtap="handleCancelMask">取消</view>
+  </view>
+</view>

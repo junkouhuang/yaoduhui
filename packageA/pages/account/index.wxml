@@ -1,0 +1,19 @@
+<!--pages/my/template/set_pwd.wxml-->
+<view class="account_infomation">
+  <view class="uno">
+    <text>会员号</text>
+    <text class="name">{{realData.uno}}</text>
+  </view>
+  <view class="telephone">
+    <text>手机号</text>
+    <text class="name">{{realData.telephone}}</text>
+  </view>
+  <view class="password" bindtap="update_password">
+    <text>账号密码</text>
+    <view>
+      <text class="set">修改</text>
+      <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/right3.png"></image>
+    </view>
+  </view>
+</view>
+<view class="tip">如果遇到账号被盗、忘记密码、无法登录等账号问题，可联系新药都荟小程序客服。</view>

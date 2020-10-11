@@ -1,0 +1,172 @@
+<wxs src="../../wxs/filter.wxs" module="tools" />
+<block wx:if="{{show}}">
+  <view class="header">
+    <image wx:if="{{data.status ===0}}" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/waitpay.png"
+      class="gan"></image>
+    <image wx:if="{{data.status ===1}}" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/waitconfirmpay.png"
+      class="gan"></image>
+    <image wx:if="{{data.status ===2}}" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/paysuccess.png"
+      class="gan"></image>
+    <image wx:if="{{data.status ===3}}" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/tui.png" class="gan">
+    </image>
+    <image wx:if="{{data.status ===4}}" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/wancheng.png"
+      class="gan"></image>
+    <image wx:if="{{data.status ===5}}" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/cancel.png"
+      class="gan"></image>
+    <image wx:if="{{data.status ===6}}" src="https://edm.xinquanjk.com/upload/iconfont/202003/20/confirming.png"
+      class="gan"></image>
+    <view class="logo">
+      <!--0-待付款 1-待确认付款 2-已付款 3-待退款 4-已完成 5-已取消 6-待第三方确认订单-->
+      <text
+        class="zt">{{data.status ===0 ?"待付款":data.status ===1 ?"待确认付款":data.status ===2 ?"已付款":data.status ===3 ?"待退款":data.status ===4 ?"已完成":data.status ===5 ?"已取消":data.status ===6 ?"待确认":""}}</text>
+      <view class="time">
+        <block wx:if="{{data.status ==0}}">
+          <block wx:if="{{source=='purchase_order' && lastModifyTime}}">
+            {{lastModifyTime}}后自动取消订单
+          </block>
+          <block wx:if="{{source=='sale_order' && lastModifyTime}}">
+            {{lastModifyTime}}后未支付将会自动取消订单
+          </block>
+        </block>
+        <block wx:elif="{{data.status ===1}}">
+
+        </block>
+        <block wx:elif="{{data.status ===2}}">
+          您的订单已付款成功
+        </block>
+        <block wx:elif="{{data.status ===3}}">
+          <block wx:if="{{source=='purchase_order'}}">
+            退款申请已提交
+          </block>
+          <block wx:if="{{source=='sale_order'}}">
+            用户退款申请已提交
+          </block>
+        </block>
+        <block wx:elif="{{data.status ===4}}">
+          订单已完成交易
+        </block>
+        <block wx:elif="{{data.status ===5}}">
+          订单已取消
+        </block>
+        <block wx:elif="{{data.status ===6}}">
+          <block wx:if="{{source=='purchase_order'}}">
+            等待供应商确认订单
+          </block>
+          <block wx:if="{{source=='sale_order'}}">
+            请尽快审核该订单
+          </block>
+        </block>
+      </view>
+    </view>
+  </view>
+  <view class="userInfo">
+    <view class="name_phone">
+      <view class="consignee">{{data.consignee}}</view>
+      <text class="consigneePhone">{{data.consigneePhone}}</text>
+    </view>
+    <view class="shippingAddress">{{data.shippingAddress}}</view>
+  </view>
+  <view class="content">
+    <view class="item">
+      <view  class="contian" >
+        <view class="psf">
+          <view class="supplierName">
+            <view>{{data.supplierName}}</view>
+          </view>
+        </view>
+        <view class="goods"
+          wx:for="{{source == 'purchase_order'?data.purchaseOrderDetail: source== 'sale_order'?data.details:''}}"
+          wx:key="index" wx:for-item="items" bindtap="goodDetail" data-drugNo="{{items.drugNo}}">
+          <view class="good_item">
+            <view class="picture">
+              <view
+                style="background-image:url({{items.imgUrl=='' || items.imgUrl==null ?'https://edm.xinquanjk.com/upload/iconfont/202003/20/classify1.png':items.imgUrl}});"
+                class="imgUrl">
+                <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/0yuancai.png"
+                  wx:if="{{items.drugTag == 1}}"></image>
+              </view>
+            </view>
+            <view class="xq">
+              <text class="mc">{{items.productName}}</text>
+              <view class="gs"><view>厂</view><text class="manufacturer">{{items.manufacturer}}</text></view>
+              <view class="spec" wx:if="{{items.spec != null && items.spec != ''}}">规格：{{items.spec}}</view>
+              <view class="jg">单价：￥<text>{{items.unitPriceWithTax}}</text></view>
+            </view>
+          </view>
+          <view class="bt">
+            <view class="cgl">采购数量：{{items.quantity}}</view>
+            <view class="yf">小计：<text class="rmb">￥</text><text
+                class="xj">{{tools.toFixed(items.unitPriceWithTax*items.quantity)}}</text></view>
+          </view>
+          <view class="audit" wx:if="{{items.quantity == 0 || items.amountWithTax == 0}}">
+            <view class="o-audit">
+              <view class="fail">该商品审核不通过</view>
+              <view class="reson" wx:if="{{items.errorMessage}}">拒绝原因：{{items.errorMessage}}</view>
+            </view>
+          </view>
+          <view class="line">
+            <view></view>
+          </view>
+        </view>
+        <view class="good-b">
+          <text>开单人：</text>
+          <text>{{data.creator}}</text>
+        </view>
+        <view class="good-b">
+          <text>{{source == 'purchase_order'?'采购订单号：': source== 'sale_order'?'销售订单号':''}}</text>
+          <text>{{source == 'purchase_order'?data.purchaseOrderNo: source== 'sale_order'?data.salesOrderNo:''}}</text>
+        </view>
+        <view class="good-b">
+          <text>开单时间：</text>
+          <text wx:if="{{data.createTime}}">{{tools.formatTime(data.createTime)}}</text>
+        </view>
+        <view class="good-b" wx:if="{{(data.status == 2 || data.status == 3 || data.status == 4 || data.status == 5 || data.status == 7) && data.payTime!=null}}">
+          <text>支付时间：</text>
+          <text wx:if="{{data.payTime}}">{{tools.formatTime(data.payTime)}}</text>
+        </view>
+        <view class="good-b" wx:if="{{data.status == 7}}"> 
+          <text>退款时间：</text>
+          <text wx:if="{{data.refundTime}}">{{tools.formatTime(data.refundTime)}}</text>
+        </view>
+        <view class="good-b">
+          <text>订单金额：</text>
+          <text style="color:#FD8E23">￥{{tools.toFixed(data.amountWithTax)}}</text>
+        </view>
+      </view>
+      <block wx:if="{{source == 'purchase_order' && data.status!=5 && data.status!=7}}">
+        <view class="realPay">
+          <view class="pay"  >
+            <block wx:if="{{data.status==0 || data.status==1  }}">支付总金额：<text>￥{{totalAmount}}</text></block>
+            <view class="cancelRefund" wx:if="{{data.status==3}}">退款申请已提交，等待供应商审核。</view>
+          </view>
+          <view class="status">
+            <!--0-待付款 1-待确认付款 2-已付款 3-待退款 4-已完成 5-取消/退款 6-待第三方确认订单-->
+            <view class="right_confirm_pay operate" data-id="{{data.purchaseOrderId}}"
+              wx:if="{{data.status==0 && data.error_message[0]==null}}" bindtap="pay">立即支付</view>
+            <view class="right operate" wx:if="{{data.status==0 || data.status==6 }}" bindtap="cancelOrder">取消订单</view>
+            <view class="confirmPay1 operate" wx:if="{{data.status==1}}" bindtap="confirmPay"
+              data-id="{{data.purchaseOrderId}}">确认支付</view>
+            <view class="confirmPay2 operate" wx:if="{{data.status==2}}" bindtap="sh"
+              data-id="{{data.purchaseOrderId}}">
+              确认收货</view>
+            <view class="applyRefund operate" wx:if="{{data.status==2}}" bindtap="applyRefund"
+              data-id="{{data.purchaseOrderId}}">申请退款</view>
+            <view class="applyRefund operate" wx:if="{{data.status==3}}" bindtap="cancelRefund"
+              data-id="{{data.purchaseOrderId}}">取消申请退款</view>
+          </view>
+        </view>
+      </block>
+      <block wx:if="{{source == 'sale_order' &&  data.status==3}}">
+        <view class="realPay">
+          <view class="pay">
+            请审核该订单的退款申请
+          </view>
+          <view class="status">
+            <view class="handleRefund2 operate" bindtap="handleRefund"  data-id="{{data.salesOrderId}}" data-flag="{{true}}">同意退款</view>
+            <view class="applyRefund operate" bindtap="handleRefund"  data-id="{{data.salesOrderId}}" data-flag="{{false}}">拒绝退款</view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</block>

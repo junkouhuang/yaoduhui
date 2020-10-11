@@ -1,0 +1,25 @@
+
+<wxs src="../../../wxs/filter.wxs" module="tools" />
+<view class="sale_order">
+  <view class="box">
+    <view class="searchbox">
+      <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/search_icon.png" class='s_img'></image>
+      <input placeholder="请输入订单号" placeholder-style="color:#c1c1c1;" confirm-type="search" bindinput="inputHandle" bindblur="inputBlur" maxlength="20" bindconfirm="search" value="{{keyword}}" bindfocus="inputFocus" />
+      <view class="close_icon" hidden="{{!close}}" catchtap="clearHandle">
+        <image src="https://edm.xinquanjk.com/upload/iconfont/202003/20/guanbi.png" class="close"></image>
+      </view>
+    </view>
+  </view>
+  <scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}" scroll-x="false">
+    <!--0 - 待付款 1 - 待确认付款 2 - 已付款 3 - 待退款 4 - 已完成 5 - 已取消 6 - 待第三方确认订单-->
+    <view class="item {{ currentTab  == 0?'active':''}}" bindtap="change" data-status="" data-index="0">全部</view>
+    <view class="item {{ currentTab == 1?'active':''}}"  bindtap="change" data-status="6" data-index="1">确认中</view>
+    <view class="item {{ currentTab == 2?'active':''}}"  bindtap="change" data-status="0" data-index="2">待付款</view>
+    <view class="item1 {{ currentTab == 3?'active':''}}" bindtap="change" data-status="1" data-index="3">待确认付款</view>
+    <view class="item {{ currentTab == 4?'active':''}}"  bindtap="change" data-status="2" data-index="4">已付款</view>
+    <view class="item {{ currentTab == 5?'active':''}}"  bindtap="change" data-status="3" data-index="5">待退款</view>
+    <view class="item {{ currentTab == 6?'active':''}}"  bindtap="change" data-status="4" data-index="6">已完成</view>
+    <view class="item2 {{ currentTab == 7?'active':''}}"  bindtap="change" data-status="5" data-index="7">取消/退款</view>
+  </scroll-view>
+  <order len="8" id="order" source="sale_order" bind:setActiveStatus="getActiveStatus"></order>
+</view>
